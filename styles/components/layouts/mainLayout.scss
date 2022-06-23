@@ -1,0 +1,11 @@
+@import '../../vars';
+
+.main-layout {
+  height: 100vh;
+  padding: 15px 0 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: $main-bg-color;
+}

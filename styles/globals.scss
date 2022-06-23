@@ -1,0 +1,38 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1278px;
+}
+
+// PAGES
+@import 'pages/index';
+
+// PARTIALS
+@import 'components/header';
+@import 'components/footer';
+@import 'components/map';
+@import 'components/newsTicker';
+
+// SECTIONS
+@import 'components/sections/hero';
+
+// LAYOUTS
+@import 'components/layouts/mainLayout';

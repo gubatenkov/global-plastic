@@ -1,0 +1,107 @@
+@import '../../vars';
+
+.hero {
+  padding: 35px 0 0;
+
+  width: 100%;
+  height: 100%;
+
+  gap: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__inner {
+    position: relative;
+  }
+
+  &__center {
+    padding: 70px 0 0;
+
+    position: relative;
+
+    width: 70%;
+    margin: 0 auto;
+
+    z-index: 10;
+  }
+
+  &__text {
+    margin: 0 0 50px 0;
+
+    &__suptitle {
+      margin: 0 0 35px 0;
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 15px;
+      font-style: normal;
+
+      text-align: center;
+
+      color: $dark-grey;
+    }
+
+    &__title {
+      margin: 0 0 0 0;
+
+      color: $black;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 53px;
+      font-style: normal;
+      text-align: center;
+    }
+  }
+
+  &__panel {
+    width: 100%;
+    margin: 0 auto;
+    max-width: fit-content;
+    padding: 16px 100px 16px 25px;
+
+    background-color: $white;
+    border-radius: $default-radius;
+
+    position: relative;
+
+    &__text {
+      gap: 15px;
+      display: flex;
+      align-items: center;
+
+      color: $black;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 30px;
+      font-style: normal;
+      text-align: center;
+
+      > p {
+        margin: 0;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 65px;
+      height: 55px;
+
+      top: 4px;
+      right: 4px;
+      position: absolute;
+
+      border-radius: 11px;
+      background-color: $accent-color;
+
+      cursor: pointer;
+    }
+  }
+
+  &__ticker-wrap {
+    width: 100%;
+  }
+}
