@@ -1,0 +1,81 @@
+@import '../vars';
+
+.slider-nav {
+  width: 100%;
+  max-width: 215px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+
+    color: $white;
+    border-radius: 6px;
+    border: 1px solid rgba($white, 0.4);
+    background-color: transparent;
+
+    cursor: pointer;
+
+    .dark & {
+      color: $black;
+      border: 1px solid rgba($black, 0.4);
+    }
+  }
+
+  &__num {
+    display: flex;
+    align-items: center;
+
+    &__curr {
+      margin: 0;
+
+      color: $white;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 12px;
+      font-style: normal;
+
+      text-transform: uppercase;
+
+      .dark & {
+        color: $black;
+      }
+    }
+
+    &__divider {
+      margin: 0 15px;
+      display: inline-block;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background-color: $white;
+
+      .dark & {
+        background-color: $black;
+      }
+    }
+
+    &__total {
+      margin: 0;
+
+      color: $white;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 12px;
+      font-style: normal;
+
+      text-transform: uppercase;
+
+      opacity: 0.4;
+
+      .dark & {
+        color: $black;
+      }
+    }
+  }
+}

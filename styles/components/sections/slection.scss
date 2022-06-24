@@ -1,0 +1,66 @@
+@import '../../vars';
+
+.slection {
+  padding: 160px 0 110px;
+  padding-left: calc((100% - var(--container-width)) / 2);
+
+  background-color: $black;
+  background-repeat: no-repeat;
+  background-position: 100px top;
+  border-radius: $default-radius;
+  background-image: url('../../../assets/images/subheroWaves.svg');
+
+  position: relative;
+
+  &__inner {
+    gap: 10%;
+    display: grid;
+    grid-template-columns: minmax(30%, 40%) 1fr;
+  }
+
+  &__left {
+    padding: 0 0 0 15px;
+
+    z-index: 11;
+
+    &__title {
+      margin: 0 0 40px 0;
+
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 48px;
+      font-style: normal;
+      color: $accent-color;
+    }
+
+    &__subtitle {
+      margin: 0 0 200px 0;
+
+      color: $white;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 30px;
+      font-style: normal;
+
+      opacity: 0.8;
+    }
+  }
+
+  &__right {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__line {
+    left: -225px;
+    bottom: 70px;
+    position: absolute;
+
+    width: 100%;
+    height: auto;
+  }
+}
+
+#slectionSlider {
+  padding: 30px 0;
+}

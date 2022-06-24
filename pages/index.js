@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { HeroSection, MainLayout } from 'components'
+import {  MainLayout, HeroSection, SliderSection } from 'components'
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
       </Head>
       <MainLayout>
         <HeroSection />
+        <SliderSection />
       </MainLayout>
     </div>
   )

@@ -11,6 +11,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  &--mb {
+    margin-bottom: 6px;
+  }
+
   &__inner {
     position: relative;
   }
@@ -39,7 +43,7 @@
 
       text-align: center;
 
-      color: $dark-grey;
+      color: $light-grey;
     }
 
     &__title {

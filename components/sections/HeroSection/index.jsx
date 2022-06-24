@@ -6,7 +6,7 @@ import arrowRight from 'assets/images/arrowRight.svg';
 
 const HeroSection = () => {
   return (
-    <section className="hero">
+    <section className="hero hero--mb">
       <div className="container">
         <div className="hero__inner">
           <Map />

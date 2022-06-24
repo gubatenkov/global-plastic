@@ -3,6 +3,9 @@
 .main-layout {
   height: 100vh;
   padding: 15px 0 0;
+  height: 100%;
+
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;

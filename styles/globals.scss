@@ -15,24 +15,31 @@ a {
   box-sizing: border-box;
 }
 
+:root {
+  --container-width: 1278px;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1278px;
+  max-width: var(--container-width);
 }
 
 // PAGES
 @import 'pages/index';
 
 // PARTIALS
+@import 'components/map';
 @import 'components/header';
 @import 'components/footer';
-@import 'components/map';
 @import 'components/newsTicker';
+@import 'components/bubbleCard';
+@import 'components/sliderNav';
 
 // SECTIONS
 @import 'components/sections/hero';
+@import 'components/sections/slection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';
