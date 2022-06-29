@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import img from 'assets/images/lib.jpg';
+import img from 'assets/images/slectionSliderImg1.png';
 
-const BubbleCard = () => {
+const BubbleCard = ({ className = '' }) => {
   return (
-    <div className="bubble">
+    <div className={`bubble ${className}`}>
       <div className="bubble__imgbox">
         <Image className="bubble__img" src={img} alt="img" layout="fill" />
       </div>
