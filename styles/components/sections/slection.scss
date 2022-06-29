@@ -52,12 +52,13 @@
   }
 
   &__line {
-    left: -225px;
+    width: 100%;
+    height: auto;
+
     bottom: 70px;
     position: absolute;
 
-    width: 100%;
-    height: auto;
+    transform: translateX(-20%);
   }
 }
 

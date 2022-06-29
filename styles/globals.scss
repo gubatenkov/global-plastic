@@ -1,9 +1,14 @@
+@import 'fonts.scss';
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-family: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  font-weight: normal;
 }
 
 a {
@@ -36,10 +41,12 @@ a {
 @import 'components/newsTicker';
 @import 'components/bubbleCard';
 @import 'components/sliderNav';
+@import 'components/cardBase';
 
 // SECTIONS
 @import 'components/sections/hero';
 @import 'components/sections/slection';
+@import 'components/sections/cardSection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';

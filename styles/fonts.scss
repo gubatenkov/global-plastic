@@ -1,0 +1,43 @@
+/* ES Rebond Grotesque */
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('../assets/fonts/es-rebond/ESRebondGrotesque-Medium.woff2')
+      format('woff2'),
+    url('../assets/fonts/es-rebond/ESRebondGrotesque-Medium.woff')
+      format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('../assets/fonts/es-rebond/ESRebondGrotesque-Bold.woff2')
+      format('woff2'),
+    url('../assets/fonts/es-rebond/ESRebondGrotesque-Bold.woff') format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('../assets/fonts/es-rebond/ESRebondGrotesque-Regular.woff2')
+      format('woff2'),
+    url('../assets/fonts/es-rebond/ESRebondGrotesque-Regular.woff')
+      format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('../assets/fonts/es-rebond/ESRebondGrotesque-Semibold.woff2')
+      format('woff2'),
+    url('../assets/fonts/es-rebond/ESRebondGrotesque-Semibold.woff')
+      format('woff');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+}

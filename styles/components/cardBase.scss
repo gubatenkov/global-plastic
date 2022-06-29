@@ -1,0 +1,22 @@
+@import '../vars';
+
+.card-base {
+  padding: 48px;
+
+  background: $white;
+  border-radius: 16px;
+
+  position: relative;
+
+  flex: 1;
+
+  &--waves {
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-image: url('../../assets/images/cardWaves.svg');
+  }
+
+  &--bg-color {
+    background-color: $accent-color;
+  }
+}
