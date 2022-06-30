@@ -11,4 +11,8 @@
   flex-direction: column;
 
   background-color: $main-bg-color;
+
+  &__header-wrap {
+    padding: 0 15px;
+  }
 }
