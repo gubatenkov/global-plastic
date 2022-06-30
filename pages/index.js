@@ -6,7 +6,8 @@ import {
   SliderSection, 
   CardSection, 
   WideSliderSection, 
-  TargetSection 
+  TargetSection, 
+  SponsorsSection
 } from 'components'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <CardSection />
         <WideSliderSection />
         <TargetSection />
+        <SponsorsSection />
       </MainLayout>
     </div>
   )
