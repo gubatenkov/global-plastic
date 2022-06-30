@@ -7,7 +7,8 @@ import {
   CardSection, 
   WideSliderSection, 
   TargetSection, 
-  SponsorsSection
+  SponsorsSection,
+  BigMapSection
 } from 'components'
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <WideSliderSection />
         <TargetSection />
         <SponsorsSection />
+        <BigMapSection />
       </MainLayout>
     </div>
   )
