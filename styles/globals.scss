@@ -34,7 +34,7 @@ a {
 // PAGES
 @import 'pages/index';
 
-// PARTIALS
+// COMPONENTS
 @import 'components/map';
 @import 'components/header';
 @import 'components/footer';
@@ -42,6 +42,7 @@ a {
 @import 'components/bubbleCard';
 @import 'components/sliderNav';
 @import 'components/cardBase';
+@import 'components/regionCard';
 
 // SECTIONS
 @import 'components/sections/hero';
@@ -51,6 +52,7 @@ a {
 @import 'components/sections/targetSection';
 @import 'components/sections/sponsorsSection';
 @import 'components/sections/bigMapSection';
+@import 'components/sections/regionSection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';

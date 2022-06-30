@@ -1,0 +1,49 @@
+.rection {
+  margin: 6px 0 0;
+  padding: 130px 0;
+
+  background-color: $black;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: $default-radius;
+  background-size: cover;
+  background-image: url('../../../assets/images/regionWave.svg');
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left,
+  &__right {
+    height: 100%;
+
+    gap: 8px;
+    display: flex;
+  }
+
+  &__center {
+    gap: 50px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title {
+      margin: 0;
+
+      width: 100%;
+      max-width: 300px;
+
+      color: $white;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 48px;
+      font-style: normal;
+      text-align: center;
+
+      overflow-wrap: break-word;
+    }
+  }
+}

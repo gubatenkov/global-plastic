@@ -8,7 +8,8 @@ import {
   WideSliderSection, 
   TargetSection, 
   SponsorsSection,
-  BigMapSection
+  BigMapSection,
+  RegionsSection
 } from 'components'
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
         <TargetSection />
         <SponsorsSection />
         <BigMapSection />
+        <RegionsSection />
       </MainLayout>
     </div>
   )
