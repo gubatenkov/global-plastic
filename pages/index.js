@@ -9,7 +9,8 @@ import {
   TargetSection, 
   SponsorsSection,
   BigMapSection,
-  RegionsSection
+  RegionsSection,
+  VideoSection
 } from 'components'
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <SponsorsSection />
         <BigMapSection />
         <RegionsSection />
+        <VideoSection />
       </MainLayout>
     </div>
   )
