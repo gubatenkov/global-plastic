@@ -11,7 +11,8 @@ import {
   BigMapSection,
   RegionsSection,
   VideoSection,
-  LinksSection
+  LinksSection,
+  StakeholdersSection
 } from 'components'
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
         <RegionsSection />
         <VideoSection />
         <LinksSection />
+        <StakeholdersSection />
       </MainLayout>
     </div>
   )

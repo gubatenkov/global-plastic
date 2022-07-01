@@ -1,0 +1,23 @@
+.staktion {
+  padding: 150px 0;
+
+  &__title {
+    margin: 0 0 70px 0;
+
+    color: $black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    font-style: normal;
+    text-align: center;
+  }
+
+  &__slider {
+    margin: 0 0 55px 0;
+
+    &-nav {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
