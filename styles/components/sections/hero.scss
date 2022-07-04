@@ -102,6 +102,16 @@
       background-color: $accent-color;
 
       cursor: pointer;
+
+      transition: background-color 0.2s ease-in;
+
+      &:hover {
+        background-color: #ffa217;
+      }
+
+      &:active {
+        background-color: #eaa62d;
+      }
     }
   }
 

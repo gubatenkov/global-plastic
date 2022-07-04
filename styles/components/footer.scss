@@ -68,15 +68,45 @@
       margin: 0 0 0 65px;
     }
 
-    &__item {
+    &__link {
+      padding: 10px 0;
+      display: inline-block;
+
       color: $white;
       font-size: 16px;
       font-weight: 500;
-      line-height: 30px;
+      line-height: 16px;
       font-style: normal;
       text-align: center;
 
       opacity: 0.5;
+
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        background-color: transparent;
+      }
+
+      &:hover {
+        color: $white;
+
+        opacity: 1;
+
+        &::after {
+          background-color: $accent-color;
+        }
+      }
+
+      &:active {
+        color: $accent-color;
+      }
     }
   }
 
@@ -91,6 +121,20 @@
 
     &__item + &__item {
       margin: 0 0 0 20px;
+    }
+
+    &__link {
+      &:hover {
+        path {
+          fill: $accent-color;
+        }
+      }
+
+      &:active {
+        path {
+          fill: #eaa62d;
+        }
+      }
     }
   }
 }

@@ -19,9 +19,28 @@
 
     cursor: pointer;
 
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: $black;
+
+      background: #f9f9f9;
+      border: 1px solid rgba(33, 32, 32, 0.4);
+    }
+
+    &:disabled {
+      background: #f1f0ed;
+      border: 1px solid rgba(33, 32, 32, 0.4);
+    }
+
     .dark & {
       color: $black;
       border: 1px solid rgba($black, 0.4);
+
+      &:hover {
+        background: $white;
+        border: 1px solid $white;
+      }
     }
   }
 

@@ -88,6 +88,14 @@
 
         background-color: $black;
         background-repeat: no-repeat;
+
+        transition: all 0.15s ease-in;
+
+        &:hover {
+          color: $black;
+
+          background: $white;
+        }
       }
     }
   }
