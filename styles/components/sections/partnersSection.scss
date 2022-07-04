@@ -1,0 +1,88 @@
+@import '../../vars';
+
+.parection {
+  padding: 140px 0;
+
+  background: $white;
+  border-radius: $section-radius;
+
+  &__title {
+    margin: 0 0 65px 0;
+
+    color: $black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: center;
+    font-style: normal;
+  }
+
+  &__cards {
+    gap: 20px;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &-card {
+    padding: 50px 25px 25px;
+
+    border-radius: 16px;
+    background-color: $white;
+    border: 1px solid rgba($color: #000000, $alpha: 0.1);
+
+    &__list {
+      margin: 0 0 40px 0;
+
+      gap: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      flex-wrap: wrap;
+
+      &-imgbox {
+        margin: 0 auto;
+
+        flex: 1 0 21%;
+      }
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__type {
+        margin: 0;
+
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        font-style: normal;
+
+        opacity: 0.4;
+      }
+
+      &__num {
+        margin: 0;
+
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 17px;
+        font-style: normal;
+
+        opacity: 0.4;
+      }
+    }
+  }
+}
