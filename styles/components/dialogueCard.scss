@@ -1,0 +1,67 @@
+@import '../vars';
+
+.dialogue-card {
+  max-width: fit-content;
+  padding: 35px 50px;
+
+  border-radius: 16px;
+  background-color: $white;
+
+  &__text {
+    min-height: 170px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 8;
+    -moz-line-clamp: 8;
+    -ms-line-clamp: 8;
+    line-clamp: 8;
+
+    overflow: hidden;
+
+    margin: 15px 0 15px;
+
+    color: $black;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    font-style: normal;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &-text {
+      max-width: 50%;
+
+      &__title {
+        margin: 0 0 10px;
+
+        color: $black;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        font-style: normal;
+      }
+
+      &__subtitle {
+        margin: 0;
+
+        color: $black;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        font-style: normal;
+
+        text-decoration-line: underline;
+
+        opacity: 0.5;
+      }
+    }
+  }
+}

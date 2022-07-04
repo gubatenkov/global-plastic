@@ -1,0 +1,32 @@
+@import '../../vars';
+
+.dialection {
+  padding: 130px 0;
+
+  &__inner {
+    gap: 90px;
+    display: flex;
+    padding-left: calc((100vw - var(--container-width)) / 2);
+  }
+
+  &__left {
+    width: 100%;
+    flex: 1 0 100%;
+    max-width: 25%;
+
+    &__title {
+      padding: 15px 0 0;
+      margin: 0 0 170px 0;
+
+      color: $black;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 48px;
+      font-style: normal;
+    }
+  }
+
+  &__right {
+    width: calc(100vw - ((100vw - var(--container-width)) / 2));
+  }
+}

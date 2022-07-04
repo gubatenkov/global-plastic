@@ -6,6 +6,11 @@
   background-color: $black;
   border-radius: $section-radius;
 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 200px center;
+  background-image: url('../../../assets/images/newsWaves.svg');
+
   &__inner {
     gap: 30px;
     display: grid;
