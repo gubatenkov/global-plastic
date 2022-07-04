@@ -1,0 +1,62 @@
+@import '../../vars';
+
+.nection {
+  padding: 135px 0;
+
+  background-color: $black;
+  border-radius: $section-radius;
+
+  &__inner {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__left {
+    width: 100%;
+  }
+
+  &__right {
+    &-top {
+      margin: 0 0 40px 0;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      &__title {
+        margin: 0;
+
+        color: $white;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 48px;
+        font-style: normal;
+        text-align: center;
+      }
+
+      &__btn {
+        margin: 0;
+        padding: 10px 25px;
+
+        color: $white;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 30px;
+        font-style: normal;
+
+        border-radius: 8px;
+        background: $black;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+
+        cursor: pointer;
+      }
+    }
+
+    &__cards {
+      gap: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

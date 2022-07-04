@@ -1,0 +1,136 @@
+@import '../../vars';
+
+.jection {
+  padding: 150px 0;
+
+  &__inner {
+    gap: 100px;
+    display: flex;
+  }
+
+  &__left {
+    width: 100%;
+
+    &__title {
+      max-width: 75%;
+      margin: 0 0 40px 0;
+
+      color: $black;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 48px;
+      font-style: normal;
+    }
+
+    &__text {
+      max-width: 80%;
+      margin: 0 0 55px 0;
+
+      color: $black;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 30px;
+      font-style: normal;
+
+      opacity: 0.8;
+    }
+
+    &-imgbox {
+      display: inline-flex;
+
+      border-radius: 16px;
+      overflow: hidden;
+    }
+  }
+
+  &__right {
+    width: 100%;
+
+    &__title {
+      max-width: 50%;
+      margin: 0 0 25px 0;
+
+      color: $black;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      font-style: normal;
+    }
+
+    &-list {
+      padding: 0;
+      max-width: 65%;
+      margin: 0 0 50px 0;
+
+      list-style: none;
+
+      &__item + &__item {
+        margin: 20px 0 0 0;
+      }
+
+      &__item {
+        gap: 20px;
+        display: flex;
+        align-items: center;
+
+        color: $black;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        font-style: normal;
+
+        &::before {
+          content: '';
+          height: 36px;
+          min-width: 36px;
+          display: inline-block;
+
+          background-repeat: no-repeat;
+          background-image: url('../../../assets/images/tick.svg');
+        }
+      }
+    }
+
+    &__actext {
+      margin: 0 0 25px 0;
+
+      color: $black;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 38px;
+      font-style: normal;
+    }
+
+    &__link {
+      margin: 0 0 25px 0;
+      padding: 10px 60px 10px 25px;
+      display: inline-block;
+
+      color: $black;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 30px;
+      font-style: normal;
+
+      border-radius: 8px;
+      background: $accent-color;
+      background-size: 15px 10px;
+      background-repeat: no-repeat;
+      background-position: center right 30px;
+      background-image: url('../../../assets/images/arrowRight.svg');
+    }
+
+    &__subactext {
+      margin: 0;
+      max-width: 70%;
+
+      color: $black;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      font-style: normal;
+
+      opacity: 0.6;
+    }
+  }
+}

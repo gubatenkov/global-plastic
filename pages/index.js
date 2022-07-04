@@ -12,7 +12,9 @@ import {
   RegionsSection,
   VideoSection,
   LinksSection,
-  StakeholdersSection
+  StakeholdersSection,
+  NewsSection,
+  JoinSection
 } from 'components'
 
 export default function Home() {
@@ -35,6 +37,8 @@ export default function Home() {
         <VideoSection />
         <LinksSection />
         <StakeholdersSection />
+        <NewsSection />
+        <JoinSection />
       </MainLayout>
     </div>
   )

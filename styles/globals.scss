@@ -44,6 +44,8 @@ a {
 @import 'components/cardBase';
 @import 'components/regionCard';
 @import 'components/stakeholdersCard';
+@import 'components/newsCardBig';
+@import 'components/newsCardSmall';
 
 // SECTIONS
 @import 'components/sections/hero';
@@ -56,7 +58,9 @@ a {
 @import 'components/sections/regionSection';
 @import 'components/sections/videoSection';
 @import 'components/sections/linksSection';
+@import 'components/sections/newsSection';
 @import 'components/sections/stakeholdersSection';
+@import 'components/sections/joinSection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';
