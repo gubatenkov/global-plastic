@@ -131,4 +131,16 @@
       }
     }
   }
+
+  &__egg1 {
+    top: 165px;
+    position: absolute;
+    left: calc(((100vw - var(--container-width)) / 2) + 50px);
+  }
+
+  &__egg2 {
+    bottom: 185px;
+    position: absolute;
+    right: calc(((100vw - var(--container-width)) / 2) + 45px);
+  }
 }

@@ -1,10 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { BubbleCard, SectionBlackLine, SliderNav } from 'components';
 
 const WideSliderSection = () => {
   const [swiper, setSwiper] = useState(null);
+  const [slidesPerView, setSlidesPerView] = useState(5);
+
+  const getSlidesPerView = () => {
+    if (typeof window !== 'undefined' && window.screen.width <= 481) {
+      setSlidesPerView(1);
+    } else {
+      setSlidesPerView(5);
+    }
+  };
+
+  // count number of slides on mount & on window resize
+  useEffect(() => {
+    getSlidesPerView();
+    if (window) {
+      const listener = window.addEventListener('resize', getSlidesPerView);
+      return () => window.removeEventListener('resize', listener);
+    }
+  }, []);
 
   return (
     <section className="wlider">
@@ -12,11 +30,11 @@ const WideSliderSection = () => {
         <Swiper
           id="wliderSlider"
           spaceBetween={100}
-          slidesPerView={5}
+          slidesPerView={slidesPerView}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => setSwiper(swiper)}
-          centeredSlides={true}
-          loop={true}
+          centeredSlides
+          loop
         >
           <SwiperSlide>
             {({ isActive, isPrev, isNext }) =>

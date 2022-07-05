@@ -1,4 +1,6 @@
-@import 'fonts.scss';
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
 
 html,
 body {
@@ -49,6 +51,7 @@ a {
 @import 'components/newsCardBig';
 @import 'components/newsCardSmall';
 @import 'components/dialogueCard';
+@import 'components/burger';
 
 // SECTIONS
 @import 'components/sections/hero';

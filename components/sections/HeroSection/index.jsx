@@ -12,7 +12,9 @@ const HeroSection = () => {
           <Map />
           <div className="hero__center">
             <div className="hero__text">
-              <p className="hero__text__suptitle">Global Treaty Dialogues</p>
+              <p className="hero__text__suptitle">
+                The most important climate deal since Paris Agreement
+              </p>
               <h1 className="hero__text__title">
                 Systemizing inclusion for UNEA Plastics Treaty Globaly
               </h1>
