@@ -1,0 +1,94 @@
+@import '../vars';
+
+.country-card {  
+  position: relative;
+  width: 100%;
+  max-width: 608px;
+  height: 417px;
+  padding: 8px;
+  background-color: $white;
+  color: $white;
+  border-radius: 10px;
+
+  &__imgbox { 
+    position: relative;   
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    
+    & * {
+      position: unset !important;
+    }
+
+    &__img {
+      position: relative !important;
+      width: 100% !important;      
+      height: 400px !important;
+      object-position: center center;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    position: absolute;
+    left: 0; right: 0; bottom: 0; top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    padding: 40px;
+    @media screen and (max-width: 480px) {
+      padding: 32px;
+    }
+  }
+  &__text {
+    max-width: 300px;
+  }
+  &__title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }  
+  &__description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    padding: 0;
+    margin: 0;
+    color: $white;
+    @media screen and (max-width: 480px) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+    width: 147px;
+    height: 55px;
+    padding: 16px;
+    background-color: $accent-color;
+    border-radius: 11px;
+    font-weight: 700;
+    color: $black;
+
+    @media screen and (max-width: 480px) {
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+    }
+
+    &__span {  
+      @media screen and (max-width: 480px) {
+        display: none;
+      }
+    }    
+  }
+}
