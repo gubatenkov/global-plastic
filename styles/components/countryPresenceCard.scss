@@ -35,7 +35,7 @@
     align-items: flex-end;
     gap: 40px;
     padding: 40px;
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       padding: 32px;
     }
   }
@@ -47,7 +47,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       font-size: 18px;
       line-height: 22px;
     }
@@ -59,7 +59,7 @@
     padding: 0;
     margin: 0;
     color: $white;
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       font-size: 12px;
       line-height: 20px;
     }
@@ -77,14 +77,14 @@
     font-weight: 700;
     color: $black;
 
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       justify-content: center;
       width: 48px;
       height: 48px;
     }
 
     &__span {  
-      @media screen and (max-width: 480px) {
+      @include screen($sm) {
         display: none;
       }
     }    

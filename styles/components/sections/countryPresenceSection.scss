@@ -6,7 +6,7 @@
     padding: 120px 16px;
     margin: 0 auto;
 
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       padding: 60px 16px;
     }
   }
@@ -20,7 +20,7 @@
     padding: 0;
     margin: 0;
     margin-bottom: 48px;
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       font-size: 32px;
       margin-bottom: 24px;
     }
@@ -32,7 +32,7 @@
     flex-wrap: wrap;
     gap: 32px;
     margin-bottom: 48px;
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       margin-bottom: 24px;
       gap: 16px;
       max-height: 850px;
@@ -55,7 +55,7 @@
       background-color: $white;
       border-color: $white;
     }
-    @media screen and (max-width: 480px) {
+    @include screen($sm) {
       height: 50px;
       font-size: 14px;
     }
