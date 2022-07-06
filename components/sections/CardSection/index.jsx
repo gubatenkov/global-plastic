@@ -1,8 +1,9 @@
+import Image from 'next/image';
+
 import { CardBase } from 'components';
 
 import img1 from 'assets/images/carectionCircle1.png';
 import img2 from 'assets/images/carectionCircle2.png';
-import Image from 'next/image';
 
 const CardSection = () => {
   return (
@@ -37,7 +38,7 @@ const CardSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="carection__card-bottom">
+                <div className="carection__card-bottom carection__card-bottom--direction">
                   <p className="carection__card-bottom__title">
                     - To facilite an inclusive and succesful treaty
                   </p>
@@ -46,6 +47,7 @@ const CardSection = () => {
                       <Image
                         className="carection__card-bottom__imgs-box__img"
                         src={img1}
+                        objectFit="cover"
                         alt="img"
                       />
                     </div>
@@ -53,6 +55,7 @@ const CardSection = () => {
                       <Image
                         className="carection__card-bottom__imgs-box__img"
                         src={img2}
+                        objectFit="cover"
                         alt="img"
                       />
                     </div>

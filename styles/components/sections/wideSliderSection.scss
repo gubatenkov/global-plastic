@@ -1,10 +1,15 @@
-@import '../../vars';
-
 .wlider {
   padding: 110px 0 50px;
 
-  border-radius: 16px;
+  border-radius: $section-radius;
   background-color: $accent-color;
+
+  position: relative;
+
+  @include screen($sm) {
+    padding: 110px 0 150px;
+    border-radius: $section-radius-mobile;
+  }
 
   &-bubble {
     width: 170px;
@@ -46,6 +51,11 @@
 
       position: relative;
 
+      @include screen($sm) {
+        width: 230px;
+        height: 230px;
+      }
+
       &::after {
         content: '';
 
@@ -62,6 +72,13 @@
         border: 16px solid rgba(255, 255, 255, 0.2);
 
         z-index: -1;
+
+        @include screen($sm) {
+          top: -11px;
+          left: -11px;
+
+          border: 11px solid rgba(255, 255, 255, 0.2);
+        }
       }
 
       & .bubble__imgbox {
@@ -73,9 +90,14 @@
         border-bottom-right-radius: 57%;
         border-bottom-left-radius: 43%;
 
-        top: -50px;
         left: 0;
+        top: -50px;
         position: absolute;
+
+        @include screen($sm) {
+          width: 115px;
+          height: 115px;
+        }
 
         &::after {
           display: none;
@@ -91,11 +113,29 @@
           font-weight: 600;
           line-height: 32px;
           font-style: normal;
+
+          @include screen($sm) {
+            font-size: 20px;
+            line-height: 20px;
+          }
         }
 
         &__descr {
           display: flex;
+
           color: $black;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 24px;
+          font-style: normal;
+          text-align: center;
+
+          opacity: 0.8;
+
+          @include screen($sm) {
+            font-size: 12px;
+            line-height: 20px;
+          }
         }
       }
     }
@@ -155,8 +195,20 @@
   &__nav {
     margin: 55px 0 0;
 
+    @include screen($sm) {
+      margin: 20px 0 0;
+    }
+
     > .slider-nav {
       margin: 0 auto;
+    }
+  }
+
+  &__line {
+    @include screen($sm) {
+      bottom: 0;
+      position: absolute;
+      left: calc(1920px / -2.6);
     }
   }
 }

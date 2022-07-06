@@ -1,5 +1,3 @@
-@import '../vars';
-
 .card-base {
   padding: 48px;
 
@@ -18,5 +16,9 @@
 
   &--bg-color {
     background-color: $accent-color;
+  }
+
+  @include screen($sm) {
+    padding: 25px;
   }
 }
