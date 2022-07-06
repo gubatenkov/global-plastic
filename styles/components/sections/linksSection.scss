@@ -6,6 +6,12 @@
   background-color: $accent-color;
   background-image: url('../../../assets/images/countryHighlightsWaves.svg');
 
+  @include screen($sm) {
+    padding: 60px 0;
+
+    border-radius: $section-radius-mobile;
+  }
+
   &__title {
     margin: 0 0 100px;
 
@@ -15,6 +21,14 @@
     line-height: 48px;
     font-style: normal;
     text-align: center;
+
+    @include screen($sm) {
+      margin: 0 0 30px;
+
+      font-size: 32px;
+      text-align: left;
+      line-height: 32px;
+    }
   }
 
   &__countries {
@@ -29,6 +43,13 @@
     columns: 2;
 
     list-style: none;
+
+    @include screen($sm) {
+      margin: 0;
+      max-width: unset;
+
+      columns: 1;
+    }
 
     &__item + &__item {
       margin-top: 30px;
@@ -62,6 +83,13 @@
         font-weight: 400;
         line-height: 38px;
         font-style: normal;
+
+        @include screen($sm) {
+          padding: 0 0 25px;
+
+          font-size: 24px;
+          line-height: 24px;
+        }
       }
 
       &__num {

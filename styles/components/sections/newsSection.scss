@@ -9,10 +9,41 @@
   background-position: 200px center;
   background-image: url('../../../assets/images/newsWaves.svg');
 
+  @include screen($sm) {
+    padding: 60px 0;
+
+    background-size: cover;
+    background-position: center;
+    border-radius: $section-radius-mobile;
+  }
+
+  &__title {
+    display: none;
+
+    @include screen($sm) {
+      display: block;
+      margin: 0 0 25px;
+
+      color: $white;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 32px;
+      font-style: normal;
+      text-align: center;
+    }
+  }
+
   &__inner {
     gap: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @include screen($sm) {
+      margin: 0 0 25px;
+
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
   }
 
   &__left {
@@ -26,6 +57,10 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
+
+      @include screen($sm) {
+        display: none;
+      }
 
       &__title {
         margin: 0;
@@ -74,6 +109,27 @@
       gap: 25px;
       display: flex;
       flex-direction: column;
+
+      @include screen($sm) {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__link {
+    display: none;
+
+    text-align: center;
+
+    > a {
+      padding: 15px 30px;
+
+      font-size: 14px;
+      line-height: 27px;
+    }
+
+    @include screen($sm) {
+      display: block;
     }
   }
 }

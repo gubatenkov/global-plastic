@@ -1,9 +1,18 @@
 .jection {
   padding: 150px 0;
 
+  @include screen($sm) {
+    padding: 60px 0;
+  }
+
   &__inner {
     gap: 100px;
     display: flex;
+
+    @include screen($sm) {
+      gap: 35px;
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -18,6 +27,14 @@
       font-weight: 600;
       line-height: 48px;
       font-style: normal;
+
+      @include screen($sm) {
+        max-width: 100%;
+        margin: 0 0 25px;
+
+        font-size: 32px;
+        line-height: 32px;
+      }
     }
 
     &__text {
@@ -31,6 +48,14 @@
       font-style: normal;
 
       opacity: 0.8;
+
+      @include screen($sm) {
+        margin: 0 0 35px;
+        max-width: 100%;
+
+        font-size: 14px;
+        line-height: 27px;
+      }
     }
 
     &-imgbox {
@@ -53,6 +78,13 @@
       font-weight: 600;
       line-height: 24px;
       font-style: normal;
+
+      @include screen($sm) {
+        max-width: 65%;
+
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
 
     &-list {
@@ -62,8 +94,17 @@
 
       list-style: none;
 
+      @include screen($sm) {
+        max-width: 100%;
+        margin: 0 0 40px;
+      }
+
       &__item + &__item {
-        margin: 20px 0 0 0;
+        margin: 20px 0 0;
+
+        @include screen($sm) {
+          margin: 25px 0 0;
+        }
       }
 
       &__item {
@@ -76,6 +117,13 @@
         font-weight: 500;
         line-height: 24px;
         font-style: normal;
+
+        @include screen($sm) {
+          align-items: flex-start;
+
+          font-size: 14px;
+          line-height: 21px;
+        }
 
         &::before {
           content: '';
@@ -97,12 +145,19 @@
       font-weight: 600;
       line-height: 38px;
       font-style: normal;
+
+      @include screen($sm) {
+        margin: 0 0 20px;
+
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
 
     &__link {
       margin: 0 0 25px 0;
-      padding: 10px 60px 10px 25px;
       display: inline-block;
+      padding: 10px 60px 10px 25px;
 
       color: $black;
       font-size: 16px;
@@ -118,6 +173,14 @@
       background-image: url('../../../assets/images/arrowRight.svg');
 
       transition: all 0.2s ease-in;
+
+      @include screen($sm) {
+        margin: 0 0 20px;
+        padding: 13px 65px 13px 25px;
+
+        font-size: 14px;
+        line-height: 27px;
+      }
 
       &:hover {
         background: #ffa217;
@@ -147,6 +210,12 @@
       font-style: normal;
 
       opacity: 0.6;
+
+      @include screen($sm) {
+        max-width: 100%;
+
+        line-height: 21px;
+      }
     }
   }
 }

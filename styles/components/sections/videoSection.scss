@@ -3,6 +3,10 @@
 
   position: relative;
 
+  @include screen($sm) {
+    padding: 60px 0 55px;
+  }
+
   &::after {
     content: '';
     width: 482px;
@@ -18,6 +22,10 @@
     background-image: url('../../../assets/images/halfCircle.svg');
 
     z-index: 10;
+
+    @include screen($sm) {
+      display: none;
+    }
   }
 
   &::before {
@@ -35,20 +43,24 @@
     background-image: url('../../../assets/images/halfCircle2.svg');
 
     z-index: 0;
-  }
 
-  &__inner {
-    gap: 90px;
-    display: flex;
-    align-items: center;
+    @include screen($sm) {
+      top: 0;
+      right: -275px;
+    }
   }
 
   &__left {
-    width: 66%;
+    width: 100%;
     padding: 0 0 0 17%;
+
+    @include screen($sm) {
+      padding: 0;
+    }
   }
 
   &__title {
+    max-width: 50%;
     margin: 0 0 50px 0;
 
     color: $black;
@@ -56,31 +68,78 @@
     font-weight: 600;
     line-height: 48px;
     font-style: normal;
+
+    @include screen($sm) {
+      max-width: 100%;
+      margin: 0 0 35px 0;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 
-  &__text {
-    margin: 0 0 40px 0;
-
-    gap: 25px;
-    display: flex;
-
-    color: $black;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 26px;
-    font-style: normal;
-
+  &__center {
     position: relative;
 
-    &::before {
-      content: '';
+    @include screen($sm) {
+      display: flex;
+      flex-direction: column;
 
-      min-width: 25px;
-      height: 25px;
+      position: unset;
+    }
 
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url('../../../assets/images/quotes.svg');
+    &__text {
+      max-width: 55%;
+      margin: 0 0 40px 0;
+
+      gap: 25px;
+      display: flex;
+
+      color: $black;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 26px;
+      font-style: normal;
+
+      position: relative;
+
+      @include screen($sm) {
+        max-width: 100%;
+        margin: 0 0 30px 0;
+
+        font-size: 16px;
+        line-height: 21px;
+      }
+
+      &::before {
+        content: '';
+
+        min-width: 25px;
+        height: 25px;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../../../assets/images/quotes.svg');
+      }
+    }
+
+    &__video {
+      display: flex;
+
+      width: 100%;
+      margin: 0 auto;
+      max-width: 276px;
+
+      top: -50%;
+      right: 50px;
+      position: absolute;
+
+      @include screen($sm) {
+        max-width: 200px;
+        margin: 0 auto 30px;
+        position: unset;
+        order: -1;
+      }
     }
   }
 
@@ -88,6 +147,10 @@
     gap: 25px;
     display: inline-flex;
     align-items: flex-start;
+
+    @include screen($sm) {
+      gap: 15px;
+    }
 
     &-avatar {
       width: 62px;
@@ -99,6 +162,11 @@
 
       position: relative;
 
+      @include screen($sm) {
+        width: 32px;
+        height: 32px;
+      }
+
       &__img {
         width: 100%;
         height: 100%;
@@ -109,6 +177,10 @@
     &-bio {
       width: 50%;
 
+      @include screen($sm) {
+        width: 60%;
+      }
+
       &__name {
         margin: 0 0 10px 0;
 
@@ -117,6 +189,11 @@
         font-weight: 700;
         line-height: 19px;
         font-style: normal;
+
+        @include screen($sm) {
+          font-size: 14px;
+          line-height: 14px;
+        }
       }
 
       &__text {
@@ -136,11 +213,19 @@
     top: 165px;
     position: absolute;
     left: calc(((100vw - var(--container-width)) / 2) + 50px);
+
+    z-index: 11;
   }
 
   &__egg2 {
-    bottom: 185px;
+    bottom: 150px;
     position: absolute;
     right: calc(((100vw - var(--container-width)) / 2) + 45px);
+
+    @include screen($sm) {
+      right: 0;
+      bottom: calc(50% + 100px);
+      transform: rotate(-90deg);
+    }
   }
 }

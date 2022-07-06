@@ -1,6 +1,6 @@
 .rection {
   margin: 6px 0 0;
-  padding: 130px 0;
+  padding: 100px 0 110px;
 
   background-color: $black;
   background-position: center center;
@@ -9,9 +9,50 @@
   background-size: cover;
   background-image: url('../../../assets/images/regionWave.svg');
 
+  @include screen($sm) {
+    padding: 60px 0 75px;
+
+    border-radius: $section-radius-mobile;
+
+    .container {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto 65px;
+
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+
+    color: $white;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    font-style: normal;
+    text-align: center;
+
+    @include screen($sm) {
+      gap: 15px;
+      margin: 0 auto 25px;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
   &__inner {
+    margin: 0 0 55px 0;
+
     display: flex;
     justify-content: space-between;
+
+    @include screen($sm) {
+      margin: 0 0 30px;
+    }
   }
 
   &__left,
@@ -22,28 +63,8 @@
     display: flex;
   }
 
-  &__center {
-    gap: 50px;
-
+  &__nav {
     display: flex;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
-
-    &__title {
-      margin: 0;
-
-      width: 100%;
-      max-width: 300px;
-
-      color: $white;
-      font-size: 48px;
-      font-weight: 600;
-      line-height: 48px;
-      font-style: normal;
-      text-align: center;
-
-      overflow-wrap: break-word;
-    }
   }
 }
