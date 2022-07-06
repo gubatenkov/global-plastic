@@ -1,0 +1,65 @@
+@import '../../vars';
+
+.cpection {  
+  background-color: $main-bg-color;  
+
+  &__center {
+    max-width: 1440px;
+    padding: 120px 16px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 480px) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1;
+    text-align: center;
+    color: $black;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 48px;
+    @media screen and (max-width: 480px) {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 48px;
+    @media screen and (max-width: 480px) {
+      margin-bottom: 24px;
+      gap: 16px;
+      max-height: 850px;
+      overflow-y: hidden;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 56px;
+    margin: 0 auto;
+    border: 1px solid $black;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: .5s;
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+    }
+    @media screen and (max-width: 480px) {
+      height: 50px;
+      font-size: 14px;
+    }
+  }
+}
