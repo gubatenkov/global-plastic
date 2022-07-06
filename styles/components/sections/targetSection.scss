@@ -1,5 +1,3 @@
-@import '../../vars';
-
 .tection {
   margin: 5px 0;
   padding: 125px 0 150px;
@@ -17,6 +15,10 @@
 
     gap: 110px;
     display: flex;
+
+    @include screen($sm) {
+      flex-direction: column;
+    }
 
     &-left {
       position: relative;

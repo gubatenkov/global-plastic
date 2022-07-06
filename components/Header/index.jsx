@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
+
+import { Burger } from 'components';
 
 import logo from 'assets/images/logo.svg';
 
 const Header = () => {
+  const [isMobNavVisible, setIsMobNavVisible] = useState(false);
+
+  const toggleMobNav = () => setIsMobNavVisible(!isMobNavVisible);
+
   return (
     <header className="header">
       <div className="header__logo">
@@ -13,6 +20,7 @@ const Header = () => {
           </a>
         </Link>
       </div>
+      <Burger isClicked={isMobNavVisible} onClick={toggleMobNav} />
       <ul className="header-nav">
         <li className="header-nav__item">
           <a className="header-nav__link" href="#">
