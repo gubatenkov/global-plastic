@@ -1,20 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import img from 'assets/images/сountryPresenceIndonesia.jpg';
 import arrowRight from 'assets/images/arrowRight.svg';
+import getImg from '../../utils/getImg';
 
-const CountryPresenceCard = () => {
+const CountryPresenceCard = ({ data }) => {
+  const {countryPresenceTitle, countryPresenceDescription, countryPresenceLink, countryPresenceImage} = data;
   return (
     <div className="country-card">
       <div className="country-card__imgbox">
-        <Image className="country-card__imgbox__img" src={img} alt="img" layout="fill" priority />
+        <Image className="country-card__imgbox__img" src={getImg(countryPresenceImage)} alt="img" layout="fill" priority />
       </div>
       <div className="country-card__content">
         <div className="country-card__text">
-          <h3 className="country-card__title">Indonesia</h3>
-          <p className="country-card__description">Officially the Republic of Indonesia,[b] is a country in Southeast Asia and Oceania between the Indian and Pacific oceans.</p>
+          <h3 className="country-card__title">{countryPresenceTitle}</h3>
+          <p className="country-card__description">{countryPresenceDescription}</p>
         </div>
-        <Link  href="#">
+        <Link  href={countryPresenceLink}>
           <a className="country-card__link">
             <span className="country-card__link__span">Read more</span>
             <Image src={arrowRight} alt="black arrow" />
