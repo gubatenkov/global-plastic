@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "V <s9379992g@gmail.com>",
+  "author": "V",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",

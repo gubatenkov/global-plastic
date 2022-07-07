@@ -4,7 +4,16 @@ import { Map, NewsTicker } from 'components';
 
 import arrowRight from 'assets/images/arrowRight.svg';
 
-const HeroSection = () => {
+const HeroSection = ({
+  data: {
+    heroTitle,
+    heroSuptitle,
+    heroPanelText,
+    heroBoldPanelText,
+    heroNewsLine,
+    heroURL,
+  },
+}) => {
   return (
     <section className="hero hero--mb">
       <div className="container">
@@ -12,19 +21,15 @@ const HeroSection = () => {
           <Map />
           <div className="hero__center">
             <div className="hero__text">
-              <p className="hero__text__suptitle">
-                The most important climate deal since Paris Agreement
-              </p>
-              <h1 className="hero__text__title">
-                Systemizing inclusion for UNEA Plastics Treaty Globaly
-              </h1>
+              <p className="hero__text__suptitle">{heroSuptitle}</p>
+              <h1 className="hero__text__title">{heroTitle}</h1>
             </div>
             <div className="hero__panel">
               <div className="hero__panel__text">
-                <strong>656 DAYS</strong>
-                <p>till UNEA 6 2024</p>
+                <strong>{heroBoldPanelText}</strong>
+                <p>{heroPanelText}</p>
               </div>
-              <a className="hero__panel__link" href="#">
+              <a className="hero__panel__link" href={heroURL}>
                 <Image src={arrowRight} alt="black arrow" />
               </a>
             </div>
@@ -32,7 +37,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="hero__ticker-wrap">
-        <NewsTicker className="ticker--rounded" />
+        <NewsTicker className="ticker--rounded" items={heroNewsLine} />
       </div>
     </section>
   );
