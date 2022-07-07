@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { CountryPresenceCard } from 'components';
+import viewAll from '../../../utils/viewAll'
 
 const CountryPresenceSection = ({data}) => {
   const {countryPresenceCards} = data;
@@ -12,12 +12,12 @@ const CountryPresenceSection = ({data}) => {
     <section className="cpection">
       <div className="cpection__center">  
         <h2 className="cpection__title">Country Presence Highlights</h2>
-        <div className="cpection__cards">
-          {countryPresenceCard}
+        <div className="cpection__wrapper">
+          <div className="cpection__cards">
+            {countryPresenceCard}
+          </div>
         </div>
-        <Link  href="#">
-          <a className="cpection__link">View all</a>
-        </Link> 
+        <button className="cpection__button" onClick={viewAll}>View all</button> 
       </div>
     </section>
   );
