@@ -1,16 +1,30 @@
 .dialection {
   padding: 130px 0;
 
+  @include screen($sm) {
+    padding: 60px 15px;
+  }
+
   &__inner {
     gap: 90px;
     display: flex;
     padding-left: calc((100vw - var(--container-width)) / 2);
+
+    @include screen($sm) {
+      gap: 25px;
+      flex-direction: column;
+    }
   }
 
   &__left {
     width: 100%;
-    flex: 1 0 100%;
     max-width: 25%;
+
+    flex: 1 0 100%;
+
+    @include screen($sm) {
+      max-width: 100%;
+    }
 
     &__title {
       padding: 15px 0 0;
@@ -21,10 +35,43 @@
       font-weight: 600;
       line-height: 48px;
       font-style: normal;
+
+      @include screen($sm) {
+        margin: 0;
+        padding: 0;
+
+        font-size: 32px;
+        line-height: 32px;
+        text-align: center;
+      }
+    }
+  }
+
+  .slider-nav {
+    @include screen($sm) {
+      display: none;
     }
   }
 
   &__right {
     width: calc(100vw - ((100vw - var(--container-width)) / 2));
+
+    @include screen($sm) {
+      width: 100%;
+    }
+  }
+
+  &__slider-navmob {
+    display: flex;
+    justify-content: center;
+
+    > .slider-nav {
+      display: none;
+
+      @include screen($sm) {
+        display: flex;
+        margin: 25px 0 0;
+      }
+    }
   }
 }

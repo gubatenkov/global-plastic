@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { RegionsCard, SliderNav } from 'components';
@@ -8,6 +8,24 @@ import icon from 'assets/images/cam.svg';
 
 const RegionsSection = () => {
   const [swiper, setSwiper] = useState(null);
+  const [slidesPerView, setSlidesPerView] = useState(4);
+
+  const getSlidesPerView = () => {
+    if (typeof window !== 'undefined' && window.screen.width <= 481) {
+      setSlidesPerView(1.5);
+    } else {
+      setSlidesPerView(4);
+    }
+  };
+
+  // count number of slides on mount & on window resize
+  useEffect(() => {
+    getSlidesPerView();
+    if (window) {
+      const listener = window.addEventListener('resize', getSlidesPerView);
+      return () => window.removeEventListener('resize', listener);
+    }
+  }, []);
 
   return (
     <section className="rection">
@@ -19,19 +37,12 @@ const RegionsSection = () => {
         <div className="rection__inner">
           <Swiper
             id="regionsSlider"
-            slidesPerView={1.5}
-            spaceBetween={10}
+            slidesPerView={slidesPerView}
+            spaceBetween={slidesPerView === 4 ? 50 : 10}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => setSwiper(swiper)}
-            centeredSlides
+            centeredSlides={slidesPerView !== 4}
             loop
-            breakpoints={{
-              // when window width is >= 481px
-              481: {
-                slidesPerView: 4,
-                spaceBetween: 50,
-              },
-            }}
           >
             <SwiperSlide>
               <RegionsCard />
