@@ -11,7 +11,7 @@ import {
 
 export const getStaticProps = async () => {
   const url =
-    'https://185dfub1.api.sanity.io/v2021-10-21/data/query/production?query=*[_type==%27countryPresenceSection%27]';
+    'https://185dfub1.api.sanity.io/v2021-10-21/data/query/production?query=*[_type==%27countries%27]';
   const response = await fetch(url);
   const data = await response.json();
   return {
