@@ -1,0 +1,53 @@
+.uaektion {
+
+  &__center {
+    position: relative;
+    max-width: 1440px;
+    padding: 104px 0 104px 96px;
+    margin: 0 auto;
+    @include screen($lg) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 48px 0;
+    padding: 0;
+    color: $black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    @include screen($lg) {
+      text-align: center;
+    }
+    @include screen($sm) {
+      font-size: 32px;
+      line-height: 32px;
+      margin: 0 0 24px 0;
+    }
+  }
+
+  &__slider {
+    margin: 0;
+    @include screen($lg) {
+      margin-bottom: 72px;
+    }   
+  }
+
+  &__slider-nav {
+    position: absolute;
+    top: 112px;
+    right: 95px;
+    display: flex;
+    justify-content: center;
+    width: 215px;
+
+    @include screen($lg) {
+      top: 580px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
+      width: 200px;
+    }
+  }
+}

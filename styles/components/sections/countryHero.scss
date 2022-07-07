@@ -1,0 +1,65 @@
+.chection {
+  height: 720px;
+  background-image: url('../../../assets/images/countryHero.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  margin-top: -106px;
+
+  @include screen($m) {
+    margin-top: -116px;
+  }
+
+  @include screen($sm) {
+    height: 670px;
+    border-radius: 8px;
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 1440px;
+    padding: 96px;
+
+    @include screen($sm) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 53px;
+    color: $white;
+
+    @include screen($sm) {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    max-width: 425px;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+    color: $white;
+
+    @include screen($sm) {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 27px;
+    }
+  }
+}

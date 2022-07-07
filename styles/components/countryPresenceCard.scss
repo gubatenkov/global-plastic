@@ -16,7 +16,7 @@
     border-radius: 10px;
     
     & * {
-      position: unset !important;
+      position: relative !important;
     }
 
     &__img {
@@ -76,6 +76,15 @@
     border-radius: 11px;
     font-weight: 700;
     color: $black;
+    transition: .3s;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:active {
+      background-color: $press-color;
+    }
 
     @include screen($sm) {
       justify-content: center;

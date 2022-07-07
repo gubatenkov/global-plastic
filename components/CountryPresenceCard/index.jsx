@@ -15,7 +15,7 @@ const CountryPresenceCard = ({ data }) => {
           <h3 className="country-card__title">{countryPresenceTitle}</h3>
           <p className="country-card__description">{countryPresenceDescription}</p>
         </div>
-        <Link  href={countryPresenceLink}>
+        <Link  href={`/countries/${countryPresenceLink}`}>
           <a className="country-card__link">
             <span className="country-card__link__span">Read more</span>
             <Image src={arrowRight} alt="black arrow" />

@@ -53,6 +53,7 @@ a {
 @import 'components/dialogueCard';
 @import 'components/countryPresenceCard';
 @import 'components/burger';
+@import 'components/upcomingActivationsCard';
 
 // SECTIONS
 @import 'components/sections/hero';
@@ -71,6 +72,8 @@ a {
 @import 'components/sections/partnersSection';
 @import 'components/sections/dialoguesSection';
 @import 'components/sections/countryPresenceSection';
+@import 'components/sections/countryHero';
+@import 'components/sections/upcomingActivationsSection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';
