@@ -9,17 +9,14 @@
     "lint": "next lint",
     "sanity": "cd studio && sanity start"
   },
-  "dependencies": {    
+  "dependencies": {
     "next": "12.1.6",
-    "node-sass": "^7.0.1",    
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "swiper": "^8.2.4"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
-    "prettier-config-halo-lab": "^1.0.7",
     "eslint": "8.18.0",
-    "eslint-config-next": "12.1.6"    
+    "eslint-config-next": "12.1.6",
+    "node-sass": "^7.0.1"
   }
 }
