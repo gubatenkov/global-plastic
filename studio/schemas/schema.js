@@ -11,7 +11,15 @@ import upcomingActivationsCard from './upcomingActivationsCard'
 import countryHeroSection from './countryHeroSection'
 import stakeholderParticipationSection from './stakeholderParticipationSection'
 import stakeholderEngagementSection from './stakeholderEngagementSection'
-
+import localInsights from './localInsights'
+import wasteSection from './wasteSection'
+import videoSection from './videoSection'
+import supportSection from './supportSection'
+import partner from './partner'
+import report from './report'
+import action from './action'
+import archive from './archive'
+import archiveSection from './archiveSection'
 
 export default createSchema({
   name: 'default',
@@ -20,15 +28,22 @@ export default createSchema({
     countries,
     country,
 
+
     // Other types
     countryPresenceCard,
-    targetSection,
     upcomingActivationsCard,
     countryHeroSection,
     stakeholderParticipationSection,
     stakeholderEngagementSection,
- 
- 
-           
+    localInsights,
+    wasteSection,
+    videoSection,    
+    targetSection,
+    supportSection,
+    partner,
+    report,
+    action,
+    archive,
+    archiveSection
   ]),
 })
