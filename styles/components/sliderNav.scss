@@ -48,10 +48,13 @@
   }
 
   &__num {
+    width: 50px;
+
     display: flex;
     align-items: center;
 
     &__curr {
+      width: 10px;
       margin: 0;
 
       color: $white;
@@ -83,6 +86,7 @@
     }
 
     &__total {
+      width: 10px;
       margin: 0;
 
       color: $white;

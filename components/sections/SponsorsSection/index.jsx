@@ -1,36 +1,31 @@
 import Image from 'next/image';
 
-import img from 'assets/images/sponsor.png';
+import { urlForImage } from 'lib/sanity';
 
-const SponsorsSection = () => {
+const SponsorsSection = ({ data: { sponsorsTitle, sponsorsImages } }) => {
   return (
     <section className="spection">
-      <h2 className="spection__title">Join leading organizations including</h2>
+      <h2 className="spection__title">{sponsorsTitle}</h2>
       <ul className="spection__sponsors">
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
-        <li className="spection__sponsors-item">
-          <Image className="spection__sponsors-item__img" src={img} alt="img" />
-        </li>
+        {sponsorsImages?.length ? (
+          sponsorsImages.map((img, idx) => {
+            return (
+              <li className="spection__sponsors-item" key={idx}>
+                <Image
+                  className="spection__sponsors-item__img"
+                  src={urlForImage(img).fit('crop').url()}
+                  layout="responsive"
+                  width={160}
+                  height={65}
+                  objectFit="contain"
+                  alt="img"
+                />
+              </li>
+            );
+          })
+        ) : (
+          <li>There is no items yet. Start to add in admin page :)</li>
+        )}
       </ul>
     </section>
   );
