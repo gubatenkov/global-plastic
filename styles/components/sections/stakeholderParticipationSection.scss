@@ -1,0 +1,78 @@
+.spaktion {
+  background-color: $spaktion-bg;
+  height: 800px;
+  background-size: contain;
+
+  &__center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;    
+    padding-top: 138px;
+    padding-right: 180px;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100%;
+    border-radius: 16px;
+  }
+
+  &__title {
+    max-width: 409px;
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 0;
+    font-size: 48px;
+    line-height: 48px;
+    color: $black;
+  }
+
+  &__subtitle {
+    max-width: 409px;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: $black;
+  }
+
+  &__shape1 {
+    position: absolute;
+    top: 390px;
+    right: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 245px;
+    height: 242px;    
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 96px;
+    background-image: url('../../../assets//images/shape1.1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;   
+  }
+
+  &__shape2 {
+    position: absolute;
+    top: 570px;
+    right: 270px;
+    width: 47px;
+    height: 48px; 
+    background-image: url('../../../assets//images/shape1.2.svg');
+    background-size: contain;
+    background-repeat: no-repeat;   
+  }
+
+  &__shape3 {
+    position: absolute;
+    top: 471px;
+    right: 284px;
+    width: 24px;
+    height: 19px; 
+    background-image: url('../../../assets//images/shape1.3.svg');
+    background-size: contain;
+    background-repeat: no-repeat;   
+  }
+}
