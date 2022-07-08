@@ -1,11 +1,13 @@
+import getImg from '../../../utils/getImg'
 
-const CountryHero = () => {
-
+const CountryHero = ({data}) => {
+  const {countryHeroTitle, countryHeroDescription, countryHeroImage } = data;
+  
   return (
-    <section className="chection">
+    <section className="chection" style={{backgroundImage: `url('${getImg(countryHeroImage)}')`}}>
       <div className="chection__center">  
-        <h1 className="chection__title">Ghana</h1>
-        <p className="chection__description">At the fifthh UN Environment Assembly on March 2, 2022, member states agreed to start negotiations on a global plastics treaty that will</p>
+        <h1 className="chection__title">{countryHeroTitle}</h1>
+        <p className="chection__description">{countryHeroDescription}</p>
       </div>
     </section>
   );

@@ -8,8 +8,6 @@ const UpcomingActivationsSection = ({data}) => {
   const [slidesPerView, setSlidesPerView] = useState(2.15);
   const [centeredSlide, setCenteredSlide] = useState(false);
 
-  const {countryPresenceCards} = data;
-
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined' && window.screen.width <= 630) {
       setSlidesPerView(1);
@@ -30,7 +28,7 @@ const UpcomingActivationsSection = ({data}) => {
     }
   }, []);
 
-  const upcomingActivations = countryPresenceCards.map((item, index) => {
+  const upcomingActivations = data.map((item, index) => {
     return (
       <SwiperSlide  key={index}>
         <UpcomingActivationsCard data={item} />
