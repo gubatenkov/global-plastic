@@ -8,6 +8,8 @@ import country from './country'
 
 import heroSection from './objects/heroSection'
 import sliderSection from './objects/sliderSection'
+import cardSection from './objects/cardSection'
+import wideSliderSection from './objects/wideSliderSection'
 import countryPresenceCard from './countryPresenceCard'
 import targetSection from './targetSection'
 import upcomingActivationsCard from './upcomingActivationsCard'
@@ -36,6 +38,8 @@ export default createSchema({
     // Other types
     heroSection,
     sliderSection,
+    cardSection,
+    wideSliderSection,
     countryPresenceCard,
     upcomingActivationsCard,
     countryHeroSection,

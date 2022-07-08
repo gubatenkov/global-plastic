@@ -1,6 +1,6 @@
 export default {
   name: 'heroSection',
-  title: 'Hero Section',
+  title: '#1 Hero Section',
   type: 'object',
   fields: [
     {

@@ -3,9 +3,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { BubbleCard, SectionBlackLine, SliderNav } from 'components';
 
-const WideSliderSection = () => {
+const WideSliderSection = ({ data: { slides } }) => {
   const [swiper, setSwiper] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(1);
+  const [totalSlides, setTotalSlides] = useState(6);
   const [slidesPerView, setSlidesPerView] = useState(5);
+
+  const updateActiveIndex = (context) => {
+    setActiveIndex(context.activeIndex + 1);
+    console.log(context.activeIndex);
+  };
+
+  const handleContext = (context) => {
+    setSwiper(context);
+    setTotalSlides(context.slides.length);
+  };
 
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined' && window.screen.width <= 481) {
@@ -31,94 +43,40 @@ const WideSliderSection = () => {
           id="wliderSlider"
           spaceBetween={100}
           slidesPerView={slidesPerView}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => setSwiper(swiper)}
+          onSlideChange={() => console.log('wide slide change')}
+          onActiveIndexChange={(swiper) => updateActiveIndex(swiper)}
+          onSwiper={(swiper) => handleContext(swiper)}
           centeredSlides
           loop
         >
-          <SwiperSlide>
-            {({ isActive, isPrev, isNext }) =>
-              isActive ? (
-                <BubbleCard className="wlider-bubble active" />
-              ) : (
-                <BubbleCard
-                  className={`wlider-bubble ${
-                    isPrev ? 'prev' : isNext ? 'next' : ''
-                  }`}
-                />
-              )
-            }
-          </SwiperSlide>
-          <SwiperSlide>
-            {({ isActive, isPrev, isNext }) =>
-              isActive ? (
-                <BubbleCard className="wlider-bubble active" />
-              ) : (
-                <BubbleCard
-                  className={`wlider-bubble ${
-                    isPrev ? 'prev' : isNext ? 'next' : ''
-                  }`}
-                />
-              )
-            }
-          </SwiperSlide>
-          <SwiperSlide>
-            {({ isActive, isPrev, isNext }) =>
-              isActive ? (
-                <BubbleCard className="wlider-bubble active" />
-              ) : (
-                <BubbleCard
-                  className={`wlider-bubble ${
-                    isPrev ? 'prev' : isNext ? 'next' : ''
-                  }`}
-                />
-              )
-            }
-          </SwiperSlide>
-          <SwiperSlide>
-            {({ isActive, isPrev, isNext }) =>
-              isActive ? (
-                <BubbleCard className="wlider-bubble active" />
-              ) : (
-                <BubbleCard
-                  className={`wlider-bubble ${
-                    isPrev ? 'prev' : isNext ? 'next' : ''
-                  }`}
-                />
-              )
-            }
-          </SwiperSlide>
-          <SwiperSlide>
-            {({ isActive, isPrev, isNext }) =>
-              isActive ? (
-                <BubbleCard className="wlider-bubble active" />
-              ) : (
-                <BubbleCard
-                  className={`wlider-bubble ${
-                    isPrev ? 'prev' : isNext ? 'next' : ''
-                  }`}
-                />
-              )
-            }
-          </SwiperSlide>
-          <SwiperSlide>
-            {({ isActive, isPrev, isNext }) =>
-              isActive ? (
-                <BubbleCard className="wlider-bubble active" />
-              ) : (
-                <BubbleCard
-                  className={`wlider-bubble ${
-                    isPrev ? 'prev' : isNext ? 'next' : ''
-                  }`}
-                />
-              )
-            }
-          </SwiperSlide>
+          {slides.map((slide, idx) => {
+            return (
+              <SwiperSlide key={idx}>
+                {({ isActive, isPrev, isNext }) =>
+                  isActive ? (
+                    <BubbleCard
+                      className="wlider-bubble active"
+                      {...slide}
+                      order={idx}
+                    />
+                  ) : (
+                    <BubbleCard
+                      className={`wlider-bubble ${
+                        isPrev ? 'prev' : isNext ? 'next' : ''
+                      }`}
+                      {...slide}
+                      order={idx}
+                    />
+                  )
+                }
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <div className="wlider__nav">
           <SliderNav
-            total={10}
-            current={1}
+            total={totalSlides}
+            current={activeIndex}
             onPrevClick={() => swiper.slidePrev(300)}
             onNextClick={() => swiper.slideNext(300)}
             theme="dark"

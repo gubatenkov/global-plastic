@@ -5,7 +5,20 @@ import { CardBase } from 'components';
 import img1 from 'assets/images/carectionCircle1.png';
 import img2 from 'assets/images/carectionCircle2.png';
 
-const CardSection = () => {
+const CardSection = ({
+  data: {
+    cardBigText,
+    cardBigText2,
+    cardSmallText,
+    cardSmallText2,
+    cardTitle,
+    cardTitle2,
+    cardYear,
+    cardYear2,
+    subtitleAfterCards,
+    titleAfterCards,
+  },
+}) => {
   return (
     <section className="carection">
       <div className="container">
@@ -13,15 +26,15 @@ const CardSection = () => {
           <div className="carection__card-row">
             <CardBase>
               <div className="carection__card-wrap carection__card-wrap--flag">
-                <p className="carection__card__title">
-                  Deep stakeholder engagement at the country level is required -
-                </p>
+                <p className="carection__card__title">{cardTitle}</p>
                 <div className="carection__card-bottom">
-                  <p className="carection__card-bottom__left">UNEA 5.2</p>
+                  <p className="carection__card-bottom__left">{cardBigText}</p>
                   <div className="carection__card-bottom__right">
-                    <p className="carection__card-bottom__right__date">2022</p>
+                    <p className="carection__card-bottom__right__date">
+                      {cardYear}
+                    </p>
                     <p className="carection__card-bottom__right__text">
-                      UNEA elected to start negotiations
+                      {cardSmallText}
                     </p>
                   </div>
                 </div>
@@ -30,18 +43,18 @@ const CardSection = () => {
             <CardBase className="card-base--waves card-base--bg-color">
               <div className="carection__card-wrap">
                 <div className="carection__card-top">
-                  <p className="carection__card-top__left">UNEA 6</p>
+                  <p className="carection__card-top__left">{cardBigText2}</p>
                   <div className="carection__card-top__right">
-                    <p className="carection__card-top__right__date">2022</p>
+                    <p className="carection__card-top__right__date">
+                      {cardYear2}
+                    </p>
                     <p className="carection__card-top__right__text">
-                      The Treaty is Voted on
+                      {cardSmallText2}
                     </p>
                   </div>
                 </div>
                 <div className="carection__card-bottom carection__card-bottom--direction">
-                  <p className="carection__card-bottom__title">
-                    - To facilite an inclusive and succesful treaty
-                  </p>
+                  <p className="carection__card-bottom__title">{cardTitle2}</p>
                   <div className="carection__card-bottom__imgs">
                     <div className="carection__card-bottom__imgs-box">
                       <Image
@@ -87,13 +100,9 @@ const CardSection = () => {
                 />
               </svg>
             </div>
-            <p className="carection__text-row__title">
-              Informed collaboration and inclusive dialogue is the only way to
-              ensure this treaty works for all.
-            </p>
+            <p className="carection__text-row__title">{titleAfterCards}</p>
             <p className="carection__text-row__subtitle">
-              Every business from consumer goods, fashion to food will be
-              impacted by this treaty. All voices must be heard.
+              {subtitleAfterCards}
             </p>
           </div>
         </div>

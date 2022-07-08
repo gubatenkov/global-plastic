@@ -1,13 +1,21 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// swiper styles
-import 'swiper/css';
-
 import { SliderNav, BubbleCard, SectionLine } from 'components';
 
 const SliderSection = ({ data: { title, subtitle, slides } }) => {
   const [swiper, setSwiper] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(1);
+  const [totalSlides, setTotalSlides] = useState(6);
+
+  const updateActiveIndex = () => {
+    setActiveIndex(swiper.activeIndex + 1);
+  };
+
+  const handleContext = (context) => {
+    setSwiper(context);
+    setTotalSlides(context.slides.length);
+  };
 
   return (
     <section className="slection">
@@ -20,8 +28,8 @@ const SliderSection = ({ data: { title, subtitle, slides } }) => {
           <Swiper
             id="slectionSlider"
             slidesPerView={1}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => setSwiper(swiper)}
+            onActiveIndexChange={updateActiveIndex}
+            onSwiper={(swiper) => handleContext(swiper)}
             breakpoints={{
               // when window width is >= 481px
               481: {
@@ -41,8 +49,8 @@ const SliderSection = ({ data: { title, subtitle, slides } }) => {
       </div>
       <div className="slection__slidernav">
         <SliderNav
-          total={10}
-          current={1}
+          total={totalSlides}
+          current={activeIndex}
           onPrevClick={() => swiper.slidePrev(300)}
           onNextClick={() => swiper.slideNext(300)}
         />

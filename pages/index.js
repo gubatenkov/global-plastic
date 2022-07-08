@@ -18,11 +18,11 @@ import {
   PartnersSection,
   DialoguesSection
 } from 'components'
-import { getHeroFieldsQuery } from 'lib/queries';
+import { getHomepageFieldsQuery } from 'lib/queries';
 
 export default function Home({ data }) {
   const { pageTitle, pageDescription, sections } = data[0];
-
+  
   return (
     <div className='home'>
       <Head>
@@ -33,8 +33,8 @@ export default function Home({ data }) {
       <MainLayout>
         <HeroSection data={sections[0]} />
         <SliderSection data={sections[1]} />
-        <CardSection />
-        <WideSliderSection />
+        <CardSection data={sections[2]} />
+        <WideSliderSection data={sections[3]} />
         <TargetSection />
         <SponsorsSection />
         <BigMapSection />
@@ -52,7 +52,7 @@ export default function Home({ data }) {
 }
 
 export const getStaticProps = async () => {
-  const data = await getHeroFieldsQuery();
+  const data = await getHomepageFieldsQuery();
 
   return {
     props: {

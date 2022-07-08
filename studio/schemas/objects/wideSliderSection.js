@@ -1,18 +1,8 @@
 export default {
-  name: 'sliderSection',
-  title: '#2 Slider Section',
+  name: 'wideSliderSection',
+  title: '#4 Wide slider section',
   type: 'object',
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
-    },
     {
       name: 'slides',
       title: 'Slides',

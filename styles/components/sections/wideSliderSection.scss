@@ -94,6 +94,8 @@
         top: -50px;
         position: absolute;
 
+        filter: grayscale(0);
+
         @include screen($sm) {
           width: 115px;
           height: 115px;
@@ -144,6 +146,7 @@
       position: sticky;
 
       border-radius: 37% 67% 50% 53% / 55% 46% 31% 31%;
+      filter: grayscale(1);
 
       &::after {
         content: '';
@@ -173,6 +176,11 @@
     }
 
     .bubble__text {
+      top: unset;
+      bottom: 50%;
+
+      transform: translate(-50%, 65%);
+
       z-index: 12;
 
       &__title {
@@ -186,9 +194,6 @@
       &__descr {
         display: none;
       }
-
-      bottom: 50%;
-      transform: translate(-50%, 65%);
     }
   }
 

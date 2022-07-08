@@ -22,6 +22,8 @@ export default {
       of: [
         { type: 'heroSection' },
         { type: 'sliderSection' },
+        { type: 'cardSection' },
+        { type: 'wideSliderSection' },
       ],
     },
   ],
