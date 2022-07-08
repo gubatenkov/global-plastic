@@ -29,8 +29,18 @@ export default {
       type: 'string',
     },
     {
+      name: 'stakeholderEngagementData1Description',
+      title: 'Stakeholder Engagement Data1 Description',
+      type: 'string',
+    },
+    {
       name: 'stakeholderEngagementData2',
       title: 'Stakeholder Engagement Data2',
+      type: 'string',
+    },
+    {
+      name: 'stakeholderEngagementData2Description',
+      title: 'Stakeholder Engagement Data2 Description',
       type: 'string',
     },
     {
@@ -39,13 +49,28 @@ export default {
       type: 'string',
     },
     {
+      name: 'stakeholderEngagementData3Description',
+      title: 'Stakeholder Engagement Data3 Description',
+      type: 'string',
+    },
+    {
       name: 'stakeholderEngagementData4',
       title: 'Stakeholder Engagement Data4',
       type: 'string',
     },
     {
+      name: 'stakeholderEngagementData4Description',
+      title: 'Stakeholder Engagement Data4 Description',
+      type: 'string',
+    },
+    {
       name: 'stakeholderEngagementData5',
       title: 'Stakeholder Engagement Data5',
+      type: 'string',
+    },
+    {
+      name: 'stakeholderEngagementData5Description',
+      title: 'Stakeholder Engagement Data5 Description',
       type: 'string',
     },
   ],
