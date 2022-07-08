@@ -10,6 +10,9 @@ const TargetSection = () => {
     <section className="tection">
       <div className="container">
         <div className="tection__inner">
+          <h2 className="tection__title">
+            Global Treaty Dialogues #For Plastics
+          </h2>
           <div className="tection__row">
             <div className="tection__row-left">
               <div className="tection__row-left__imgbox">

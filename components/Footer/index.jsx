@@ -7,13 +7,18 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer-inner">
-          <div className="footer__row footer__row--itemsCenter footer__row--mb40">
-            <div className="footer__logo">
+        <div className="footer__inner">
+          <div className="footer__row footer__row--itemsStart">
+            <div className="footer__logobox">
               <Image
-                className="footer__logo__img"
+                className="footer__logobox__img"
                 src={logo}
                 alt="global treaty dialogues"
+              />
+              <Image
+                className="footer__logobox__img"
+                src={logo2}
+                alt="ocean plastics leadership network"
               />
             </div>
             <ul className="footer__nav">
@@ -43,15 +48,6 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="footer__row">
-            <div className="footer__logo">
-              <Image
-                className="footer__logo__img"
-                src={logo2}
-                alt="ocean plastics leadership network"
-              />
-            </div>
           </div>
           <div className="footer__row footer__row--itemsBottom">
             <div className="footer__row-left">
@@ -86,6 +82,22 @@ const Footer = () => {
                     >
                       <path
                         d="M11.9289 11.9295H9.85443V8.68065C9.85443 7.90587 9.84064 6.90894 8.77544 6.90894C7.69507 6.90894 7.52949 7.75271 7.52949 8.62477V11.9295H5.45567V5.2483H7.4474V6.16107H7.47499C7.88134 5.46701 8.63608 5.05237 9.43981 5.08203C11.5426 5.08203 11.9296 6.46532 11.9296 8.26394L11.9289 11.9295ZM3.11487 4.33485C2.44981 4.33485 1.911 3.79603 1.911 3.13094C1.911 2.46586 2.44981 1.92704 3.11487 1.92704C3.77992 1.92704 4.31873 2.46586 4.31873 3.13094C4.31873 3.79603 3.77992 4.33485 3.11487 4.33485ZM4.15178 11.9295H2.0752V5.2483H4.15178V11.9295ZM12.9631 0.000784156H1.03277C0.469127 -0.00542511 0.00689893 0.446472 0 1.01014V12.9899C0.00689893 13.5542 0.469127 14.0061 1.03277 13.9999H12.9631C13.5281 14.0068 13.9924 13.5549 14 12.9899V1.00944C13.9917 0.444402 13.5274 -0.0074949 12.9631 9.42052e-05"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li className="footer__socials__item">
+                  <a className="footer__socials__link" href="#">
+                    <svg
+                      width="7"
+                      height="13"
+                      viewBox="0 0 7 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.31013 4.55002H4.69754V3.25002C4.69754 2.57922 4.75391 2.15672 5.74643 2.15672H6.32892C6.69936 2.15672 7 1.86552 7 1.50672V0.691623C7 0.351674 6.7309 0.0611243 6.3806 0.0383743C5.97527 0.0117243 5.56926 -0.000625644 5.16259 2.43547e-05C3.34196 2.43547e-05 2.01323 1.07707 2.01323 3.05437V4.55002H0.671077C0.300642 4.55002 0 4.84122 0 5.20001V6.50001C0 6.85881 0.300642 7.15001 0.671077 7.15001L2.01323 7.14936V12.35C2.01323 12.7088 2.31387 13 2.68431 13H4.02646C4.39689 13 4.69754 12.7088 4.69754 12.35V7.14806L6.15646 7.14741C6.49736 7.14741 6.78391 6.89976 6.82284 6.57151L6.97651 5.27411C7.02282 4.88867 6.71144 4.55002 6.31013 4.55002Z"
                         fill="white"
                       />
                     </svg>

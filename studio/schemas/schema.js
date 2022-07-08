@@ -2,9 +2,14 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
+import homepage from './documents/homepage'
 import countries from './countries'
 import country from './country'
 
+=======
+
+import heroSection from './objects/heroSection'
+import sliderSection from './objects/sliderSection'
 import countryPresenceCard from './countryPresenceCard'
 import targetSection from './targetSection'
 import upcomingActivationsCard from './upcomingActivationsCard'
@@ -24,12 +29,15 @@ import archiveSection from './archiveSection'
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
+
     // Pages
+    homepage,
     countries,
     country,
 
-
     // Other types
+    heroSection,
+    sliderSection,
     countryPresenceCard,
     upcomingActivationsCard,
     countryHeroSection,

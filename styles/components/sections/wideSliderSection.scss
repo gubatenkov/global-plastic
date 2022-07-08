@@ -195,6 +195,10 @@
   &__nav {
     margin: 55px 0 0;
 
+    position: relative;
+
+    z-index: 11;
+
     @include screen($sm) {
       margin: 20px 0 0;
     }

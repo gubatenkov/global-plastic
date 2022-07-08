@@ -6,21 +6,15 @@ import 'swiper/css';
 
 import { SliderNav, BubbleCard, SectionLine } from 'components';
 
-const SliderSection = () => {
+const SliderSection = ({ data: { title, subtitle, slides } }) => {
   const [swiper, setSwiper] = useState(null);
 
   return (
     <section className="slection">
       <div className="slection__inner">
         <div className="slection__left">
-          <h2 className="slection__left__title">
-            We have a mandate to turn the tide on the ocean plastics crisis
-          </h2>
-          <p className="slection__left__subtitle">
-            At the fifthh UN Environment Assembly on March 2, 2022, member
-            states agreed to start negotiations on a global plastics treaty that
-            will:
-          </p>
+          <h2 className="slection__left__title">{title}</h2>
+          <p className="slection__left__subtitle">{subtitle}</p>
         </div>
         <div className="slection__right">
           <Swiper
@@ -35,18 +29,13 @@ const SliderSection = () => {
               },
             }}
           >
-            <SwiperSlide>
-              <BubbleCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BubbleCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BubbleCard />
-            </SwiperSlide>
-            <SwiperSlide>
-              <BubbleCard />
-            </SwiperSlide>
+            {slides.map((slide, idx) => {
+              return (
+                <SwiperSlide key={idx}>
+                  <BubbleCard {...slide} order={idx + 1} />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
       </div>

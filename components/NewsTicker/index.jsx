@@ -1,15 +1,14 @@
-const NewsTicker = ({ className = '' }) => {
+const NewsTicker = ({ className = '', items }) => {
   return (
     <div className={className.length ? `ticker ${className}` : 'ticker'}>
       <ul className="ticker__list">
-        <li className="ticker__list__item">
-          DEFRA appoints the OPLN as the official neutral convener for United
-          Kingdom
-        </li>
-        <li className="ticker__list__item">
-          DEFRA appoints the OPLN as the official neutral convener for United
-          Kingdom
-        </li>
+        {items.map((lineText, idx) => {
+          return (
+            <li className="ticker__list__item" key={idx}>
+              {lineText}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

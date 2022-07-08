@@ -10,6 +10,26 @@
   background-position: top left;
   background-image: url('../../../assets/images/targetWaves.svg');
 
+  @include screen($sm) {
+    padding: 60px 0;
+    border-radius: $section-radius-mobile;
+  }
+
+  &__title {
+    display: none;
+    margin: 0 0 40px 0;
+
+    color: $white;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    font-style: normal;
+
+    @include screen($sm) {
+      display: block;
+    }
+  }
+
   &__row {
     margin: 0 0 140px 0;
 
@@ -17,6 +37,9 @@
     display: flex;
 
     @include screen($sm) {
+      margin: 0 0 70px 0;
+
+      gap: 35px;
       flex-direction: column;
     }
 
@@ -37,6 +60,10 @@
 
         background-repeat: no-repeat;
         background-image: url('../../../assets/images/element.svg');
+
+        @include screen($sm) {
+          transform: rotate(-25deg) translate(35px, -5px);
+        }
       }
 
       &__imgbox {
@@ -47,6 +74,11 @@
 
         overflow: hidden;
         border-radius: 50% 80% 50% 78% / 84% 63% 44% 44%;
+
+        @include screen($sm) {
+          width: 85%;
+          margin: 0 auto;
+        }
 
         &__img {
           width: 100%;
@@ -69,6 +101,10 @@
           font-weight: 600;
           line-height: 48px;
           font-style: normal;
+
+          @include screen($sm) {
+            display: none;
+          }
         }
 
         &__subtitle {
@@ -79,6 +115,10 @@
           font-weight: 600;
           line-height: 32px;
           font-style: normal;
+
+          @include screen($sm) {
+            display: none;
+          }
         }
 
         &__descr {
@@ -91,6 +131,13 @@
           font-style: normal;
 
           opacity: 0.8;
+
+          @include screen($sm) {
+            margin: 0 0 35px 0;
+
+            font-size: 14px;
+            line-height: 27px;
+          }
         }
       }
 
@@ -114,6 +161,13 @@
         cursor: pointer;
 
         transition: all 0.2s ease-in;
+
+        @include screen($sm) {
+          margin: 0 auto;
+
+          font-size: 14px;
+          line-height: 27px;
+        }
 
         &:hover {
           color: $black;
@@ -142,6 +196,13 @@
       line-height: 32px;
       font-style: normal;
       text-align: center;
+
+      @include screen($sm) {
+        margin: 0 0 35px 0;
+
+        font-size: 20px;
+        line-height: 20px;
+      }
     }
 
     &__list {
@@ -178,8 +239,17 @@
       &-item {
         text-align: center;
 
+        @include screen($sm) {
+          flex: 1;
+        }
+
         &__icon {
           margin: 0 0 25px 0;
+
+          @include screen($sm) {
+            max-width: 50%;
+            margin: 0 auto 15px;
+          }
         }
 
         &__num {
@@ -191,6 +261,13 @@
           line-height: 32px;
           font-style: normal;
           text-align: center;
+
+          @include screen($sm) {
+            margin: 0 0 10px 0;
+
+            font-size: 18px;
+            line-height: 18px;
+          }
         }
 
         &__text {
@@ -203,6 +280,11 @@
           font-style: normal;
 
           opacity: 0.6;
+
+          @include screen($sm) {
+            font-size: 12px;
+            line-height: 14px;
+          }
         }
       }
     }

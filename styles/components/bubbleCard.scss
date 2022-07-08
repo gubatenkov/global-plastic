@@ -72,17 +72,17 @@
   }
 
   &__text {
-    width: 70%;
+    width: 90%;
 
     left: 50%;
-    bottom: 100px;
+    top: 220px;
     position: absolute;
 
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 
     @include screen($sm) {
       width: 90%;
-      bottom: 80px;
+      top: 175px;
     }
 
     &__title {
@@ -91,7 +91,7 @@
       color: $white;
       font-size: 32px;
       font-weight: 600;
-      line-height: 51px;
+      line-height: 32px;
       font-style: normal;
 
       @include screen($sm) {

@@ -12,12 +12,18 @@ const VideoSection = () => {
             <h2 className="vection__title">
               Peter Thomson Addresses the Chile Dialogues
             </h2>
-            <p className="vection__text">
-              I commend all of you for coming together today for the Chile
-              Country Dialogues to ensure that national action on plastics
-              begins immediately. We cannot afford to wait until the end of the
-              negotiation process to start having these important conversations.
-            </p>
+            <div className="vection__center">
+              <p className="vection__center__text">
+                I commend all of you for coming together today for the Chile
+                Country Dialogues to ensure that national action on plastics
+                begins immediately. We cannot afford to wait until the end of
+                the negotiation process to start having these important
+                conversations.
+              </p>
+              <div className="vection__center__video">
+                <Image src={img2} alt="video" />
+              </div>
+            </div>
             <div className="vection__author">
               <div className="vection__author-avatar">
                 <Image
@@ -35,9 +41,6 @@ const VideoSection = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="vection__right">
-            <Image src={img2} alt="video" />
           </div>
         </div>
       </div>

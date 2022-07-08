@@ -12,12 +12,18 @@ const StakeholdersSection = () => {
       <div className="staktion__slider">
         <Swiper
           id="stacktionSlider"
-          slidesPerView={1.5}
-          spaceBetween={32}
+          slidesPerView={1.05}
+          spaceBetween={15}
           centeredSlides={true}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => setSwiper(swiper)}
           loop={true}
+          breakpoints={{
+            481: {
+              slidesPerView: 1.5,
+              spaceBetween: 32,
+            },
+          }}
         >
           <SwiperSlide>
             <StakeholdersCard />
