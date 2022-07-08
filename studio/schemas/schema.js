@@ -5,6 +5,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import homepage from './documents/homepage'
 import heroSection from './objects/heroSection'
 import sliderSection from './objects/sliderSection'
+import cardSection from './objects/cardSection'
+import wideSliderSection from './objects/wideSliderSection'
 import countryPresenceCard from './countryPresenceCard'
 import countryPresenceSection from './countryPresenceSection'
 
@@ -14,6 +16,8 @@ export default createSchema({
     homepage,
     heroSection,
     sliderSection,
+    cardSection,
+    wideSliderSection,
     countryPresenceCard,
     countryPresenceSection,
   ]),
