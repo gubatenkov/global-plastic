@@ -38,6 +38,7 @@ const VideoSection = ({
                     width={276}
                     height={276}
                     objectFit="cover"
+                    style={{ transform: 'scale(1.2)' }}
                   />
                 ) : (
                   <div />
