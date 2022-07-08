@@ -6,8 +6,6 @@ import homepage from './documents/homepage'
 import countries from './countries'
 import country from './country'
 
-=======
-
 import heroSection from './objects/heroSection'
 import sliderSection from './objects/sliderSection'
 import countryPresenceCard from './countryPresenceCard'
