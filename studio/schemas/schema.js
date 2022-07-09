@@ -14,6 +14,10 @@ import tectionSection from './objects/tectionSection'
 import sponsorsSection from './objects/sponsorsSection'
 import regionsSection from './objects/regionsSection'
 import videoSection from './objects/videoSection'
+import linksSection from './objects/linksSection'
+import stakeholdersSection from './objects/stakeholdersSection'
+import newsSection from './objects/newsSection'
+import joinSection from './objects/joinSection'
 import countryPresenceCard from './countryPresenceCard'
 import targetSection from './targetSection'
 import upcomingActivationsCard from './upcomingActivationsCard'
@@ -50,6 +54,10 @@ export default createSchema({
     regionsSection,
     videoSection,
     youtube,
+    linksSection,
+    stakeholdersSection,
+    newsSection,
+    joinSection,
     countryPresenceCard,
     upcomingActivationsCard,
     countryHeroSection,

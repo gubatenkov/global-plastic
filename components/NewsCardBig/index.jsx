@@ -1,26 +1,33 @@
 import Image from 'next/image';
 
-import img from 'assets/images/newsCardimgBig.png';
+import { urlForImage } from 'lib/sanity';
+
 import arrowRight from 'assets/images/arrowRight.svg';
 
-const NewsCardBig = () => {
+const NewsCardBig = ({
+  newsBigCardDate,
+  newsBigCardImage,
+  newsBigCardTitle,
+  newsBigCardLink,
+}) => {
   return (
     <div className="ncard-big">
       <div className="ncard-big__preview">
         <Image
           className="ncard-big__preview__img"
-          src={img}
+          src={urlForImage(newsBigCardImage).url()}
           alt="img"
+          layout="fill"
+          width={592}
+          height={513}
           objectFit="cover"
         />
       </div>
       <div className="ncard-big__bottom">
-        <p className="ncard-big__bottom__date">28.05 2021</p>
-        <p className="ncard-big__bottom__title">
-          The story behaind “Glant Plastic Tap” at UNEA 5.2
-        </p>
+        <p className="ncard-big__bottom__date">{newsBigCardDate}</p>
+        <p className="ncard-big__bottom__title">{newsBigCardTitle}</p>
       </div>
-      <a className="hero__panel__link" href="#">
+      <a className="hero__panel__link" href={newsBigCardLink}>
         <Image src={arrowRight} alt="black arrow" />
       </a>
     </div>
