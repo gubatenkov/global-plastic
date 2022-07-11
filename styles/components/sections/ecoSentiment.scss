@@ -1,20 +1,25 @@
 .ecosektion {
   background-color: $black;
   border-radius: 16px;
+  margin-bottom: 6px;
 
   @include screen($sm) {
     border-radius: 8px;
+    margin-bottom: 4px;
   }
   
   &__center {
     display: flex;
     justify-content: space-between;
+    gap: 48px;
     padding: 96px;
+    padding-top: 136px;
     margin: 0 auto;
     max-width: 1440px;
     height: 100%;
 
-    @include screen($sm) {
+    @include screen($lg) {
+      flex-direction: column; 
       padding: 60px 16px;
     }
   }
@@ -23,10 +28,15 @@
     max-width: 350px;
     margin: 0;
     margin-bottom: 48px;
-    padding: 45px 0 0 0;
+    padding: 5px 0 0 0;
     font-size: 48px;
     line-height: 48px;
     color: $accent-color;
+
+    @include screen($lg) {
+      max-width: 100%;
+      padding: 0;
+    }
 
     @include screen($sm) {
       margin-bottom: 24px;
@@ -38,7 +48,7 @@
   &__description {
     max-width: 480px;
     margin: 0;
-    margin-bottom: 48px;
+    margin-bottom: 48px;    
     padding: 0;
     font-weight: 500;
     font-size: 16px;
@@ -47,6 +57,10 @@
 
     & p {
       margin-bottom: 28px;
+    }
+
+    @include screen($lg) {
+      max-width: 100%;
     }
 
     @include screen($sm) {
@@ -80,16 +94,36 @@
       color: $white;
       background: rgba(255, 255, 255, 0.15);
     }
+
+    @include screen($sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__diagram {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include screen($lg) {
+      justify-content: flex-start;
+      margin: 0 auto;
+    }
   }
   
   &__diagram--image {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 608px;
+    width: 220px;
     height: 528px;
     padding: 40px 0;
-    border: 1px solid red;
+
+    @include screen($sm) {
+      width: 142px;
+      height: 400px;
+      padding: 40px 0;
+    }
   }
 
   &__temperature {
@@ -100,20 +134,95 @@
     border: 3px solid $white;
     border-radius: 76px;
     background-image: url("../../../assets/images/temperature-topology.svg"), url("../../../assets/images/temperature-bg.png"), linear-gradient(#F93D31, #F9B131, #5BAEF0);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include screen($sm) {
+      width: 115px;
+      height: 400px;
+    }
   }
 
   &__scale {
     width: 42px;
     height: 425px;
     background-image: url("../../../assets/images/temperature-scale.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include screen($sm) {
+      width: 31px;
+      height: 320px;
+    }
   }
 
   &__value {
-    width: 100%;
-    height: 100%;
-    border-top: 3px solid #fff;
-    box-shadow: 0 -5px 0 rgba(255, 255, 255, .4);
+    position: relative;
+    width: 100%; 
+    border-top: 3px solid #fff;    
+    box-shadow: 0px -5px 0 rgba(255, 255, 255, .4);
     border-radius: 0 0 76px 76px;
     background-color: rgba(255, 255, 255, .4);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: -61px;
+      width: 58px;
+      height: 3px;
+      background-color: $accent-color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -14px;
+      right: -67px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: 4px solid $black;
+      background-color: $accent-color;
+    }
+  }
+
+  &__diagram--data {
+    width: 330px;
+    padding-right: 15px;
+    padding-left: 20px;
+    color: $white;
+
+    @include screen($xxl) {
+      width: 220px;
+      padding-right: 0;      
+    }
+
+    @include screen($sm) {
+      width: 100%;
+      padding-left: 35px;
+    }
+  }
+
+  &__diagram--number {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 16px;
+
+    @include screen($sm) {
+      font-size: 24px;
+    }
+  }
+
+  &__diagram--description {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+
+    @include screen($sm) {
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
 }

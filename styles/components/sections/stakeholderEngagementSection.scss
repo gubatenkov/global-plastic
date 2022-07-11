@@ -5,6 +5,7 @@
   background-size: cover;
 
   @include screen($sm) {
+    margin-bottom: 4px;
     border-radius: 8px;
   }
 
