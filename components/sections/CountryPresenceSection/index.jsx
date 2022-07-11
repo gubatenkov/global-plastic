@@ -17,7 +17,7 @@ const CountryPresenceSection = ({data}) => {
             {countryPresenceCard}
           </div>
         </div>
-        <button className="cpection__button" onClick={viewAll}>View all</button> 
+        <div className="cpection__button" onClick={viewAll}>View all</div> 
       </div>
     </section>
   );
