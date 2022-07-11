@@ -6,11 +6,7 @@ import { Burger } from 'components';
 
 import logo from 'assets/images/logo.svg';
 
-const Header = () => {
-  const [isMobNavVisible, setIsMobNavVisible] = useState(false);
-
-  const toggleMobNav = () => setIsMobNavVisible(!isMobNavVisible);
-
+const Header = ({ isMobNavVisible, toggleMobNav }) => {
   return (
     <header className="header">
       <div className="header__logo">
