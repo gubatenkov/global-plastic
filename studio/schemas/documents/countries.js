@@ -34,7 +34,7 @@ export default {
       {
         name: 'linksSectionCountriesPage',
         title: 'Links Section Countries Page',
-        type: 'linksSectionCountries',
+        type: 'linksSectionPage',
       },
     ],   
   }

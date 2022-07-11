@@ -32,7 +32,7 @@ import youtube from './objects/videoSchema'
 import regionsSectionCard from './objects/regionsSectionCard'
 import regionsSectionCountries from './objects/regionsSectionCountries'
 import linksCountries from './objects/linksCountries'
-import linksSectionCountries from './objects/linksSectionCountries'
+import linksSectionPage from './objects/linksSectionPage'
 import videoSectionCountry from './objects/videoSectionCountry'
 import ecoSentiment from './objects/ecoSentiment'
 
@@ -55,6 +55,10 @@ export default createSchema({
     regionsSection,
     videoSection,
     youtube,
+    linksSection,
+    stakeholdersSection,
+    newsSection,
+    joinSection,
     countryPresenceCard,
     upcomingActivationsCard,
     countryHeroSection,
@@ -72,7 +76,7 @@ export default createSchema({
     regionsSectionCard,
     regionsSectionCountries,
     linksCountries,
-    linksSectionCountries,
+    linksSectionPage,
     videoSectionCountry,
     ecoSentiment,
   ]),
