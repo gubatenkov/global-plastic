@@ -95,5 +95,12 @@
         opacity: 0.5;
       }
     }
+
+    &-imgbox {
+      position: relative;
+
+      width: 120px;
+      height: 50px;
+    }
   }
 }

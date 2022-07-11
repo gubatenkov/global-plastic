@@ -53,8 +53,8 @@ export default function Home({ data }) {
         <StakeholdersSection data={sections[9]} />
         <NewsSection data={sections[10]} />
         <JoinSection data={sections[11]} />
-        <PartnersSection />
-        <DialoguesSection />
+        <PartnersSection data={sections[12]} />
+        <DialoguesSection data={sections[13]} />
       </MainLayout>
     </div>
   )

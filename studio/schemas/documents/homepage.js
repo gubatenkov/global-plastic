@@ -32,6 +32,8 @@ export default {
         { type: 'stakeholdersSection' },
         { type: 'newsSection' },
         { type: 'joinSection' },
+        { type: 'partnersSection' },
+        { type: 'dialogsSection' },
       ],
     },
   ],
