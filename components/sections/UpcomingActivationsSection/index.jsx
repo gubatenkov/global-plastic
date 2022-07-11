@@ -7,11 +7,20 @@ const UpcomingActivationsSection = ({data}) => {
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(2.15);
   const [centeredSlide, setCenteredSlide] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const updateActiveIndex = (context) => {
+    setActiveIndex(context.realIndex + 1);
+  };
+
+  const handleContext = (context) => {
+    setSwiper(context);
+  };
 
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined' && window.screen.width <= 630) {
       setSlidesPerView(1);
-    } else if (typeof window !== 'undefined' && window.screen.width <= 1440) {
+    } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
       setSlidesPerView(2);
       setCenteredSlide(true);
     } else {
@@ -46,7 +55,8 @@ const UpcomingActivationsSection = ({data}) => {
             slidesPerView={slidesPerView}
             spaceBetween={32}
             centeredSlides={centeredSlide}
-            onSwiper={(swiper) => setSwiper(swiper)}
+            onSwiper={(context) => handleContext(context)}
+            onSlideChange={updateActiveIndex}
             loop={true}
           >
             {upcomingActivations}
@@ -55,8 +65,8 @@ const UpcomingActivationsSection = ({data}) => {
         </div>
         <div className="uaektion__slider-nav">
           <SliderNav
-            total={10}
-            current={1}
+            total={upcomingActivations?.length ?? 0}
+            current={activeIndex}
             onPrevClick={() => swiper.slidePrev(300)}
             onNextClick={() => swiper.slideNext(300)}
             theme="dark"

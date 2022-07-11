@@ -31,7 +31,7 @@
   &__slider {
     margin: 0;
     @include screen($lg) {
-      margin-bottom: 72px;
+      margin-bottom: 55px;
     }   
   }
 
@@ -44,7 +44,7 @@
     width: 215px;
 
     @include screen($lg) {
-      top: 580px;
+      top: 558px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 6;

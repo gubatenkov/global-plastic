@@ -2,9 +2,9 @@ import { CountryPresenceCard } from 'components';
 import viewAll from '../../../utils/viewAll'
 
 const CountryPresenceSection = ({data}) => {
-  const {countryPresenceCards} = data;
+  
 
-  const countryPresenceCard = countryPresenceCards.map((item, index) => {
+  const countryPresenceCard = data.map((item, index) => {
     return <CountryPresenceCard data={item} key={index} />;
   });
 

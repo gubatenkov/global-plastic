@@ -1,28 +1,330 @@
 .sesktion {
-  &__center {
-    position: relative;
-    margin: 0 auto;
-    max-width: 1440px;
-    height: 800px;
-    border-radius: 16px;
-    background-image: url("../../../assets/images/bg.jpg");
+  margin-bottom: 6px;
+  border-radius: 16px;
+  background-image: url("../../../assets/images/bg.jpg");
+  background-size: cover;
+
+  @include screen($sm) {
+    border-radius: 8px;
   }
 
-  &__title {
-    font-size: 48px;
+  &__center {    
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 60px 96px;
+    max-width: 1440px;
+    height: 800px;
+    
+    @include screen($xxl) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 64px 16px;
+    }
+
+    @include screen($sm) { 
+      height: 667px;
+      padding: 64px 0px;
+    }
+  }
+
+  &__title {    
     width: 324px;
     margin: 0;
     padding: 0;
-    padding-top: 239px;
-    padding-left: 96px;
+    padding-top: 181px;
     margin-bottom: 40px;
+    font-size: 48px;
+    line-height: 1;
+
+    @include screen($xxl) {
+      width: 100%;
+      padding: 0px 16px;
+      margin-bottom: 24px;
+    }
+
+    @include screen($sm) {
+      font-size: 32px;
+    }
   }
 
   &__description {
-    width: 464px;
-    padding-left: 96px;
+    width: 364px;
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
+
+    @include screen($xxl) {
+      width: 100%;
+      padding: 0px 16px;
+      margin-bottom: 44px;
+    }
+
+    @include screen($sm) {
+      width: 100%;
+      padding: 0 16px;
+      margin-bottom: 44px;
+      font-size: 14px;      
+      line-height: 27px;
+    }
+  }
+
+  &__container {
+    position: relative;    
+    margin-top: -20px;
+    margin-right: 72px;
+    width: 720px;
+    height: 720px;
+
+    @include screen($xxl) {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 720px;
+    }
+  }
+
+  &__shapes-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__shape1 {
+    position: absolute;
+    top: 24.6%;
+    left: 24.9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 39.3%;
+    height: 38%;
+    background-image: url('../../../assets/images/shape2.1.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__data1 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 96px;
+    @include screen($xxl) {
+      margin-bottom: 7px;
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
+
+  &__description1 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    line-height: 20px;
+    @include screen($xxl) {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &__shape2 {
+    position: absolute;
+    top: 43.3%;
+    left: 0.4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    height: 24%;
+    background-image: url('../../../assets/images/shape2.2.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__data2 {
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+    @include screen($xxl) {
+      margin-bottom: 4px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description2 {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 16px;
+    @include screen($xxl) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__shape3 {
+    position: absolute;
+    top: 68.8%;
+    left: 24.6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32%;
+    height: 24.7%;
+    background-image: url('../../../assets/images/shape2.3.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__data3 {
+    padding: 0;
+    padding-top: 8px;
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    @include screen($xxl) {
+      margin-bottom: 2px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description3 {
+    max-width: 113px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    @include screen($xxl) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__shape4 {
+    position: absolute;
+    top: 25.7%;
+    left: 70.1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30.4%;
+    height: 27.9%;
+    background-image: url('../../../assets/images/shape2.4.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__data4 {
+    padding: 0;    
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    @include screen($xxl) {
+      margin-bottom: 4px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description4 {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 8px;
+    font-size: 16px;
+    line-height: 16px;
+    @include screen($xxl) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__shape5 {
+    position: absolute;
+    top: 4.2%;
+    left: 40.8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22.2%;
+    height: 17.6%;
+    background-image: url('../../../assets/images/shape2.5.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__data5 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    @include screen($xxl) {
+      margin-bottom: 2px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description5 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    @include screen($xxl) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &__shape1img {
+    position: absolute;
+    top: 11.7%;
+    left: -2.6%;
+    width: 30.7%;
+    height: 28.6%;
+    background-image: url('../../../assets/images/shape2.1img.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__shape2img {
+    position: absolute;
+    top: 55.6%;
+    left: 58.5%;
+    width: 35.3%;
+    height: 31.5%;
+    background-image: url('../../../assets/images/shape2.2img.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 }

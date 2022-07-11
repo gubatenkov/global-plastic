@@ -1,5 +1,5 @@
-.spaktion {
-  background-color: $spaktion-bg;
+.lektion {
+  background-color: $country-bg;
   height: 800px;  
   border-radius: 16px;
   margin-bottom: 7px;
@@ -31,16 +31,6 @@
       background-position: 26% 135%;
       background-size: auto 690px;
     }
-  }
-
-  &__bg {
-    position: absolute;
-    bottom: 0;
-    left: calc(-50vw + 720px);
-    width: calc(50vw - 720px);
-    height: 590px;
-    border-left: calc(50vw - 720px) solid #fff;
-    border-top: 100px solid transparent;
   }
 
   &__title {

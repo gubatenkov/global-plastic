@@ -1,0 +1,108 @@
+.ecosektion {
+  background-color: $black;
+  border-radius: 16px;
+
+  @include screen($sm) {
+    border-radius: 8px;
+  }
+  
+  &__center {
+    display: flex;
+    justify-content: space-between;
+    padding: 96px;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100%;
+
+    @include screen($sm) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    max-width: 350px;
+    margin: 0;
+    margin-bottom: 48px;
+    padding: 45px 0 0 0;
+    font-size: 48px;
+    line-height: 48px;
+    color: $accent-color;
+
+    @include screen($sm) {
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description {
+    max-width: 480px;
+    margin: 0;
+    margin-bottom: 48px;
+    padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: $white;
+
+    & p {
+      margin-bottom: 28px;
+    }
+
+    @include screen($sm) {
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 27px;
+    }
+  }
+
+  &__link {
+    padding: 16px 24px;
+    margin-bottom: 45px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;    
+    color: $white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    transition: .3s;    
+    
+    & svg {
+      margin-left: 24px;
+    }
+
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+
+    &:active {
+      color: $white;
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+  
+  &__diagram--image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 608px;
+    height: 528px;
+    padding: 40px 0;
+    border: 1px solid red;
+  }
+
+  &__temperature {
+    width: 152px;
+    height: 528px;
+    border: 3px solid $white;
+    border-radius: 161px;
+    background-image: url("../../../assets/images/temperature-topology.svg"), url("../../../assets/images/temperature-bg.png"), linear-gradient(#F93D31, #F9B131, #5BAEF0);
+  }
+
+  &__scale {
+    width: 42px;
+    height: 425px;
+    background-image: url("../../../assets/images/temperature-scale.png");
+  }
+}

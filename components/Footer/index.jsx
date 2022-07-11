@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
             <ul className="footer__nav">
               <li className="footer__nav__item">
-                <a className="footer__nav__link" href="#">
+                <a className="footer__nav__link" href="countries">
                   Countries
                 </a>
               </li>
