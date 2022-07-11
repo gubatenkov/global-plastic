@@ -1,20 +1,20 @@
 import Image from 'next/image';
 
-import img from 'assets/images/regionImg.png';
+import { urlForImage } from 'lib/sanity';
 
-const RegionCard = () => {
+const RegionCard = ({ regionCardTitle, regionCardImage }) => {
   return (
     <div className="regard">
       <div className="regard__imgbox">
         <Image
           className="regard__imgbox__img"
-          src={img}
-          alt="img"
+          src={urlForImage(regionCardImage).url()}
+          alt={regionCardTitle}
           layout="fill"
           objectFit="cover"
         />
       </div>
-      <p className="regard__text">Latin America</p>
+      <p className="regard__text">{regionCardTitle}</p>
     </div>
   );
 };

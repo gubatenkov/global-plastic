@@ -6,6 +6,7 @@ const StakeholderParticipationSection = ({data}) => {
   return (
     <section className="spaktion">
         <div className="spaktion__center" style={{backgroundImage: `url('${getImg(stakeholderParticipationImage)}')`}}>
+        <div className="spaktion__bg"></div>
         <h2 className="spaktion__title">{stakeholderParticipationTitle}</h2>
         <h3 className="spaktion__subtitle">{stakeholderParticipationDescription}</h3>
         <div className="spaktion__shape1">{stakeholderParticipationNumber}</div>

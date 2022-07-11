@@ -1,0 +1,145 @@
+.lektion {
+  background-color: $country-bg;
+  height: 800px;  
+  border-radius: 16px;
+  margin-bottom: 7px;
+
+  @include screen($sm) {
+    height: 916px;
+  }
+  
+  &__center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;    
+    padding: 138px 180px 0 0;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+
+    @include screen($lg) {
+      align-items: flex-start;
+      padding: 96px 16px;
+    }
+
+    @include screen($sm) {
+      padding: 60px 16px;
+      background-position: 26% 135%;
+      background-size: auto 690px;
+    }
+  }
+
+  &__title {
+    max-width: 409px;
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 0;
+    font-size: 48px;
+    line-height: 48px;
+    color: $black;
+
+    @include screen($lg) {
+      text-align: left;
+    }
+
+    @include screen($sm) {
+      max-width: 286px;
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 409px;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: $black;
+
+    @include screen($lg) {
+      text-align: left;
+    }
+
+    @include screen($sm) {
+      max-width: 286px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__shape1 {
+    position: absolute;
+    top: 390px;
+    right: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 245px;
+    height: 245px;    
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 96px;
+    background-image: url('../../../assets//images/shape1.1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    @include screen($lg) {
+      top: 312px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include screen($sm) {
+      top: 235px;
+      width: 160px;
+      height: 160px;
+      margin-left: -10px;
+      font-size: 64px;
+      line-height: 64px;
+    }
+  }
+
+  &__shape2 {
+    position: absolute;
+    top: 570px;
+    right: 270px;
+    width: 47px;
+    height: 48px; 
+    background-image: url('../../../assets//images/shape1.2.svg');
+    background-size: contain;
+    background-repeat: no-repeat; 
+    
+    @include screen($sm) {
+      top: 335px;
+      right: 64px;
+      width: 37px;
+      height: 38px; 
+    }
+  }
+
+  &__shape3 {
+    position: absolute;
+    top: 471px;
+    right: 284px;
+    width: 24px;
+    height: 19px; 
+    background-image: url('../../../assets//images/shape1.3.svg');
+    background-size: contain;
+    background-repeat: no-repeat;  
+    
+    @include screen($sm) {
+      top: 287px;
+      right: 85px;
+      width: 22px;
+      height: 22px; 
+    }
+  }
+}

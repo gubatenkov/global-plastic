@@ -1,43 +1,66 @@
 import Image from 'next/image';
+import { useState } from 'react';
+import getYouTubeId from 'get-youtube-id';
 
-import img from 'assets/images/author.png';
-import img2 from 'assets/images/video.png';
+import { VideoPopup } from 'components';
+import { urlForImage } from 'lib/sanity';
 
-const VideoSection = () => {
+const VideoSection = ({
+  data: {
+    videoSectionTitle,
+    videoSectionVideo,
+    videoSectionQuote,
+    videoSectionAuthorName,
+    videoSectionAuthorJob,
+    videoSectionAuthorImage,
+  },
+}) => {
+  const [isVideoPopupShown, setVideoPopupShown] = useState(false);
+  const vidId = getYouTubeId(videoSectionVideo?.url);
+
   return (
     <section className="vection">
       <div className="container">
         <div className="vection__inner">
           <div className="vection__left">
-            <h2 className="vection__title">
-              Peter Thomson Addresses the Chile Dialogues
-            </h2>
+            <h2 className="vection__title">{videoSectionTitle}</h2>
             <div className="vection__center">
-              <p className="vection__center__text">
-                I commend all of you for coming together today for the Chile
-                Country Dialogues to ensure that national action on plastics
-                begins immediately. We cannot afford to wait until the end of
-                the negotiation process to start having these important
-                conversations.
-              </p>
-              <div className="vection__center__video">
-                <Image src={img2} alt="video" />
+              <p className="vection__center__text">{videoSectionQuote}</p>
+              <div
+                className="vection__center__video"
+                onClick={() => setVideoPopupShown(true)}
+              >
+                {typeof vidId === 'string' ? (
+                  <Image
+                    src={`https://img.youtube.com/vi/${vidId}/0.jpg`}
+                    alt="YouTube video thumbnail"
+                    layout="responsive"
+                    width={276}
+                    height={276}
+                    objectFit="cover"
+                    style={{ transform: 'scale(1.2)' }}
+                  />
+                ) : (
+                  <div />
+                )}
+                <div className="vection__center__video__play" />
               </div>
             </div>
             <div className="vection__author">
               <div className="vection__author-avatar">
                 <Image
                   className="vection__author-avatar__img"
-                  src={img}
+                  src={urlForImage(videoSectionAuthorImage).url()}
                   alt="img"
                   layout="fill"
                 />
               </div>
               <div className="vection__author-bio">
-                <div className="vection__author-bio__name">Peter Thomson</div>
+                <div className="vection__author-bio__name">
+                  {videoSectionAuthorName}
+                </div>
                 <div className="vection__author-bio__text">
-                  The United Nations Secretary-General`s Special Envoy for the
-                  Ocean
+                  {videoSectionAuthorJob}
                 </div>
               </div>
             </div>
@@ -74,6 +97,9 @@ const VideoSection = () => {
           fill="#F9B131"
         />
       </svg>
+      {isVideoPopupShown && (
+        <VideoPopup videoId={vidId} onClose={() => setVideoPopupShown(false)} />
+      )}
     </section>
   );
 };

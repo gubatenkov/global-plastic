@@ -35,11 +35,11 @@ export default function Home({ data }) {
         <SliderSection data={sections[1]} />
         <CardSection data={sections[2]} />
         <WideSliderSection data={sections[3]} />
-        <TargetSection />
-        <SponsorsSection />
+        <TargetSection data={sections[4]} />
+        <SponsorsSection data={sections[5]} />
         <BigMapSection />
-        <RegionsSection />
-        <VideoSection />
+        <RegionsSection data={sections[6]} />
+        <VideoSection data={sections[7]} />
         <LinksSection />
         <StakeholdersSection />
         <NewsSection />

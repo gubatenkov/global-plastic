@@ -19,9 +19,14 @@ export default {
         type: 'image',
       },
       {
-        name: 'levelUrgency',
-        title: 'Level Urgency',
+        name: 'levelUrgencyDiagramData',
+        title: 'Level Urgency Diagram Data',
         type: 'number',
-      },     
+      },
+      {
+        name: 'localInsightsDiagramDescription',
+        title: 'Local Insights Diagram Description',
+        type: 'string',
+      },    
     ],
   }

@@ -3,28 +3,38 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import homepage from './documents/homepage'
-import countries from './countries'
-import country from './country'
+import countries from './documents/countries'
+import country from './documents/country'
 
 import heroSection from './objects/heroSection'
 import sliderSection from './objects/sliderSection'
 import cardSection from './objects/cardSection'
 import wideSliderSection from './objects/wideSliderSection'
-import countryPresenceCard from './countryPresenceCard'
-import targetSection from './targetSection'
-import upcomingActivationsCard from './upcomingActivationsCard'
-import countryHeroSection from './countryHeroSection'
-import stakeholderParticipationSection from './stakeholderParticipationSection'
-import stakeholderEngagementSection from './stakeholderEngagementSection'
-import localInsights from './localInsights'
-import wasteSection from './wasteSection'
-import videoSection from './videoSection'
-import supportSection from './supportSection'
-import partner from './partner'
-import report from './report'
-import action from './action'
-import archive from './archive'
-import archiveSection from './archiveSection'
+import tectionSection from './objects/tectionSection'
+import sponsorsSection from './objects/sponsorsSection'
+import regionsSection from './objects/regionsSection'
+import videoSection from './objects/videoSection'
+import countryPresenceCard from './objects/countryPresenceCard'
+import targetSection from './objects/targetSection'
+import upcomingActivationsCard from './objects/upcomingActivationsCard'
+import countryHeroSection from './objects/countryHeroSection'
+import stakeholderParticipationSection from './objects/stakeholderParticipationSection'
+import stakeholderEngagementSection from './objects/stakeholderEngagementSection'
+import localInsights from './objects/localInsights'
+import wasteSection from './objects/wasteSection'
+import supportSection from './objects/supportSection'
+import partner from './objects/partner'
+import report from './objects/report'
+import action from './objects/action'
+import archive from './objects/archive'
+import archiveSection from './objects/archiveSection'
+import youtube from './objects/videoSchema'
+import regionsSectionCard from './objects/regionsSectionCard'
+import regionsSectionCountries from './objects/regionsSectionCountries'
+import linksCountries from './objects/linksCountries'
+import linksSectionCountries from './objects/linksSectionCountries'
+import videoSectionCountry from './objects/videoSectionCountry'
+import ecoSentiment from './objects/ecoSentiment'
 
 export default createSchema({
   name: 'default',
@@ -40,6 +50,11 @@ export default createSchema({
     sliderSection,
     cardSection,
     wideSliderSection,
+    tectionSection,
+    sponsorsSection,
+    regionsSection,
+    videoSection,
+    youtube,
     countryPresenceCard,
     upcomingActivationsCard,
     countryHeroSection,
@@ -47,13 +62,18 @@ export default createSchema({
     stakeholderEngagementSection,
     localInsights,
     wasteSection,
-    videoSection,    
     targetSection,
     supportSection,
     partner,
     report,
     action,
     archive,
-    archiveSection
+    archiveSection,
+    regionsSectionCard,
+    regionsSectionCountries,
+    linksCountries,
+    linksSectionCountries,
+    videoSectionCountry,
+    ecoSentiment,
   ]),
 })

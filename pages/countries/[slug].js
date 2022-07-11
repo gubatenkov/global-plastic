@@ -6,6 +6,8 @@ import {
   UpcomingActivationsSection,
   StakeholderParticipationSection,
   StakeholderEngagementSection,
+  EcoSentiment,
+  LocalInsights,
   VideoSection,
   TargetSection,
 } from 'components'
@@ -24,7 +26,7 @@ export const getServerSideProps = async () => {
   };
 
 export default function Country({page}) {
-  const {countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement} = page;
+  const {countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, videoSectionCountryPage, targetSectionCountryPage} = page;
 
   // console.log(page);
 
@@ -39,9 +41,11 @@ export default function Country({page}) {
         <CountryHero data={countryHero} />
         <UpcomingActivationsSection data={upcomingActivationsSlider} />
         <StakeholderParticipationSection data={stakeholderParticipation} />
-        <StakeholderEngagementSection data={stakeholderEngagement} />
-        <VideoSection />
-        <TargetSection />
+        <StakeholderEngagementSection data={stakeholderEngagement} />        
+        {/* <EcoSentiment data={ecoSentiment} />
+        <LocalInsights data={localInsights} /> */}
+        <TargetSection data={targetSectionCountryPage} />
+        <VideoSection data={videoSectionCountryPage} />
       </MainLayout>
     </div>
   )

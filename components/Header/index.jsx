@@ -23,7 +23,7 @@ const Header = () => {
       <Burger isClicked={isMobNavVisible} onClick={toggleMobNav} />
       <ul className="header-nav">
         <li className="header-nav__item">
-          <a className="header-nav__link" href="#">
+          <a className="header-nav__link" href="countries">
             Countries
           </a>{' '}
         </li>

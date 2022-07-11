@@ -4,6 +4,18 @@ export default {
     type: 'document',
     fields: [
       {
+        name: 'pageTitle',
+        title: 'Country Page SEO title',
+        type: 'string',
+        validation: Rule => Rule.required().min(1).max(100)
+      },
+      {
+        name: 'pageDescription',
+        title: 'Country Page SEO description',
+        type: 'text',
+        validation: Rule => Rule.required().min(1).max(300)
+      },
+      {
         name: 'countryHero',
         title: 'Country Hero',
         type: 'countryHeroSection',
@@ -27,7 +39,7 @@ export default {
       {
         name: 'ecoSentiment',
         title: 'Eco Sentiment',
-        type: 'number',
+        type: 'ecoSentimentSection',
       },
       {
         name: 'localInsights',
@@ -40,10 +52,9 @@ export default {
         type: 'wasteSection',
       },
       {
-        name: 'videoQuoteSlider',
-        title: 'Video Quote Slider',
-        type: 'array',
-        of: [{type: 'videoSection'}],
+        name: 'videoSectionCountryPage',
+        title: 'Video Section Country Page',
+        type: 'videoSectionCountry',       
       },      
       {
         name: 'targetSectionCountryPage',

@@ -1,24 +1,30 @@
 import Image from 'next/image';
 
-import img from 'assets/images/tectionImg.png';
 import img2 from 'assets/images/earth.svg';
 import img3 from 'assets/images/people.svg';
 import img4 from 'assets/images/sandClock.svg';
 
-const TargetSection = () => {
+import { urlForImage } from 'lib/sanity';
+
+const TargetSection = ({
+  data: { tectionTitle, tectionText, tectionSuptitle, tectionImg, tectionLink },
+}) => {
   return (
     <section className="tection">
       <div className="container">
         <div className="tection__inner">
           <h2 className="tection__title">
-            Global Treaty Dialogues #For Plastics
+            {tectionTitle} <br /> {tectionSuptitle}
           </h2>
           <div className="tection__row">
             <div className="tection__row-left">
               <div className="tection__row-left__imgbox">
                 <Image
                   className="tection__row-left__imgbox__img"
-                  src={img}
+                  src={urlForImage(tectionImg).fit('crop').url()}
+                  width={550}
+                  height={500}
+                  objectFit="cover"
                   alt="img"
                 />
               </div>
@@ -26,32 +32,18 @@ const TargetSection = () => {
             <div className="tection__row-right">
               <div className="tection__row-right__text">
                 <h2 className="tection__row-right__text__title">
-                  Global Treaty Dialogues
+                  {tectionTitle}
                 </h2>
                 <p className="tection__row-right__text__subtitle">
-                  #For Plastics
+                  {tectionSuptitle}
                 </p>
-                <p className="tection__row-right__text__descr">
-                  Working together with World Wildlife Fund (WWF) and
-                  Greenpeace, the Ocean Plastic Leadership Network launched the
-                  Global Plastics Treaty Dialogues (GPTD) in March 2021. This
-                  series of neutral convening engages an activist-to-industry
-                  network of stakeholders to build capacity for a global
-                  plastics treaty and its country-level implementation. By March
-                  2022, the GPTDs have held 5 global and 10 national level
-                  convenings, connecting thousands of stakeholders across 40+
-                  countries. By March 2022, the GPTDs have held 5 global and 10
-                  national level convenings, connecting thousands of
-                  stakeholders across 40+ countries. By March 2022, the GPTDs
-                  have held 5 global and 10 national level convenings,
-                  connecting thousands of stakeholders across 40+ countries. By
-                  March 2022, the GPTDs have held 5 global and 10 national level
-                  convenings, connecting thousands of stakeholders across 40+
-                  countries.
-                </p>
+                <p className="tection__row-right__text__descr">{tectionText}</p>
               </div>
-              <button className="tection__row-right__action">
-                Get involved
+              <a
+                className="tection__row-right__action"
+                href={tectionLink.tectionLinkURL}
+              >
+                {tectionLink.tectionLinkText}
                 <svg
                   width="15"
                   height="10"
@@ -64,7 +56,7 @@ const TargetSection = () => {
                     fill="#F9B131"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
           <div className="tection__targets">

@@ -6,15 +6,13 @@ import { SliderNav, BubbleCard, SectionLine } from 'components';
 const SliderSection = ({ data: { title, subtitle, slides } }) => {
   const [swiper, setSwiper] = useState(null);
   const [activeIndex, setActiveIndex] = useState(1);
-  const [totalSlides, setTotalSlides] = useState(6);
 
-  const updateActiveIndex = () => {
-    setActiveIndex(swiper.activeIndex + 1);
+  const updateActiveIndex = (context) => {
+    setActiveIndex(context.realIndex + 1);
   };
 
   const handleContext = (context) => {
     setSwiper(context);
-    setTotalSlides(context.slides.length);
   };
 
   return (
@@ -49,7 +47,7 @@ const SliderSection = ({ data: { title, subtitle, slides } }) => {
       </div>
       <div className="slection__slidernav">
         <SliderNav
-          total={totalSlides}
+          total={slides?.length ?? 0}
           current={activeIndex}
           onPrevClick={() => swiper.slidePrev(300)}
           onNextClick={() => swiper.slideNext(300)}
