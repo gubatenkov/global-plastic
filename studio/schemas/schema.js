@@ -15,6 +15,10 @@ import sponsorsSection from './objects/sponsorsSection'
 import regionsSection from './objects/regionsSection'
 import videoSection from './objects/videoSection'
 import countryPresenceCard from './objects/countryPresenceCard'
+import linksSection from './objects/linksSection'
+import stakeholdersSection from './objects/stakeholdersSection'
+import newsSection from './objects/newsSection'
+import joinSection from './objects/joinSection'
 import targetSection from './objects/targetSection'
 import upcomingActivationsCard from './objects/upcomingActivationsCard'
 import countryHeroSection from './objects/countryHeroSection'
@@ -65,6 +69,10 @@ export default createSchema({
     targetSection,
     supportSection,
     partner,
+    linksSection,
+    stakeholdersSection,
+    newsSection,
+    joinSection,
     report,
     action,
     archive,
