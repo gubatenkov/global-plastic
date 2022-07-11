@@ -1,9 +1,34 @@
-import getImg from '../../../utils/getImg'
+import { useState, useEffect } from 'react'
 
 const EcoSentiment = ({data}) => {
   const {ecoSentimentTitle, ecoSentimentDescriptionPart1, ecoSentimentDescriptionPart2, ecoSentimentLinkName, ecoSentimentLinkHref, ecoSentimentDiagramData, ecoSentimentDiagramDescription } = data;
 
-  const scaleHeight = 425 * ecoSentimentDiagramData / 10 + 50;
+  const [temperatureHeight, setTemperatureHeight] = useState(528);
+  const [scaleHeight, setScaleHeight] = useState(425);
+  const [textHeight, setTextHeight] = useState(80);
+
+  const getResizeHeight = () => {
+    if (typeof window !== 'undefined' && window.screen.width <= 480) {
+      setTemperatureHeight(400);
+      setScaleHeight(320);
+      setTextHeight(60);
+    } else if (typeof window !== 'undefined' && window.screen.width > 480) {
+      setTemperatureHeight(528);
+      setScaleHeight(425);
+      setTextHeight(80);
+    } 
+  };
+
+  useEffect(() => {
+    getResizeHeight();
+    if (window) {
+      const listener = window.addEventListener('resize', getResizeHeight);
+      return () => window.removeEventListener('resize', listener);
+    }
+  }, []);
+
+  const valueHeight = scaleHeight * ecoSentimentDiagramData / 10 + (temperatureHeight-scaleHeight) / 2;
+  const dataHeight = scaleHeight - valueHeight + textHeight;
 
   return (
     <section className="ecosektion">
@@ -33,13 +58,13 @@ const EcoSentiment = ({data}) => {
         <div className="ecosektion__diagram">
           <div className="ecosektion__diagram--image">
             <div className="ecosektion__temperature">
-              <div className="ecosektion__value" style={{height: `${scaleHeight}px`}}></div>
+              <div className="ecosektion__value" style={{height: `${valueHeight}px`}}></div>
             </div>            
             <div className="ecosektion__scale"></div>
           </div>
-          <div className="ecosektion__diagram--data">
-            <div className="ecosektion__diagram--number"></div>
-            <div className="ecosektion__diagram--description"></div>
+          <div className="ecosektion__diagram--data" style={{paddingTop: `${dataHeight}px`}}>
+            <div className="ecosektion__diagram--number">{ecoSentimentDiagramData}</div>
+            <div className="ecosektion__diagram--description">{ecoSentimentDiagramDescription}</div>
           </div>
 
         </div>
