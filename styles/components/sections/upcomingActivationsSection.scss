@@ -30,7 +30,12 @@
 
   &__slider {
     margin: 0;
+
     @include screen($lg) {
+      margin-bottom: 72px;
+    }  
+
+    @include screen($sm) {
       margin-bottom: 55px;
     }   
   }
@@ -44,11 +49,15 @@
     width: 215px;
 
     @include screen($lg) {
-      top: 558px;
+      top: 598px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 6;
       width: 200px;
+    }
+
+    @include screen($sm) {
+      top: 558px;
     }
   }
 }

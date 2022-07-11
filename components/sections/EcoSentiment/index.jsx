@@ -3,6 +3,8 @@ import getImg from '../../../utils/getImg'
 const EcoSentiment = ({data}) => {
   const {ecoSentimentTitle, ecoSentimentDescriptionPart1, ecoSentimentDescriptionPart2, ecoSentimentLinkName, ecoSentimentLinkHref, ecoSentimentDiagramData, ecoSentimentDiagramDescription } = data;
 
+  const scaleHeight = 425 * ecoSentimentDiagramData / 10 + 50;
+
   return (
     <section className="ecosektion">
         <div className="ecosektion__center">
@@ -30,8 +32,9 @@ const EcoSentiment = ({data}) => {
         </div>
         <div className="ecosektion__diagram">
           <div className="ecosektion__diagram--image">
-            <div className="ecosektion__temperature"></div>
-            <div className="ecosektion__value"></div>
+            <div className="ecosektion__temperature">
+              <div className="ecosektion__value" style={{height: `${scaleHeight}px`}}></div>
+            </div>            
             <div className="ecosektion__scale"></div>
           </div>
           <div className="ecosektion__diagram--data">

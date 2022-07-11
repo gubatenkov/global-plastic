@@ -40,8 +40,8 @@ export default function Country({page}) {
         <UpcomingActivationsSection data={upcomingActivationsSlider} />
         <StakeholderParticipationSection data={stakeholderParticipation} />
         <StakeholderEngagementSection data={stakeholderEngagement} />        
-        {/* <EcoSentiment data={ecoSentiment} />
-        <LocalInsights data={localInsights} /> */}
+        <EcoSentiment data={ecoSentiment} />
+        {/* <LocalInsights data={localInsights} /> */}
         <TargetSection data={targetSectionCountryPage} />
         <VideoSection data={videoSectionCountryPage} />
       </MainLayout>
