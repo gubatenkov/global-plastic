@@ -1,31 +1,37 @@
 import Image from 'next/image';
 
-import img from 'assets/images/quotes.svg';
-import img2 from 'assets/images/dialoguesCardImg.svg';
+import { urlForImage } from 'lib/sanity';
 
-const DialogueCard = () => {
+import img from 'assets/images/quotes.svg';
+
+const DialogueCard = ({
+  dialogsCardText,
+  dialogsCardTitle,
+  dialogsCardSubtitle,
+  dialogsCardImage,
+}) => {
   return (
     <div className="dialogue-card">
       <Image src={img} alt="icon" />
-      <p className="dialogue-card__text">
-        The inclusion of waste reclaimers in the treaty negotiation process is
-        crucial to form an inclusive agreement. OPLN’s efforts to include these
-        voices throughout the dialogues, bringing their perspectives to the
-        forefront of these discussions have informed all stakeholders of waste
-        reclaimers’ vital role in solving the plastic pollution crisis.
-      </p>
+      <p className="dialogue-card__text">{dialogsCardText}</p>
       <div className="dialogue-card__bottom">
         <div className="dialogue-card__bottom-text">
           <p className="dialogue-card__bottom-text__title">
-            National Geographic
+            {dialogsCardTitle}
           </p>
           <p className="dialogue-card__bottom-text__subtitle">
-            Global treaty to regulate plastic pollution gains momentum, JUNE 8,
-            2021, Laura Parker
+            {dialogsCardSubtitle}
           </p>
         </div>
         <div className="dialogue-card__bottom-imgbox">
-          <Image src={img2} alt="img" />
+          <Image
+            src={urlForImage(dialogsCardImage).width(120).url()}
+            layout="responsive"
+            width={120}
+            height={50}
+            objectFit="contain"
+            alt="img"
+          />
         </div>
       </div>
     </div>

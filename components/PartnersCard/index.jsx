@@ -1,15 +1,21 @@
 import Image from 'next/image';
 
 import img from 'assets/images/partner1.png';
+import { urlForImage } from 'lib/sanity';
 
 const partners = [img, img, img, img, img, img];
 
-const PartnersCard = () => {
+const PartnersCard = ({ title, logos, index }) => {
+  const getIndex = (idx) => {
+    if (idx < 10) return `0${idx}`;
+    return idx;
+  };
+
   return (
     <li className="parection__cards__item">
       <div className="parection-card">
         <div className="parection-card__list">
-          {partners.map((partner, idx) => {
+          {logos.map((img, idx) => {
             return (
               <div
                 className="parection-card__list-imgbox"
@@ -22,7 +28,12 @@ const PartnersCard = () => {
               >
                 <Image
                   className="parection-card__list-imgbox__img"
-                  src={partner}
+                  key={idx}
+                  src={urlForImage(img).url()}
+                  layout="responsive"
+                  width={150}
+                  height={75}
+                  objectFit="contain"
                   alt="img"
                 />
               </div>
@@ -30,8 +41,8 @@ const PartnersCard = () => {
           })}
         </div>
         <div className="parection-card__info">
-          <p className="parection-card__info__type">Managing partner</p>
-          <p className="parection-card__info__num">01</p>
+          <p className="parection-card__info__type">{title}</p>
+          <p className="parection-card__info__num">{getIndex(index)}</p>
         </div>
       </div>
     </li>

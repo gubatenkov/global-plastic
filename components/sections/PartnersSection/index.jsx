@@ -1,18 +1,23 @@
 import { PartnersCard } from 'components';
 
-const PartnersSection = () => {
+const PartnersSection = ({ data: { partnersTitle, partnersCards } }) => {
   return (
     <section className="parection">
       <div className="container">
         <div className="parection__inner">
-          <h2 className="parection__title">Cross-Sector Support</h2>
+          <h2 className="parection__title">{partnersTitle}</h2>
           <ul className="parection__cards">
-            <PartnersCard />
-            <PartnersCard />
-            <PartnersCard />
-            <PartnersCard />
-            <PartnersCard />
-            <PartnersCard />
+            {partnersCards?.length &&
+              partnersCards.map((card, idx) => {
+                return (
+                  <PartnersCard
+                    key={idx}
+                    title={card.partnersCardTitle}
+                    logos={card.partnersCardImage}
+                    index={idx + 1}
+                  />
+                );
+              })}
           </ul>
         </div>
       </div>
