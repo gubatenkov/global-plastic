@@ -17,7 +17,7 @@
     content: '';
 
     top: 155px;
-    right: 210px;
+    right: calc((100vw - 875px) / 2);
     position: absolute;
 
     width: 25px;

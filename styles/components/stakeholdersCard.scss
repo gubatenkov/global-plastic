@@ -9,6 +9,7 @@
   }
 
   &__text {
+    min-height: 120px;
     margin: 15px 0 35px;
 
     color: $black;
@@ -17,7 +18,18 @@
     line-height: 30px;
     font-style: normal;
 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 4;
+    -moz-line-clamp: 4;
+    -ms-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+
     @include screen($sm) {
+      min-height: 110px;
       margin: 10px 0 30px;
 
       font-size: 14px;
@@ -33,6 +45,8 @@
     &-avatar {
       width: 48px;
       height: 48px;
+
+      flex-shrink: 0;
 
       overflow: hidden;
       border-radius: 50%;

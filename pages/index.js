@@ -20,6 +20,15 @@ import {
 } from 'components'
 import { getHomepageFieldsQuery } from 'lib/queries';
 
+export const getStaticProps = async () => {
+  const data = await getHomepageFieldsQuery();
+  return {
+    props: {
+      data
+    },
+  }
+}
+
 export default function Home({ data }) {
   const { pageTitle, pageDescription, sections } = data[0];
   
@@ -40,10 +49,10 @@ export default function Home({ data }) {
         <BigMapSection />
         <RegionsSection data={sections[6]} />
         <VideoSection data={sections[7]} />
-        <LinksSection />
-        <StakeholdersSection />
-        <NewsSection />
-        <JoinSection />
+        <LinksSection data={sections[8]} />
+        <StakeholdersSection data={sections[9]} />
+        <NewsSection data={sections[10]} />
+        <JoinSection data={sections[11]} />
         <PartnersSection />
         <DialoguesSection />
       </MainLayout>
@@ -51,12 +60,3 @@ export default function Home({ data }) {
   )
 }
 
-export const getStaticProps = async () => {
-  const data = await getHomepageFieldsQuery();
-
-  return {
-    props: {
-      data
-    },
-  }
-}

@@ -59,10 +59,25 @@
     }
 
     &-imgbox {
-      display: inline-flex;
+      position: relative;
 
-      border-radius: 16px;
-      overflow: hidden;
+      &__wrap {
+        display: inline-flex;
+        width: 100%;
+        height: 259px;
+      }
+
+      &__img {
+        border-radius: 16px;
+      }
+
+      &__el {
+        top: -35px;
+        right: 25px;
+        position: absolute;
+
+        z-index: 11;
+      }
     }
   }
 

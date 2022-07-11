@@ -1,21 +1,33 @@
 import Image from 'next/image';
 
-import img from 'assets/images/newsCardSmallImg.png';
+import { urlForImage } from 'lib/sanity';
 
-const NewsCardSmall = () => {
+const NewsCardSmall = ({
+  newsSmallCardDate,
+  newsSmallCardImage,
+  newsSmallCardLink,
+  newsSmallCardTitle,
+}) => {
   return (
     <div className="ncard-small">
       <div className="ncard-small__preview">
-        <Image src={img} alt="img" objectFit="cover" />
+        <Image
+          className="ncard-small__preview__img"
+          src={urlForImage(newsSmallCardImage).url()}
+          alt="img"
+          layout="fill"
+          objectFit="cover"
+        />
       </div>
       <div className="ncard-small__content">
         <h3 className="ncard-small__content__title">
-          <a href="#">
-            Working together with World Wildlife Fund (WWF) and Greenpeace
-          </a>
+          <a href="#">{newsSmallCardTitle}</a>
         </h3>
         <div className="ncard-small__content__bottom">
-          <a className="ncard-small__content__bottom__link" href="#">
+          <a
+            className="ncard-small__content__bottom__link"
+            href={newsSmallCardLink}
+          >
             Read more
             <svg
               width="15"
@@ -30,7 +42,9 @@ const NewsCardSmall = () => {
               ></path>
             </svg>
           </a>
-          <div className="ncard-small__content__bottom__date">28.05 2021</div>
+          <div className="ncard-small__content__bottom__date">
+            {newsSmallCardDate}
+          </div>
         </div>
       </div>
     </div>

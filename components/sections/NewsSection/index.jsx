@@ -1,13 +1,15 @@
 import { NewsCardBig, NewsCardSmall } from 'components';
 
-const NewsSection = () => {
+const NewsSection = ({
+  data: { newsSectionTitle, newsBigCard, newsSmallCard, newsSmall2Card },
+}) => {
   return (
     <section className="nection">
       <div className="container">
-        <h2 className="nection__title">Latest news</h2>
+        <h2 className="nection__title">{newsSectionTitle}</h2>
         <div className="nection__inner">
           <div className="nection__left">
-            <NewsCardBig />
+            <NewsCardBig {...newsBigCard} />
           </div>
           <div className="nection__right">
             <div className="nection__right-top">
@@ -17,8 +19,8 @@ const NewsSection = () => {
               </a>
             </div>
             <div className="nection__right__cards">
-              <NewsCardSmall />
-              <NewsCardSmall />
+              <NewsCardSmall {...newsSmallCard} />
+              <NewsCardSmall {...newsSmall2Card} />
             </div>
           </div>
         </div>
