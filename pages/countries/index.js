@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 
 export default function Countries({page}) {
   const {countryPresenceCards, targetSectionCountriesPage, regionsSectionCountriesPage, linksSectionCountriesPage} = page;
-  console.log(page)
+
   return (
     <div className="countries">
       <Head>
