@@ -1,145 +1,218 @@
 .lektion {
-  background-color: $country-bg;
-  height: 800px;  
+  display: flex;  
+  margin-bottom: 6px;
   border-radius: 16px;
-  margin-bottom: 7px;
+  background-color: $country-bg; 
+  
+  @include screen($xxl) {
+    flex-direction: column;
+    margin-bottom: 4px;
+    border-radius: 8px;
+  }
 
   @include screen($sm) {
-    height: 916px;
+    flex-direction: column;
+    margin-bottom: 4px;
+    border-radius: 8px;
   }
   
   &__center {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;    
-    padding: 138px 180px 0 0;
-    margin: 0 auto;
-    max-width: 1440px;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom left;
+    width: 50%;
+    max-width: 720px;
+    padding: 85px 96px 0 92px;    
+
+    @include screen($xxl) {
+      width: 100%;
+      max-width: 100%;
+      padding: 60px 96px;
+    }
 
     @include screen($lg) {
-      align-items: flex-start;
-      padding: 96px 16px;
+      padding: 60px 16px;
     }
 
     @include screen($sm) {
-      padding: 60px 16px;
-      background-position: 26% 135%;
-      background-size: auto 690px;
+      padding: 32px 16px 60px;
+    }
+  }
+
+  &__imgbox { 
+    position: relative;
+    width: 50%;
+    height: 720px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include screen($xxl) {
+      width: 100%;
+      height: 434px;
+    }
+  }
+
+  &__imgbox * {
+    position: unset !important;
+  }
+  
+  &__img {
+    object-fit: cover;
+    object-position: center center;
+    width: 100% !important;
+    position: relative !important;
+    height: 720px !important;
+
+    @include screen($xxl) {
+      height: 434px !important;
     }
   }
 
   &__title {
-    max-width: 409px;
+    max-width: 375px;
     margin: 0;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     padding: 0;
     font-size: 48px;
     line-height: 48px;
     color: $black;
 
-    @include screen($lg) {
-      text-align: left;
+    @include screen($xxl) {
+      max-width: 100%;
     }
 
     @include screen($sm) {
-      max-width: 286px;
       margin-bottom: 24px;
       font-size: 32px;
       line-height: 32px;
     }
   }
 
-  &__subtitle {
-    max-width: 409px;
+  &__description {
+    max-width: 400px;
     margin: 0;
-    margin-bottom: 16px;
+    margin-bottom: 64px;
     padding: 0;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
     color: $black;
 
-    @include screen($lg) {
-      text-align: left;
+    @include screen($xxl) {
+      max-width: 100%;
     }
 
     @include screen($sm) {
-      max-width: 286px;
-      font-size: 24px;
-      line-height: 24px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 27px;
     }
   }
 
-  &__shape1 {
-    position: absolute;
-    top: 390px;
-    right: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 245px;
-    height: 245px;    
-    font-weight: 400;
-    font-size: 96px;
-    line-height: 96px;
-    background-image: url('../../../assets//images/shape1.1.svg');
-    background-size: contain;
+  &__diagram--title {
+    margin-bottom: 32px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1;
+
+    @include screen($sm) {
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+  }
+
+  &__diagram--image {
+    width: 481px;
+
+    @include screen(620px) {
+      width: 341px;
+    }
+  }
+
+  &__temperature {
+    width: 481px;
+    height: 64px;
+    border: 3px solid $white;
+    border-radius: 32px;
+    background-image: url("../../../assets/images/temperature-topology2.svg"), url("../../../assets/images/temperature-bg2.png"), linear-gradient(to left,#F93D31, #F9B131, #5BAEF0);
+    background-size: cover;
     background-repeat: no-repeat;
-    
-    @include screen($lg) {
-      top: 312px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
 
-    @include screen($sm) {
-      top: 235px;
-      width: 160px;
-      height: 160px;
-      margin-left: -10px;
-      font-size: 64px;
-      line-height: 64px;
+    @include screen(620px) {
+      width: 341px;
+      height: 56px;
     }
   }
 
-  &__shape2 {
-    position: absolute;
-    top: 570px;
-    right: 270px;
-    width: 47px;
-    height: 48px; 
-    background-image: url('../../../assets//images/shape1.2.svg');
-    background-size: contain;
-    background-repeat: no-repeat; 
-    
+  &__scale {
+    width: 425px;
+    height: 42px;
+    margin: 0 auto 16px;
+    background-image: url("../../../assets/images/temperature-scale2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include screen(620px) {
+      width: 300px;
+      height: 36px;
+    }
+
     @include screen($sm) {
-      top: 335px;
-      right: 64px;
-      width: 37px;
-      height: 38px; 
+      margin: 0 auto 20px;
     }
   }
 
-  &__shape3 {
-    position: absolute;
-    top: 471px;
-    right: 284px;
-    width: 24px;
-    height: 19px; 
-    background-image: url('../../../assets//images/shape1.3.svg');
-    background-size: contain;
-    background-repeat: no-repeat;  
-    
-    @include screen($sm) {
-      top: 287px;
-      right: 85px;
-      width: 22px;
-      height: 22px; 
+  &__value {
+    position: relative;
+    height: 100%;
+    width: 42%;
+    border-right: 3px solid #fff;    
+    box-shadow: 5px 0 0 rgba(255, 255, 255, .4);
+    border-radius: 76px 0 0 76px;
+    background-color: rgba(255, 255, 255, .4);
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: -3px;
+      bottom: -35px;
+      width: 3px;
+      height: 32px;
+      background-color: $accent-color;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -7px;
+      bottom: -45px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      border: 2px solid $black;
+      background-color: $accent-color;
     }
   }
+
+  &__diagram--number {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+
+    @include screen($sm) {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &__diagram--description {
+    max-width: 127px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    opacity: .6;
+
+    @include screen($sm) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }  
 }

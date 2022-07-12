@@ -6,7 +6,7 @@
   border-radius: 16px;
   margin-top: -106px;
 
-  @include screen($m) {
+  @include screen(865px) {
     margin-top: -116px;
   }
 

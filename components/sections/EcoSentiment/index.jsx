@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 const EcoSentiment = ({data}) => {
   const {ecoSentimentTitle, ecoSentimentDescriptionPart1, ecoSentimentDescriptionPart2, ecoSentimentLinkName, ecoSentimentLinkHref, ecoSentimentDiagramData, ecoSentimentDiagramDescription } = data;
