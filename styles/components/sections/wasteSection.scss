@@ -1,0 +1,95 @@
+.waktion {  
+  margin-bottom: 6px;
+  border-radius: 16px;
+  background-color: $white;
+  background-image: url("../../../assets/images/waste-bg.svg");
+
+  @include screen($sm) {
+    flex-direction: column;
+    margin-bottom: 4px;
+    border-radius: 8px;
+  }
+  
+  &__center {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 96px; 
+
+    @include screen($sm) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__content {
+    padding-top: 65px;
+  }
+
+  &__title {
+    max-width: 379px;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    padding-top: 35px;
+    font-size: 48px;
+    line-height: 48px;
+    color: $black;
+
+    @include screen($sm) {
+      max-width: 100%;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description {
+    max-width: 467px;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: $black;
+
+    @include screen($sm) {
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 27px;
+    }
+  }
+  
+  &__container {
+    padding-top: 35px;
+    padding-right: 30px;
+  }
+
+  &__mobile--title {
+    display: none;
+  }
+
+  &__imgbox {
+    position: relative;
+    width: 556px;
+    height: 527;
+    overflow: hidden;
+
+    @include screen($sm) {
+      width: 245px;
+      height: 232px;
+      margin: 0 auto;
+    }
+  }
+
+  &__imgbox * {
+    position: unset !important;
+  }
+  
+  &__img {
+    object-fit: contain;
+    object-position: center center;
+    width: 100% !important;
+    position: relative !important;
+    height: 100% !important;
+  }
+}
