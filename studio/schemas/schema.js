@@ -28,8 +28,7 @@ import stakeholderParticipationSection from './objects/stakeholderParticipationS
 import stakeholderEngagementSection from './objects/stakeholderEngagementSection'
 import localInsights from './objects/localInsights'
 import wasteSection from './objects/wasteSection'
-import supportSection from './objects/supportSection'
-import partner from './objects/partner'
+import partnersCountrySection from './objects/partnersCountrySection'
 import report from './objects/report'
 import action from './objects/action'
 import archive from './objects/archive'
@@ -71,8 +70,7 @@ export default createSchema({
     localInsights,
     wasteSection,
     targetSection,
-    supportSection,
-    partner,
+    partnersCountrySection,
     linksSection,
     stakeholdersSection,
     newsSection,

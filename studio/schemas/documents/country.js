@@ -62,9 +62,9 @@ export default {
         type: 'targetSection',
       },
       {
-        name: 'crossSectorSupport',
-        title: 'Cross-Sector Support',
-        type: 'supportSection',
+        name: 'partnersSection',
+        title: 'Partners Section',
+        type: 'partnersCountrySection',
       },
       {
         name: 'reportsGuidesSlider',

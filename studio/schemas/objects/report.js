@@ -14,6 +14,16 @@ export default {
       type: 'string',
     },
     {
+      name: 'reportRegion',
+      title: 'Report Region',
+      type: 'string',
+    },
+    {
+      name: 'reportCountry',
+      title: 'Report Country',
+      type: 'string',
+    },
+    {
       name: 'reportFile',
       title: 'Report File',
       type: 'file',
