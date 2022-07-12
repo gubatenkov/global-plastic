@@ -45,6 +45,7 @@ const SliderSection = ({ data: { title, subtitle, slides } }) => {
           </Swiper>
         </div>
       </div>
+      <SectionLine className="slection__line" />
       <div className="slection__slidernav">
         <SliderNav
           total={slides?.length ?? 0}
@@ -53,7 +54,6 @@ const SliderSection = ({ data: { title, subtitle, slides } }) => {
           onNextClick={() => swiper.slideNext(300)}
         />
       </div>
-      <SectionLine className="slection__line" />
     </section>
   );
 };

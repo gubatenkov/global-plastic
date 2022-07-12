@@ -56,7 +56,7 @@
     }
 
     &__list {
-      min-height: 90px;
+      min-height: 105px;
       margin: 0 0 25px 0;
 
       gap: 15px;
@@ -71,7 +71,8 @@
       }
 
       &-imgbox {
-        flex: 0 0 21%;
+        flex: 1 0 21%;
+        max-width: 190px;
       }
     }
 
