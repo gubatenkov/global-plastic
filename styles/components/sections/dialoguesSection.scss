@@ -10,7 +10,13 @@
     display: flex;
     padding-left: calc((100vw - var(--container-width)) / 2);
 
+    @include screen(1405px) {
+      padding-left: 55px;
+    }
+
     @include screen($sm) {
+      padding-left: 0;
+
       gap: 25px;
       flex-direction: column;
     }

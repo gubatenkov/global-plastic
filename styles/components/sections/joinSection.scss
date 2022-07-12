@@ -83,6 +83,11 @@
 
   &__right {
     width: 100%;
+    padding: 65px 0 0;
+
+    @include screen($sm) {
+      padding: 0;
+    }
 
     &__title {
       max-width: 50%;

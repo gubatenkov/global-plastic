@@ -17,10 +17,15 @@ const WideSliderSection = ({ data: { slides } }) => {
   };
 
   const getSlidesPerView = () => {
-    if (typeof window !== 'undefined' && window.screen.width <= 481) {
-      setSlidesPerView(1);
-    } else {
+    if (typeof window === 'undefined') return;
+    if (window.screen.width >= 1600) {
       setSlidesPerView(5);
+    } else if (window.screen.width >= 1300) {
+      setSlidesPerView(4);
+    } else if (window.screen.width >= 1100) {
+      setSlidesPerView(3);
+    } else {
+      setSlidesPerView(1);
     }
   };
 
@@ -41,7 +46,7 @@ const WideSliderSection = ({ data: { slides } }) => {
           spaceBetween={100}
           slidesPerView={slidesPerView}
           onSlideChange={updateActiveIndex}
-          onSwiper={(swiper) => handleContext(swiper)}
+          onSwiper={handleContext}
           centeredSlides
           loop
         >
