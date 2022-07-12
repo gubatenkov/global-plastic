@@ -1,0 +1,120 @@
+.maplegend {
+  width: 100%;
+  max-width: 255px;
+
+  background: $white;
+  box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.32);
+  border-radius: $section-radius;
+
+  position: relative;
+
+  &__wrap {
+    right: 43px;
+    bottom: 175px;
+    position: absolute;
+  }
+
+  &__title {
+    padding: 15px 25px 0;
+    margin: 0;
+
+    color: $black;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    font-style: normal;
+  }
+
+  &__section + &__section {
+    border-top: 1px solid rgba($black, 0.08);
+  }
+
+  &__section {
+    padding: 15px 25px;
+
+    &__title {
+      margin: 0 0 5px;
+
+      color: $black;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      font-style: normal;
+    }
+
+    &__subtitle {
+      margin: 0 0 15px;
+
+      color: $black;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 20px;
+      font-style: normal;
+
+      opacity: 0.4;
+    }
+
+    &-list {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+
+      .maplegend__section--2col & {
+        columns: 2;
+      }
+
+      &__item + &__item {
+        margin-top: 13px;
+      }
+
+      &__item {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+
+        > p {
+          margin: 0;
+
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 20px;
+          font-style: normal;
+
+          color: $black;
+
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 30px;
+    left: -42px;
+    position: absolute;
+
+    background: $accent-color;
+    border-top-left-radius: 10px;
+    border: 1px solid transparent;
+    border-bottom-left-radius: 10px;
+
+    cursor: pointer;
+
+    .cross {
+      animation: spin 3s linear infinite;
+
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
