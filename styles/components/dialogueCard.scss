@@ -10,7 +10,7 @@
   }
 
   &__text {
-    min-height: 170px;
+    height: 165px;
     margin: 15px 0 15px;
 
     display: -webkit-box;
@@ -18,7 +18,7 @@
     -moz-box-orient: vertical;
     -ms-box-orient: vertical;
     box-orient: vertical;
-    -webkit-line-clamp: 12;
+    -webkit-line-clamp: 8;
     -moz-line-clamp: 8;
     -ms-line-clamp: 8;
     line-clamp: 8;
@@ -81,8 +81,9 @@
         }
       }
 
-      &__subtitle {
+      &__link {
         margin: 0;
+        height: 58px;
 
         color: $black;
         font-size: 12px;

@@ -28,7 +28,7 @@ const NewsCardSmall = ({
             className="ncard-small__content__bottom__link"
             href={newsSmallCardLink}
           >
-            Read more
+            <span>Read more</span>
             <svg
               width="15"
               height="10"

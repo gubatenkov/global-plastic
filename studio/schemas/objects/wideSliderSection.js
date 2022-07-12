@@ -16,16 +16,19 @@ export default {
           name: 'title',
           title: 'Slide title',
           type: 'string',
+          validation: Rule => Rule.required().max(100)
         },
         {
           name: 'subtitle',
           title: 'Slide subtitle',
           type: 'string',
+          validation: Rule => Rule.required().max(150)
         },
         {
           name: 'image',
           title: 'Slide image',
           type: 'image',
+          validation: Rule => Rule.required()
         }
       ]
       }]

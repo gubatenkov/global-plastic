@@ -108,6 +108,8 @@
 
       position: relative;
 
+      transition: all 0.2s ease-in-out;
+
       @include screen($sm) {
         padding: 0;
 
@@ -124,6 +126,8 @@
         bottom: 0;
         position: absolute;
         background-color: transparent;
+
+        transition: all 0.2s ease-in-out;
       }
 
       &:hover {

@@ -1,8 +1,4 @@
-import Image from 'next/image';
-
-import { Map, NewsTicker } from 'components';
-
-import arrowRight from 'assets/images/arrowRight.svg';
+import { HeroPanel, Map, NewsTicker } from 'components';
 
 const HeroSection = ({
   data: {
@@ -24,15 +20,11 @@ const HeroSection = ({
               <p className="hero__text__suptitle">{heroSuptitle}</p>
               <h1 className="hero__text__title">{heroTitle}</h1>
             </div>
-            <div className="hero__panel">
-              <div className="hero__panel__text">
-                <strong>{heroBoldPanelText}</strong>
-                <p>{heroPanelText}</p>
-              </div>
-              <a className="hero__panel__link" href={heroURL}>
-                <Image src={arrowRight} alt="black arrow" />
-              </a>
-            </div>
+            <HeroPanel
+              leftText={heroBoldPanelText}
+              centerText={heroPanelText}
+              linkURL={heroURL}
+            />
           </div>
         </div>
       </div>
