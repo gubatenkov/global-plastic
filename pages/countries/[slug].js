@@ -11,6 +11,8 @@ import {
   WasteSection,
   VideoSection,
   TargetSection,
+  PartnersSection,
+  
 } from 'components'
 
 export const getServerSideProps = async () => {
@@ -27,7 +29,7 @@ export const getServerSideProps = async () => {
   };
 
 export default function Country({page}) {
-  const {countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, videoSectionCountryPage, targetSectionCountryPage, wasteSector} = page;
+  const {countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, targetSectionCountryPage, partnersSection} = page;
 
   console.log(wasteSector);
 
@@ -48,6 +50,7 @@ export default function Country({page}) {
         <WasteSection data={wasteSector} />        
         <VideoSection data={videoSectionCountryPage} />
         <TargetSection data={targetSectionCountryPage} />
+        <PartnersSection data={partnersSection} />
       </MainLayout>
     </div>
   )
