@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import getImg from '../../../utils/getImg';
 
 const LocalInsights = ({data}) => {
-  const {localInsightsTitle, localInsightsDescription, levelUrgencyDiagramData, localInsightsDiagramDescription, localInsightsImage} = data;
+  const {localInsightsTitle, localInsightsDescription,localInsightsDiagramTitle,  levelUrgencyDiagramData, localInsightsDiagramDescription, localInsightsImage} = data;
 
   const [temperatureWidth, setTemperatureWidth] = useState(481);
   const [scaleWidth, setScaleWidth] = useState(423);
@@ -39,7 +39,7 @@ const LocalInsights = ({data}) => {
           <h2 className="lektion__title">{localInsightsTitle}</h2>
           <p className="lektion__description">{localInsightsDescription}</p>
           <div className="lektion__diagram">
-          <div className="lektion__diagram--title">Level of urgency</div>
+          <div className="lektion__diagram--title">{localInsightsDiagramTitle}</div>
           <div className="lektion__diagram--image">
             <div className="lektion__temperature">
               <div className="lektion__value" style={{width: `${valueWidth}px`}}></div>
