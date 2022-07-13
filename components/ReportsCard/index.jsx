@@ -30,9 +30,11 @@ const ReportsCard = ({ data }) => {
       <div className="reports-card__imgbox">
         <Image className="reports-card__imgbox__img" src={getImg(reportImage)} alt="img" layout="fill" priority />
       </div>
-      <h3 className="reports-card__title">{reportTitle}</h3>
-      <p className="reports-card__subtitle">{reportSubTitle}</p>
-      <form onSubmit={onSubmit}><input type="submit" value="Download" className="reports-card__download" /></form>
+      <div className="reports-card__content">
+        <h3 className="reports-card__title">{reportTitle}</h3>
+        <p className="reports-card__subtitle">{reportSubTitle}</p>
+        <form onSubmit={onSubmit}><input type="submit" value="Download" className="reports-card__download" /></form>
+      </div>
     </div>
   );
 };

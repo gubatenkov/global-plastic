@@ -6,17 +6,17 @@ const TargetCountrySection = ({
   data: { tectionTitle, tectionText, tectionSuptitle, tectionImg, tectionLink },
 }) => {
   return (
-    <section className="tection">
+    <section className="tcection">
       <div className="container">
-        <div className="tection__inner">
-          <h2 className="tection__title">
+        <div className="tcection__inner">
+          <h2 className="tcection__title">
             {tectionTitle} <br /> {tectionSuptitle}
           </h2>
-          <div className="tection__row">
-            <div className="tection__row-left">
-              <div className="tection__row-left__imgbox">
+          <div className="tcection__row">
+            <div className="tcection__row-left">
+              <div className="tcection__row-left__imgbox">
                 <Image
-                  className="tection__row-left__imgbox__img"
+                  className="tcection__row-left__imgbox__img"
                   src={urlForImage(tectionImg).fit('crop').url()}
                   width={550}
                   height={500}
@@ -25,18 +25,18 @@ const TargetCountrySection = ({
                 />
               </div>
             </div>
-            <div className="tection__row-right">
-              <div className="tection__row-right__text">
-                <h2 className="tection__row-right__text__title">
+            <div className="tcection__row-right">
+              <div className="tcection__row-right__text">
+                <h2 className="tcection__row-right__text__title">
                   {tectionTitle}
                 </h2>
-                <p className="tection__row-right__text__subtitle">
+                <p className="tcection__row-right__text__subtitle">
                   {tectionSuptitle}
                 </p>
-                <p className="tection__row-right__text__descr">{tectionText}</p>
+                <p className="tcection__row-right__text__descr">{tectionText}</p>
               </div>
               <a
-                className="tection__row-right__action"
+                className="tcection__row-right__action"
                 href={tectionLink.tectionLinkURL}
               >
                 {tectionLink.tectionLinkText}
