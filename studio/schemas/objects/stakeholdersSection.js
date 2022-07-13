@@ -21,22 +21,26 @@ export default {
             {
               name: 'stakeholdersCardText',
               type: 'text',
-              title: 'Add card text'
+              title: 'Add card text',
+              validation: Rule => Rule.required().min(1).max(555)
             },
             {
               name: 'stakeholdersCardAuthorName',
               type: 'string',
-              title: 'Add card author name'
+              title: 'Add card author name',
+              validation: Rule => Rule.required().min(1).max(30)
             },
             {
               name: 'stakeholdersCardAuthorJob',
               type: 'string',
-              title: 'Add card author job'
+              title: 'Add card author job',
+              validation: Rule => Rule.required().min(1).max(40)
             },
             {
               name: 'stakeholdersCardAuthorImage',
               type: 'image',
-              title: 'Add card author image'
+              title: 'Add card author image',
+              validation: Rule => Rule.required()
             }
           ]
         }

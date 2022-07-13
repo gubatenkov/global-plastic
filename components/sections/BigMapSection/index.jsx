@@ -1,13 +1,21 @@
-import Image from 'next/image';
+import { useState } from 'react';
 
-import img from 'assets/images/map.png';
+import { HeroPanel } from 'components';
 import MapLegend from 'components/MapLegend';
 
 const BigMapSection = () => {
+  const [isLegendVisible, setLegendVisible] = useState(true);
+
   return (
-    <section className="mection">
-      <Image layout="responsive" src={img} alt="map" />
-      <MapLegend title="Plastics Journey" />
+    <section className={isLegendVisible ? 'mection legend' : 'mection'}>
+      <MapLegend
+        title="Plastics Journey"
+        isVisible={isLegendVisible}
+        toggleLegend={() => setLegendVisible(!isLegendVisible)}
+      />
+      <div className="mection__panel">
+        <HeroPanel leftText="656 days" centerText="till UNEA 6 2024" />
+      </div>
     </section>
   );
 };

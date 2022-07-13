@@ -13,7 +13,7 @@ const PartnersSection = ({ data: { partnersTitle, partnersCards } }) => {
                   <PartnersCard
                     key={idx}
                     title={card.partnersCardTitle}
-                    logos={card.partnersCardImage}
+                    logos={card.partnersCardImages}
                     index={idx + 1}
                   />
                 );

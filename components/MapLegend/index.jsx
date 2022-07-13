@@ -94,7 +94,7 @@ const sections = [
   },
 ];
 
-const MapLegend = ({ title }) => {
+const MapLegend = ({ title, isVisible, toggleLegend }) => {
   return (
     <div className="maplegend__wrap">
       <div className="maplegend">
@@ -123,30 +123,49 @@ const MapLegend = ({ title }) => {
           );
         })}
       </div>
-      <button className="maplegend__btn">
-        <svg
-          className="cross"
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M15 5L5 15"
-            stroke="#212020"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M5 5L15 15"
-            stroke="#212020"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+      <button className="maplegend__btn" onClick={toggleLegend}>
+        {isVisible ? (
+          <svg
+            className="cross"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15 5L5 15"
+              stroke="#212020"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M5 5L15 15"
+              stroke="#212020"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        ) : (
+          <div className="maplegend__btn__text">
+            <svg
+              width="7"
+              height="10"
+              viewBox="0 0 7 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.70711 1.70711C7.09763 1.31658 7.09763 0.683417 6.70711 0.292893C6.31658 -0.0976311 5.68342 -0.0976311 5.29289 0.292893L6.70711 1.70711ZM2 5L1.29289 4.29289L0.585786 5L1.29289 5.70711L2 5ZM5.29289 9.70711C5.68342 10.0976 6.31658 10.0976 6.70711 9.70711C7.09763 9.31658 7.09763 8.68342 6.70711 8.29289L5.29289 9.70711ZM5.29289 0.292893L1.29289 4.29289L2.70711 5.70711L6.70711 1.70711L5.29289 0.292893ZM1.29289 5.70711L5.29289 9.70711L6.70711 8.29289L2.70711 4.29289L1.29289 5.70711Z"
+                fill="#212020"
+              />
+            </svg>
+
+            <span>Map legend</span>
+          </div>
+        )}
       </button>
     </div>
   );

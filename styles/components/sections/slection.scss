@@ -75,17 +75,28 @@
   }
 
   &__line {
-    width: 100%;
+    width: 10px;
     height: auto;
+    margin: 0 auto;
 
-    bottom: 70px;
-    position: absolute;
+    // bottom: 70px;
+    // position: absolute;
 
-    transform: translateX(-20%);
+    // transform: translateX(-20%);
 
-    @include screen($sm) {
-      bottom: 60px;
-      left: calc(2250px / -2);
+    .box {
+      position: relative;
+
+      svg {
+        top: -55px;
+        left: -1150px;
+        position: absolute;
+
+        @include screen($sm) {
+          top: -90px;
+          left: -1350px;
+        }
+      }
     }
   }
 

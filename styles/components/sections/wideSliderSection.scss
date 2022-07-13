@@ -1,5 +1,5 @@
 .wlider {
-  padding: 110px 0 50px;
+  padding: 110px 0 180px;
 
   border-radius: $section-radius;
   background-color: $accent-color;
@@ -14,6 +14,7 @@
   &-bubble {
     width: 170px;
     height: 170px;
+    margin: 0 auto;
 
     background: transparent;
 
@@ -183,6 +184,10 @@
 
       z-index: 12;
 
+      @include screen($sm) {
+        bottom: 53%;
+      }
+
       &__title {
         margin: 0;
 
@@ -214,11 +219,24 @@
   }
 
   &__line {
-    @include screen($sm) {
-      bottom: 0;
-      position: absolute;
-      left: calc(1920px / -2.6);
+    width: 10px;
+
+    margin: 0 auto;
+
+    .box {
+      position: relative;
+
+      > svg {
+        top: -50px;
+        left: -980px;
+        position: absolute;
+      }
     }
+    // @include screen($sm) {
+    //   bottom: 0;
+    //   position: absolute;
+    //   left: calc(1920px / -2.6);
+    // }
   }
 }
 

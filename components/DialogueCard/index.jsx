@@ -7,7 +7,7 @@ import img from 'assets/images/quotes.svg';
 const DialogueCard = ({
   dialogsCardText,
   dialogsCardTitle,
-  dialogsCardSubtitle,
+  dialogsCardLink,
   dialogsCardImage,
 }) => {
   return (
@@ -19,9 +19,12 @@ const DialogueCard = ({
           <p className="dialogue-card__bottom-text__title">
             {dialogsCardTitle}
           </p>
-          <p className="dialogue-card__bottom-text__subtitle">
-            {dialogsCardSubtitle}
-          </p>
+          <a
+            className="dialogue-card__bottom-text__link"
+            href={dialogsCardLink.dialogsCardLinkURL}
+          >
+            {dialogsCardLink.dialogsCardLinkText}
+          </a>
         </div>
         <div className="dialogue-card__bottom-imgbox">
           <Image

@@ -22,17 +22,33 @@ export default {
               name: 'dialogsCardText',
               type: 'text',
               title: 'Add dialog card text',
+              validation: Rule => Rule.required().min(1).max(870)
             }, 
             {
               name: 'dialogsCardTitle',
               type: 'string',
               title: 'Add dialog card title under text',
+              validation: Rule => Rule.required().min(1).max(30)
             }, 
             {
-              name: 'dialogsCardSubtitle',
-              type: 'string',
-              title: 'Add dialog card subtitle under title',
-            }, 
+              name: 'dialogsCardLink',
+              type: 'object',
+              title: 'Add dialog card link text and URL',
+              fields: [
+                {
+                  name: 'dialogsCardLinkText',
+                  type: 'string',
+                  title: 'Add title',
+                  validation: Rule => Rule.required().min(1).max(190)
+                },
+                {
+                  name: 'dialogsCardLinkURL',
+                  type: 'url',
+                  title: 'Add url',
+                  validation: Rule => Rule.required()
+                }
+              ]
+            },
             {
               name: 'dialogsCardImage',
               type: 'image',

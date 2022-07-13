@@ -17,15 +17,7 @@ const PartnersCard = ({ title, logos, index }) => {
         <div className="parection-card__list">
           {logos.map((img, idx) => {
             return (
-              <div
-                className="parection-card__list-imgbox"
-                key={idx}
-                style={
-                  partners.length > 1
-                    ? { flex: '0 0 21%' }
-                    : { flex: '1 0 21%' }
-                }
-              >
+              <div className="parection-card__list-imgbox" key={idx}>
                 <Image
                   className="parection-card__list-imgbox__img"
                   key={idx}

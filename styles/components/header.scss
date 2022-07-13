@@ -52,6 +52,8 @@
 
       position: relative;
 
+      transition: all 0.2s ease-in-out;
+
       &::after {
         content: '';
         width: 100%;
@@ -64,6 +66,8 @@
         background-color: $black;
 
         opacity: 0;
+
+        transition: all 0.2s ease-in-out;
       }
 
       &:hover {
