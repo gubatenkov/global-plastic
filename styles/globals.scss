@@ -58,6 +58,7 @@ a {
 @import 'components/videoPopup';
 @import 'components/mobileMenu';
 @import 'components/mapLegend';
+@import 'components/reportsCard';
 
 // SECTIONS
 @import 'components/sections/hero';
@@ -83,6 +84,8 @@ a {
 @import 'components/sections/ecoSentiment';
 @import 'components/sections/localInsights';
 @import 'components/sections/wasteSection';
+@import 'components/sections/targetCountrySection';
+@import 'components/sections/reportsSection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';

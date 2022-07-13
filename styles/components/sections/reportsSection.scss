@@ -1,0 +1,59 @@
+.rektion {
+  background-color: $black;
+  border-radius: 16px;
+
+  @include screen($sm) {
+    border-radius: 8px;
+  }
+
+  &__center {
+    position: relative;
+    max-width: 1440px;
+    padding: 141px 96px 91px;
+    margin: 0 auto;
+    @include screen($lg) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 48px 0;
+    padding: 0;
+    color: $white;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    @include screen($lg) {
+      text-align: center;
+    }
+    @include screen($sm) {
+      font-size: 32px;
+      line-height: 32px;
+      margin: 0 0 24px 0;
+    }
+  }
+
+  &__slider {
+    margin: 0;
+    margin-bottom: 48px;
+
+    @include screen($sm) {
+      margin-bottom: 55px;
+    }   
+  }
+
+  &__slider-nav {
+    display: flex;
+    justify-content: center;
+    width: 215px;
+    margin: 0 auto;
+
+    @include screen($lg) {
+      width: 200px;
+    }
+
+    @include screen($sm) {
+      top: 558px;
+    }
+  }
+}

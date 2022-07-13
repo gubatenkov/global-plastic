@@ -44,3 +44,6 @@ export {default as StakeholderEngagementSection } from './sections/StakeholderEn
 export {default as EcoSentiment } from './sections/EcoSentiment'
 export {default as LocalInsights } from './sections/LocalInsights'
 export {default as WasteSection } from './sections/WasteSection'
+export {default as TargetCountrySection } from './sections/TargetCountrySection'
+export {default as ReportsCard } from './ReportsCard'
+export {default as ReportsSection } from './sections/ReportsSection'
