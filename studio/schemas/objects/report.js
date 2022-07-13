@@ -9,8 +9,13 @@ export default {
       type: 'image',
     },
     {
-      name: 'reportName',
-      title: 'Report Name',
+      name: 'reportTitle',
+      title: 'Report Title',
+      type: 'string',
+    },
+    {
+      name: 'reportSubTitle',
+      title: 'Report Sub Title',
       type: 'string',
     },
     {

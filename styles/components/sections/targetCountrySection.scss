@@ -1,0 +1,188 @@
+.tcection {
+  margin: 5px 0;
+  padding: 115px 0 30px;
+
+  background: $black;
+  border-radius: $section-radius;
+
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-image: url('../../../assets/images/targetWaves.svg');
+
+  @include screen($sm) {
+    padding: 60px 0;
+    border-radius: $section-radius-mobile;
+  }
+
+  &__title {
+    display: none;
+    margin: 0 0 40px 0;
+
+    color: $white;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    font-style: normal;
+
+    @include screen($sm) {
+      display: block;
+    }
+  }
+
+  &__row {
+    margin: 0 0 107px 0;
+
+    gap: 110px;
+    display: flex;
+
+    @include screen($sm) {
+      margin: 0 0 70px 0;
+
+      gap: 35px;
+      flex-direction: column;
+    }
+
+    &-left {
+      position: relative;
+
+      &::before {
+        content: '';
+
+        display: block;
+
+        width: 130px;
+        height: 203px;
+
+        top: 25px;
+        left: -15px;
+        position: absolute;
+
+        background-repeat: no-repeat;
+        background-image: url('../../../assets/images/element.svg');
+
+        @include screen($sm) {
+          transform: rotate(-25deg) translate(35px, -5px);
+        }
+      }
+
+      &__imgbox {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+
+        overflow: hidden;
+        border-radius: 50% 80% 50% 78% / 84% 63% 44% 44%;
+
+        @include screen($sm) {
+          width: 85%;
+          margin: 0 auto;
+        }
+
+        &__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &-right {
+      &__text {
+        width: 100%;
+        max-width: 500px;
+
+        &__title {
+          margin: 0 0 15px 0;
+
+          color: $white;
+          font-size: 48px;
+          font-weight: 600;
+          line-height: 48px;
+          font-style: normal;
+
+          @include screen($sm) {
+            display: none;
+          }
+        }
+
+        &__subtitle {
+          margin: 0 0 35px 0;
+
+          color: $white;
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 32px;
+          font-style: normal;
+
+          @include screen($sm) {
+            display: none;
+          }
+        }
+
+        &__descr {
+          margin: 0 0 50px 0;
+
+          color: $white;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 32px;
+          font-style: normal;
+
+          opacity: 0.8;
+
+          @include screen($sm) {
+            margin: 0 0 35px 0;
+
+            font-size: 14px;
+            line-height: 27px;
+          }
+        }
+      }
+
+      &__action {
+        padding: 15px 30px 15px 25px;
+
+        gap: 20px;
+        display: inline-flex;
+        align-items: center;
+
+        color: $white;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 30px;
+        font-style: normal;
+
+        border-radius: 8px;
+        background-color: $black;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+
+        cursor: pointer;
+
+        transition: all 0.2s ease-in;
+
+        @include screen($sm) {
+          margin: 0 auto;
+
+          font-size: 14px;
+          line-height: 27px;
+        }
+
+        &:hover {
+          color: $black;
+
+          background-color: $white;
+          border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        &:active {
+          color: $white;
+
+          background: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}

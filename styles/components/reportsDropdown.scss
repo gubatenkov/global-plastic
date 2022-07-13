@@ -1,0 +1,108 @@
+.dropdown {
+  position: relative;
+  padding: 11px 16px;
+  min-width: 234px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: $white;
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 8px;  
+  background-color: transparent;  
+  
+  &+& {
+    margin-left: 16px;
+    margin-right: -2px;
+  }
+
+  &__header {    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $white;
+    cursor: pointer;
+
+    &.checked {
+      color: $accent-color
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    background-image: url('../../assets/images/dropdownIcon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    transition: .3s;
+  }
+
+  &__icon.open {
+    transform: rotate(-90deg);
+  }
+
+  &__body {
+    display: none;
+    position: absolute;
+    left: -1px;
+    width: calc(100% + 2px);
+    top: 43px;
+    z-index: 2;
+    padding: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 0 0 8px 8px;
+    background-color: $black; 
+  }
+
+  &__body.open {
+    display: block;
+  }
+
+  &__item {
+    position: relative;
+    padding: 4px;
+    padding-left: 30px;
+    opacity: .8;
+    transition: .3s;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 13px;
+      left: 0px;
+      width: 12px;
+      height: 12px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 2px;
+    }
+
+    &:hover::before {
+      border-color: $accent-color;
+    }
+
+    &.checked::before {
+      content: "✔";
+      color: $black;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 12px;
+      background-color: $accent-color;
+    }
+  }
+
+
+
+  &__item:hover {
+    cursor: pointer;
+  }
+
+  &__item.selected {
+    opacity: 1;
+  }
+}
+
