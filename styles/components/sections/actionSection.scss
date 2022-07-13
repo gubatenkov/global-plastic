@@ -1,0 +1,78 @@
+.action {
+  background-color: $country-bg;
+
+  &__center {
+    position: relative;
+    max-width: 1440px;
+    padding: 158px 96px;
+    margin: 0 auto;
+
+    @include screen($lg) {
+      padding: 76px 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 48px 0;
+    padding: 0;
+    color: $black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    @include screen($lg) {
+      text-align: center;
+    }
+    @include screen($sm) {
+      font-size: 32px;
+      line-height: 32px;
+      margin: 0 auto 24px;
+    }
+  }
+
+  &__slider {
+    margin: 0;
+
+    @include screen($lg) {
+      margin-bottom: 72px;
+    }  
+
+    @include screen($sm) {
+      margin-bottom: 55px;
+    }   
+  }
+
+  &__slider-nav {
+    position: absolute;
+    top: 164px;
+    right: 98px;
+    display: flex;
+    justify-content: center;
+    width: 215px;
+
+    @include screen($lg) {
+      top: 598px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
+      width: 200px;
+    }
+
+    @include screen($sm) {
+      top: 548px;
+    }
+  }
+}
+
+#aktionSlider {
+  display: flex;
+
+  @include screen(630px) {
+    max-width: 395px;
+  }
+
+  @include screen($sm) {
+    max-width: 343px;
+  }
+}
+
+

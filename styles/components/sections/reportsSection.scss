@@ -21,6 +21,15 @@
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 48px;
+
+    @include screen($xxl) {
+      flex-direction: column;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__container {
+    display: flex;
   }
 
   &__title {
@@ -31,9 +40,13 @@
     font-size: 48px;
     font-weight: 600;
     line-height: 48px;
-    @include screen($lg) {
+
+    @include screen($xxl) {
+      margin-bottom: 24px;
+      margin-left: auto;
       text-align: center;
     }
+
     @include screen($sm) {
       font-size: 32px;
       line-height: 32px;
@@ -63,5 +76,14 @@
     @include screen($sm) {
       top: 558px;
     }
+  }
+}
+
+#recktionSlider {
+  @include screen(630px) {
+    max-width: 395px;
+  }
+  @include screen($sm) {
+    max-width: 343px;
   }
 }
