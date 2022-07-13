@@ -24,7 +24,6 @@ const ReportsDropdown = ({dropdownName, dropdownData}) => {
     items.forEach(item => item.classList.remove("checked"));
     e.target.classList.add("checked");
     header.classList.add("checked");
-    console.log(e.target.parentElement.previousElementSibling);
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
   }
   

@@ -7,8 +7,6 @@ const ReportsSection = ({data}) => {
   const regions = [...new Set(data.map(el => el.reportRegion))];
   const countries = [...new Set(data.map(el => el.reportCountry))];
 
-  console.log(regions, countries)
-
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [centeredSlide, setCenteredSlide] = useState(false);
