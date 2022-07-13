@@ -6,6 +6,8 @@ import getFile from '../../utils/getFile';
 const ReportsCard = ({ data }) => {
   const {reportCountry, reportFile, reportImage, reportTitle, reportSubTitle, reportRegion} = data;
 
+  console.log(reportCountry)
+
   const onSubmit = async (event) => {
     event.preventDefault();
 

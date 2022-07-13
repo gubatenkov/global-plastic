@@ -4,6 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
 const ReportsSection = ({data}) => {
+  const regions = [...new Set(data.map(el => el.reportRegion))];
+  const countries = [...new Set(data.map(el => el.reportCountry))];
+
+  console.log(regions, countries)
+
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [centeredSlide, setCenteredSlide] = useState(false);
@@ -50,8 +55,8 @@ const ReportsSection = ({data}) => {
       <div className="rektion__center">
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>
-          <ReportsDropdown dropdownName='Region' />
-          <ReportsDropdown dropdownName='Country' />
+          <ReportsDropdown dropdownName='Region' dropdownData={regions} />
+          <ReportsDropdown dropdownName='Country' dropdownData={countries} />
         </div>
         <div className="rektion__slider">
           <Swiper

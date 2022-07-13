@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 
 const data = ["Latin America", "Middle East", "South-East Asia", "Australia & Oceaniar"];
 
-const ReportsDropdown = ({dropdownName}) => {
+const ReportsDropdown = ({dropdownName, dropdownData}) => {
+
   const [isOpen, setOpen] = useState(false);
-  const [items, setItem] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null);
 
   const dropdown = useRef(null);
@@ -31,12 +31,13 @@ const ReportsDropdown = ({dropdownName}) => {
   return (
     <div className='dropdown' ref={dropdown}>
       <div className='dropdown__header' onClick={toggleDropdown}>
-        {selectedItem ? items[selectedItem] : dropdownName}
+        {selectedItem ? dropdownData[selectedItem] : dropdownName}
         <i className={`dropdown__icon ${isOpen && "open"}`}></i>   
       </div>
       <div className={`dropdown__body ${isOpen && 'open'}`}>
-        {items.map((item, index) => (
-          <div className="dropdown__item" onClick={e => handleItemClick(e, e.target.id)} id={index} key={index}>
+        {dropdownData.map((item, index) => (
+          <div className="dropdown__item" id={index} key={index}
+          onClick={e => handleItemClick(e, e.target.id)}>
             {item}
           </div>
         ))}

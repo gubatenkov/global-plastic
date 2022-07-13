@@ -13,7 +13,7 @@ const PartnersCard = ({ title, logos, index }) => {
 
   return (
     <li className="parection__cards__item">
-      <div className="parection-card">
+      {/* <div className="parection-card">
         <div className="parection-card__list">
           {logos.map((img, idx) => {
             return (
@@ -44,7 +44,7 @@ const PartnersCard = ({ title, logos, index }) => {
           <p className="parection-card__info__type">{title}</p>
           <p className="parection-card__info__num">{getIndex(index)}</p>
         </div>
-      </div>
+      </div> */}
     </li>
   );
 };
