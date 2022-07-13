@@ -28,10 +28,9 @@ export const getServerSideProps = async () => {
     };
   };
 
-export default function Country({page}) {
+export default function Country({ page }) {
   const {countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, targetSectionCountryPage, partnersSection} = page;
 
-  console.log(wasteSector);
 
   return (
     <div className="country">

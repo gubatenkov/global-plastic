@@ -22,7 +22,7 @@ export default {
               title: 'Partners Card Title'
             },
             {
-              name: 'partnersCardImage',
+              name: 'partnersCardImages',
               type: 'array',
               title: 'Partner Card Image',
               of: [
