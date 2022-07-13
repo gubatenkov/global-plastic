@@ -8,11 +8,23 @@
   color: $white;
   border: 1px solid rgba(255, 255, 255, .4);
   border-radius: 8px;  
-  background-color: transparent;  
+  background-color: transparent;
+  
+  @include screen(520px) {
+    width: 50%;
+    min-width: 167px;
+    height: 40px;
+    padding: 6px 11px 6px 24px;
+  }
   
   &+& {
     margin-left: 16px;
     margin-right: -2px;
+
+    @include screen(520px) {
+      margin-left: 12px;
+      margin-right: 0;
+    }
   }
 
   &__header {    

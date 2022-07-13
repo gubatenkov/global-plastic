@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
+import { SliderNav, ActionCard } from 'components';
 
-const ReportsSection = ({data}) => {
-  const regions = [...new Set(data.map(el => el.reportRegion))];
-  const countries = [...new Set(data.map(el => el.reportCountry))];
-
+const ActionSection = ({data}) => {
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [centeredSlide, setCenteredSlide] = useState(false);
@@ -23,6 +20,7 @@ const ReportsSection = ({data}) => {
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined' && window.screen.width <= 630) {
       setSlidesPerView(1);
+      setCenteredSlide(true);
     } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
       setSlidesPerView(2);
       setCenteredSlide(true);
@@ -40,27 +38,21 @@ const ReportsSection = ({data}) => {
     }
   }, []);
 
-  const reportsCards = data.map((item, index) => {
+  const actionCards = data.map((item, index) => {
     return (
       <SwiperSlide  key={index}>
-        <ReportsCard data={item} />
+        <ActionCard data={item} />
       </SwiperSlide>
     );
   });
 
   return (
-    <section className="rektion">
-      <div className="rektion__center">
-        <div className="rektion__header">
-          <h2 className="rektion__title">Reports & Guides</h2>
-          <div className="rektion__container">
-            <ReportsDropdown dropdownName='Region' dropdownData={regions} />
-            <ReportsDropdown dropdownName='Country' dropdownData={countries} />
-          </div>
-        </div>
-        <div className="rektion__slider">
+    <section className="aktion">
+      <div className="action__center">
+        <h2 className="action__title">Spotlight on Action</h2>
+        <div className="action__slider">
           <Swiper
-            id="recktionSlider"
+            id="aktionSlider"            
             slidesPerView={slidesPerView}
             spaceBetween={32}
             centeredSlides={centeredSlide}
@@ -68,17 +60,17 @@ const ReportsSection = ({data}) => {
             onSlideChange={updateActiveIndex}
             loop={true}
           >
-            {reportsCards}
+            {actionCards}
               
           </Swiper>
         </div>
-        <div className="rektion__slider-nav">
+        <div className="action__slider-nav">
           <SliderNav
-            total={reportsCards?.length ?? 0}
+            total={actionCards?.length ?? 0}
             current={activeIndex}
             onPrevClick={() => swiper.slidePrev(300)}
             onNextClick={() => swiper.slideNext(300)}
-            theme="light"
+            theme="dark"
           />
         </div>
       </div>
@@ -86,4 +78,4 @@ const ReportsSection = ({data}) => {
   );
 };
 
-export default ReportsSection;
+export default ActionSection;
