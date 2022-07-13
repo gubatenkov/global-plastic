@@ -44,7 +44,10 @@ const Header = ({ isMobNavVisible, toggleMobNav }) => {
           </a>{' '}
         </li>
       </ul>
-      <a className="header__link" href="#">
+      <a
+        className="header__link"
+        href="https://oceanplasticsnetwork.com/member#network"
+      >
         Join the Dialogues
       </a>
       <div className="header__wave">
