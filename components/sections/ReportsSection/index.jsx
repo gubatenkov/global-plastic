@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { SliderNav, ReportsCard } from 'components';
+import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
 const ReportsSection = ({data}) => {
   const [swiper, setSwiper] = useState(null);
@@ -48,7 +48,11 @@ const ReportsSection = ({data}) => {
   return (
     <section className="rektion">
       <div className="rektion__center">
-        <h2 className="rektion__title">Reports & Guides</h2>
+        <div className="rektion__header">
+          <h2 className="rektion__title">Reports & Guides</h2>
+          <ReportsDropdown dropdownName='Region' />
+          <ReportsDropdown dropdownName='Country' />
+        </div>
         <div className="rektion__slider">
           <Swiper
             id="uaecktionSlider"

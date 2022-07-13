@@ -16,8 +16,16 @@
     }
   }
 
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
   &__title {
-    margin: 0 0 48px 0;
+    margin: 0;
+    margin-right: auto;
     padding: 0;
     color: $white;
     font-size: 48px;
