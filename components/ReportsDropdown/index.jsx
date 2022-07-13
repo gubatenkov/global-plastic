@@ -1,28 +1,43 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-const data = [{id: 0, label: "Istanbul, TR (AHL)"}, {id: 1, label: "Paris, FR (CDG)"}];
+const data = ["Latin America", "Middle East", "South-East Asia", "Australia & Oceaniar"];
 
 const ReportsDropdown = ({dropdownName}) => {
   const [isOpen, setOpen] = useState(false);
   const [items, setItem] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const dropdown = useRef(null);
+  useEffect(() => {
+    const onClick = e => dropdown.current.contains(e.target) || setOpen(false);
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
   
-  const toggleDropdown = () => setOpen(!isOpen);
+  const toggleDropdown = () => {
+    setOpen(!isOpen);    
+  };
   
-  const handleItemClick = (id) => {
+  const handleItemClick = (e, id) => {
+    const items = Array.from(e.target.parentElement.children);
+    const header = e.target.parentElement.previousElementSibling;
+    items.forEach(item => item.classList.remove("checked"));
+    e.target.classList.add("checked");
+    header.classList.add("checked");
+    console.log(e.target.parentElement.previousElementSibling);
     selectedItem == id ? setSelectedItem(null) : setSelectedItem(id);
   }
   
   return (
-    <div className='dropdown'>
+    <div className='dropdown' ref={dropdown}>
       <div className='dropdown__header' onClick={toggleDropdown}>
-        {selectedItem ? items.find(item => item.id == selectedItem).label : dropdownName}
+        {selectedItem ? items[selectedItem] : dropdownName}
         <i className={`dropdown__icon ${isOpen && "open"}`}></i>   
       </div>
       <div className={`dropdown__body ${isOpen && 'open'}`}>
-        {items.map(item => (
-          <div className="dropdown__item" onClick={e => handleItemClick(e.target.id)} id={item.id}>
-            {item.label}
+        {items.map((item, index) => (
+          <div className="dropdown__item" onClick={e => handleItemClick(e, e.target.id)} id={index} key={index}>
+            {item}
           </div>
         ))}
       </div>
