@@ -36,6 +36,15 @@ a {
   max-width: var(--container-width);
 }
 
+input, 
+button {
+  font-size: 16px;
+  font-family: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  font-weight: normal;
+}
+
 // PAGES
 @import 'pages/index';
 

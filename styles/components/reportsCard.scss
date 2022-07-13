@@ -59,19 +59,24 @@
     }
   }
   
-  &__link {
+  &__download {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex: 0 0 auto;
     width: 154px;
     height: 56px;
-    padding: 16px;
+    padding-left: 24px;   
     margin-left: 24px;
     background-color: transparent;
+    background-image: url('../../assets/images/arrowDown.svg');
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position: 111px 11px;
     border: 1px solid rgba(33, 32, 32, 0.4);
     border-radius: 11px;
     font-weight: 700;
+    font-size: 16px;
     color: $black; 
     
     &:hover {
@@ -81,7 +86,7 @@
 
     &:active {
       color: $white;
-      background: rgba(33, 32, 32, 0.8);
+      background-color: rgba(33, 32, 32, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
@@ -89,12 +94,6 @@
       justify-content: center;
       width: 48px;
       height: 48px;
-    }
-
-    &__span {  
-      @include screen($lg) {
-        display: none;
-      }
-    }      
+    }     
   } 
 }
