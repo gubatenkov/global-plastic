@@ -28,9 +28,9 @@ const ReportsSection = ({data}) => {
     if (typeof window !== 'undefined' && window.screen.width <= 630) {
       setSlidesPerView(1);
     } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
-      setSlidesPerView(filterData.length < 2 ? filterData.length : 2); 
-    } else {
-      setSlidesPerView(filterData.length < 3 ? filterData.length : 3);
+      setSlidesPerView(2);
+    } else if (typeof window !== 'undefined' && window.screen.width > 1200) {
+      setSlidesPerView(3);
     }
   };
 
@@ -71,9 +71,9 @@ const ReportsSection = ({data}) => {
         <div className="rektion__slider">
           <Swiper
             id="recktionSlider"
-            slidesPerView={slidesPerView}
+            slidesPerView={filterData.length < slidesPerView ? filterData.length : slidesPerView }
             spaceBetween={32}
-            centeredSlides={true}
+            centeredSlides={false}
             onSwiper={(context) => handleContext(context)}
             onSlideChange={updateActiveIndex}
             loop={true}
