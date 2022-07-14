@@ -5,7 +5,7 @@ const NewsTicker = ({ className = '', items }) => {
   return (
     <div className={className.length ? `ticker ${className}` : 'ticker'}>
       <ul className="ticker__list">
-        {items.map((lineText, idx) => {
+        {items.map(({ heroNewsLineText, heroNewsLineURL }, idx) => {
           return (
             <li
               className="ticker__list__item"
@@ -17,7 +17,9 @@ const NewsTicker = ({ className = '', items }) => {
               running-left ${duration}s linear ${delayFn(idx)}s infinite`,
               }}
             >
-              {lineText}
+              <a className="ticker__list__link" href={heroNewsLineURL}>
+                {heroNewsLineText}
+              </a>
             </li>
           );
         })}

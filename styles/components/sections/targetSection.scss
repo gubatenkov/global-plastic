@@ -30,10 +30,15 @@
     background-image: url('../../../assets/images/targetLine.svg');
 
     z-index: 1;
+
+    @include screen($sm) {
+      bottom: 35px;
+    }
   }
 
   @include screen($sm) {
     padding: 60px 0;
+
     border-radius: $section-radius-mobile;
   }
 
@@ -184,6 +189,10 @@
         cursor: pointer;
 
         transition: all 0.2s ease-in;
+
+        position: relative;
+
+        z-index: 2;
 
         @include screen($sm) {
           margin: 0 auto;

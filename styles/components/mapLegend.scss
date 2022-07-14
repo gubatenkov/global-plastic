@@ -18,6 +18,11 @@
     .legend & {
       transform: translateX(0);
     }
+
+    @include screen($sm) {
+      right: 15px;
+      bottom: 100px;
+    }
   }
 
   &__title {

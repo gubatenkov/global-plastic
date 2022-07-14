@@ -10,7 +10,7 @@
   background-image: url('../../assets/images/footerWaves.svg');
 
   @include screen($sm) {
-    padding: 60px 15px 20px 15px;
+    padding: 60px 0 15px;
 
     background-image: none;
     border-radius: $section-radius-mobile;
@@ -34,6 +34,10 @@
 
     &--itemsStart {
       align-items: flex-start;
+
+      @include screen($sm) {
+        gap: 65px;
+      }
     }
 
     &-right {

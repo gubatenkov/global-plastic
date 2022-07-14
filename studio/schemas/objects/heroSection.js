@@ -32,7 +32,23 @@ export default {
       name: 'heroNewsLine',
       title: 'Section news line items',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [
+        { 
+          type: 'object',
+          fields: [
+        {
+          name: 'heroNewsLineText',
+          title: 'Add news line text',
+          type: 'string',
+          validation: Rule => Rule.required().min(5).max(100),
+        },
+        { 
+          name: 'heroNewsLineURL',
+          title: 'Add news line URL',
+          type: 'url', 
+          validation: Rule => Rule.required() 
+        }]
+      }],
       validation: Rule => Rule.required().min(4)
     }
   ],
