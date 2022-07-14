@@ -32,7 +32,8 @@ export default {
       name: 'heroNewsLine',
       title: 'Section news line items',
       type: 'array',
-      of: [{ type: 'string' }]
+      of: [{ type: 'string' }],
+      validation: Rule => Rule.required().min(4)
     }
   ],
 }
