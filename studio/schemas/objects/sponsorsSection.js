@@ -11,7 +11,8 @@ export default {
     { name: 'sponsorsImages',
       type: 'array',
       title: 'Add sponsors logos',
-      of: [{ type: 'image' }] 
+      of: [{ type: 'image' }],
+      validation: Rule => Rule.required().min(7)
     }
   ]
 }
