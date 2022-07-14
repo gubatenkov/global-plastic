@@ -55,6 +55,7 @@
   }
 
   &__slider {
+    min-height: 386px;
     margin: 0;
     margin-bottom: 48px;
 
@@ -76,6 +77,19 @@
     @include screen($sm) {
       top: 558px;
     }
+  }
+
+  &__none {
+    display: none;
+  }
+
+  &__cards--container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 794px;
+    overflow-y: hidden;
   }
 }
 

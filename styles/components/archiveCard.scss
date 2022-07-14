@@ -1,0 +1,62 @@
+.archive-card { 
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & li:last-child .archive-card__item {
+      border-color: transparent;
+    }
+  } 
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 31px 0;
+    border-bottom: 1px solid #d2d2d2;
+
+    @include screen($sm) {
+      align-items: flex-start;
+      padding: 15px 0;
+    }
+  }
+
+  &__item * {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+
+    @include screen($sm) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+
+  &__header {
+    padding-bottom: 16px;
+  }
+
+  &__header * {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  &__date {
+    width: 13%;
+    min-width: 65px;
+  }
+
+  &__title {
+    width: 54%;
+    min-width: 125px;
+  }
+
+  &__series {
+    width: 28%;
+    min-width: 95px;
+  }
+}
