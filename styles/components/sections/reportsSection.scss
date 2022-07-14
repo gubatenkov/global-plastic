@@ -78,6 +78,19 @@
       top: 558px;
     }
   }
+
+  &__none {
+    display: none;
+  }
+
+  &__cards--container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 794px;
+    overflow-y: hidden;
+  }
 }
 
 #recktionSlider {
