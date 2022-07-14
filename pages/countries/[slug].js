@@ -14,7 +14,7 @@ import {
   PartnersSection,
   ReportsSection,
   ActionSection,
-  
+  ArchiveSection  
 } from 'components'
 
 export const getServerSideProps = async () => {
@@ -30,8 +30,10 @@ export const getServerSideProps = async () => {
     };
   };
 
-export default function Country({ page }) {
-  const {countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, targetSectionCountryPage, partnersSection} = page;
+  export default function Country({page}) {
+    const {pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider} = page;
+
+  // console.log(archiveSlider)
 
   return (
     <div className="country">
@@ -53,6 +55,7 @@ export default function Country({ page }) {
         <PartnersSection data={partnersSection} />
         <ReportsSection data={reportsGuidesSlider} />
         <ActionSection data={actionSlider} />
+        <ArchiveSection data={archiveSlider} />
       </MainLayout>
     </div>
   )
