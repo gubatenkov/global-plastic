@@ -9,6 +9,12 @@ export default {
       title: 'Add news section title'
     },
     {
+      name: 'newsSectionLink',
+      type: 'url',
+      title: 'Add news section "See All" link URL',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'newsBigCard',
       type: 'object',
       title: 'Add big card text and link',

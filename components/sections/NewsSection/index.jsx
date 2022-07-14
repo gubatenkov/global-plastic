@@ -1,7 +1,13 @@
 import { NewsCardBig, NewsCardSmall } from 'components';
 
 const NewsSection = ({
-  data: { newsSectionTitle, newsBigCard, newsSmallCard, newsSmall2Card },
+  data: {
+    newsSectionTitle,
+    newsSectionLink,
+    newsBigCard,
+    newsSmallCard,
+    newsSmall2Card,
+  },
 }) => {
   return (
     <section className="nection">
@@ -14,7 +20,7 @@ const NewsSection = ({
           <div className="nection__right">
             <div className="nection__right-top">
               <h3 className="nection__right-top__title">Latest news</h3>
-              <a className="nection__right-top__btn" href="#">
+              <a className="nection__right-top__btn" href={newsSectionLink}>
                 See all
               </a>
             </div>
@@ -25,7 +31,7 @@ const NewsSection = ({
           </div>
         </div>
         <div className="nection__link">
-          <a href="#" className="nection__right-top__btn">
+          <a href={newsSectionLink} className="nection__right-top__btn">
             See all
           </a>
         </div>
