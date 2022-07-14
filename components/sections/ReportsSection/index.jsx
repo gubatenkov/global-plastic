@@ -9,8 +9,12 @@ const ReportsSection = ({data}) => {
 
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
-  const [centeredSlide, setCenteredSlide] = useState(false);
   const [activeIndex, setActiveIndex] = useState(1);
+  const [reportRegion, setReportRegion] = useState(null);
+  const [reportCountry, setReportCountry] = useState(null);
+
+  const filterData = data.filter(el => reportRegion ? el.reportRegion === reportRegion : el)
+                         .filter(el => reportCountry ? el.reportCountry === reportCountry : el);
 
   const updateActiveIndex = (context) => {
     setActiveIndex(context.realIndex + 1);
@@ -24,11 +28,9 @@ const ReportsSection = ({data}) => {
     if (typeof window !== 'undefined' && window.screen.width <= 630) {
       setSlidesPerView(1);
     } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
-      setSlidesPerView(2);
-      setCenteredSlide(true);
+      setSlidesPerView(filterData.length < 2 ? filterData.length : 2); 
     } else {
-      setSlidesPerView(3);
-      setCenteredSlide(false);
+      setSlidesPerView(filterData.length < 3 ? filterData.length : 3);
     }
   };
 
@@ -40,7 +42,7 @@ const ReportsSection = ({data}) => {
     }
   }, []);
 
-  const reportsCards = data.map((item, index) => {
+  const reportsCards = filterData.map((item, index) => {
     return (
       <SwiperSlide  key={index}>
         <ReportsCard data={item} />
@@ -48,14 +50,22 @@ const ReportsSection = ({data}) => {
     );
   });
 
+  const transferData = (event, dropdownData, dropdownName) => {
+    if(dropdownName === 'reportRegion') {
+      setReportRegion(dropdownData[event.target.id] || null)
+    } else if(dropdownName === 'reportCountry') {
+      setReportCountry(dropdownData[event.target.id] || null)
+    } 
+  }
+
   return (
     <section className="rektion">
       <div className="rektion__center">
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>
           <div className="rektion__container">
-            <ReportsDropdown dropdownName='Region' dropdownData={regions} />
-            <ReportsDropdown dropdownName='Country' dropdownData={countries} />
+            <ReportsDropdown dropdownName='reportRegion' dropdownData={regions} transferData={transferData} />
+            <ReportsDropdown dropdownName='reportCountry' dropdownData={countries} transferData={transferData}/>
           </div>
         </div>
         <div className="rektion__slider">
@@ -63,7 +73,7 @@ const ReportsSection = ({data}) => {
             id="recktionSlider"
             slidesPerView={slidesPerView}
             spaceBetween={32}
-            centeredSlides={centeredSlide}
+            centeredSlides={true}
             onSwiper={(context) => handleContext(context)}
             onSlideChange={updateActiveIndex}
             loop={true}

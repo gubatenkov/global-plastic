@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { SliderNav, ArchiveCard } from 'components';
 
 const ArchiveSection = ({data}) => {
-  console.log(data)
   const [swiper, setSwiper] = useState(null);
   const [activeIndex, setActiveIndex] = useState(1);
 
