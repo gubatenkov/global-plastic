@@ -40,7 +40,7 @@ export default {
           name: 'heroNewsLineText',
           title: 'Add news line text',
           type: 'string',
-          validation: Rule => Rule.required().min(5).max(100),
+          validation: Rule => Rule.required().min(50),
         },
         { 
           name: 'heroNewsLineURL',
