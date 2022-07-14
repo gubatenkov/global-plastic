@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import viewAll from '../../../utils/viewAll'
 
 import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
@@ -105,7 +106,12 @@ const ReportsSection = ({data}) => {
           </div>
         </div>
         <div className={isMobile ? "rektion__cards--container" : "rektion__none"}>
-          {renderCards}
+          <div className="rektion__wrapper">
+            <div className="rektion__cards">
+              {renderCards}
+            </div>
+          </div>
+          <button className="rektion__button" onClick={viewAll}>View all</button>          
         </div>
       </div>
     </section>
