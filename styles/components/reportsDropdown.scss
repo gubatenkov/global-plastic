@@ -62,12 +62,14 @@
     top: 43px;
     z-index: 2;
     padding: 16px;
+    padding-bottom: 8px;
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
     border: 1px solid rgba(255, 255, 255, .4);
     border-radius: 0 0 8px 8px;
-    background-color: $black; 
+    background-color: $black;
+
   }
 
   &__body.open {
@@ -81,6 +83,10 @@
     opacity: .8;
     transition: .3s;
     cursor: pointer;
+
+    &:last-child {
+      padding-bottom: 16px;
+    }
 
     &::before {
       content: '';
@@ -107,14 +113,29 @@
     }
   }
 
-
-
   &__item:hover {
     cursor: pointer;
   }
 
   &__item.selected {
     opacity: 1;
+  }
+
+  &__reset {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-top: 16px;
+    text-align: center;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -12px; right: -12px; top: 10px;
+      height: 1px;
+      background-color: rgba(255, 255, 255, .4);
+    }
   }
 }
 
