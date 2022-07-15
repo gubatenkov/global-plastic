@@ -29,10 +29,16 @@
   }
 
   &__slider--wrapper {
-    max-width: 100%;    
-    padding-left: calc(50vw - 624px);
+    max-width: 100%;
     margin-bottom: 104px;  
     overflow-x: hidden;
+
+    @include screen(1440px) {
+      max-width: 100%;    
+      padding-left: calc(50vw - 624px);
+      margin-bottom: 104px;  
+      overflow-x: hidden;
+    }
 
     @include screen(1200px) {
       width: 100%;
@@ -53,7 +59,12 @@
   }
 
   &__slider {
-    width: 1888px;
+    width: 3808px;    
+    margin: 0 auto;
+  
+    @include screen(1440px) {
+      width: 1888px;
+    }
 
     @include screen(1200px) {
       width: 100%;

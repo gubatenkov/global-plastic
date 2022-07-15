@@ -19,6 +19,16 @@ export default {
         type: 'string',
       },
       {
+        name: 'stakeholderParticipationFlag',
+        title: 'Stakeholder Participation Flag',
+        type: 'image',
+      },
+      {
+        name: 'stakeholderParticipationCountry',
+        title: 'Stakeholder Participation Country',
+        type: 'string',
+      },
+      {
         name: 'stakeholderParticipationNumber',
         title: 'Stakeholder Participation Number',
         type: 'string',
