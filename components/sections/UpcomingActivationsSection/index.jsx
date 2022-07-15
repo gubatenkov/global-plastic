@@ -23,8 +23,11 @@ const UpcomingActivationsSection = ({data}) => {
     } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
       setSlidesPerView(2);
       setCenteredSlide(true);
-    } else {
+    } else if (typeof window !== 'undefined' && window.screen.width <= 1440) {
       setSlidesPerView(3);
+      setCenteredSlide(false);
+    } else {
+      setSlidesPerView(6);
       setCenteredSlide(false);
     }
   };
