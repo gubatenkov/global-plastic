@@ -4,10 +4,10 @@
   &__center {
     position: relative;
     max-width: 1440px;
-    padding: 104px 0 104px 96px;
+    padding: 104px 0 0 96px;
     margin: 0 auto;
     @include screen($lg) {
-      padding: 60px 16px;
+      padding: 60px 16px 0 16px;
     }
   }
 
@@ -21,23 +21,43 @@
     @include screen($lg) {
       text-align: center;
     }
-    @include screen($sm) {
+    @include screen(525px) {
       font-size: 32px;
       line-height: 32px;
       margin: 0 0 24px 0;
     }
   }
 
-  &__slider {
-    margin: 0;
+  &__slider--wrapper {
+    max-width: 100%;    
+    padding-left: calc(50vw - 624px);
+    margin-bottom: 104px;  
+    overflow-x: hidden;
+
+    @include screen(1200px) {
+      width: 100%;
+      padding-left: 96px;
+      padding-right: 96px;
+      overflow-x: visible;
+    }
 
     @include screen($lg) {
-      margin-bottom: 72px;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-bottom: 132px;
     }  
 
-    @include screen($sm) {
-      margin-bottom: 55px;
-    }   
+    @include screen(525px) {
+      margin-bottom: 115px;
+    } 
+  }
+
+  &__slider {
+    width: 1888px;
+
+    @include screen(1200px) {
+      width: 100%;
+    }
   }
 
   &__slider-nav {
@@ -56,8 +76,18 @@
       width: 200px;
     }
 
-    @include screen($sm) {
+    @include screen(525px) {
       top: 558px;
     }
   }
+}
+
+#uaecktionSlider {
+  @include screen(1024px) {
+    width: 608px;
+  }
+
+  @include screen(640px) {
+    width: 100%;
+  } 
 }

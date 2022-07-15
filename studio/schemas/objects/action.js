@@ -22,11 +22,6 @@ export default {
       name: 'actionLink',
       title: 'Action Link',
       type: 'string',
-    },
-    {
-      name: 'actionDescriptipn',
-      title: 'Action Descriptipn',
-      type: 'string',
-    },  
+    }, 
   ],
 }

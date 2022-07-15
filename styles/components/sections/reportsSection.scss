@@ -48,6 +48,7 @@
     }
 
     @include screen($sm) {
+      max-width: 152px;
       font-size: 32px;
       line-height: 32px;
       margin: 0 0 24px 0;

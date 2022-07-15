@@ -5,7 +5,7 @@ import { SliderNav, UpcomingActivationsCard } from 'components';
 
 const UpcomingActivationsSection = ({data}) => {
   const [swiper, setSwiper] = useState(null);
-  const [slidesPerView, setSlidesPerView] = useState(2.15);
+  const [slidesPerView, setSlidesPerView] = useState(3);
   const [centeredSlide, setCenteredSlide] = useState(false);
   const [activeIndex, setActiveIndex] = useState(1);
 
@@ -18,13 +18,13 @@ const UpcomingActivationsSection = ({data}) => {
   };
 
   const getSlidesPerView = () => {
-    if (typeof window !== 'undefined' && window.screen.width <= 630) {
+    if (typeof window !== 'undefined' && window.screen.width <= 1024) {
       setSlidesPerView(1);
     } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
       setSlidesPerView(2);
       setCenteredSlide(true);
     } else {
-      setSlidesPerView(2.15);
+      setSlidesPerView(3);
       setCenteredSlide(false);
     }
   };
@@ -49,6 +49,17 @@ const UpcomingActivationsSection = ({data}) => {
     <section className="uaektion">
       <div className="uaektion__center">
         <h2 className="uaektion__title">Upcoming Activations</h2>
+        <div className="uaektion__slider-nav">
+          <SliderNav
+            total={upcomingActivations?.length ?? 0}
+            current={activeIndex}
+            onPrevClick={() => swiper.slidePrev(300)}
+            onNextClick={() => swiper.slideNext(300)}
+            theme="dark"
+          />
+        </div>
+      </div>
+      <div className="uaektion__slider--wrapper">
         <div className="uaektion__slider">
           <Swiper
             id="uaecktionSlider"
@@ -62,15 +73,6 @@ const UpcomingActivationsSection = ({data}) => {
             {upcomingActivations}
               
           </Swiper>
-        </div>
-        <div className="uaektion__slider-nav">
-          <SliderNav
-            total={upcomingActivations?.length ?? 0}
-            current={activeIndex}
-            onPrevClick={() => swiper.slidePrev(300)}
-            onNextClick={() => swiper.slideNext(300)}
-            theme="dark"
-          />
         </div>
       </div>
     </section>
