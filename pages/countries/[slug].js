@@ -19,7 +19,7 @@ import {
 
 export const getServerSideProps = async () => {
     const url =
-      'https://185dfub1.api.sanity.io/v2021-10-21/data/query/production?query=*[_type==%27country%27]';
+      'https://185dfub1.api.sanity.io/v2021-10-21/data/query/production?query=*[_type==%27countryPages%27]';
     const response = await fetch(url);
     const data = await response.json();
     if (!data) {
@@ -31,7 +31,10 @@ export const getServerSideProps = async () => {
   };
 
   export default function Country({page}) {
-    const {pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider} = page;
+
+    console.log(page)
+
+    const {pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider} = page.countryPage[0];
 
   return (
     <div className="country">
