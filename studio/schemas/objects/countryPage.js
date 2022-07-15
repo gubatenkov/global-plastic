@@ -4,6 +4,11 @@ export default {
     type: 'object',
     fields: [
       {
+        name: 'pageUrl',
+        title: 'Country Name',
+        type: 'string',
+      },
+      {
         name: 'pageTitle',
         title: 'Country Page SEO title',
         type: 'string',

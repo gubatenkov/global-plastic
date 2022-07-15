@@ -17,7 +17,8 @@ import {
   ArchiveSection  
 } from 'components'
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+    const slug = context.query.slug;
     const url =
       'https://185dfub1.api.sanity.io/v2021-10-21/data/query/production?query=*[_type==%27countryPages%27]';
     const response = await fetch(url);
@@ -26,15 +27,15 @@ export const getServerSideProps = async () => {
       return { notFound: true };
     }
     return {
-      props: { page: data.result[0] },
+      props: { page: data.result[0], slug },
     };
   };
 
-  export default function Country({page}) {
+export default function Country({page, slug}) {
+  const pages = page.countryPage;
+  const currentPage = pages.filter(el => el.pageUrl === slug);
 
-    console.log(page)
-
-    const {pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider} = page.countryPage[0];
+  const {pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider} = currentPage[0];
 
   return (
     <div className="country">
