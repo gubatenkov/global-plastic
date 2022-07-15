@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 
-const data = ["Latin America", "Middle East", "South-East Asia", "Australia & Oceaniar"];
-
 const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
 
   const [isOpen, setOpen] = useState(false);
@@ -15,7 +13,7 @@ const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
   }, []);
   
   const toggleDropdown = () => {
-    setOpen(!isOpen);    
+    setOpen(!isOpen);
   };
   
   const handleItemClick = (event) => {
@@ -27,6 +25,17 @@ const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
     event.target.classList.add("checked");
     header.classList.add("checked");
     selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
+  }
+
+  const handleResetClick = (event) => {
+    setSelectedItem(null);    
+    setOpen(false);
+
+    const items = Array.from(event.target.parentElement.children);
+    const header = event.target.parentElement.previousElementSibling;
+
+    items.forEach(item => item.classList.remove("checked"));
+    header.classList.remove("checked");
   }
   
   return (
@@ -42,8 +51,15 @@ const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
               handleItemClick(event);
               transferData(event, dropdownData, dropdownName);}}>
             {item}
-          </div>
+          </div>          
         ))}
+        <div className="dropdown__reset" 
+        onClick={(event) => {
+          toggleDropdown();
+          handleResetClick(event);
+          transferData(event, dropdownData, dropdownName);}}>
+            Reset filter
+          </div>
       </div>
     </div>
   )

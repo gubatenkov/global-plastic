@@ -65,7 +65,8 @@ const ReportsSection = ({data}) => {
   const transferData = (event, dropdownData, dropdownName) => {
     if(dropdownName === 'reportRegion') {
       setReportRegion(dropdownData[event.target.id] || null)
-    } else if(dropdownName === 'reportCountry') {
+    } 
+    if(dropdownName === 'reportCountry') {
       setReportCountry(dropdownData[event.target.id] || null)
     } 
   }

@@ -80,8 +80,18 @@
 
     @include screen($xxl) {
       margin: 0 auto;
-      width: 100%;
-      max-width: 720px;
+      width: 720px;
+      height: 720px;
+    }
+
+    @include screen(768px) {
+      width: 454px;
+      height: 454px;
+    }
+
+    @include screen($sm) {
+      width: 354px;
+      height: 354px;
     }
   }
 
@@ -107,6 +117,13 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 44.9%;
+      height: 43.5%;
+      left: 26%;
+      top: 23.5%;
+    }
   }
 
   &__data1 {
@@ -148,6 +165,13 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 26.8%;
+      height: 27.4%;
+      left: 0.8%;
+      top: 43%;
+    }
   }
 
   &__data2 {
@@ -190,6 +214,13 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 36.4%;
+      height: 29.7%;
+      left: 22.6%;
+      bottom: 0;
+    }
   }
 
   &__data3 {
@@ -234,6 +265,13 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 30.5%;
+      height: 27.7%;
+      right: 0;
+      top: 19.8%;
+    }
   }
 
   &__data4 {
@@ -276,6 +314,13 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 29.4%;
+      height: 23.5%;
+      left: 38.4%;
+      top: 0%;
+    }
   }
 
   &__data5 {
@@ -315,6 +360,13 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 34%;
+      height: 26.6%;
+      left: 1.4%;
+      top: 8.2%;
+    }
   }
 
   &__shape2img {
@@ -327,5 +379,12 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      width: 37.5%;
+      height: 32%;
+      right: 0;
+      bottom: 16.7%;
+    }
   }
 }
