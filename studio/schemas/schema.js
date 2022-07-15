@@ -4,8 +4,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import homepage from './documents/homepage'
 import countries from './documents/countries'
-import country from './documents/country'
+import countryPages from './documents/countryPages'
 
+import countryPage from './objects/countryPage'
 import heroSection from './objects/heroSection'
 import sliderSection from './objects/sliderSection'
 import cardSection from './objects/cardSection'
@@ -48,9 +49,10 @@ export default createSchema({
     // Pages
     homepage,
     countries,
-    country,
-
+    countryPages,
+    
     // Other types
+    countryPage,
     heroSection,
     sliderSection,
     cardSection,
@@ -85,5 +87,6 @@ export default createSchema({
     linksSectionPage,
     videoSectionCountry,
     ecoSentiment,
+    
   ]),
 })

@@ -1,8 +1,13 @@
 export default {
-    name: 'country',
-    title: 'Country',
-    type: 'document',
+    name: 'countrySpecific',
+    title: 'Country Specific',
+    type: 'object',
     fields: [
+      {
+        name: 'pageUrl',
+        title: 'Country Name',
+        type: 'string',
+      },
       {
         name: 'pageTitle',
         title: 'Country Page SEO title',
