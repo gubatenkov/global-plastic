@@ -5,6 +5,7 @@
   margin-bottom: 7px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 
   @include screen($sm) {
     height: 916px;
@@ -34,10 +35,8 @@
 
   &__country {
     position: absolute;
-    left: 18.5%;
-    top: 50%;
-    transform: translateX(-50%);    
-    transform: translateY(-50%);
+    left: 235px;
+    top: 345px;
     width: 176px;
     height: 119px;
   }

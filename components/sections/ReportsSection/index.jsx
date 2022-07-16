@@ -17,6 +17,18 @@ const ReportsSection = ({data}) => {
 
   const filterData = data.filter(el => reportRegion ? el.reportRegion === reportRegion : el)
                          .filter(el => reportCountry ? el.reportCountry === reportCountry : el);
+  
+  const getSliderWidth = () => {
+    let sliderWidth;
+    const cardWidth = 395;
+    const gap = 32;
+    if(filterData.length === 2 && filterData.length < slidesPerView) {
+      sliderWidth = cardWidth * 2 + gap + 'px';
+    } else {
+      sliderWidth = '100%';
+    }
+    return sliderWidth;
+  }
 
   const updateActiveIndex = (context) => {
     setActiveIndex(context.realIndex + 1);
@@ -82,8 +94,8 @@ const ReportsSection = ({data}) => {
           </div>
         </div>
         <div className={isMobile ? "rektion__none" : "rektion__slider--container"}>
-          <div className="rektion__slider">
-            <Swiper
+          <div className="rektion__slider"  style={{width: getSliderWidth()}}>
+            <Swiper              
               id="recktionSlider"
               slidesPerView={filterData.length < slidesPerView ? filterData.length : slidesPerView }
               spaceBetween={32}

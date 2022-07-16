@@ -176,12 +176,12 @@
     &::after {
       content: '';
       position: absolute;
-      top: -14px;
+      top: -8px;
       right: -67px;
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      border: 4px solid $black;
+      border: 3px solid $black;
       background-color: $accent-color;
     }
   }
