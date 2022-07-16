@@ -1,0 +1,120 @@
+.bubble-black {
+  width: 380px;
+  height: 380px;
+
+  border-radius: 50%;
+  background-color: $dark-grey;
+
+  text-align: center;
+
+  position: relative;
+
+  @include screen($sm) {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  &__number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    font-style: normal;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/images/smallBubble.svg');
+
+    top: 90px;
+    left: 50%;
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 11;
+  }
+
+  &__imgbox {
+    width: 170px;
+    height: 170px;
+
+    top: -20px;
+    left: 20px;
+    position: absolute;
+
+    background: transparent;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 44%;
+    border-bottom-right-radius: 57%;
+    border-bottom-left-radius: 43%;
+
+    overflow: hidden;
+
+    @include screen($sm) {
+      top: 0;
+
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    max-width: 325px;
+
+    left: 50%;
+    top: 220px;
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+
+    @include screen($sm) {
+      width: 90%;
+      top: 175px;
+    }
+
+    &__title {
+      margin: 0 0 20px 0;
+
+      color: $white;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 32px;
+      font-style: normal;
+
+      @include screen($sm) {
+        margin: 0 0 15px 0;
+
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+
+    &__descr {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 275px;
+
+      color: $white;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      font-style: normal;
+
+      opacity: 0.6;
+    }
+  }
+}

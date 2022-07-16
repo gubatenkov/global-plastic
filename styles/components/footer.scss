@@ -172,6 +172,11 @@
         path {
           fill: $accent-color;
         }
+
+        .footer__socials__img {
+          filter: invert(20%) sepia(22%) saturate(1576%) hue-rotate(338deg)
+            brightness(99%) contrast(97%);
+        }
       }
 
       &:active {

@@ -8,20 +8,20 @@ import {
   RegionsSection,
   LinksSection,
 } from 'components'
+import { getCountriesFieldsQuery } from 'lib/queries';
 
 export const getStaticProps = async () => {
-  const url =
-    'https://185dfub1.api.sanity.io/v2021-10-21/data/query/production?query=*[_type==%27countries%27]';
-  const response = await fetch(url);
-  const data = await response.json();
+  const data = await getCountriesFieldsQuery();
+
   return {
-    props: { page: data.result[0] },
+    props: { page: data[0] },
   };
 };
 
-export default function Countries({page}) {
-  const {pageTitle, pageDescription, countryPresenceCards, targetSectionCountriesPage, regionsSectionCountriesPage, linksSectionCountriesPage} = page;
-
+export default function Countries({ page }) {
+  const {pageTitle, pageDescription, countryPresenceCards, targetSectionCountriesPage, 
+    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials }} = page;
+    
   return (
     <div className="countries">
       <Head>
@@ -29,7 +29,7 @@ export default function Countries({page}) {
         <meta name="description" content={pageDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainLayout>
+      <MainLayout menu={pageMenu} socials={pageSocials}>
         <TargetSection data={targetSectionCountriesPage} />
         <CountryPresenceSection data={countryPresenceCards} />
         <BigMapSection />

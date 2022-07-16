@@ -41,17 +41,21 @@ import linksCountries from './objects/linksCountries'
 import linksSectionPage from './objects/linksSectionPage'
 import videoSectionCountry from './objects/videoSectionCountry'
 import ecoSentiment from './objects/ecoSentiment'
+import menu from './documents/menu'
+import socials from './documents/socials'
 
 export default createSchema({
   name: 'default',
   types: schemaTypes.concat([
 
-    // Pages
+    // Documents
     homepage,
     countries,
     countryPages,
+    menu,
+    socials,
     
-    // Other types
+    // Objects
     countryPage,
     heroSection,
     sliderSection,
