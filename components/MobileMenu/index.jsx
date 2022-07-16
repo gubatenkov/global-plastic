@@ -5,7 +5,7 @@ import { Burger } from 'components';
 
 import logo from 'assets/images/logo.svg';
 
-const MobileMenu = ({ isOpened, onToggle }) => {
+const MobileMenu = ({ isOpened, onToggle, links }) => {
   return (
     <div className={isOpened ? 'mobmenu active' : 'mobmenu'}>
       <div className="mobmenu__top">
@@ -22,31 +22,19 @@ const MobileMenu = ({ isOpened, onToggle }) => {
       </div>
       <nav className="mobmenu__nav">
         <ul className="mobmenu__nav-list">
-          <li className="mobmenu__nav-list__item">
-            <a href="#" className="mobmenu__nav-list__link">
-              Countries
-            </a>
-          </li>
-          <li className="mobmenu__nav-list__item">
-            <a href="#" className="mobmenu__nav-list__link">
-              Mission
-            </a>
-          </li>
-          <li className="mobmenu__nav-list__item">
-            <a href="#" className="mobmenu__nav-list__link">
-              Roadmap
-            </a>
-          </li>
-          <li className="mobmenu__nav-list__item">
-            <a href="#" className="mobmenu__nav-list__link">
-              Get involved
-            </a>
-          </li>
-          <li className="mobmenu__nav-list__item">
-            <a href="#" className="mobmenu__nav-list__link">
-              Blog
-            </a>
-          </li>
+          {links?.length &&
+            links.map(({ _key, headerMenuLinkText, headerMenuLinkUrl }) => {
+              return (
+                <li className="mobmenu__nav-list__item" key={_key}>
+                  <a
+                    className="mobmenu__nav-list__link"
+                    href={headerMenuLinkUrl}
+                  >
+                    {headerMenuLinkText}
+                  </a>
+                </li>
+              );
+            })}
         </ul>
       </nav>
       <div className="mobmenu__bottom">

@@ -16,22 +16,24 @@ import {
   NewsSection,
   JoinSection,
   PartnersSection,
-  DialoguesSection
+  DialoguesSection,
+  ScrollSection
 } from 'components'
 import { getHomepageFieldsQuery } from 'lib/queries';
 
 export const getStaticProps = async () => {
-  const data = await getHomepageFieldsQuery();
+  const pageData = await getHomepageFieldsQuery();
+  
   return {
     props: {
-      data
+      data: pageData[0],
     },
   }
 }
 
 export default function Home({ data }) {
-  const { pageTitle, pageDescription, sections } = data[0];
-  
+  const { pageTitle, pageDescription, sections, menu: { pageMenu }, socials: { pageSocials } } = data;
+
   return (
     <div className='home'>
       <Head>
@@ -39,8 +41,9 @@ export default function Home({ data }) {
         <meta name="description" content={pageDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <MainLayout>
+      <MainLayout menu={pageMenu} socials={pageSocials}>
         <HeroSection data={sections[0]} />
+        {/* <ScrollSection data={sections[1]} /> */}
         <SliderSection data={sections[1]} />
         <CardSection data={sections[2]} />
         <WideSliderSection data={sections[3]} />

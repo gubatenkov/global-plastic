@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
 
 import { Burger } from 'components';
 
 import logo from 'assets/images/logo.svg';
 
-const Header = ({ isMobNavVisible, toggleMobNav }) => {
+const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -18,31 +17,16 @@ const Header = ({ isMobNavVisible, toggleMobNav }) => {
       </div>
       <Burger isClicked={isMobNavVisible} onClick={toggleMobNav} />
       <ul className="header-nav">
-        <li className="header-nav__item">
-          <a className="header-nav__link" href="countries">
-            Countries
-          </a>{' '}
-        </li>
-        <li className="header-nav__item">
-          <a className="header-nav__link" href="#">
-            Mission
-          </a>{' '}
-        </li>
-        <li className="header-nav__item">
-          <a className="header-nav__link" href="#">
-            Roadmap
-          </a>{' '}
-        </li>
-        <li className="header-nav__item">
-          <a className="header-nav__link" href="#">
-            Get involved
-          </a>{' '}
-        </li>
-        <li className="header-nav__item">
-          <a className="header-nav__link" href="#">
-            Blog
-          </a>{' '}
-        </li>
+        {links?.length &&
+          links.map(({ _key, headerMenuLinkText, headerMenuLinkUrl }) => {
+            return (
+              <li className="header-nav__item" key={_key}>
+                <a className="header-nav__link" href={headerMenuLinkUrl}>
+                  {headerMenuLinkText}
+                </a>
+              </li>
+            );
+          })}
       </ul>
       <a
         className="header__link"

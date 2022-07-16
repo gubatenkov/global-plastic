@@ -9,10 +9,25 @@
 
   position: relative;
 
+  transform: translate(-50%, -50%);
+
   @include screen($sm) {
     width: 300px;
     height: 300px;
     margin: 0 auto;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrap {
+      width: 0;
+      height: 0;
+      min-width: 0;
+      min-height: 0;
+    }
   }
 
   &__number {
