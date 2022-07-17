@@ -34,8 +34,20 @@
     color: $white;
     cursor: pointer;
 
-    &.checked {
-      color: $accent-color
+    & space {
+      position: relative;
+      display: inline-block;
+    }
+
+    &.checked space::after {
+      content: "";
+      position: absolute;
+      right: -12px; 
+      top: -2px; 
+      width: 8px;
+      height: 8px;
+      background-color: $accent-color;
+      border-radius: 50%;
     }
   }
 

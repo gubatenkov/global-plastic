@@ -15,8 +15,8 @@ const ReportsSection = ({data}) => {
   const [reportCountry, setReportCountry] = useState(null);
   const [isMobile, setMobile] = useState(false);
 
-  const filterData = data.filter(el => reportRegion ? el.reportRegion === reportRegion : el)
-                         .filter(el => reportCountry ? el.reportCountry === reportCountry : el);
+  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.reportRegion) : el)
+                        .filter(el => reportCountry ? reportCountry.includes(el.reportCountry) : el);
   
   const getSliderWidth = () => {
     let sliderWidth;
@@ -74,12 +74,24 @@ const ReportsSection = ({data}) => {
     );
   });
 
-  const transferData = (event, dropdownData, dropdownName) => {
-    if(dropdownName === 'reportRegion') {
-      setReportRegion(dropdownData[event.target.id] || null)
-    } 
+  const transferFilter = (event, dropdownData, dropdownName) => {
+    const items = Array.from(event.target.parentElement.children);    
+    const selectedItems = items.filter(el => el.classList.contains("checked")).map(el => +el.id);    
+    const selectedCards = dropdownData.filter((item, index) => selectedItems.includes(index));
     if(dropdownName === 'reportCountry') {
-      setReportCountry(dropdownData[event.target.id] || null)
+      setReportCountry(selectedCards)
+    } 
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(selectedCards)
+    } 
+    
+  }
+
+  const resetFilter = (dropdownName) => {
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(null)
+    } else if(dropdownName === 'reportCountry') {
+      setReportCountry(null)
     } 
   }
 
@@ -89,8 +101,8 @@ const ReportsSection = ({data}) => {
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>
           <div className="rektion__container">
-            <ReportsDropdown dropdownName='reportRegion' dropdownData={regions} transferData={transferData} />
-            <ReportsDropdown dropdownName='reportCountry' dropdownData={countries} transferData={transferData}/>
+            <ReportsDropdown dropdownName='reportRegion' dropdownData={regions} transferFilter={transferFilter} resetFilter={resetFilter} />
+            <ReportsDropdown dropdownName='reportCountry' dropdownData={countries} transferFilter={transferFilter} resetFilter={resetFilter}/>
           </div>
         </div>
         <div className={isMobile ? "rektion__none" : "rektion__slider--container"}>
