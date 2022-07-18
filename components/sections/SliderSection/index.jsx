@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { SliderNav, BubbleCard, SectionLine } from 'components';
+import { SliderNav, BubbleCardBlack, SectionLine } from 'components';
 
 const SliderSection = ({ data: { title, subtitle, slides } }) => {
   const [swiper, setSwiper] = useState(null);
@@ -38,7 +38,7 @@ const SliderSection = ({ data: { title, subtitle, slides } }) => {
             {slides.map((slide, idx) => {
               return (
                 <SwiperSlide key={idx}>
-                  <BubbleCard {...slide} order={idx + 1} />
+                  <BubbleCardBlack {...slide} order={idx + 1} />
                 </SwiperSlide>
               );
             })}

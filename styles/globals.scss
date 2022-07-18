@@ -36,7 +36,7 @@ a {
   max-width: var(--container-width);
 }
 
-input, 
+input,
 button {
   font-size: 16px;
   font-family: 'ES Rebond Grotesque', -apple-system, BlinkMacSystemFont,
@@ -54,6 +54,7 @@ button {
 @import 'components/footer';
 @import 'components/newsTicker';
 @import 'components/bubbleCard';
+@import 'components/bubbleCardBlack';
 @import 'components/sliderNav';
 @import 'components/cardBase';
 @import 'components/regionCard';
@@ -100,6 +101,7 @@ button {
 @import 'components/sections/reportsSection';
 @import 'components/sections/actionSection';
 @import 'components/sections/archiveSection';
+@import 'components/sections/scrollSection';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';
