@@ -29,6 +29,8 @@
   }
 
   &__slider--wrapper {
+    display: flex;
+    justify-content: center;
     max-width: 100%;
     margin-bottom: 104px;  
     overflow-x: hidden;
@@ -59,16 +61,7 @@
   }
 
   &__slider {
-    width: 3808px;    
     margin: 0 auto;
-  
-    @include screen(1440px) {
-      width: 1888px;
-    }
-
-    @include screen(1200px) {
-      width: 100%;
-    }
   }
 
   &__slider-nav {

@@ -15,8 +15,20 @@ const ReportsSection = ({data}) => {
   const [reportCountry, setReportCountry] = useState(null);
   const [isMobile, setMobile] = useState(false);
 
-  const filterData = data.filter(el => reportRegion ? el.reportRegion === reportRegion : el)
-                         .filter(el => reportCountry ? el.reportCountry === reportCountry : el);
+  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.reportRegion) : el)
+                        .filter(el => reportCountry ? reportCountry.includes(el.reportCountry) : el);
+  
+  const getSliderWidth = () => {
+    let sliderWidth;
+    const cardWidth = 395;
+    const gap = 32;
+    if(filterData.length === 2 && filterData.length < slidesPerView) {
+      sliderWidth = cardWidth * 2 + gap + 'px';
+    } else {
+      sliderWidth = '100%';
+    }
+    return sliderWidth;
+  }
 
   const updateActiveIndex = (context) => {
     setActiveIndex(context.realIndex + 1);
@@ -53,7 +65,6 @@ const ReportsSection = ({data}) => {
       return <ReportsCard key={index} data={item} />;
     });
  
-
   const renderSwiperCards = filterData.map((item, index) => {
     return (
       <SwiperSlide key={index}>
@@ -62,12 +73,23 @@ const ReportsSection = ({data}) => {
     );
   });
 
-  const transferData = (event, dropdownData, dropdownName) => {
-    if(dropdownName === 'reportRegion') {
-      setReportRegion(dropdownData[event.target.id] || null)
-    } 
+  const transferFilter = (event, dropdownData, dropdownName) => {
+    const items = Array.from(event.target.parentElement.children);    
+    const selectedItems = items.filter(el => el.classList.contains("checked"))
+                               .map(el => dropdownData[el.id]);   
     if(dropdownName === 'reportCountry') {
-      setReportCountry(dropdownData[event.target.id] || null)
+      setReportCountry(selectedItems)
+    } 
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(selectedItems)
+    }    
+  }
+
+  const resetFilter = (dropdownName) => {
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(null)
+    } else if(dropdownName === 'reportCountry') {
+      setReportCountry(null)
     } 
   }
 
@@ -77,13 +99,13 @@ const ReportsSection = ({data}) => {
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>
           <div className="rektion__container">
-            <ReportsDropdown dropdownName='reportRegion' dropdownData={regions} transferData={transferData} />
-            <ReportsDropdown dropdownName='reportCountry' dropdownData={countries} transferData={transferData}/>
+            <ReportsDropdown dropdownName='reportRegion' dropdownData={regions} transferFilter={transferFilter} resetFilter={resetFilter} />
+            <ReportsDropdown dropdownName='reportCountry' dropdownData={countries} transferFilter={transferFilter} resetFilter={resetFilter}/>
           </div>
         </div>
         <div className={isMobile ? "rektion__none" : "rektion__slider--container"}>
-          <div className="rektion__slider">
-            <Swiper
+          <div className="rektion__slider"  style={{width: getSliderWidth()}}>
+            <Swiper              
               id="recktionSlider"
               slidesPerView={filterData.length < slidesPerView ? filterData.length : slidesPerView }
               spaceBetween={32}

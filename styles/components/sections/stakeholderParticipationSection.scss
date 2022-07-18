@@ -2,11 +2,9 @@
   background-color: $spaktion-bg;
   height: 800px;  
   border-radius: 16px;
-  margin-bottom: 7px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-bottom: 7px;  
 
-  @include screen($sm) {
+  @include screen($lg) {
     height: 916px;
   }
   
@@ -19,10 +17,17 @@
     margin: 0 auto;
     max-width: 1440px;
     height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include screen($xxl) {
+      background-position: -300px 150px;
+    }
     
     @include screen($lg) {
       align-items: flex-start;
       padding: 96px 16px;
+      background-position: -280px 240px;
     }
 
     @include screen($sm) {
@@ -34,12 +39,26 @@
 
   &__country {
     position: absolute;
-    left: 18.5%;
-    top: 50%;
-    transform: translateX(-50%);    
-    transform: translateY(-50%);
+    z-index: 9;
+    left: 400px;
+    top: 278px;
     width: 176px;
     height: 119px;
+
+    @include screen($xxl) {
+      left: 100px;
+      top: 428px;
+    }
+
+    @include screen($lg) {
+      left: 190px;
+      top: 570px;
+    }
+
+    @include screen($sm) {
+      left: 135px;
+      top: 532px;
+    }
   }
 
   &__flag {

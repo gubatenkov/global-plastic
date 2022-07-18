@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 
-const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
+const ReportsDropdown = ({dropdownName, dropdownData, transferFilter, resetFilter}) => {
 
   const [isOpen, setOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedRegion, setSelectedRegion] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState([]);
 
   const dropdown = useRef(null);
   useEffect(() => {
@@ -16,20 +17,26 @@ const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
     setOpen(!isOpen);
   };
   
-  const handleItemClick = (event) => {
+  const handleItemClick = (event, dropdownName) => {
     const id = event.target.id;
-    const items = Array.from(event.target.parentElement.children);
-    const header = event.target.parentElement.previousElementSibling;
+    const selectedItem = dropdownName === "reportRegion" ? selectedRegion : selectedCountry;
+    const setSelectedItem = dropdownName === "reportRegion" ? setSelectedRegion : setSelectedCountry;
 
-    items.forEach(item => item.classList.remove("checked"));
-    event.target.classList.add("checked");
-    header.classList.add("checked");
-    selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
+    selectedItem.includes(id) ? event.target.classList.remove("checked") : event.target.classList.add("checked");
+
+    const items = Array.from(event.target.parentElement.children);
+    const selectedItems = items.filter(el => el.classList.contains("checked")).map(el => el.id);
+    setSelectedItem(selectedItems);
+
+    const header = event.target.parentElement.previousElementSibling;    
+    selectedItems.length === 0 ? header.classList.remove("checked") : header.classList.add("checked");
   }
 
-  const handleResetClick = (event) => {
-    setSelectedItem(null);    
+  const handleResetClick = (event, dropdownName) => {    
     setOpen(false);
+
+    const setSelectedItem = dropdownName === "reportRegion" ? setSelectedRegion : setSelectedCountry;
+    setSelectedItem([]);
 
     const items = Array.from(event.target.parentElement.children);
     const header = event.target.parentElement.previousElementSibling;
@@ -41,25 +48,26 @@ const ReportsDropdown = ({dropdownName, dropdownData, transferData}) => {
   return (
     <div className='dropdown' ref={dropdown}>
       <div className='dropdown__header' onClick={toggleDropdown}>
-        {selectedItem ? dropdownData[selectedItem] : dropdownName.replace('report', '')}
+        <space>{dropdownName.replace('report', '')}</space>
         <i className={`dropdown__icon ${isOpen && "open"}`}></i>   
       </div>
       <div className={`dropdown__body ${isOpen && 'open'}`}>
         {dropdownData.map((item, index) => (
           <div className="dropdown__item" id={index} key={index}
             onClick={(event) => {
-              handleItemClick(event);
-              transferData(event, dropdownData, dropdownName);}}>
+              handleItemClick(event, dropdownData, dropdownName);
+              transferFilter(event, dropdownData, dropdownName);              
+              }}>
             {item}
           </div>          
         ))}
         <div className="dropdown__reset" 
-        onClick={(event) => {
-          toggleDropdown();
-          handleResetClick(event);
-          transferData(event, dropdownData, dropdownName);}}>
+          onClick={(event) => {
+            toggleDropdown();
+            handleResetClick(event, dropdownName);
+            resetFilter(dropdownName);}}>
             Reset filter
-          </div>
+        </div>
       </div>
     </div>
   )
