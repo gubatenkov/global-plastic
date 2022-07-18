@@ -2,10 +2,24 @@
   background-color: $spaktion-bg;
   height: 800px;  
   border-radius: 16px;
-  margin-bottom: 7px;  
+  margin-bottom: 7px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; 
+
+  @include screen($xxl) {
+    background-position: -500px 150px;
+  }
 
   @include screen($lg) {
     height: 916px;
+    background-position: calc(50% + 120px) 340px;
+    background-color: $white;
+  }
+
+  @include screen($sm) {
+    background-position: 38% 135%;
+    background-size: auto 690px;
   }
   
   &__center {
@@ -16,81 +30,15 @@
     padding: 138px 180px 0 0;
     margin: 0 auto;
     max-width: 1440px;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    @include screen($xxl) {
-      background-position: -300px 150px;
-    }
     
     @include screen($lg) {
       align-items: flex-start;
-      padding: 96px 16px;
-      background-position: -280px 240px;
+      padding: 96px 16px;     
     }
 
     @include screen($sm) {
       padding: 60px 16px;
-      background-position: 26% 135%;
-      background-size: auto 690px;
     }
-  }
-
-  &__country {
-    position: absolute;
-    z-index: 9;
-    left: 400px;
-    top: 278px;
-    width: 176px;
-    height: 119px;
-
-    @include screen($xxl) {
-      left: 100px;
-      top: 428px;
-    }
-
-    @include screen($lg) {
-      left: 190px;
-      top: 570px;
-    }
-
-    @include screen($sm) {
-      left: 135px;
-      top: 532px;
-    }
-  }
-
-  &__flag {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    z-index: 2;
-    transform: translateX(-50%);
-    width: 39px;
-    height: 39px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    border-radius: 50%;
-  }
-
-  &__bg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    top: 20px;
-    width: 176px;
-    height: 80px;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
-    background-image: url("../../../assets/images/map-bg.png");
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
   }
 
   &__title {

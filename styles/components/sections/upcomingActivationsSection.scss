@@ -30,21 +30,21 @@
 
   &__slider--wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; 
+    padding-left: calc(50vw - 624px);
     max-width: 100%;
     margin-bottom: 104px;  
     overflow-x: hidden;
 
     @include screen(1440px) {
-      max-width: 100%;
-      justify-content: flex-start; 
-      padding-left: calc(50vw - 624px);
+      max-width: 100%;      
       margin-bottom: 104px;  
       overflow-x: hidden;
     }
 
     @include screen(1200px) {
       width: 100%;
+      justify-content: center;
       padding-left: 96px;
       padding-right: 96px;
       overflow-x: visible;

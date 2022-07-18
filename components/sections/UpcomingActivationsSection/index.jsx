@@ -34,7 +34,7 @@ const UpcomingActivationsSection = ({data}) => {
     } else if (window.screen.width > 1440) {
       setSlidesPerView(data.length);
       setCenteredSlide(false);
-      setSwiperWidth(data.length * 608 + 32 * 5 + 'px');
+      setSwiperWidth(data.length * 608 + 32 * (data.length - 1) + 'px');
     }
   };
 
