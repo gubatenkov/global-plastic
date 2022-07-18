@@ -65,7 +65,6 @@ const ReportsSection = ({data}) => {
       return <ReportsCard key={index} data={item} />;
     });
  
-
   const renderSwiperCards = filterData.map((item, index) => {
     return (
       <SwiperSlide key={index}>
@@ -76,15 +75,14 @@ const ReportsSection = ({data}) => {
 
   const transferFilter = (event, dropdownData, dropdownName) => {
     const items = Array.from(event.target.parentElement.children);    
-    const selectedItems = items.filter(el => el.classList.contains("checked")).map(el => +el.id);    
-    const selectedCards = dropdownData.filter((item, index) => selectedItems.includes(index));
+    const selectedItems = items.filter(el => el.classList.contains("checked"))
+                               .map(el => dropdownData[el.id]);   
     if(dropdownName === 'reportCountry') {
-      setReportCountry(selectedCards)
+      setReportCountry(selectedItems)
     } 
     if(dropdownName === 'reportRegion') {      
-      setReportRegion(selectedCards)
-    } 
-    
+      setReportRegion(selectedItems)
+    }    
   }
 
   const resetFilter = (dropdownName) => {
