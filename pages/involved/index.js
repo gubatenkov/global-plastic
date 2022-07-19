@@ -23,7 +23,7 @@ export default function Countries({ page }) {
   const {pageTitle, pageDescription, involvedHeroSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
     console.log(page)
   return (
-    <div className="countries">
+    <div className="involved">
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />

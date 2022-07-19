@@ -1,8 +1,11 @@
 .ifktion {
-  background-color: $spaktion-bg;
-  height: 800px;  
+  display: flex;
+  height: 820px;
+  padding: 14px 0 6px;
+  padding-left: calc(50vw - 720px);
   border-radius: 16px;
-  margin-bottom: 7px;
+  margin-bottom: 7px;  
+  background-color: $white;
 
   @include screen($sm) {
     border-radius: 8px;
@@ -10,22 +13,20 @@
   }
   
   &__center {
-    position: relative;
-    display: flex;
-    justify-content: center;   
-    padding: 138px 180px 0 0;
-    margin: 0 auto;
-    max-width: 1440px;
+    width: 50%;
+    max-width: 720px;
+    padding: 80px 96px 0;
+    border: 1px solid red;
 
     @include screen($sm) {
+      width: 100%;
       padding: 60px 16px;
     }
   }
 
   &__title {
-    max-width: 409px;
     margin: 0;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     padding: 0;
     font-size: 48px;
     line-height: 48px;
@@ -59,7 +60,7 @@
   &__imgbox { 
     position: relative;
     width: 50%;
-    height: 720px;
+    height: 800px;
     border-radius: 16px;
     overflow: hidden;
 
@@ -75,10 +76,10 @@
   
   &__img {
     object-fit: cover;
-    object-position: center center;
+    object-position: 0 0;
     width: 100% !important;
     position: relative !important;
-    height: 720px !important;
+    height: 800px !important;
 
     @include screen($xxl) {
       height: 434px !important;

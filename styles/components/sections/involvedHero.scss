@@ -1,33 +1,20 @@
 .inktion {
-  background-color: $spaktion-bg;
-  height: 800px;  
+  background-color: $country-bg;
+  height: 715px;  
   border-radius: 16px;
   margin-bottom: 7px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; 
-
-  @include screen($xxl) {
-    background-position: -500px 150px;
-  }
-
-  @include screen($lg) {
-    height: 916px;
-    background-position: calc(50% + 120px) 340px;
-    background-color: $white;
-  }
 
   @include screen($sm) {
-    background-position: 38% 135%;
-    background-size: auto 690px;
+    border-radius: 8px;
+    margin-bottom: 4px;
   }
   
   &__center {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;    
-    padding: 138px 180px 0 0;
+    align-items: center;    
+    padding: 110px 292px 136px;
     margin: 0 auto;
     max-width: 1440px;
     
@@ -42,17 +29,15 @@
   }
 
   &__title {
-    max-width: 409px;
+    max-width: 850px;
     margin: 0;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     padding: 0;
+    padding-top: 48px;
     font-size: 48px;
     line-height: 48px;
+    text-align: center;
     color: $black;
-
-    @include screen($lg) {
-      text-align: left;
-    }
 
     @include screen($sm) {
       max-width: 286px;
@@ -62,14 +47,15 @@
     }
   }
 
-  &__subtitle {
-    max-width: 409px;
+  &__description {
+    max-width: 430px;
     margin: 0;
-    margin-bottom: 16px;
+    margin-bottom: 48px;
     padding: 0;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 38px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
     color: $black;
 
     @include screen($lg) {
@@ -82,72 +68,33 @@
       line-height: 24px;
     }
   }
-
-  &__shape1 {
-    position: absolute;
-    top: 390px;
-    right: 350px;
+  
+  &__link {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 245px;
-    height: 245px;    
-    font-weight: 400;
-    font-size: 96px;
-    line-height: 96px;
-    background-image: url('../../../assets//images/shape1.1.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    
-    @include screen($lg) {
-      top: 312px;
-      left: 50%;
-      transform: translateX(-50%);
+    justify-content: space-between;
+    padding: 13px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    color: $white;
+    border-radius: 8px;
+    background-color: $black;
+    border: 1px solid rgba(33, 32, 32, 0.4);
+    cursor: pointer;
+    transition: .3s;
+
+    & svg {
+      margin-left: 16px;
     }
 
-    @include screen($sm) {
-      top: 235px;
-      width: 160px;
-      height: 160px;
-      margin-left: -10px;
-      font-size: 64px;
-      line-height: 64px;
+    &:hover {
+      color: $black;
+      background-color: $white;
     }
-  }
 
-  &__shape2 {
-    position: absolute;
-    top: 570px;
-    right: 270px;
-    width: 47px;
-    height: 48px; 
-    background-image: url('../../../assets//images/shape1.2.svg');
-    background-size: contain;
-    background-repeat: no-repeat; 
-    
-    @include screen($sm) {
-      top: 335px;
-      right: 64px;
-      width: 37px;
-      height: 38px; 
-    }
-  }
-
-  &__shape3 {
-    position: absolute;
-    top: 471px;
-    right: 284px;
-    width: 24px;
-    height: 19px; 
-    background-image: url('../../../assets//images/shape1.3.svg');
-    background-size: contain;
-    background-repeat: no-repeat;  
-    
-    @include screen($sm) {
-      top: 287px;
-      right: 85px;
-      width: 22px;
-      height: 22px; 
+    &:active {
+      color: $white;
+      background: rgba(33, 32, 32, 0.8);
     }
   }
 }
