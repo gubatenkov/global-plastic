@@ -5,6 +5,7 @@
   margin-bottom: 7px;
 
   @include screen($sm) {
+    height: auto;
     border-radius: 8px;
     margin-bottom: 4px;
   }
@@ -19,12 +20,11 @@
     max-width: 1440px;
     
     @include screen($lg) {
-      align-items: flex-start;
       padding: 96px 16px;     
     }
 
     @include screen($sm) {
-      padding: 60px 16px;
+      padding: 70px 16px 80px;
     }
   }
 
@@ -40,8 +40,8 @@
     color: $black;
 
     @include screen($sm) {
-      max-width: 286px;
-      margin-bottom: 24px;
+      max-width: 100%;
+      margin-bottom: 32px;
       font-size: 32px;
       line-height: 32px;
     }
@@ -58,14 +58,13 @@
     text-align: center;
     color: $black;
 
-    @include screen($lg) {
-      text-align: left;
-    }
-
     @include screen($sm) {
-      max-width: 286px;
-      font-size: 24px;
-      line-height: 24px;
+      max-width: 100%;
+      margin: 0;
+      margin-bottom: 24px;
+      padding: 0;
+      font-weight: 500;
+      font-size: 14px;
     }
   }
   
