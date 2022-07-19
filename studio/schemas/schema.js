@@ -2,9 +2,12 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
+import menu from './documents/menu'
+import socials from './documents/socials'
 import homepage from './documents/homepage'
 import countries from './documents/countries'
 import countryPages from './documents/countryPages'
+import involved from './documents/involved'
 
 import countryPage from './objects/countryPage'
 import heroSection from './objects/heroSection'
@@ -41,8 +44,10 @@ import linksCountries from './objects/linksCountries'
 import linksSectionPage from './objects/linksSectionPage'
 import videoSectionCountry from './objects/videoSectionCountry'
 import ecoSentiment from './objects/ecoSentiment'
-import menu from './documents/menu'
-import socials from './documents/socials'
+import involvedHero from './objects/involvedHero'
+import involvedForm from './objects/involvedForm'
+import wideInvolved from './objects/wideInvolved'
+import stakeholdersInvolved from './objects/stakeholdersInvolved'
 
 export default createSchema({
   name: 'default',
@@ -54,6 +59,7 @@ export default createSchema({
     countryPages,
     menu,
     socials,
+    involved,
     
     // Objects
     countryPage,
@@ -91,6 +97,12 @@ export default createSchema({
     linksSectionPage,
     videoSectionCountry,
     ecoSentiment,
+    involvedHero,
+    involvedForm,
+    wideInvolved,
+    stakeholdersInvolved,
+    
+
     
   ]),
 })

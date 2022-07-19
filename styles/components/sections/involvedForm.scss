@@ -1,0 +1,87 @@
+.ifktion {
+  background-color: $spaktion-bg;
+  height: 800px;  
+  border-radius: 16px;
+  margin-bottom: 7px;
+
+  @include screen($sm) {
+    border-radius: 8px;
+    margin-bottom: 4px;
+  }
+  
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;   
+    padding: 138px 180px 0 0;
+    margin: 0 auto;
+    max-width: 1440px;
+
+    @include screen($sm) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    max-width: 409px;
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 0;
+    font-size: 48px;
+    line-height: 48px;
+    color: $black;
+
+    @include screen($sm) {
+      max-width: 286px;
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 409px;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    color: $black;
+
+    @include screen($sm) {
+      max-width: 286px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__imgbox { 
+    position: relative;
+    width: 50%;
+    height: 720px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include screen($xxl) {
+      width: 100%;
+      height: 434px;
+    }
+  }
+
+  &__imgbox * {
+    position: unset !important;
+  }
+  
+  &__img {
+    object-fit: cover;
+    object-position: center center;
+    width: 100% !important;
+    position: relative !important;
+    height: 720px !important;
+
+    @include screen($xxl) {
+      height: 434px !important;
+    }
+  }
+}
