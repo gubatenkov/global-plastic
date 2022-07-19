@@ -1,0 +1,100 @@
+.inktion {
+  background-color: $country-bg;
+  height: 715px;  
+  border-radius: 16px;
+  margin-bottom: 7px;
+
+  @include screen($sm) {
+    border-radius: 8px;
+    margin-bottom: 4px;
+  }
+  
+  &__center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 110px 292px 136px;
+    margin: 0 auto;
+    max-width: 1440px;
+    
+    @include screen($lg) {
+      align-items: flex-start;
+      padding: 96px 16px;     
+    }
+
+    @include screen($sm) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__title {
+    max-width: 850px;
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    padding-top: 48px;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: $black;
+
+    @include screen($sm) {
+      max-width: 286px;
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__description {
+    max-width: 430px;
+    margin: 0;
+    margin-bottom: 48px;
+    padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: $black;
+
+    @include screen($lg) {
+      text-align: left;
+    }
+
+    @include screen($sm) {
+      max-width: 286px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    color: $white;
+    border-radius: 8px;
+    background-color: $black;
+    border: 1px solid rgba(33, 32, 32, 0.4);
+    cursor: pointer;
+    transition: .3s;
+
+    & svg {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+
+    &:active {
+      color: $white;
+      background: rgba(33, 32, 32, 0.8);
+    }
+  }
+}

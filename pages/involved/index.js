@@ -1,17 +1,18 @@
 import Head from 'next/head'
 
 import {  
-  MainLayout, 
+  MainLayout,
+  InvolvedHero,
+  WideSliderSection,
+  InvolvedForm, 
   TargetSection,
-  CountryPresenceSection,
-  BigMapSection,
-  RegionsSection,
-  LinksSection,
+  StakeholdersSection,
+  PartnersSection,  
 } from 'components'
-import { getCountriesFieldsQuery } from 'lib/queries';
+import { getInvolvedFieldsQuery } from 'lib/queries';
 
 export const getStaticProps = async () => {
-  const data = await getCountriesFieldsQuery();
+  const data = await getInvolvedFieldsQuery();
 
   return {
     props: { page: data[0] },
@@ -19,22 +20,22 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {pageTitle, pageDescription, countryPresenceCards, targetSectionCountriesPage, 
-    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials }} = page;
-    
+  const {pageTitle, pageDescription, involvedHeroSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
+    console.log(page)
   return (
-    <div className="countries">
+    <div className="involved">
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout menu={pageMenu} socials={pageSocials}>
+        <InvolvedHero data={involvedHeroSection} />
+        <WideSliderSection data={wideInvolvedSection} />
+        <InvolvedForm data={involvedFormSection} />
         <TargetSection data={targetSectionCountriesPage} />
-        <CountryPresenceSection data={countryPresenceCards} />
-        <BigMapSection />
-        <RegionsSection data={regionsSectionCountriesPage}/>
-        <LinksSection data={linksSectionCountriesPage} />
+        <StakeholdersSection data={stakeholdersSliderSection} />
+        <PartnersSection data={partnersSection} />
       </MainLayout>
     </div>
   )
