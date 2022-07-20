@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
 
 export default function Countries({ page }) {
   const {pageTitle, pageDescription, involvedHeroSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
-    console.log(page)
+
   return (
     <div className="involved">
       <Head>

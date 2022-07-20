@@ -12,6 +12,7 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/image-url": "^1.0.1",
+    "axios": "^0.27.2",
     "get-youtube-id": "^1.0.1",
     "next": "12.1.6",
     "next-sanity": "^0.6.0",
