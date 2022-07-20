@@ -21,7 +21,6 @@ const InvolvedHero = ({data}) => {
     const handleScroll = () => {
       const percent = getScrollPercent();
       setScrollPercent(percent);
-      console.log(percent);
       if(percent < 22 || percent > 112) {
         icon.current.firstElementChild.style.display = 'block';
         icon.current.style.transform = `scale(1)`;
