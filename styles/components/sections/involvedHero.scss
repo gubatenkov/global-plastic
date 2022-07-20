@@ -29,11 +29,13 @@
   }
 
   &__title {
+    position: relative;
+    z-index: 2;
     max-width: 850px;
     margin: 0;
     margin-bottom: 40px;
     padding: 0;
-    padding-top: 48px;
+    padding-top: 92px;
     font-size: 48px;
     line-height: 48px;
     text-align: center;
@@ -42,12 +44,15 @@
     @include screen($sm) {
       max-width: 100%;
       margin-bottom: 32px;
+      padding-top: 68px;
       font-size: 32px;
       line-height: 32px;
     }
   }
 
   &__description {
+    position: relative;
+    z-index: 2;
     max-width: 430px;
     margin: 0;
     margin-bottom: 48px;
@@ -69,6 +74,8 @@
   }
   
   &__link {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,5 +102,28 @@
       color: $white;
       background: rgba(33, 32, 32, 0.8);
     }
+  }
+
+  &__message {
+    position: absolute;
+    width: 46px;
+    height: 44px;
+    background-image: url("../../../assets/images/message.svg");
+    background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 110px;
+    left: calc(50% - 23px);
+    z-index: 1;
+    width: 46px;
+    height: 44px; 
+    background-image: url("../../../assets/images/shapeInvolvedAnimate.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
   }
 }
