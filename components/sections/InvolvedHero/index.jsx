@@ -1,21 +1,61 @@
-import Image from 'next/image';
 import { useRouter } from "next/router";
-import getImg from '../../../utils/getImg';
+import { useEffect, useState, useRef } from "react";
 
 const InvolvedHero = ({data}) => {
   const router = useRouter();
-  const {involvedHeroTitle, involvedHeroDescription, involvedHeroImage} = data;
+  const {involvedHeroTitle, involvedHeroDescription} = data;  
+  const [percent, setScrollPercent] = useState(0);
+  const section = useRef();
+  const icon = useRef();
+
+  const getScrollPercent = () => {
+    if(!section.current) return;    
+    const sectionHeight = section.current.clientHeight;
+    const scrollHeight = document.documentElement.scrollTop;
+    const scrollPercent = Math.round(scrollHeight / sectionHeight * 100);  
+    const percent = isNaN(scrollPercent) ? "" : scrollPercent;    
+    return percent;
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const percent = getScrollPercent();
+      setScrollPercent(percent);
+      console.log(percent);
+      if(percent < 22 || percent > 112) {
+        icon.current.firstElementChild.style.display = 'block';
+        icon.current.style.transform = `scale(1)`;
+        icon.current.style.top = `110px`;
+        icon.current.style.maxHeight = `44px`;
+      } else if(percent > 22 && percent <= 37) {
+        icon.current.firstElementChild.style.display = 'none';
+        icon.current.style.transform = `scale(${percent/2})`;
+        icon.current.style.top = 110 + percent * 6 + 'px';
+        icon.current.style.maxHeight = `44px`;
+      } else if(percent > 37 && percent <= 75) {
+        icon.current.firstElementChild.style.display = 'none';
+        icon.current.style.transform = `scale(${percent/1.2}) translateX(4%)`;
+        icon.current.style.top = 110 + percent * 4 + 'px';
+        icon.current.style.maxHeight = `30px`;
+      } else if(percent > 75 && percent <= 112) {
+        icon.current.firstElementChild.style.display = 'none';
+        icon.current.style.transform = `scale(${percent/1.2}) translateX(4%)`;
+        icon.current.style.top = 110 + percent * 4 + 'px';
+        icon.current.style.maxHeight = `20px`;
+      }
+    }
+    window.addEventListener("scroll", handleScroll, true);
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    }
+  }, []);
 
   return (
-    <section className="inktion">
+    <section className="inktion" ref={section}>
       <div className="inktion__center">
-        <Image
-            src={getImg(involvedHeroImage)}
-            width="46px"
-            height="44px"
-            alt="icon"
-            layout="fixed"
-          />
+        <div className="inktion__icon" ref={icon}>
+          <div className="inktion__message"></div>
+        </div>
         <h2 className="inktion__title">{involvedHeroTitle}</h2>
         <p className="inktion__description">{involvedHeroDescription}</p>
           <button className="inktion__link" onClick={() => router.push("#form")}>

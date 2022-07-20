@@ -2,12 +2,7 @@ export default {
     name: 'involvedHero',
     title: 'Involved Hero',  
     type: 'object',
-    fields: [    
-      {
-        name: 'involvedHeroImage',
-        title: 'Involved Hero Image',
-        type: 'image',
-      },
+    fields: [
       {
         name: 'involvedHeroTitle',
         title: 'Involved Hero Title',

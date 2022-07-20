@@ -17,9 +17,15 @@ const InvolvedForm = ({data}) => {
   const modal = useRef();
   
   const modalVisible = () => {
-    modal.current.classList.add('visible');
+    if(modal.current) {
+      modal.current.classList.add('visible');
+      const section = modal.current.parentElement;
+      const inputs = section.querySelectorAll('input');
+      const inputArr = Array.from(inputs);
+      inputArr.forEach(input => input.value = '');
+    }    
   }
-  
+   
   const modalHide = () => {
     modal.current.classList.remove('visible');
   }
