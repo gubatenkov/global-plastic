@@ -3,6 +3,10 @@
 @import 'mixins';
 @import 'swiper/css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;

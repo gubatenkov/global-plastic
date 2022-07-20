@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import getImg from '../../../utils/getImg'
+import { useRouter } from "next/router";
+import getImg from '../../../utils/getImg';
 
 const InvolvedHero = ({data}) => {
+  const router = useRouter();
   const {involvedHeroTitle, involvedHeroDescription, involvedHeroImage} = data;
 
   return (
@@ -15,8 +17,8 @@ const InvolvedHero = ({data}) => {
             layout="fixed"
           />
         <h2 className="inktion__title">{involvedHeroTitle}</h2>
-        <h3 className="inktion__description">{involvedHeroDescription}</h3>
-          <a className="inktion__link" href="">
+        <p className="inktion__description">{involvedHeroDescription}</p>
+          <button className="inktion__link" onClick={() => router.push("#form")}>
             Join to converstion
             <svg
               width="15"
@@ -30,7 +32,7 @@ const InvolvedHero = ({data}) => {
                 fill="#F9B131"
               />
             </svg>
-          </a>
+          </button>
       </div>
     </section>
   );
