@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import involvedAnimation from '../../../animation/involvedAnimation'
 
 const InvolvedHero = ({data}) => {
