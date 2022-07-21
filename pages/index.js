@@ -43,7 +43,7 @@ export default function Home({ data }) {
       </Head>
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <HeroSection data={sections[0]} />
-        {/* <ScrollSection data={sections[1]} /> */}
+        <ScrollSection data={sections[1]} />
         <SliderSection data={sections[1]} />
         <CardSection data={sections[2]} />
         <WideSliderSection data={sections[3]} />

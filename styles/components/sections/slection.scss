@@ -1,6 +1,6 @@
 .slection {
   padding: 160px 0 110px;
-  padding-left: calc((100% - var(--container-width)) / 2);
+  padding-left: calc((100% - #{$container-width}) / 2);
 
   background-color: $black;
   background-repeat: no-repeat;

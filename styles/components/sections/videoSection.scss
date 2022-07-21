@@ -247,7 +247,7 @@
   &__egg1 {
     top: 165px;
     position: absolute;
-    left: calc(((100vw - var(--container-width)) / 2) + 50px);
+    left: calc(((100vw - #{$container-width}) / 2) + 50px);
 
     z-index: 11;
   }
@@ -255,7 +255,7 @@
   &__egg2 {
     bottom: 150px;
     position: absolute;
-    right: calc(((100vw - var(--container-width)) / 2) + 45px);
+    right: calc(((100vw - #{$container-width}) / 2) + 45px);
 
     @include screen($sm) {
       right: 0;
