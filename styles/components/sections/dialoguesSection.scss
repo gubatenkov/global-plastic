@@ -8,7 +8,7 @@
   &__inner {
     gap: 90px;
     display: flex;
-    padding-left: calc((100vw - var(--container-width)) / 2);
+    padding-left: calc((100vw - #{$container-width}) / 2);
 
     @include screen(1405px) {
       padding-left: 55px;
@@ -60,7 +60,7 @@
   }
 
   &__right {
-    width: calc(100vw - ((100vw - var(--container-width)) / 2));
+    width: calc(100vw - ((100vw - #{$container-width}) / 2));
 
     @include screen($sm) {
       width: 100%;

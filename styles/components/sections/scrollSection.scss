@@ -1,9 +1,53 @@
 .screction {
-  height: 100vh;
+  max-height: 880px;
 
   background-color: $black;
 
   position: relative;
+
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__watch {
+    position: sticky;
+    width: 10000px;
+    top: 50%;
+    height: 1px;
+
+    z-index: 12;
+  }
+
+  &__wave-1 {
+    top: 180px;
+    left: -75px;
+    position: absolute;
+
+    z-index: -1;
+  }
+
+  &__wave-2 {
+    top: 180px;
+    left: -75px;
+    position: absolute;
+
+    z-index: -1;
+  }
+
+  &__container {
+    margin: -20px 0 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    will-change: transform;
+
+    .ghost {
+      width: 100vw;
+    }
+  }
 
   &__scrollwrap {
     top: 0;
@@ -16,10 +60,6 @@
     overflow-x: hidden;
 
     z-index: 10;
-
-    // &::-webkit-scrollbar {
-    //   display: none;
-    // }
   }
 
   &__scroll {
@@ -27,12 +67,15 @@
   }
 
   &__nav {
-    right: 100px;
-    position: absolute;
+    top: 160px;
+    left: 90%;
+    position: sticky;
 
     gap: 12px;
     display: inline-flex;
     align-items: center;
+
+    z-index: 100;
 
     span {
       color: $white;
@@ -55,14 +98,9 @@
 
   &__inner {
     padding: 160px 0 170px;
-    padding-left: calc((100% - var(--container-width)) / 2);
+    padding-left: calc((100vw - #{$container-width}) / 2);
 
-    top: 0;
-    left: 0;
-    bottom: 0;
-    position: absolute;
-
-    gap: 280px;
+    gap: 150px;
     display: flex;
 
     .bubble {
@@ -71,13 +109,17 @@
   }
 
   &__left {
-    max-width: 490px;
+    max-width: 600px;
 
     flex-shrink: 0;
 
     &__btn {
       margin: 180px 0 0;
       padding: 0;
+
+      gap: 15px;
+      display: flex;
+      align-items: center;
 
       color: $white;
       font-size: 12px;
@@ -92,10 +134,11 @@
   }
 
   &__right {
-    padding: 100px 0 0;
+    min-height: 550px;
 
     gap: 200px;
     display: flex;
+    align-items: center;
   }
 
   .bubble.compble {
@@ -154,4 +197,15 @@
       }
     }
   }
+
+  &__text > .slection__left__subtitle {
+    max-width: 70%;
+  }
+}
+
+.thumbnails-container {
+  position: relative;
+  width: max-content;
+  display: flex;
+  align-items: center;
 }
