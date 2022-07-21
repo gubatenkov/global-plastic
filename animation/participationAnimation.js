@@ -1,16 +1,14 @@
 const participationAnimation = (percent, icon) => {
   const number = icon.current.firstElementChild;   
-  if(percent > -30 && percent < 10) {
+  if(percent > -40 && percent < -14) {
     icon.current.style.transform = 'scale(1)';
+    number.style.display = 'block';
+  } else if(percent > -14 && percent < 95) {
+    icon.current.style.transform = `scale(${1 + (percent + 14) / 100})`;
     icon.current.style.opacity = '1';
     number.style.display = 'block';
-  } else if(percent > 50 && percent < 85) {
-    icon.current.style.transform = 'scale(25)';
-    icon.current.style.opacity = '.5';
-    number.style.display = 'none';
-  } else if(percent < -30 || percent > 85) {
-    icon.current.style.transform = 'scale(.1)';
-    icon.current.style.opacity = '1';
+  } else if(percent < -40 || percent > 95) {
+    icon.current.style.transform = 'scale(.25)';
     number.style.display = 'block';
   }       
 }

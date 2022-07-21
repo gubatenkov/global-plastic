@@ -101,7 +101,7 @@
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    transform: scale(.1);
+    transform: scale(.25);
     transition: .75s;
     
     @include screen($lg) {
@@ -118,11 +118,6 @@
       font-size: 64px;
       line-height: 64px;
     }
-  }
-
-  &__number {
-    padding-bottom: 5%;
-    padding-right: 8%;
   }
 
   &__shape2 {
