@@ -1,47 +1,26 @@
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
+import involvedAnimation from '../../../animation/involvedAnimation'
 
 const InvolvedHero = ({data}) => {
   const router = useRouter();
-  const {involvedHeroTitle, involvedHeroDescription} = data;  
-  const [percent, setScrollPercent] = useState(0);
+  const {involvedHeroTitle, involvedHeroDescription} = data;
   const section = useRef();
   const icon = useRef();
 
   const getScrollPercent = () => {
     if(!section.current) return;    
     const sectionHeight = section.current.clientHeight;
-    const scrollHeight = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollTop - section.current.offsetTop;
     const scrollPercent = Math.round(scrollHeight / sectionHeight * 100);  
-    const percent = isNaN(scrollPercent) ? "" : scrollPercent;    
+    const percent = isNaN(scrollPercent) ? "" : scrollPercent;
     return percent;
   }
 
   useEffect(() => {
     const handleScroll = () => {
       const percent = getScrollPercent();
-      setScrollPercent(percent);
-      if(percent < 22 || percent > 112) {
-        icon.current.firstElementChild.style.display = 'block';
-        icon.current.style.transform = `scale(1)`;
-        icon.current.style.top = `110px`;
-        icon.current.style.maxHeight = `44px`;
-      } else if(percent > 22 && percent <= 37) {
-        icon.current.firstElementChild.style.display = 'none';
-        icon.current.style.transform = `scale(${percent/2})`;
-        icon.current.style.top = 110 + percent * 6 + 'px';
-        icon.current.style.maxHeight = `44px`;
-      } else if(percent > 37 && percent <= 75) {
-        icon.current.firstElementChild.style.display = 'none';
-        icon.current.style.transform = `scale(${percent/1.2}) translateX(4%)`;
-        icon.current.style.top = 110 + percent * 4 + 'px';
-        icon.current.style.maxHeight = `30px`;
-      } else if(percent > 75 && percent <= 112) {
-        icon.current.firstElementChild.style.display = 'none';
-        icon.current.style.transform = `scale(${percent/1.2}) translateX(4%)`;
-        icon.current.style.top = 110 + percent * 4 + 'px';
-        icon.current.style.maxHeight = `20px`;
-      }
+      involvedAnimation(percent, icon);
     }
     window.addEventListener("scroll", handleScroll, true);
     return () => {
