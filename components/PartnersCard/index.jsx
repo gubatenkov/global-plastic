@@ -19,6 +19,7 @@ const PartnersCard = ({ title, logos, index }) => {
           scale: 1,
         }}
         transition={{ duration: 1, delay: index * 0.2 }}
+        viewport={{ once: true }}
       >
         <div className="parection-card__list">
           {logos.map((img, idx) => {
