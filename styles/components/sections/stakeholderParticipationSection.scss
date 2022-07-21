@@ -97,7 +97,7 @@
     font-weight: 400;
     font-size: 96px;
     line-height: 96px;
-    background-image: url('../../../assets//images/shape1.1.svg');
+    background-image: url('../../../assets//images/shapeParticipation1animate.svg');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -121,9 +121,8 @@
   }
 
   &__number {
+    padding-bottom: 5%;
     padding-right: 8%;
-    padding-bottom: 8%;
-    transition: 0;
   }
 
   &__shape2 {
@@ -132,7 +131,7 @@
     right: 270px;
     width: 56px;
     height: 60px; 
-    background-image: url('../../../assets//images/shape1.2.svg');
+    background-image: url('../../../assets//images/shapeParticipation2animate.svg');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat; 
@@ -151,7 +150,7 @@
     right: 284px;
     width: 32px;
     height: 36px; 
-    background-image: url('../../../assets//images/shape1.3.svg');
+    background-image: url('../../../assets//images/shapeParticipation3animate.svg');
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;  
