@@ -18,5 +18,5 @@ COPY ./package*.json /usr/src/app/
 RUN npm install && npm cache clean --force
 COPY ./ /usr/src/app
 EXPOSE ${NEXT_SERVER_PORT}
-RUN [ "npm", "run", "build" ]
-CMD [ "npm", "start" ]
+RUN npm run build
+CMD npm start
