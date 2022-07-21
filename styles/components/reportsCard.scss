@@ -62,7 +62,8 @@
   
   &__download {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    text-align: left;
     align-items: center;
     flex: 0 0 auto;
     width: 154px;

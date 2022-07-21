@@ -176,6 +176,10 @@
     right: 2px;
   }
 
+  &__input-wrapper input.invalid {
+    border-color: #E14848;
+  }
+
   &__input-wrapper input:valid + &__placeholder {
     top: -7px;
     padding: 0 8px;
@@ -346,5 +350,3 @@
     }
   }
 }
-
-

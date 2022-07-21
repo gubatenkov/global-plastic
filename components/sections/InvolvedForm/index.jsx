@@ -3,7 +3,7 @@ import getImg from '../../../utils/getImg';
 import arrowRight from '../../../assets/images/arrowRight.svg';
 import mail from '../../../assets/images/mail.svg';
 import { useState, useRef } from 'react';
-import axios from 'axios';
+import handleSubmit from '../../../pages/api/handleSubmit';
 
 const InvolvedForm = ({data}) => {
   const {involvedFormImage, involvedFormTitle} = data;
@@ -13,72 +13,23 @@ const InvolvedForm = ({data}) => {
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [select, setSelect] = useState("");
-
   const modal = useRef();
   
   const modalVisible = () => {
     if(modal.current) {
       modal.current.classList.add('visible');
-      const section = modal.current.parentElement;
-      const inputs = section.querySelectorAll('input');
-      const inputArr = Array.from(inputs);
-      inputArr.forEach(input => input.value = '');
+      setFirstName('');
+      setLastName('');
+      setCompany('');
+      setEmail('');
     }    
   }
    
   const modalHide = () => {
-    modal.current.classList.remove('visible');
+    if(modal.current) {
+      modal.current.classList.remove('visible');
+    }    
   }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if(!firstName || !lastName || !company || !email || !select) return;
-    const response = await submit_hubspot_form(firstName, lastName, company, email, select);
-    if(response.status == 200) {
-      modalVisible();
-    }
-  }
-
-  const submit_hubspot_form = async (firstName, lastName, company, email, select) => {
-    const portalId = process.env.NEXT_PUBLIC_PORTAL_ID;
-    const formGuid = process.env.NEXT_PUBLIC_CONTACT_FORM_GUID;
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },  
-    }
-    const response = await axios.post(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formGuid}`,
-      {
-        portalId,
-        formGuid,
-        fields: [
-          {
-            name: 'firstname',
-            value: firstName,
-          },
-          {
-            name: 'lastname',
-            value: lastName,
-          },
-          {
-            name: 'company',
-            value: company,
-          },
-          {
-            name: 'email',
-            value: email,
-          },
-          {
-            name: '0-2/which_group_do_you_best_represent_',
-            value: select,
-          }
-        ],
-      },
-      config
-    );
-    return response;
-  }
- 
 
   return (
     <section className="ifktion">
@@ -99,7 +50,7 @@ const InvolvedForm = ({data}) => {
       </div>
       <div className="ifktion__center">
         <h2 className="ifktion__title" id="form">{involvedFormTitle}</h2>
-        <form className="ifktion__form" onSubmit={handleSubmit}>
+        <form className="ifktion__form" onSubmit={(event) => handleSubmit(event, firstName, lastName, company, email, select, modalVisible)}>
           <div className="ifktion__input-wrapper ifktion__half-input">
             <input name="firstname" type="text" maxLength="50" required 
             value={firstName} onChange={e => setFirstName(e.target.value)} />
