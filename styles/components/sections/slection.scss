@@ -1,4 +1,5 @@
 .slection {
+  display: none;
   padding: 160px 0 110px;
   padding-left: calc((100% - #{$container-width}) / 2);
 
@@ -11,7 +12,9 @@
   position: relative;
 
   @include screen($sm) {
+    display: block;
     padding: 60px 0;
+
     border-radius: $section-radius-mobile;
   }
 

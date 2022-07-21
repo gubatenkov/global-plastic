@@ -7,6 +7,10 @@
 
   overflow-x: hidden;
 
+  @include screen($sm) {
+    display: none;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -18,22 +22,6 @@
     height: 1px;
 
     z-index: 12;
-  }
-
-  &__wave-1 {
-    top: 180px;
-    left: -75px;
-    position: absolute;
-
-    z-index: -1;
-  }
-
-  &__wave-2 {
-    top: 180px;
-    left: -75px;
-    position: absolute;
-
-    z-index: -1;
   }
 
   &__container {
@@ -98,7 +86,7 @@
 
   &__inner {
     padding: 160px 0 170px;
-    padding-left: calc((100vw - #{$container-width}) / 2);
+    margin-left: calc((100vw - #{$container-width}) / 2);
 
     gap: 150px;
     display: flex;
@@ -113,8 +101,42 @@
 
     flex-shrink: 0;
 
+    position: relative;
+
+    &::before {
+      content: '';
+
+      width: 5000px;
+      height: 100%;
+
+      top: 100px;
+      left: -350px;
+      position: absolute;
+
+      background-repeat: no-repeat;
+      background-image: url('../../../assets/images/rightWave.svg');
+
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+
+      width: 5000px;
+      height: 100%;
+
+      top: 100px;
+      left: -350px;
+      position: absolute;
+
+      background-repeat: no-repeat;
+      background-image: url('../../../assets/images/rightWave2.svg');
+
+      z-index: 1;
+    }
+
     &__btn {
-      margin: 180px 0 0;
+      margin: 250px 0 0;
       padding: 0;
 
       gap: 15px;

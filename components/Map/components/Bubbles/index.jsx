@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Bubbles = () => {
   return (
@@ -34,48 +35,131 @@ const Bubbles = () => {
           transform="matrix(0.693306 -0.720643 -0.720643 -0.693306 8.5747 261.483)"
           fill="#5BAEF0"
         />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 468.221 327.771)"
-          fill="#5BAEF0"
-        />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 488.924 335.299)"
-          fill="#5BAEF0"
-        />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 535.979 354.12)"
-          fill="#5BAEF0"
-        />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 241.881 130.603)"
-          fill="#5BAEF0"
-        />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1141.07 143.455)"
-          fill="#5BAEF0"
-        />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 263.081 120.74)"
-          fill="#5BAEF0"
-        />
-        <circle
-          opacity="0.2"
-          r="13.7649"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1160.1 152.008)"
-          fill="#5BAEF0"
-        />
+        <motion.g
+          animate={{
+            scale: [1, 0.9, 1],
+          }}
+          transition={{
+            duration: 6,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.1,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 468.221 327.771)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
+        <motion.g
+          animate={{
+            scale: [1, 0.75, 1],
+          }}
+          transition={{
+            duration: 5,
+            ease: 'easeInOut',
+            repeat: Infinity,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            fill="#5BAEF0"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 488.924 335.299)"
+          />
+        </motion.g>
+        <motion.g
+          animate={{
+            scale: [1, 0.45, 1],
+          }}
+          transition={{
+            duration: 4,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.2,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 535.979 354.12)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
+        <motion.g
+          animate={{
+            scale: [1, 0.45, 1],
+          }}
+          transition={{
+            duration: 4,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.2,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 241.881 130.603)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
+        <motion.g
+          animate={{
+            scale: [1, 0.65, 1],
+          }}
+          transition={{
+            duration: 5,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.1,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1141.07 143.455)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
+        <motion.g
+          animate={{
+            scale: [1, 0.65, 1],
+          }}
+          transition={{
+            duration: 5,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.4,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 263.081 120.74)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
+        <motion.g
+          animate={{
+            scale: [1, 0.45, 1],
+          }}
+          transition={{
+            duration: 4,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.2,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="13.7649"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1160.1 152.008)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
         <circle
           opacity="0.2"
           r="3.50336"
@@ -88,12 +172,23 @@ const Bubbles = () => {
           transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1132.74 164.166)"
           fill="#5BAEF0"
         />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 215.085 98.1547)"
-          fill="#5BAEF0"
-        />
+        <motion.g
+          animate={{
+            scale: [1, 0.65, 1],
+          }}
+          transition={{
+            duration: 3,
+            ease: 'easeInOut',
+            repeat: Infinity,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 215.085 98.1547)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
         <circle
           opacity="0.2"
           r="10.6458"
@@ -118,12 +213,24 @@ const Bubbles = () => {
           transform="matrix(-0.914382 -0.404852 -0.404852 0.914382 272.862 153.559)"
           fill="#5BAEF0"
         />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1182.48 114.152)"
-          fill="#5BAEF0"
-        />
+        <motion.g
+          animate={{
+            scale: [1, 0.25, 1],
+          }}
+          transition={{
+            duration: 6,
+            ease: 'easeInOut',
+            repeat: Infinity,
+            delay: 0.1,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1182.48 114.152)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
         <circle
           opacity="0.2"
           r="3.50336"
@@ -202,12 +309,23 @@ const Bubbles = () => {
           transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 1037.71 305.337)"
           fill="#5BAEF0"
         />
-        <circle
-          opacity="0.2"
-          r="14.9712"
-          transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 963.213 307.067)"
-          fill="#5BAEF0"
-        />
+        <motion.g
+          animate={{
+            scale: [1, 0.75, 1],
+          }}
+          transition={{
+            duration: 4,
+            ease: 'easeInOut',
+            repeat: Infinity,
+          }}
+        >
+          <circle
+            opacity="0.2"
+            r="14.9712"
+            transform="matrix(-0.543628 -0.839326 -0.839326 0.543628 963.213 307.067)"
+            fill="#5BAEF0"
+          />
+        </motion.g>
         <circle
           opacity="0.2"
           r="5.69799"

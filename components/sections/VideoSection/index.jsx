@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import getYouTubeId from 'get-youtube-id';
+import { motion } from 'framer-motion';
 
 import { VideoPopup } from 'components';
 import { urlForImage } from 'lib/sanity';
+import Bubble from '../CardSection/components/Bubble';
 
 const VideoSection = ({
   data: {
@@ -23,9 +25,29 @@ const VideoSection = ({
       <div className="container">
         <div className="vection__inner">
           <div className="vection__left">
-            <h2 className="vection__title">{videoSectionTitle}</h2>
+            <motion.h2
+              className="vection__title"
+              initial={{ opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+            >
+              {videoSectionTitle}
+            </motion.h2>
             <div className="vection__center">
-              <p className="vection__center__text">{videoSectionQuote}</p>
+              <motion.p
+                className="vection__center__text"
+                initial={{ opacity: 0 }}
+                whileInView={{
+                  opacity: 1,
+                }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.3 }}
+              >
+                {videoSectionQuote}
+              </motion.p>
               <div
                 className="vection__center__video"
                 onClick={() => setVideoPopupShown(true)}
@@ -46,7 +68,15 @@ const VideoSection = ({
                 <div className="vection__center__video__play" />
               </div>
             </div>
-            <div className="vection__author">
+            <motion.div
+              className="vection__author"
+              initial={{ opacity: 0 }}
+              whileInView={{
+                opacity: 1,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.6 }}
+            >
               <div className="vection__author-avatar">
                 <Image
                   className="vection__author-avatar__img"
@@ -63,23 +93,11 @@ const VideoSection = ({
                   {videoSectionAuthorJob}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-      <svg
-        className="vection__egg1"
-        width="72"
-        height="71"
-        viewBox="0 0 72 71"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0.192198 46.0374C3.69946 8.52089 22.4049 -4.57999 48.4331 1.37488C73.8446 10.903 78.217 46.4424 63.9074 56.161C39.3568 72.835 -3.20983 82.4282 0.192198 46.0374Z"
-          fill="#F9B131"
-        />
-      </svg>
+      <Bubble className="vection__egg1" style={{ transform: 'scale(1.5)' }} />
       <svg
         className="vection__egg2"
         width="47"

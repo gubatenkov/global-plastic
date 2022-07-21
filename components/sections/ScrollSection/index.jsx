@@ -118,16 +118,6 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
     });
   }, [debouncedHandler, scrollY]);
 
-  const currentX = {
-    0: 0,
-    1: -175,
-    2: -350,
-    3: -525,
-    4: -700,
-    5: -795,
-    6: -190,
-  };
-
   return (
     <section className="screction" ref={sectionRef}>
       <ScrollNav
@@ -151,20 +141,6 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
           className="thumbnails-container"
           animate={controls}
         >
-          <Wave1
-            className="screction__wave-1"
-            animate={{
-              x: currentX[step],
-            }}
-            transition={{ duration: 1 }}
-          />
-          <Wave2
-            className="screction__wave-2"
-            animate={{
-              x: currentX[step] * 1.2,
-            }}
-            transition={{ duration: 1 }}
-          />
           <div className="screction__inner">
             <div className="screction__left">
               <div className="screction__text">
@@ -230,7 +206,11 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
           </div>
         </motion.div>
       </div>
-      <div ref={ghostRef} style={{ height: scrollRange }} className="ghost" />
+      <div
+        ref={ghostRef}
+        style={{ height: scrollRange + 10000 }}
+        className="ghost"
+      />
     </section>
   );
 };

@@ -36,7 +36,7 @@ const ScrubbleCard = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const startPositions = {
+  const initialYPositions = {
     1: '0px',
     2: '-75px',
     3: '0px',
@@ -45,13 +45,22 @@ const ScrubbleCard = ({
     6: '-45px',
   };
 
+  const activeXPositions = {
+    1: '-55px',
+    2: '55px',
+    3: '55px',
+    4: '-40px',
+    5: '-50px',
+    6: '0px',
+  };
+
   return (
     <motion.div
       className={isActive ? 'scrubble active' : 'scrubble'}
       initial={{
         width: '290px',
         height: '290px',
-        y: order in startPositions ? startPositions[order] : '0px',
+        y: order in initialYPositions ? initialYPositions[order] : '0px',
       }}
       whileInView={
         isActive
@@ -60,7 +69,7 @@ const ScrubbleCard = ({
               height: '400px',
               backgroundColor: '#302E2E',
               border: '1px solid #302E2E',
-              y: '-50px',
+              x: order in activeXPositions ? activeXPositions[order] : '0px',
             }
           : {
               width: order === 1 ? '310px' : '290px',

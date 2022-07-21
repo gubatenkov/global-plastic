@@ -40,7 +40,8 @@ export default {
           type: 'image',
         }
       ]
-      }]
+      }],
+      validation: Rule => Rule.required().min(6).max(6)
     },
   ],
 }
