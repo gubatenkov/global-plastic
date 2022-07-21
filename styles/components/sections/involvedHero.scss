@@ -110,7 +110,7 @@
     height: 44px;
     background-image: url("../../../assets/images/message.svg");
     background-size: auto;
-    background-position: center center;
+    background-position:  12px center;
     background-repeat: no-repeat;
   }
 
@@ -122,6 +122,7 @@
     width: 46px;
     height: 44px; 
     background-image: url("../../../assets/images/shapeInvolvedAnimate.svg");
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: hidden;

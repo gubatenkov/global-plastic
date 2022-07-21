@@ -90,14 +90,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 245px;
-    height: 245px;    
+    width: 300px;
+    height: 300px;    
     font-weight: 400;
     font-size: 96px;
     line-height: 96px;
-    background-image: url('../../../assets//images/shape1.1.svg');
+    background-image: url('../../../assets//images/shapeParticipation1animate.svg');
     background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;
+    transform: scale(.1);
+    transition: .75s;
     
     @include screen($lg) {
       top: 312px;
@@ -115,14 +118,20 @@
     }
   }
 
+  &__number {
+    padding-right: 8%;
+    padding-bottom: 8%;
+  }
+
   &__shape2 {
     position: absolute;
     top: 570px;
     right: 270px;
-    width: 47px;
-    height: 48px; 
-    background-image: url('../../../assets//images/shape1.2.svg');
+    width: 56px;
+    height: 60px; 
+    background-image: url('../../../assets//images/shapeParticipation2animate.svg');
     background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat; 
     
     @include screen($sm) {
@@ -137,10 +146,11 @@
     position: absolute;
     top: 471px;
     right: 284px;
-    width: 24px;
-    height: 19px; 
-    background-image: url('../../../assets//images/shape1.3.svg');
+    width: 32px;
+    height: 36px; 
+    background-image: url('../../../assets//images/shapeParticipation3animate.svg');
     background-size: contain;
+    background-position: center center;
     background-repeat: no-repeat;  
     
     @include screen($sm) {
