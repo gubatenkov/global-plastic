@@ -14,7 +14,6 @@ const StakeholderParticipationSection = ({data}) => {
     const scrollHeight = document.documentElement.scrollTop - section.current.offsetTop;
     const scrollPercent = Math.round(scrollHeight / sectionHeight * 100);  
     const percent = isNaN(scrollPercent) ? "" : scrollPercent;
-    console.log(percent)
     return percent;
   }
 
