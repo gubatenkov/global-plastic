@@ -31,6 +31,15 @@ const InvolvedForm = ({data}) => {
     }    
   }
 
+  const onBlur = (event) => {
+    const isValid = event.target.checkValidity();
+    if(!isValid) {
+      event.target.classList.add('invalid');
+    } else {
+      event.target.classList.remove('invalid');
+    }
+  }
+
   return (
     <section className="ifktion">
       <div className="ifktion__modal" ref={modal}>
@@ -68,7 +77,7 @@ const InvolvedForm = ({data}) => {
           </div>
           <div className="ifktion__input-wrapper">
             <input name="email" type="email" maxLength="50" required
-            value={email} onChange={e => setEmail(e.target.value)} />
+            value={email} onChange={e => setEmail(e.target.value)} onBlur={onBlur}/>
             <span className="ifktion__placeholder" data-placeholder="E-mail"></span>
           </div>    
           <label htmlFor="group" className="ifktion__form-subtitle">Which group do you best represent?</label>

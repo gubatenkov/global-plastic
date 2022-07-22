@@ -160,12 +160,12 @@
   
   &__input-wrapper input:focus + &__placeholder {
     top: -7px;
-    padding: 0 8px;
+    padding: 0 4px;
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
     color: $accent-color;
-    background-color: $white;
+    background-image: linear-gradient(to top, transparent 32%, #fff 32%);
   }
 
   &__input-wrapper input:focus + &__placeholder::before {
@@ -175,20 +175,40 @@
   &__input-wrapper input:focus + &__placeholder::after {
     font-size: 14px;
     top: -3px;
-    right: 2px;
+    right: -2px;
   }
 
   &__input-wrapper input.invalid {
     border-color: #E14848;
   }
 
-  &__input-wrapper input:valid + &__placeholder {
+  &__input-wrapper input.invalid + &__placeholder {
     top: -7px;
-    padding: 0 8px;
+    padding: 0 4px;
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
-    background-color: $white;
+    background-image: linear-gradient(to top, transparent 32%, #fff 32%);
+  }
+
+  &__input-wrapper input.invalid + &__placeholder::before {
+    color: #E14848;
+  }
+
+  &__input-wrapper input.invalid + &__placeholder::after {
+    color: #E14848;
+    font-size: 14px;
+    top: -3px;
+    right: -2px;
+  }
+
+  &__input-wrapper input:valid + &__placeholder {
+    top: -7px;
+    padding: 0 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    background-image: linear-gradient(to top, transparent 32%, #fff 32%);
   }
 
   &__input-wrapper input:valid + &__placeholder::before {

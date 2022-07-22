@@ -355,11 +355,14 @@
     top: 11.7%;
     left: -2.6%;
     width: 30.7%;
-    height: 28.6%;
-    background-image: url('../../../assets/images/shape2.1img.png');
+    height: 28.6%;    
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    mask-image: url("../../../assets/images/shape2.1imgMask.svg");
+    mask-size: contain;
+    mask-position: center center;
+    mask-repeat: no-repeat;
 
     @include screen($xxl) {
       width: 34%;
@@ -371,14 +374,17 @@
 
   &__shape2img {
     position: absolute;
-    top: 55.6%;
-    left: 58.5%;
-    width: 35.3%;
-    height: 31.5%;
-    background-image: url('../../../assets/images/shape2.2img.png');
+    top: 53.6%;
+    left: 55.5%;
+    width: 41.8%;
+    height: 37.6%;    
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    mask-image: url("../../../assets/images/shape2.2imgMask.svg");
+    mask-size: contain;
+    mask-position: center center;
+    mask-repeat: no-repeat;
 
     @include screen($xxl) {
       width: 37.5%;

@@ -32,9 +32,9 @@ const StakeholderEngagementSection = ({data}) => {
               <div className="sesktion__data5">{stakeholderEngagementData5}</div>
               <p className="sesktion__description5">{stakeholderEngagementData5Description}</p>
             </div>
-            <div className="sesktion__shape1img">
+            <div className="sesktion__shape1img" style={{backgroundImage: `url('${getImg(stakeholderEngagementImage1)}')`}} >
             </div>
-            <div className="sesktion__shape2img">
+            <div className="sesktion__shape2img" style={{backgroundImage: `url('${getImg(stakeholderEngagementImage2)}')`}} >
             </div>
           </div>
         </div>
