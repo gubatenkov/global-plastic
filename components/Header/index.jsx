@@ -6,22 +6,6 @@ import { Burger } from 'components';
 
 import logo from 'assets/images/logo.svg';
 
-const wave1 = {
-  hidden: {
-    x: '-100%',
-    opacity: '0.3',
-  },
-  visible: {
-    x: '100%',
-    opacity: '1',
-    transition: {
-      loop: Infinity,
-      ease: 'linear',
-      duration: 10,
-    },
-  },
-};
-
 const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
   return (
     <header className="header">
@@ -48,8 +32,18 @@ const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
       <Link passHref href="/involved#form">
         <a className="header__link">Join the Dialogues</a>
       </Link>
-      <div className="header__wave" />
-      <div className="header__wave" />
+      <motion.div
+        className="header__wave"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 1 }}
+      />
+      <motion.div
+        className="header__wave"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.2 }}
+        transition={{ duration: 1 }}
+      />
     </header>
   );
 };
