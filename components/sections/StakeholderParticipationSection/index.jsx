@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import participationAnimation from '../../../animation/participationAnimation'
 
 const StakeholderParticipationSection = ({data}) => {
-  const {stakeholderParticipationTitle, stakeholderParticipationDescription, stakeholderParticipationImage, stakeholderParticipationNumber} = data;
+  const {stakeholderParticipationTitle, stakeholderParticipationDescription, stakeholderParticipationImage, stakeholderImagePositionLeft, stakeholderImagePositionTop, stakeholderParticipationNumber} = data;
 
   const section = useRef();
   const icon = useRef();
