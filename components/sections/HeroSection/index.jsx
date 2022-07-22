@@ -1,3 +1,7 @@
+import debounce from 'lodash.debounce';
+import { useScroll } from 'framer-motion';
+import { useCallback, useEffect, useRef } from 'react';
+
 import { HeroPanel, Map, NewsTicker } from 'components';
 
 const HeroSection = ({
@@ -10,8 +14,37 @@ const HeroSection = ({
     heroURL,
   },
 }) => {
+  const sectionRef = useRef(null);
+  const { scrollY, scrollYProgress } = useScroll({ target: sectionRef });
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedHandler = useCallback(
+    debounce(() => {
+      const sectionOffset = sectionRef?.current?.offsetTop;
+      const sectionHeight =
+        sectionRef?.current?.getBoundingClientRect()?.height;
+
+      window.scrollTo({
+        top: sectionOffset + sectionHeight + 440 - window.innerHeight / 2,
+        behavior: 'smooth',
+      });
+    }, 500),
+    []
+  );
+
+  // scroll listener fire handler after the section is scrolled more than h / 2
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      if (latest < 0) return;
+
+      let isScrollingDown = scrollY.getPrevious() - latest < 0;
+
+      if (isScrollingDown && scrollYProgress.getPrevious()) debouncedHandler();
+    });
+  }, [debouncedHandler, scrollY, scrollYProgress]);
+
   return (
-    <section className="hero hero--mb">
+    <section className="hero hero--mb" ref={sectionRef}>
       <div className="container">
         <div className="hero__inner">
           <Map />

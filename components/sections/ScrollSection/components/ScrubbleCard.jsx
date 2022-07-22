@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import { useRef } from 'react';
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 
 import { urlForImage } from 'lib/sanity';
 
 import img from 'assets/images/slectionSliderImg1.png';
-import { useEffect } from 'react';
 
 const ScrubbleCard = ({
   title,
@@ -13,7 +12,6 @@ const ScrubbleCard = ({
   image,
   order,
   isActive,
-  setOffset,
   setCurrentIdx,
 }) => {
   const ref = useRef(null);
@@ -28,13 +26,6 @@ const ScrubbleCard = ({
     if (!image) return img;
     return urlForImage(image).fit('crop').url();
   };
-
-  useEffect(() => {
-    if (ref?.current) {
-      setOffset(ref, order);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const initialYPositions = {
     1: '0px',

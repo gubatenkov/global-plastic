@@ -1,9 +1,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 import { Burger } from 'components';
 
 import logo from 'assets/images/logo.svg';
+
+const wave1 = {
+  hidden: {
+    x: '-100%',
+    opacity: '0.3',
+  },
+  visible: {
+    x: '100%',
+    opacity: '1',
+    transition: {
+      loop: Infinity,
+      ease: 'linear',
+      duration: 10,
+    },
+  },
+};
 
 const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
   return (
@@ -31,23 +48,8 @@ const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
       <Link passHref href="/involved#form">
         <a className="header__link">Join the Dialogues</a>
       </Link>
-      <div className="header__wave">
-        <div
-          className="header__wave-inner"
-          style={{ height: '45px', overflow: 'hidden' }}
-        >
-          <svg
-            viewBox="0 0 800 150"
-            preserveAspectRatio="none"
-            style={{ height: '100%', width: '100%' }}
-          >
-            <path
-              d="M108.63,135.70 C189.90,115.97 201.75,132.73 288.09,135.70 L444.98,149.52 L31.31,150.50 Z"
-              style={{ stroke: 'none', fill: '#f5f5f5' }}
-            ></path>
-          </svg>
-        </div>
-      </div>
+      <div className="header__wave" />
+      <div className="header__wave" />
     </header>
   );
 };

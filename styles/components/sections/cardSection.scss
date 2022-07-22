@@ -262,11 +262,13 @@
       position: relative;
 
       > .message {
-        top: 50%;
-        left: 50%;
+        top: calc(50% - 2px);
+        left: calc(50% - 2px);
         position: absolute;
 
         transform: translate(-50%, -50%);
+
+        z-index: 12;
       }
     }
 
@@ -294,7 +296,7 @@
       font-style: normal;
       text-align: center;
 
-      z-index: 10;
+      z-index: 11;
 
       @include screen($sm) {
         margin: 0 auto 30px;
@@ -319,7 +321,7 @@
 
       opacity: 0.8;
 
-      z-index: 10;
+      z-index: 11;
     }
   }
 }

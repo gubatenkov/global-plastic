@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import debounce from 'lodash.debounce';
 import { useScroll, motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { CardBase } from 'components';
 import Bubble from './components/Bubble';
@@ -28,23 +29,41 @@ const CardSection = ({
   const { scrollY } = useScroll();
   const [percentage, setPercentage] = useState(0);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedHandler = useCallback(
+    debounce(() => {
+      window.scrollTo({
+        top: sectionRef.current.offsetTop - 440 - window.innerHeight / 2,
+        behavior: 'smooth',
+      });
+    }, 500),
+    []
+  );
+
   useEffect(() => {
     return scrollY.onChange((latest) => {
       if (latest < 0) return;
-      const sectionH = sectionRef.current.getBoundingClientRect().height;
-      const pxToScroll =
-        sectionH - (bubbleRef.current.offsetTop - sectionRef.current.offsetTop);
-      const start = bubbleRef.current.offsetTop;
+      const sectionH = sectionRef.current.getBoundingClientRect().height - 400;
+      const start = sectionRef.current.offsetTop + 400;
 
-      if (latest >= start && latest < start + pxToScroll) {
-        setPercentage(Math.round(latest / (pxToScroll / 100)) - 480);
+      if (latest >= start && latest < start + sectionH) {
+        setPercentage(Math.round(latest / (sectionH / 100)) - 202);
       } else if (latest < start) {
         setPercentage(0);
       } else {
         setPercentage(100);
       }
+
+      let isScrollingDown = scrollY.getPrevious() - latest < 0;
+      if (
+        !isScrollingDown &&
+        latest > sectionRef.current.offsetTop &&
+        latest < sectionRef.current.offsetTop + 50
+      ) {
+        debouncedHandler();
+      }
     });
-  }, [scrollY]);
+  }, [debouncedHandler, scrollY]);
 
   return (
     <section className="carection" ref={sectionRef}>
@@ -109,8 +128,9 @@ const CardSection = ({
               <div className="carection__text-row__bubble" ref={bubbleRef}>
                 <Bubble
                   style={{
-                    transform: `scale(${percentage ? percentage : 1})`,
+                    transform: `scale(${percentage ? percentage : 1.1})`,
                     transition: 'transform 0.5s linear',
+                    zIndex: 11,
                   }}
                 />
                 <Message className="message" />
