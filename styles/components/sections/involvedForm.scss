@@ -23,16 +23,16 @@
   &__center {
     width: 100%;
     max-width: 720px;
-    padding: 80px 96px 0;
+    padding: 0 96px;
 
     @include screen($xxl) {
-      padding: 80px 32px 0 60px;
+      padding: 0 32px 0 60px;
     }
 
     @include screen($lg) {
       width: 100%;
       max-width: 100%;
-      padding: 32px 16px 60px 16px;
+      padding: 0 16px 60px 16px;
     }
   }
 
@@ -40,12 +40,14 @@
     margin: 0;
     margin-bottom: 48px;
     padding: 0;
+    padding-top: 80px;
     font-size: 48px;
     line-height: 48px;
     color: $black;
 
     @include screen($lg) {
       margin-bottom: 32px;
+      padding-top: 32px;
       font-size: 32px;
       line-height: 32px;
       text-align: center;
