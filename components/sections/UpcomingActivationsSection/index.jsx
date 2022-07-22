@@ -19,26 +19,26 @@ const UpcomingActivationsSection = ({data}) => {
   };
 
   const getSlidesPerView = () => {
-    if(typeof window === 'undefined') return;
-    if (window.screen.width <= 1024) {
-      setSlidesPerView(1);      
+    if (typeof window !== 'undefined' && window.screen.width <= 1024) {
+      setSlidesPerView(1);
       setCenteredSlide(true);
-    } else if (window.screen.width <= 1200) {
+      setSwiperWidth('100%');
+    } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
       setSlidesPerView(2);
       setCenteredSlide(true);
       setSwiperWidth('100%');
-    } else if (window.screen.width <= 1440) {
+    } else if (typeof window !== 'undefined' && window.screen.width <= 1440) {
       setSlidesPerView(3);
       setCenteredSlide(false);
       setSwiperWidth(3 * 608 + 32 * 2 + 'px');
-    } else if (window.screen.width > 1440) {
+    } else {
       setSlidesPerView(data.length);
       setCenteredSlide(false);
       setSwiperWidth(data.length * 608 + 32 * (data.length - 1) + 'px');
     }
   };
 
-  useEffect(() => {
+  useEffect((data) => {
     getSlidesPerView();
     if (window) {
       const listener = window.addEventListener('resize', getSlidesPerView);

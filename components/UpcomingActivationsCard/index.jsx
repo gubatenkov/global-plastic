@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import arrowRight from 'assets/images/arrowRight.svg';
-import pin from 'assets/images/pin.svg';
+import pin from '../../assets/images/pin.svg';
 import getImg from '../../utils/getImg';
 
 const UpcomingActivationsCard = ({ data }) => {
