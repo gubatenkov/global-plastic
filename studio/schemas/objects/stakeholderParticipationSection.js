@@ -9,6 +9,16 @@ export default {
         type: 'image',
       },
       {
+        name: 'stakeholderImagePositionLeft',
+        title: 'Stakeholder Image Position Left',
+        type: 'number',
+      },
+      {
+        name: 'stakeholderImagePositionTop',
+        title: 'Stakeholder Image Position Top',
+        type: 'number',
+      },
+      {
         name: 'stakeholderParticipationTitle',
         title: 'Stakeholder Participation Title',
         type: 'string',
