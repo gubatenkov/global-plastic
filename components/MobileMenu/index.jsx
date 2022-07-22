@@ -38,9 +38,9 @@ const MobileMenu = ({ isOpened, onToggle, links }) => {
         </ul>
       </nav>
       <div className="mobmenu__bottom">
-        <a className="mobmenu__bottom__link" href="#">
+        <Link className="mobmenu__bottom__link" href="/involved#form">
           Join the Dialogues
-        </a>
+        </Link>
       </div>
     </div>
   );

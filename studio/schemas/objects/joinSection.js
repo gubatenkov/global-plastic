@@ -50,7 +50,7 @@ export default {
         },
         {
           name: 'joinSectionLinkURL',
-          type: 'url'
+          type: 'string'
         }
       ]
     },

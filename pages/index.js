@@ -20,6 +20,7 @@ import {
   ScrollSection
 } from 'components'
 import { getHomepageFieldsQuery } from 'lib/queries';
+import ScrollSectionV2 from 'components/sections/ScrollSection.v2';
 
 export const getStaticProps = async () => {
   const pageData = await getHomepageFieldsQuery();
@@ -43,7 +44,8 @@ export default function Home({ data }) {
       </Head>
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <HeroSection data={sections[0]} />
-        <ScrollSection data={sections[1]} />
+        {/* <ScrollSection data={sections[1]} /> */}
+        <ScrollSectionV2 data={sections[1]} />
         <SliderSection data={sections[1]} /> 
         <CardSection data={sections[2]} />
         <WideSliderSection data={sections[3]} />

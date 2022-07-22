@@ -30,7 +30,7 @@ export default {
       fields: [
         {
           name: 'tectionLinkURL',
-          type: 'url',
+          type: 'string',
           title: 'Section Link URL'
         },
         {
