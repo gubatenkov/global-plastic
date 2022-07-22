@@ -38,7 +38,7 @@ const UpcomingActivationsSection = ({data}) => {
     }
   };
 
-  useEffect((data) => {
+  useEffect((a) => {
     getSlidesPerView();
     if (window) {
       const listener = window.addEventListener('resize', getSlidesPerView);

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import viewAll from '../../../utils/viewAll'
+import { useRouter } from "next/router";
 
 import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
 const ReportsSection = ({data}) => {
+  const router = useRouter();
   const regions = [...new Set(data.map(el => el.reportRegion))];
   const countries = [...new Set(data.map(el => el.reportCountry))];
 
@@ -93,9 +94,29 @@ const ReportsSection = ({data}) => {
     } 
   }
 
+  const viewAll = (event) => {
+    const button = event.target;
+    const wrapper = event.target.previousElementSibling;
+    const cards = wrapper.firstElementChild;
+  
+    if(wrapper.offsetHeight === cards.offsetHeight && 
+      !wrapper.classList.contains('full')) {
+      return
+    }
+    
+    if(wrapper.classList.contains('full')) {
+      wrapper.classList.remove('full');
+      button.textContent = 'View all';      
+      router.push("#reports")
+    } else {
+      wrapper.classList.add('full');
+      button.textContent = 'Close';
+    }
+  }
+
   return (
     <section className="rektion">
-      <div className="rektion__center">
+      <div className="rektion__center" id="reports">
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>
           <div className="rektion__container">
