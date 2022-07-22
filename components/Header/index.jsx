@@ -28,12 +28,9 @@ const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
             );
           })}
       </ul>
-      <a
-        className="header__link"
-        href="https://oceanplasticsnetwork.com/member#network"
-      >
-        Join the Dialogues
-      </a>
+      <Link passHref href="/involved#form">
+        <a className="header__link">Join the Dialogues</a>
+      </Link>
       <div className="header__wave">
         <div
           className="header__wave-inner"

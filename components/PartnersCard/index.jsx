@@ -1,9 +1,7 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-import img from 'assets/images/partner1.png';
 import { urlForImage } from 'lib/sanity';
-
-const partners = [img, img, img, img, img, img];
 
 const PartnersCard = ({ title, logos, index }) => {
   const getIndex = (idx) => {
@@ -13,7 +11,16 @@ const PartnersCard = ({ title, logos, index }) => {
 
   return (
     <li className="parection__cards__item">
-      <div className="parection-card">
+      <motion.div
+        className="parection-card"
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{ duration: 1, delay: index * 0.2 }}
+        viewport={{ once: true }}
+      >
         <div className="parection-card__list">
           {logos.map((img, idx) => {
             return (
@@ -36,7 +43,7 @@ const PartnersCard = ({ title, logos, index }) => {
           <p className="parection-card__info__type">{title}</p>
           <p className="parection-card__info__num">{getIndex(index)}</p>
         </div>
-      </div>
+      </motion.div>
     </li>
   );
 };

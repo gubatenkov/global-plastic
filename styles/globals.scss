@@ -3,10 +3,6 @@
 @import 'mixins';
 @import 'swiper/css';
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   padding: 0;
@@ -16,6 +12,7 @@ body {
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
   font-weight: normal;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -29,15 +26,11 @@ a {
   box-sizing: border-box;
 }
 
-:root {
-  --container-width: 1278px;
-}
-
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-  max-width: var(--container-width);
+  max-width: $container-width;
 }
 
 input,
@@ -76,6 +69,7 @@ button {
 @import 'components/reportsDropdown';
 @import 'components/actionCard';
 @import 'components/archiveCard';
+@import 'components/scrubbleCard';
 
 // SECTIONS
 @import 'components/sections/hero';
