@@ -41,7 +41,7 @@ const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
       <motion.div
         className="header__wave"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
+        animate={{ opacity: 0.15 }}
         transition={{ duration: 1 }}
       />
     </header>
