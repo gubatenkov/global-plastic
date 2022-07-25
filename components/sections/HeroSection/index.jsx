@@ -39,7 +39,7 @@ const HeroSection = ({
 
       let isScrollingDown = scrollY.getPrevious() - latest < 0;
 
-      if (isScrollingDown && scrollYProgress.getPrevious()) debouncedHandler();
+      // if (isScrollingDown && scrollYProgress.getPrevious()) debouncedHandler();
     });
   }, [debouncedHandler, scrollY, scrollYProgress]);
 
