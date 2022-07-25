@@ -1,0 +1,182 @@
+.errorktion {
+  background-color: $country-bg;
+  background-image: url("../../../assets/images/wave.png");
+  background-size: cover;
+  background-position: center center;
+  height: 720px;
+
+  @include screen($sm) {
+    height: 575px;
+  }
+  
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;    
+    padding: 110px 96px;
+    margin: 0 auto;
+    max-width: 1440px;    
+
+    @include screen($sm) {
+      padding: 124px 16px;
+    }
+  }
+
+  &__content {
+    width: 50%;
+    max-width: 720px;
+    padding-top: 32px;
+    padding-left: 100px;
+
+    @include screen($xxl) {
+      min-width: 400px;      
+      padding-left: 0;
+    }
+
+    @include screen($sm) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+
+  &__icon {
+    width: 46px;
+    height: 44px;
+    margin-bottom: 22px;
+    background-image: url("../../../assets/images/icon404.svg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__close {
+    position: absolute;
+    width: 46px;
+    height: 44px;
+    background-image: url("../../../assets/images/close.svg");
+    background-size: auto;
+    background-position:  center center;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 1;
+    color: $black;
+
+    @include screen($sm) {
+      font-size: 48px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 48px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+    color: $black;
+
+    @include screen($sm) {
+      font-size: 32px;
+    }
+  }
+  
+  &__link {
+    padding: 16px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    color: $black;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid rgba(33, 32, 32, 0.4);
+    cursor: pointer;
+    transition: .3s;
+
+    @include screen($sm) {
+      font-size: 14px;
+    }
+
+    & svg {
+      margin-left: 16px;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $black;
+    }
+
+    &:active {
+      color: $white;
+      background: rgba(33, 32, 32, 0.8);
+    }
+  }
+
+  &__images {
+    position: relative;
+    width: 50%;
+    max-width: 720px;
+    height: 500px;
+
+    @include screen($lg) {
+      display: none;
+    }
+  }
+
+  &__img1 {
+    position: absolute;
+    top: 13%;
+    left: -5%;
+    width: 82%;
+    height: 78%;
+    background-image: url("../../../assets/images/img404-1.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__img2 {
+    position: absolute;
+    top: -8%;
+    left: 52%;
+    width: 40%;
+    height: 45%;
+    background-image: url("../../../assets/images/img404-2.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__shape1 {
+    position: absolute;
+    top: 71%;
+    left: 58%;
+    width: 12%;
+    height: 14%;
+    background-image: url("../../../assets/images/shape404-1.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__shape2 {
+    position: absolute;
+    top: 65%;
+    left: 64%;
+    width: 6.4%;
+    height: 5%;
+    background-image: url("../../../assets/images/shape404-2.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
