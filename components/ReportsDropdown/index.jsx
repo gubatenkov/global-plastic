@@ -48,7 +48,7 @@ const ReportsDropdown = ({dropdownName, dropdownData, transferFilter, resetFilte
   return (
     <div className='dropdown' ref={dropdown}>
       <div className='dropdown__header' onClick={toggleDropdown}>
-        <space>{dropdownName.replace('report', '')}</space>
+        <span>{dropdownName.replace('report', '')}</span>
         <i className={`dropdown__icon ${isOpen && "open"}`}></i>   
       </div>
       <div className={`dropdown__body ${isOpen && 'open'}`}>

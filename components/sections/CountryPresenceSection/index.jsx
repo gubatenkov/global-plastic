@@ -1,28 +1,10 @@
 import { CountryPresenceCard } from 'components';
 import { useRouter } from "next/router";
+import viewAll from '../../../utils/viewAll'
 
 const CountryPresenceSection = ({data}) => {
   const router = useRouter();
-
-  const viewAll = (event) => {
-    const button = event.target;
-    const wrapper = event.target.previousElementSibling;
-    const cards = wrapper.firstElementChild;
-  
-    if(wrapper.offsetHeight === cards.offsetHeight && 
-      !wrapper.classList.contains('full')) {
-      return
-    }
-    
-    if(wrapper.classList.contains('full')) {
-      wrapper.classList.remove('full');
-      button.textContent = 'View all';      
-      router.push("#countryPresence")
-    } else {
-      wrapper.classList.add('full');
-      button.textContent = 'Close';
-    }
-  }
+  const fn = () => router.push("#countryPresence");
 
   const countryPresenceCard = data.map((item, index) => {
     return <CountryPresenceCard data={item} key={index} />;
@@ -37,7 +19,7 @@ const CountryPresenceSection = ({data}) => {
             {countryPresenceCard}
           </div>
         </div>
-        <button className="cpection__button" onClick={viewAll}>View all</button> 
+        <button className="cpection__button" onClick={(event) => viewAll(event, fn)}>View all</button> 
       </div>
     </section>
   );
