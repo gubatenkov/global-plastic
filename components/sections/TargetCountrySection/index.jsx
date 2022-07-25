@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { urlForImage } from 'lib/sanity';
 
 const TargetCountrySection = ({
-  data: { tectionTitle, tectionText, tectionSuptitle, tectionImg, tectionLink },
+  data: { tectionTitle, tectionText, tectionSuptitle, tectionImg, tectionLink,tectionLinkURL },
 }) => {
   return (
     <section className="tcection">
@@ -36,7 +36,7 @@ const TargetCountrySection = ({
                 </p>
                 <p className="tcection__row-right__text__descr">{tectionText}</p>
               </div>
-              <Link href="/involved#form">  
+              <Link href={tectionLink.tectionLinkURL}>  
                 <a
                   className="tcection__row-right__action">
                   {tectionLink.tectionLinkText}

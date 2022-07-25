@@ -31,14 +31,14 @@ const UpcomingActivationsSection = ({data}) => {
       setSlidesPerView(3);
       setCenteredSlide(false);
       setSwiperWidth(3 * 608 + 32 * 2 + 'px');
-    } else {
-      setSlidesPerView(data.length);
+    } else if (typeof window !== 'undefined' && window.screen.width > 1440) {
+      setSlidesPerView(6);
       setCenteredSlide(false);
-      setSwiperWidth(data.length * 608 + 32 * (data.length - 1) + 'px');
+      setSwiperWidth(6 * 608 + 32 * 5 + 'px');
     }
   };
 
-  useEffect((a) => {
+  useEffect(() => {
     getSlidesPerView();
     if (window) {
       const listener = window.addEventListener('resize', getSlidesPerView);

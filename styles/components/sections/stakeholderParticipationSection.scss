@@ -86,7 +86,7 @@
 
   &__shape1 {
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     top: 390px;
     right: 350px;
     display: flex;
@@ -122,6 +122,7 @@
 
   &__shape2 {
     position: absolute;
+    z-index: 0;
     top: 570px;
     right: 270px;
     width: 56px;
@@ -141,6 +142,7 @@
 
   &__shape3 {
     position: absolute;
+    z-index: 0;
     top: 471px;
     right: 284px;
     width: 32px;

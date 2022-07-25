@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useRouter } from "next/router";
+import viewAll from '../../../utils/viewAll'
 
 import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
 const ReportsSection = ({data}) => {
   const router = useRouter();
+  const fn = () => router.push("#reports");
+
   const regions = [...new Set(data.map(el => el.reportRegion))];
   const countries = [...new Set(data.map(el => el.reportCountry))];
 
@@ -94,26 +97,6 @@ const ReportsSection = ({data}) => {
     } 
   }
 
-  const viewAll = (event) => {
-    const button = event.target;
-    const wrapper = event.target.previousElementSibling;
-    const cards = wrapper.firstElementChild;
-  
-    if(wrapper.offsetHeight === cards.offsetHeight && 
-      !wrapper.classList.contains('full')) {
-      return
-    }
-    
-    if(wrapper.classList.contains('full')) {
-      wrapper.classList.remove('full');
-      button.textContent = 'View all';      
-      router.push("#reports")
-    } else {
-      wrapper.classList.add('full');
-      button.textContent = 'Close';
-    }
-  }
-
   return (
     <section className="rektion">
       <div className="rektion__center" id="reports">
@@ -135,8 +118,7 @@ const ReportsSection = ({data}) => {
               onSlideChange={updateActiveIndex}
               loop={true}
             >
-              {renderSwiperCards}
-                
+              {renderSwiperCards}                
             </Swiper>
           </div>
           <div className="rektion__slider-nav">
@@ -155,7 +137,7 @@ const ReportsSection = ({data}) => {
               {renderCards}
             </div>
           </div>
-          <button className="rektion__button" onClick={viewAll}>View all</button>          
+          <button className="rektion__button" onClick={(event) => viewAll(event, fn)}>View all</button>          
         </div>
       </div>
     </section>
