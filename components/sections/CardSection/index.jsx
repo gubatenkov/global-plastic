@@ -60,7 +60,7 @@ const CardSection = ({
         latest > sectionRef.current.offsetTop &&
         latest < sectionRef.current.offsetTop + 50
       ) {
-        debouncedHandler();
+        // debouncedHandler();
       }
     });
   }, [debouncedHandler, scrollY]);
