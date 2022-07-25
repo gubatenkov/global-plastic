@@ -136,7 +136,7 @@ const CardSection = ({
                 <Message className="message" />
               </div>
             </div>
-            <motion.p
+            <motion.h2
               className="carection__text-row__title"
               initial={{ opacity: 0 }}
               whileInView={{
@@ -146,7 +146,7 @@ const CardSection = ({
               transition={{ duration: 1 }}
             >
               {titleAfterCards}
-            </motion.p>
+            </motion.h2>
             <motion.p
               className="carection__text-row__subtitle"
               initial={{ opacity: 0 }}

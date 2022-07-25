@@ -98,10 +98,10 @@ const MapLegend = ({ title, isVisible, toggleLegend }) => {
   return (
     <div className="maplegend__wrap">
       <div className="maplegend">
-        <h3 className="maplegend__title">{title}</h3>
+        <p className="maplegend__title">{title}</p>
         {sections.map((section) => {
           return (
-            <section className={section.className} key={section.id}>
+            <div className={section.className} key={section.id}>
               {section.title?.length ? (
                 <h4 className="maplegend__section__title">{section.title}</h4>
               ) : null}
@@ -119,7 +119,7 @@ const MapLegend = ({ title, isVisible, toggleLegend }) => {
                   );
                 })}
               </ul>
-            </section>
+            </div>
           );
         })}
       </div>
