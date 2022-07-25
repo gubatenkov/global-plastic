@@ -1,7 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 import {  
-  MainLayout, 
+  MainLayout,
+  Meta,
   TargetSection,
   CountryPresenceSection,
   BigMapSection,
@@ -20,7 +21,7 @@ export const getStaticProps = async () => {
 
 export default function Countries({ page }) {
   const {pageTitle, pageDescription, countryPresenceCards, targetSectionCountriesPage, 
-    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials }} = page;
+    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials }, meta: {pageMeta}} = page;
     
   return (
     <div className="countries">
@@ -28,6 +29,7 @@ export default function Countries({ page }) {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <link rel="icon" href="/favicon.ico" />
+        <Meta meta={pageMeta} />
       </Head>
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <TargetSection data={targetSectionCountriesPage} />

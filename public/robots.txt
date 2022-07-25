@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: http://global-plastic.staging.halo-lab.team
+
+# Sitemaps
+Sitemap: http://global-plastic.staging.halo-lab.team/sitemap.xml
+Sitemap: http://global-plastic.staging.halo-lab.team/server-sitemap.xml
