@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 import {  
   MainLayout,
   Meta,
@@ -20,17 +18,12 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {pageTitle, pageDescription, countryPresenceCards, targetSectionCountriesPage, 
-    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials }, meta: {pageMeta}} = page;
+  const {countryPresenceCards, targetSectionCountriesPage, 
+    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials } } = page;
     
   return (
     <div className="countries">
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="icon" href="/favicon.ico" />
-        <Meta meta={pageMeta} />
-      </Head>
+      <Meta data={page} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <TargetSection data={targetSectionCountriesPage} />
         <CountryPresenceSection data={countryPresenceCards} />
