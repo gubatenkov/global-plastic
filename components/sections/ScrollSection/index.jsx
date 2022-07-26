@@ -33,21 +33,16 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
     if (innerRef && rightRef) {
       const innerW = innerRef.current.getBoundingClientRect().width;
       const rightW = rightRef.current.getBoundingClientRect().width;
-      const part = innerW - (innerW - rightW);
-
+      const part = innerW - rightW;
       setVisiblePart(part);
     }
   }, [rightRef]);
 
   useEffect(() => {
-    let part;
-    if (innerRef && rightRef) {
-      const innerW = innerRef.current.getBoundingClientRect().width;
-      const rightW = rightRef.current.getBoundingClientRect().width;
-      part = innerW - rightW;
-    }
     sectionRef &&
-      setScrollRange(sectionRef.current.getBoundingClientRect().width - part);
+      setScrollRange(
+        sectionRef.current.getBoundingClientRect().width - visiblePart
+      );
   }, [sectionH, sectionRef, visiblePart]);
 
   const { scrollY } = useScroll();
@@ -55,11 +50,11 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
   const transform = useTransform(
     x,
     [0, 100],
-    [0, -scrollRange + sectionH - 100]
+    [0, -scrollRange + sectionH - 150]
   );
   const physics = {
     damping: 20,
-    mass: 0.27,
+    mass: 0.5,
     stiffness: 25,
   };
   const spring = useSpring(transform, physics);
@@ -77,7 +72,7 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
       });
 
       const pos = Math.abs(
-        Number((latest / (scrollRange - start) - 0.25).toFixed(2)) * 100
+        Number((latest / (scrollRange - start) - 0.35).toFixed(2)) * 100
       );
 
       x.set(pos);

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import debounce from 'lodash.debounce';
-import { useScroll, motion } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useScroll, motion, useMotionValue, useTransform } from 'framer-motion';
 
 import { CardBase } from 'components';
 import Bubble from './components/Bubble';
@@ -27,6 +27,7 @@ const CardSection = ({
   const bubbleRef = useRef(null);
   const sectionRef = useRef(null);
   const { scrollY } = useScroll();
+  const x = useMotionValue(0);
   const [percentage, setPercentage] = useState(0);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -43,27 +44,18 @@ const CardSection = ({
   useEffect(() => {
     return scrollY.onChange((latest) => {
       if (latest < 0) return;
-      const sectionH = sectionRef.current.getBoundingClientRect().height - 400;
-      const start = sectionRef.current.offsetTop + 400;
+      const sectionH = sectionRef.current.getBoundingClientRect().height;
+      const start = sectionRef.current.offsetTop + sectionH / 3;
+      const end = sectionH + sectionRef.current.offsetTop;
 
-      if (latest >= start && latest < start + sectionH) {
-        setPercentage(Math.round(latest / (sectionH / 100)) - 202);
-      } else if (latest < start) {
-        setPercentage(0);
-      } else {
-        setPercentage(100);
-      }
-
-      let isScrollingDown = scrollY.getPrevious() - latest < 0;
-      if (
-        !isScrollingDown &&
-        latest > sectionRef.current.offsetTop &&
-        latest < sectionRef.current.offsetTop + 50
-      ) {
-        // debouncedHandler();
+      if (latest > start && latest < end) {
+        const value = Number(
+          (((latest - start) / (end - start)) * 100).toFixed()
+        );
+        setPercentage(value);
       }
     });
-  }, [debouncedHandler, scrollY]);
+  }, [debouncedHandler, scrollY, x]);
 
   return (
     <section className="carection" ref={sectionRef}>
