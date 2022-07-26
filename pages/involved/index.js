@@ -1,7 +1,6 @@
-import Head from 'next/head'
-
 import {  
   MainLayout,
+  Meta,
   InvolvedHero,
   WideSliderSection,
   InvolvedForm, 
@@ -20,15 +19,11 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {pageTitle, pageDescription, involvedHeroSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
+  const {involvedHeroSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
 
   return (
     <div className="involved">
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta data={page} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <InvolvedHero data={involvedHeroSection} />
         <WideSliderSection data={wideInvolvedSection} />

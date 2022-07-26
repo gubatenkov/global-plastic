@@ -1,7 +1,6 @@
-import Head from 'next/head'
-
 import {  
-  MainLayout, 
+  MainLayout,
+  Meta,
   CountryHero,
   UpcomingActivationsSection,
   StakeholderParticipationSection,
@@ -28,18 +27,13 @@ export const getServerSideProps = async (context) => {
 export default function Country({ page, slug }) {
   const pages = page.countryPage;
   const currentPage = pages.filter(el => el.pageUrl === slug);
-  const { pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, 
-    stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, 
-    targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider } = currentPage[0];
-  const { menu: { pageMenu }, socials: { pageSocials }} = page;
-
+  const { pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider } = currentPage[0];
+  const { meta, menu: { pageMenu }, socials: { pageSocials }} = page;
+  const metaData = {pageTitle, pageDescription, meta};
+ 
   return (
     <div className="country">
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta data={metaData} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <CountryHero data={countryHero} />
         <UpcomingActivationsSection data={upcomingActivationsSlider} />
