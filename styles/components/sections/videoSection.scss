@@ -3,6 +3,8 @@
 
   position: relative;
 
+  overflow: hidden;
+
   @include screen($sm) {
     padding: 60px 0 55px;
   }

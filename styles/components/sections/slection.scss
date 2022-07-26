@@ -11,6 +11,8 @@
 
   position: relative;
 
+  overflow: hidden;
+
   @include screen($sm) {
     display: block;
     padding: 60px 0;

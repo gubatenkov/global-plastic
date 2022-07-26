@@ -231,3 +231,9 @@
   display: flex;
   align-items: center;
 }
+
+.containerr {
+  @include screen($sm) {
+    display: none;
+  }
+}
