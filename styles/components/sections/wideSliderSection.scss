@@ -6,6 +6,8 @@
 
   position: relative;
 
+  overflow: hidden;
+
   @include screen($sm) {
     padding: 110px 0 150px;
     border-radius: $section-radius-mobile;
@@ -232,11 +234,6 @@
         position: absolute;
       }
     }
-    // @include screen($sm) {
-    //   bottom: 0;
-    //   position: absolute;
-    //   left: calc(1920px / -2.6);
-    // }
   }
 }
 

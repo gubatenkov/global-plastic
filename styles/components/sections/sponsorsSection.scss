@@ -5,6 +5,8 @@
   border-top-left-radius: $section-radius;
   border-top-right-radius: $section-radius;
 
+  overflow: hidden;
+
   @include screen($sm) {
     padding: 55px 0;
 
