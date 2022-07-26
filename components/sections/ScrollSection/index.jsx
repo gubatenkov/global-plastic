@@ -1,6 +1,11 @@
-import ResizeObserver from 'resize-observer-polyfill';
-import { useState, useRef, useCallback, useEffect } from 'react';
-import { motion, useTransform, useSpring, useScroll } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import {
+  motion,
+  useTransform,
+  useSpring,
+  useScroll,
+  useMotionValue,
+} from 'framer-motion';
 
 import ScrubbleCard from './components/ScrubbleCard';
 
@@ -10,47 +15,47 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
   const ghostRef = useRef(null);
   const scrollRef = useRef(null);
   const sectionRef = useRef(null);
+  const containerRef = useRef(null);
   const [step, setStep] = useState(0);
-  const [viewportW, setViewportW] = useState(0);
-  const [scrollRange, setScrollRange] = useState(0);
+  const [sectionH, setSectionH] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(1);
-  const [breakpoints, setBreakpoints] = useState([0]);
-
-  const getBreakpoints = useCallback(() => {
-    const breakpoints = [0];
-    for (let i = 0; i < slides?.length; i++) {
-      const val = Number(((1 / slides?.length) * (i + 1)).toFixed(2));
-      breakpoints.push(val);
-    }
-    setBreakpoints(breakpoints);
-  }, [slides?.length]);
+  const [breakpoints, setBreakpoints] = useState([0, 17, 30, 45, 60, 75, 85]);
+  const [scrollRange, setScrollRange] = useState(0);
+  const [visiblePart, setVisiblePart] = useState(0);
 
   useEffect(() => {
-    const diff =
-      innerRef.current.getBoundingClientRect().width -
-      rightRef.current.scrollWidth;
-    scrollRef && setScrollRange(scrollRef.current.scrollWidth - diff + 150);
-  }, [scrollRef]);
-
-  const onResize = useCallback((entries) => {
-    for (let entry of entries) {
-      setViewportW(entry.contentRect.width);
+    if (containerRef) {
+      setSectionH(containerRef.current.getBoundingClientRect().height);
     }
-  }, []);
+  }, [containerRef]);
 
   useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => onResize(entries));
-    resizeObserver.observe(ghostRef.current);
-    return () => resizeObserver.disconnect();
-  }, [onResize]);
+    if (innerRef && rightRef) {
+      const innerW = innerRef.current.getBoundingClientRect().width;
+      const rightW = rightRef.current.getBoundingClientRect().width;
+      const part = innerW - (innerW - rightW);
 
-  const { scrollYProgress } = useScroll({
-    container: sectionRef,
-  });
+      setVisiblePart(part);
+    }
+  }, [rightRef]);
+
+  useEffect(() => {
+    let part;
+    if (innerRef && rightRef) {
+      const innerW = innerRef.current.getBoundingClientRect().width;
+      const rightW = rightRef.current.getBoundingClientRect().width;
+      part = innerW - rightW;
+    }
+    sectionRef &&
+      setScrollRange(sectionRef.current.getBoundingClientRect().width - part);
+  }, [sectionH, sectionRef, visiblePart]);
+
+  const { scrollY } = useScroll();
+  const x = useMotionValue(0);
   const transform = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, -scrollRange + viewportW + 400]
+    x,
+    [0, 100],
+    [0, -scrollRange + sectionH - 100]
   );
   const physics = {
     damping: 20,
@@ -61,59 +66,34 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
 
   // listen the scroll event and execute the logic
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      latest = Number(latest.toFixed(2));
-      if (latest < 0) return;
-
-      getBreakpoints();
+    return scrollY.onChange((latest) => {
+      const start = containerRef?.current?.offsetTop ?? 0;
+      if (latest - start < 0 || latest > scrollRange) return;
 
       breakpoints.forEach((br, idx) => {
-        if (latest >= br) {
+        if (x.get() >= br) {
           setStep(idx);
         }
       });
+
+      const pos = Math.abs(
+        Number((latest / (scrollRange - start) - 0.25).toFixed(2)) * 100
+      );
+
+      x.set(pos);
     });
-  }, [breakpoints, getBreakpoints, scrollYProgress, slides.length, step]);
-
-  useEffect(() => {
-    const spaceHolder = document.querySelector('.space-holder');
-    const horizontal = document.querySelector('.horizontal');
-    spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
-
-    function calcDynamicHeight(ref) {
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      const objectWidth = ref.scrollWidth;
-      return objectWidth - vw + vh + 150; // 150 is the padding (in pixels) desired on the right side of the .cards container. This can be set to whatever your styles dictate
-    }
-
-    window.addEventListener('scroll', () => {
-      const sticky = document.querySelector('.sticky');
-      horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`;
-    });
-    console.log(progressY);
-
-    // window.addEventListener('resize', () => {
-    //   spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
-    // });
-  }, []);
+  }, [breakpoints, scrollRange, scrollY, slides.length, step, x]);
 
   return (
-    <section className="containerr">
-      <div className="space-holder">
-        <div className="sticky">
-          <motion.div
-            className="horizontal"
-            ref={scrollRef}
-            // style={{ x: spring }}
-          >
-            {/* <section role="feed" className="cards">
-              <article className="sample-card"></article>
-              <article className="sample-card"></article>
-              <article className="sample-card"></article>
-              <article className="sample-card"></article>
-              <article className="sample-card"></article>
-            </section> */}
+    <section className="containerr" ref={containerRef}>
+      <div
+        className="space-holder"
+        style={{
+          height: `${scrollRange}px`,
+        }}
+      >
+        <div className="sticky" ref={scrollRef}>
+          <div className="horizontal">
             <section className="screction" ref={sectionRef}>
               <ScrollNav
                 currentSlide={currentSlide}
@@ -121,10 +101,8 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
               />
               <div className="screction__container">
                 <motion.div
-                  // ref={scrollRef}
-                  // style={{ x: spring }}
+                  style={{ x: spring }}
                   className="thumbnails-container"
-                  // animate={controls}
                 >
                   <div className="screction__inner" ref={innerRef}>
                     <div className="screction__left">
@@ -182,7 +160,6 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
                             order={idx + 1}
                             subtitle={subtitle}
                             isActive={step === idx + 1}
-                            // setOffset={setSlidesOffsets}
                             setCurrentIdx={setCurrentSlide}
                           />
                         );
@@ -191,13 +168,13 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
                   </div>
                 </motion.div>
               </div>
-              <div
+              {/* <div
                 ref={ghostRef}
                 style={{ height: scrollRange }}
                 className="ghost"
-              />
+              /> */}
             </section>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

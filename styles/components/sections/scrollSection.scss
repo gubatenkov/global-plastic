@@ -1,11 +1,12 @@
 .screction {
   max-height: 880px;
+  padding-left: calc((100vw - #{$container-width}) / 2);
 
   background-color: $black;
 
   position: relative;
 
-  overflow-x: hidden;
+  overflow: hidden;
 
   @include screen($sm) {
     display: none;
@@ -86,7 +87,6 @@
 
   &__inner {
     padding: 160px 0 170px;
-    margin-left: calc((100vw - #{$container-width}) / 2);
 
     gap: 150px;
     display: flex;

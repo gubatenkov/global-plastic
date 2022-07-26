@@ -1,7 +1,6 @@
-import Head from 'next/head'
-
 import {  
-  MainLayout, 
+  MainLayout,
+  Meta,
   HeroSection, 
   SliderSection, 
   CardSection, 
@@ -32,15 +31,11 @@ export const getStaticProps = async () => {
 }
 
 export default function Home({ data }) {
-  const { pageTitle, pageDescription, sections, menu: { pageMenu }, socials: { pageSocials } } = data;
-  
+  const { sections, menu: { pageMenu }, socials: { pageSocials } } = data;
+
   return (
     <div className='home'>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta data={data} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <HeroSection data={sections[0]} />
         <ScrollSection data={sections[1]} />

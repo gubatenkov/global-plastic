@@ -3,6 +3,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import menu from './documents/menu'
+import meta from './documents/meta'
 import socials from './documents/socials'
 import homepage from './documents/homepage'
 import countries from './documents/countries'
@@ -58,6 +59,7 @@ export default createSchema({
     countries,
     countryPages,
     menu,
+    meta,
     socials,
     involved,
     

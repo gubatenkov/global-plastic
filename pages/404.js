@@ -1,6 +1,4 @@
-import Head from 'next/head';
-
-import {MainLayout} from 'components';
+import {MainLayout, Meta} from 'components';
 import {Page404} from 'components';
 import { getInvolvedFieldsQuery } from 'lib/queries';
 
@@ -17,11 +15,7 @@ export default function Countries({ page }) {
 
   return (
     <div className="involved">
-      <Head>
-        <title>404 page</title>
-        <meta name="description" content="Page not found" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta data={page} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <Page404 />
       </MainLayout>
