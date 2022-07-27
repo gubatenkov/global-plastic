@@ -19,10 +19,12 @@ const BubbleCardBlack = ({ className = '', title, subtitle, image, order }) => {
           layout="fill"
         />
       </div>
-      <div className="bubble-black__number">{order}</div>
-      <div className="bubble-black__text">
-        <p className="bubble-black__text__title">{title}</p>
-        <p className="bubble-black__text__descr">{subtitle}</p>
+      <div className="bubble-black__info">
+        <div className="bubble-black__number">{order}</div>
+        <div className="bubble-black__text">
+          <p className="bubble-black__text__title">{title}</p>
+          <p className="bubble-black__text__descr">{subtitle}</p>
+        </div>
       </div>
     </div>
   );

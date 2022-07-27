@@ -52,6 +52,8 @@
         height: 100%;
         object-fit: cover;
 
+        transition: all 0.2s ease-in-out;
+
         filter: grayscale(100%);
         filter: invert(0.5);
 

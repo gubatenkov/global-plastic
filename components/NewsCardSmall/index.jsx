@@ -25,11 +25,12 @@ const NewsCardSmall = ({
         </h3>
         <div className="ncard-small__content__bottom">
           <a
-            className="ncard-small__content__bottom__link"
+            className="ncard-small__content__bottom__link arrow-hover-right"
             href={newsSmallCardLink}
           >
             <span>Read more</span>
             <svg
+              className="arrow-image"
               width="15"
               height="10"
               viewBox="0 0 15 10"

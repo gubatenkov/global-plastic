@@ -40,11 +40,12 @@ const TargetSection = ({
                 <p className="tection__row-right__text__descr">{tectionText}</p>
               </div>
               <a
-                className="tection__row-right__action"
+                className="tection__row-right__action arrow-hover-right"
                 href={tectionLink.tectionLinkURL}
               >
                 {tectionLink.tectionLinkText}
                 <svg
+                  className="arrow-image"
                   width="15"
                   height="10"
                   viewBox="0 0 15 10"

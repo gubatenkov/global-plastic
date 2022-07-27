@@ -128,12 +128,22 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
                           transition={{ duration: 1, delay: 1 }}
                         >
                           Just scroll{' '}
-                          <svg
+                          <motion.svg
                             width="13"
                             height="12"
                             viewBox="0 0 13 12"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            animate={{
+                              x: [0, 10, 0],
+                            }}
+                            transition={{
+                              duration: 2,
+                              ease: 'easeInOut',
+                              times: [0, 0.2, 0.5, 0.8, 1],
+                              repeat: Infinity,
+                              // repeatDelay: 0.5,
+                            }}
                           >
                             <path
                               d="M0 6H12M12 6L7.33333 1.5M12 6L7.33333 10.5"
@@ -141,7 +151,7 @@ const ScrollSection = ({ data: { title, subtitle, slides } }) => {
                               strokeWidth="1.5"
                               strokeLinejoin="bevel"
                             />
-                          </svg>
+                          </motion.svg>
                         </motion.button>
                       </div>
                     </div>

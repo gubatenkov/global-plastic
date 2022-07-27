@@ -64,15 +64,19 @@ const sections = [
       },
       {
         icon: <Circle color="#60D4E3" />,
-        text: 'Middle East',
+        text: 'Sub-Saharan Africa',
       },
       {
         icon: <Circle color="#E382DF" />,
-        text: 'South-East Asia',
+        text: 'Middle East & Northern Africa',
       },
       {
-        icon: <Circle color="#60D4E3" />,
-        text: 'Australia & Oceaniar',
+        icon: <Circle color="#DA6076" />,
+        text: 'South & Southeast Asia',
+      },
+      {
+        icon: <Circle color="#608ADA" />,
+        text: 'Australia, New Zealand and Pacific Islands',
       },
     ],
   },

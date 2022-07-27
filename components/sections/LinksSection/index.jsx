@@ -19,8 +19,9 @@ const LinksSection = ({
                     </sup>
                   </p>
                   <Link href={`/country/${cName.toLowerCase()}`}>
-                    <div className="lection__countries__item__icon">
+                    <div className="lection__countries__item__icon arrow-hover-right">
                       <svg
+                        className="arrow-image"
                         width="15"
                         height="10"
                         viewBox="0 0 15 10"

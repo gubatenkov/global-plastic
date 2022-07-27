@@ -146,7 +146,7 @@
     }
 
     .bubble__imgbox {
-      position: sticky;
+      position: relative;
 
       border-radius: 37% 67% 50% 53% / 55% 46% 31% 31%;
       filter: grayscale(1);

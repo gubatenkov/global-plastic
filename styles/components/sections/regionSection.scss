@@ -67,4 +67,33 @@
     display: flex;
     justify-content: center;
   }
+
+  &__center__icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    display: inline-block;
+
+    position: relative;
+  }
+
+  &__bubble {
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    z-index: 10;
+
+    transform: scale(1.1);
+  }
+
+  &__camera {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+  }
 }

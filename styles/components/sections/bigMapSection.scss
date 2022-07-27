@@ -41,9 +41,11 @@
     border-radius: $section-radius;
   }
 
-  img {
-    @include screen($sm) {
-      display: none !important;
+  &__inner {
+    img {
+      @include screen($sm) {
+        display: none !important;
+      }
     }
   }
 }

@@ -32,18 +32,6 @@ const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
       <Link passHref href="/involved#form">
         <a className="header__link">Join the Dialogues</a>
       </Link>
-      <motion.div
-        className="header__wave"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
-        transition={{ duration: 1 }}
-      />
-      <motion.div
-        className="header__wave"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.05 }}
-        transition={{ duration: 1 }}
-      />
     </header>
   );
 };

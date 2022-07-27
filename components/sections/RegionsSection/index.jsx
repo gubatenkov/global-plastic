@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import Bubble from './components/Bubble';
+import Camera from './components/Camera';
 import { RegionsCard, SliderNav } from 'components';
-
-import icon from 'assets/images/cam.svg';
 
 const RegionsSection = ({ data: { regionTitle, regionCards } }) => {
   const [swiper, setSwiper] = useState(null);
@@ -40,7 +39,11 @@ const RegionsSection = ({ data: { regionTitle, regionCards } }) => {
     <section className="rection">
       <div className="container">
         <h2 className="rection__title">
-          <Image className="rection__center__icon" src={icon} alt="icon" />
+          {/* <Image className="rection__center__icon" src={icon} alt="icon" /> */}
+          <span className="rection__center__icon">
+            <Bubble className="rection__bubble" />
+            <Camera className="rection__camera" />
+          </span>
           {regionTitle}
         </h2>
         <div className="rection__inner">
