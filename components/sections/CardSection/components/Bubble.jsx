@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const Bubble = ({ className, color = '#f9b131', ...restProps }) => {
   return (
     <svg
@@ -14,6 +12,7 @@ const Bubble = ({ className, color = '#f9b131', ...restProps }) => {
       <path fill={color}>
         <animate
           attributeName="d"
+          d="0"
           dur="16000ms"
           repeatCount="indefinite"
           fill="freeze"

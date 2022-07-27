@@ -1,6 +1,8 @@
 .dialection {
   padding: 130px 0;
 
+  overflow: hidden;
+
   @include screen($sm) {
     padding: 60px 15px;
   }

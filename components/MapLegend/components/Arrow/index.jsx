@@ -24,7 +24,7 @@ const Arrow = ({ width = '24', height = '17' }) => {
           y2="9.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#0799C8" offset="unset" />
+          <stop stopColor="#0799C8" offset="0" />
           <stop offset="1" stopColor="#0799C8" stopOpacity="0" />
         </linearGradient>
       </defs>
