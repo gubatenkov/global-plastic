@@ -28,9 +28,9 @@ const UpcomingActivationsCard = ({ data }) => {
           </p>
         </div>
         <Link  href={`/countries/${upcomingActivationsLink}`}>
-          <a className="ua-country-card__link modified-link">
+          <a className="ua-country-card__link modified-link arrow-hover-right">
             <span className="ua-country-card__link__span">Register</span>
-            <Image src={arrowRight} alt="black arrow" />
+            <Image src={arrowRight} alt="black arrow" className="arrow-image" />
           </a>
         </Link>        
       </div>

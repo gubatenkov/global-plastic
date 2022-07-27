@@ -43,6 +43,49 @@ button {
   cursor: pointer;
 }
 
+.arrow-hover-right,
+.arrow-hover-left,
+.arrow-hover-down,
+.arrow-image {
+  transition: 0.3s ease-in;
+}
+
+.arrow-image {
+  transition: 0.3s ease-in;
+}
+
+.arrow-hover-right .arrow-image {
+  transform: translateX(-15%);
+}
+
+.arrow-hover-right:hover .arrow-image {
+  transform: translateX(5%);
+}
+
+.arrow-hover-left .arrow-image {
+  transform: translateX(15%);
+}
+
+.arrow-hover-left:hover .arrow-image {
+  transform: translateX(-5%);
+}
+
+.arrow-hover-down .arrow-image {
+  transform: translateY(-15%);
+}
+
+.arrow-hover-down:hover .arrow-image {
+  transform: translateY(5%);
+}
+
+.slider-nav__btn-next {
+  padding-left: 10px;
+}
+
+.slider-nav__btn-prev {
+  padding-right: 10px;
+}
+
 // section {
 //   overflow: hidden;
 // }

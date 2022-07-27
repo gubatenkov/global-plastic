@@ -89,9 +89,9 @@ const InvolvedForm = ({data}) => {
             <option value="Small_NGO">Small NGO (less than 100 employees)</option>
             <option value="Government_&_Academia">Government & Academia</option>
           </select>          
-          <button type="submit" className="ifktion__submit">
+          <button type="submit" className="ifktion__submit arrow-hover-right">
             Submit
-            <Image src={arrowRight} alt="black arrow" />
+            <Image src={arrowRight} alt="black arrow" className="arrow-image" />
           </button>
         </form>
       </div>

@@ -17,9 +17,9 @@ const ActionCard = ({ data }) => {
         </h3>
         <div className="action-card__footer">          
           <Link  href={actionLink}>
-            <a className="action-card__link modified-link">
+            <a className="action-card__link modified-link arrow-hover-right">
               <p className="action-card__link__text">Read more</p>
-              <Image src={arrowRight} alt="black arrow" />
+              <Image src={arrowRight} alt="black arrow" className="arrow-image"/>
             </a>
           </Link>
           <p className="action-card__date">
