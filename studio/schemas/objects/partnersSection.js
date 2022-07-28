@@ -19,7 +19,8 @@ export default {
             {
               name: 'partnersCardTitle',
               type: 'string',
-              title: 'Add partners card title'
+              title: 'Add partners card title',
+              validation: Rule => Rule.required()
             },
             {
               name: 'partnersCardImages',
@@ -29,11 +30,13 @@ export default {
                 {
                   type: 'image'
                 }
-              ]
+              ],
+              validation: Rule => Rule.required().min(1).max(6)
             },
           ]
         }
-      ]
+      ],
+      validation: Rule => Rule.required()
     }
   ]
 }
