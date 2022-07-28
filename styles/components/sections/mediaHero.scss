@@ -1,0 +1,81 @@
+.mhero {
+  padding: 305px 0 100px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: $section-radius;
+  background-image: url('../../../assets/images/mheroBg.png');
+
+  overflow: hidden;
+
+  position: relative;
+
+  &::before {
+    content: '';
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-image: url('../../../assets/images/mheroBgFilter.png');
+
+    z-index: 0;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__date {
+    margin: 0 0 40px;
+
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    font-style: normal;
+
+    opacity: 0.6;
+  }
+
+  &__title {
+    max-width: 450px;
+    margin: 0 0 40px;
+
+    color: $white;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 53px;
+    font-style: normal;
+  }
+
+  &__link {
+    padding: 12px 25px;
+
+    gap: 15px;
+    align-items: center;
+    display: inline-flex;
+
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    font-style: normal;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+  }
+}
