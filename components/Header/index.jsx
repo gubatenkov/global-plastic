@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 import { Burger } from 'components';
+import HeaderPanel from './components/HeaderPanel';
 
 import logo from 'assets/images/logo.svg';
 
 const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
   return (
-    <header className="header">
+    <HeaderPanel className="header">
       <div className="header__logo">
         <Link className="header__logo__link" href="/">
           <a>
@@ -32,7 +32,7 @@ const Header = ({ isMobNavVisible, toggleMobNav, links }) => {
       <Link passHref href="/involved#form">
         <a className="header__link">Join the Dialogues</a>
       </Link>
-    </header>
+    </HeaderPanel>
   );
 };
 
