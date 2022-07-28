@@ -9,6 +9,7 @@ import homepage from './documents/homepage'
 import countries from './documents/countries'
 import countryPages from './documents/countryPages'
 import involved from './documents/involved'
+import roadmap from './documents/roadmap'
 
 import countryPage from './objects/countryPage'
 import heroSection from './objects/heroSection'
@@ -49,6 +50,8 @@ import involvedHero from './objects/involvedHero'
 import involvedForm from './objects/involvedForm'
 import wideInvolved from './objects/wideInvolved'
 import stakeholdersInvolved from './objects/stakeholdersInvolved'
+import roadmapHero from './objects/roadmapHero'
+import roadmapUpcomingActivationsCard from './objects/roadmapUpcomingActivationsCard'
 
 export default createSchema({
   name: 'default',
@@ -62,6 +65,7 @@ export default createSchema({
     meta,
     socials,
     involved,
+    roadmap,
     
     // Objects
     countryPage,
@@ -103,7 +107,8 @@ export default createSchema({
     involvedForm,
     wideInvolved,
     stakeholdersInvolved,
-    
+    roadmapHero,
+    roadmapUpcomingActivationsCard,
 
     
   ]),

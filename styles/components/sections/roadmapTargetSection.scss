@@ -1,0 +1,284 @@
+.rtection {
+  position: relative;
+  margin: 5px 0;
+  padding: 125px 0 150px;
+  background-color: $country-bg;
+  border-radius: $section-radius;
+  background: url('../../../assets/images/roadmapLline1.svg') top 845px left 5vw/90% auto no-repeat, url('../../../assets/images/roadmapLline2.svg') top 805px left 5vw/90% auto no-repeat;
+
+  
+
+
+
+  @include screen($sm) {
+    padding: 60px 0;
+
+    border-radius: $section-radius-mobile;
+  }
+
+  &__title {
+    display: none;
+    margin: 0 0 40px 0;
+
+    color: $black;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    font-style: normal;
+
+    @include screen($sm) {
+      display: block;
+    }
+  }
+
+  &__row {
+    margin: 0 0 140px 0;
+
+    gap: 110px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include screen($sm) {
+      margin: 0 0 70px 0;
+
+      gap: 35px;
+      flex-direction: column;
+    }
+
+    &-left {
+      position: relative;
+
+      &::before {
+        content: '';
+
+        display: block;
+
+        width: 130px;
+        height: 203px;
+
+        top: 25px;
+        left: -15px;
+        position: absolute;
+
+        background-repeat: no-repeat;
+        background-image: url('../../../assets/images/element.svg');
+
+        @include screen($sm) {
+          transform: rotate(-25deg) translate(35px, -5px);
+        }
+      }
+
+      &__imgbox {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+
+        overflow: hidden;
+        border-radius: 50% 80% 50% 78% / 84% 63% 44% 44%;
+
+        @include screen($sm) {
+          width: 85%;
+          margin: 0 auto;
+        }
+
+        &__img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &-right {
+      &__text {
+        width: 100%;
+        max-width: 500px;
+
+        &__title {
+          margin: 0 0 15px 0;
+
+          color: $black;
+          font-size: 48px;
+          font-weight: 600;
+          line-height: 48px;
+          font-style: normal;
+
+          @include screen($sm) {
+            display: none;
+          }
+        }
+
+        &__subtitle {
+          margin: 0 0 35px 0;
+
+          color: $black;
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 32px;
+          font-style: normal;
+
+          @include screen($sm) {
+            display: none;
+          }
+        }
+
+        &__descr {
+          margin: 0 0 50px 0;
+
+          color: $black;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 32px;
+          font-style: normal;
+
+          opacity: 0.8;
+
+          @include screen($sm) {
+            margin: 0 0 35px 0;
+
+            font-size: 14px;
+            line-height: 27px;
+          }
+        }
+      }
+
+      &__action {
+        padding: 15px 30px 15px 25px;
+
+        gap: 20px;
+        display: inline-flex;
+        align-items: center;
+
+        color: $black;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 30px;
+        font-style: normal;
+
+        border-radius: 8px;
+        background-color: transparent;
+        border: 1px solid rgba(32, 32, 32, 0.4);
+
+        cursor: pointer;
+
+        transition: all 0.2s ease-in;
+
+        position: relative;
+
+        z-index: 2;
+
+        @include screen($sm) {
+          margin: 0 auto;
+
+          font-size: 14px;
+          line-height: 27px;
+        }
+
+        &:hover {
+          color: $white;
+
+          background-color: $black;
+          border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        &:active {
+          color: $white;
+
+          background: rgba(32, 32, 32, 0.8);
+          border: 1px solid rgba(32, 32, 32, 0.4);
+        }
+      }
+    }
+  }
+
+  &__targets {
+    &__title {
+      margin: 0 0 55px 0;
+
+      color: $black;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 32px;
+      font-style: normal;
+      text-align: center;
+
+      @include screen($sm) {
+        margin: 0 0 35px 0;
+
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0 0px 0 70px;
+
+      display: flex;
+      justify-content: space-evenly;
+
+      list-style: none;
+
+      position: relative;
+
+      z-index: 10;
+
+      @include screen($sm) {
+        padding: 0;
+      }
+
+      &-item {
+        text-align: center;
+
+        @include screen($sm) {
+          flex: 1;
+        }
+
+        &__icon {
+          margin: 0 0 25px 0;
+
+          @include screen($sm) {
+            max-width: 50%;
+            margin: 0 auto 15px;
+          }
+        }
+
+        &__num {
+          margin: 0 0 20px 0;
+
+          color: $black;
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 32px;
+          font-style: normal;
+          text-align: center;
+
+          @include screen($sm) {
+            margin: 0 0 10px 0;
+
+            font-size: 18px;
+            line-height: 18px;
+          }
+        }
+
+        &__text {
+          margin: 0;
+
+          color: $black;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 19px;
+          font-style: normal;
+
+          opacity: 0.6;
+
+          @include screen($sm) {
+            font-size: 12px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+}
