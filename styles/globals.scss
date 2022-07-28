@@ -118,6 +118,7 @@ button {
 @import 'components/actionCard';
 @import 'components/archiveCard';
 @import 'components/scrubbleCard';
+@import 'components/roadmapHeroCard';
 
 // SECTIONS
 @import 'components/sections/hero';
@@ -151,6 +152,10 @@ button {
 @import 'components/sections/involvedHero';
 @import 'components/sections/involvedForm';
 @import 'components/sections/page404';
+@import 'components/sections/roadmapHero';
+@import 'components/sections/roadmapUpcomingActivations';
+@import 'components/sections/roadmapTargetSection';
+
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';
