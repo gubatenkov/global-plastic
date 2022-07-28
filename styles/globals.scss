@@ -86,12 +86,9 @@ button {
   padding-right: 10px;
 }
 
-// section {
-//   overflow: hidden;
-// }
-
 // PAGES
 @import 'pages/index';
+@import 'pages/media';
 
 // COMPONENTS
 @import 'components/map';
@@ -119,6 +116,7 @@ button {
 @import 'components/archiveCard';
 @import 'components/scrubbleCard';
 @import 'components/roadmapHeroCard';
+@import 'components/treatyUpdatesCard';
 
 // SECTIONS
 @import 'components/sections/hero';
@@ -155,7 +153,8 @@ button {
 @import 'components/sections/roadmapHero';
 @import 'components/sections/roadmapUpcomingActivations';
 @import 'components/sections/roadmapTargetSection';
-
+@import 'components/sections/mediaHero';
+@import 'components/sections/updatesSliderSection.scss';
 
 // LAYOUTS
 @import 'components/layouts/mainLayout';
