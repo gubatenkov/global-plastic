@@ -26,8 +26,6 @@
     animation: move 10s linear infinite;
 
     background-size: cover;
-    // background-repeat: no-repeat;
-    // background-repeat: repeat-x;
     background: url('../../assets/images/headerPanel.svg') 50%;
 
     @include screen($sm) {
