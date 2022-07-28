@@ -6,14 +6,10 @@
   border-radius: $section-radius;
   background: url('../../../assets/images/roadmapLline1.svg') top 845px left 5vw/90% auto no-repeat, url('../../../assets/images/roadmapLline2.svg') top 805px left 5vw/90% auto no-repeat;
 
-  
-
-
-
   @include screen($sm) {
     padding: 60px 0;
-
     border-radius: $section-radius-mobile;
+    background: url('../../../assets/images/roadmapLline1.svg') top 970px left 0/100% auto no-repeat, url('../../../assets/images/roadmapLline2.svg') top 960px left 0/100% auto no-repeat;
   }
 
   &__title {

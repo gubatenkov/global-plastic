@@ -1,55 +1,64 @@
 .roadmap-hero-card {  
   position: relative;
   width: 100%;
-  max-width: 608px;
-  height: 417px;
-  padding: 8px;
-  background-color: $white;
+  min-height: 720px;
   color: $white;
-  border-radius: 10px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-  &__imgbox { 
-    position: relative;   
-    width: 100%;
-    height: 401px;
-    overflow: hidden;
-    border-radius: 10px;
-    
-    & * {
-      position: unset !important;
-    }
+  &__bg { 
+    min-height: 720px;   
+    padding: 180px 96px 96px 96px;
+    background-image: url("../../assets/images/roadmap-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
 
-    &__img {
-      position: relative !important;
-      width: 100% !important;      
-      height: 401px !important;
-      object-position: center center;
-      object-fit: cover;
+    @include screen($sm) {
+      padding: 140px 16px 24px 16px;
     }
   }
+
   &__content {
-    position: absolute;
-    left: 0; right: 0; bottom: 0; top: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 40px;
-    padding: 32px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;        
+    margin-bottom: 24px;
+
+    @include screen($lg) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
     @include screen($sm) {
-      gap: 16px;
+      margin-bottom: 16px;
     }
   }
 
   &__location {
     display: flex;
-    align-items: center;    
-    margin-bottom: 16px;
-  }
-  @include screen($sm) {
-    margin-bottom: 20px;
-  }
+    align-items: center;
 
-  &__location__span {
+    @include screen($sm) {
+      padding-bottom: 16px;
+    }
+  }
+  
+
+  &__location__country {
     padding-left: 4px;
     font-weight: 500;
     font-size: 16px;
@@ -59,33 +68,33 @@
       line-height: 27px;
     }
   }
-  &__activation-title {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 16px;
-    @include screen($sm) {
-      font-size: 18px;
-      line-height: 22px;
-      margin-bottom: 20px;
-    }
 
-    & span {
-      display: block;
-      @include screen($sm) {
-        font-weight: 400;
-      }
+  &__location__region {
+    padding-right: 126px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    @include screen($sm) {
+      font-size: 14px;
+      line-height: 27px;
     }
   }
+
+  &__dot {
+    padding: 0 8px;
+    line-height: 30px;
+    text-align: center;
+  }
+
   &__date {
     font-weight: 500;
     font-size: 14px;
     line-height: 27px;
-    padding: 0;
+    padding: 8px 16px;
     margin: 0;
-    color: $white; 
+    color: $white;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
     
     @include screen($sm) {
       padding-bottom: 8px;
@@ -117,6 +126,42 @@
       }
     }
   }
+
+  &__title {
+    max-width: 534px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 53px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+
+    @include screen($sm) {
+      max-width: 343px;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__description {
+    max-width: 467px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+
+    @include screen($sm) {
+      max-width: 343px;
+      font-size: 14px;
+      line-height: 27px;
+      margin-bottom: 32px;
+    }
+  }
+
   &__link {
     display: flex;
     justify-content: space-between;
@@ -124,44 +169,27 @@
     flex: 0 0 auto;
     width: 147px;
     height: 55px;
-    padding: 16px;
+    padding: 13px 24px;
     background-color: $accent-color;
     border-radius: 11px;
     font-weight: 700;
-    color: $black; 
-    
+    color: $black;
+
     &:hover {
       background-color: $hover-color;
     }
 
     &:active {
       background-color: $press-color;
-    }
+    } 
 
-    @include screen($lg) {
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-    }
-
-    &__span {  
-      @include screen($lg) {
-        display: none;
-      }
-    }      
-  } 
-  &__link.modified-link {
-    width: 138px;
-    margin-bottom: 8px;
-    margin-right: 8px;
-    padding-right: 23px;
-
-    @include screen($lg) {
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      padding-right: 16px;
-      margin: 0;
+    @include screen($sm) {
+      font-size: 14px;
     }
   } 
+
+  &__arrow {
+    width: 48px;
+    padding-left: 24px;
+  }
 }
