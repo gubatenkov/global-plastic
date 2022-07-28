@@ -1,5 +1,17 @@
 .rhektion {
-  background-color: $country-bg;
+  position: relative;
+  overflow-y: hidden;
+  z-index: 0;
+  margin-top: -106px;
+
+  @include screen(865px) {
+    margin-top: -116px;
+  }
+
+  @include screen($sm) {
+    height: 670px;
+    border-radius: 8px;
+  }
 
   &__slider--wrapper {
     display: flex;
@@ -42,32 +54,23 @@
   &__slider-nav {
     position: absolute;
     z-index: 10;
-    top: 112px;
+    bottom: 95px;
     right: 95px;
     display: flex;
     justify-content: center;
     width: 215px;
 
-    @include screen($lg) {
-      top: 598px;
+    @include screen(595px) {
+      bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 6;
-      width: 200px;
     }
 
-    @include screen(525px) {
-      top: 558px;
+    @include screen($sm) {
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
 
-#uaecktionSlider {
-  @include screen(1024px) {
-    width: 608px;
-  }
-
-  @include screen(640px) {
-    width: 100%;
-  } 
-}
