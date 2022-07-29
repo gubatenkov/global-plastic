@@ -11,8 +11,25 @@
     }
   }
 
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 48px;
+
+    @include screen($xxl) {
+      flex-direction: column;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
   &__title {
-    margin: 0 0 48px 0;
+    margin: 0;
+    margin-right: auto;
     padding: 0;
     color: $black;
     font-size: 48px;

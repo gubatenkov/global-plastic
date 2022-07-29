@@ -14,8 +14,8 @@ const RoadmapUpcomingActivations = ({ data }) => {
   const [reportRegion, setReportRegion] = useState(null);
   const [reportCountry, setReportCountry] = useState(null);
 
-  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.reportRegion) : el)
-                         .filter(el => reportCountry ? reportCountry.includes(el.reportCountry) : el);
+  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.upcomingActivationsRegion) : el)
+                         .filter(el => reportCountry ? reportCountry.includes(el.upcomingActivationsCountry) : el);
 
   console.log(regions, countries)
 
@@ -23,10 +23,36 @@ const RoadmapUpcomingActivations = ({ data }) => {
     return <RoadmapUpcomingActivationsCard key={index} data={item} />
   });
 
+  const transferFilter = (event, dropdownData, dropdownName) => {
+    const items = Array.from(event.target.parentElement.children);    
+    const selectedItems = items.filter(el => el.classList.contains("checked"))
+                               .map(el => dropdownData[el.id]);   
+    if(dropdownName === 'reportCountry') {
+      setReportCountry(selectedItems)
+    } 
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(selectedItems)
+    }    
+  }
+
+  const resetFilter = (dropdownName) => {
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(null)
+    } else if(dropdownName === 'reportCountry') {
+      setReportCountry(null)
+    } 
+  }
+
   return (
     <section className="ruaektion">
       <div className="ruaektion__center" id="roadmapUpcoming">
-        <h2 className="ruaektion__title">Upcoming Activations</h2>
+        <div className="ruaektion__header">
+          <h2 className="ruaektion__title">Upcoming Activations</h2>
+          <div className="ruaektion__container">
+              <RoadmapDropdown dropdownName='reportRegion' dropdownData={regions} transferFilter={transferFilter} resetFilter={resetFilter} />
+              <RoadmapDropdown dropdownName='reportCountry' dropdownData={countries} transferFilter={transferFilter} resetFilter={resetFilter}/>
+            </div>
+          </div>
           <div className="ruaektion__wrapper">
             <div className="ruaektion__cards">
               {roadmapUpcomingActivations}

@@ -5,33 +5,30 @@ import pin from '../../assets/images/pin.svg';
 import getImg from '../../utils/getImg';
 
 const RoadmapUpcomingActivationsCard = ({ data }) => {
-  const {upcomingActivationsTitle, upcomingActivationsSubTitle, upcomingActivationsImage, upcomingActivationsLink, upcomingActivationsCountry, upcomingActivationsRegion, upcomingActivationsDate, upcomingActivationsTime } = data;
+  const {upcomingActivationsTitle, upcomingActivationsImage, upcomingActivationsLink, upcomingActivationsCountry, upcomingActivationsRegion, upcomingActivationsDate, upcomingActivationsTime } = data;
 
   return (
-    <div className="ua-country-card">
-      <div className="ua-country-card__imgbox">
-        <Image className="ua-country-card__imgbox__img" src={getImg(upcomingActivationsImage)} alt="img" layout="fill" priority />
+    <div className="roadmap-card">
+      <div className="roadmap-card__imgbox">
+        <Image className="roadmap-card__imgbox__img" src={getImg(upcomingActivationsImage)} alt="img" layout="fill" priority />
       </div>
-      <div className="ua-country-card__content">
-        <div className="ua-country-card__text">
-          <div className="ua-country-card__location">
+      <div className="roadmap-card__content">
+        <div className="roadmap-card__text">
+          <div className="roadmap-card__location">
             <Image src={pin} alt="pin" />
-            <span className="ua-country-card__location__span">{upcomingActivationsCountry}</span>
-            <span className="dot">•</span>
-            <span className="ua-country-card__location__span">{upcomingActivationsRegion}</span>
+            <span className="roadmap-card__location__span">{upcomingActivationsCountry}</span>
+            <span className="roadmap-card__dot">•</span>
+            <span className="roadmap-card__location__span">{upcomingActivationsRegion}</span>
           </div>
-          <h3 className="ua-country-card__activation-title">
-            <span>{upcomingActivationsTitle}</span>
-            <span>{upcomingActivationsSubTitle}</span>
-          </h3>
-          <p className="ua-country-card__date">
-            <span className="ua-country-card__date--day">{upcomingActivationsDate}</span>
+          <h3 className="roadmap-card__title">{upcomingActivationsTitle}</h3>
+          <p className="roadmap-card__date">
+            <span className="roadmap-card__date--day">{upcomingActivationsDate}</span>
             <span>{upcomingActivationsTime}</span>
           </p>
         </div>
         <Link  href={`/countries/${upcomingActivationsLink}`}>
-          <a className="ua-country-card__link modified-link arrow-hover-right">
-            <span className="ua-country-card__link__span">Register</span>
+          <a className="roadmap-card__link modified-link arrow-hover-right">
+            <span className="roadmap-card__link__span">Register</span>
             <Image src={arrowRight} alt="black arrow" className="arrow-image" />
           </a>
         </Link>        
