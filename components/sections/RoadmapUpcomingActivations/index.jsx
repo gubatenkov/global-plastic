@@ -1,91 +1,68 @@
-import { useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState } from 'react';
+import { useRouter } from "next/router";
 
-import { SliderNav, UpcomingActivationsCard } from 'components';
+import { RoadmapUpcomingActivationsCard, RoadmapDropdown } from 'components';
+import viewAll from '../../../utils/viewAll';
 
-const RoadmapUpcomingActivations = ({data}) => {
-  const [swiper, setSwiper] = useState(null);
-  const [swiperWidth, setSwiperWidth] = useState('100%');
-  const [slidesPerView, setSlidesPerView] = useState(3);
-  const [centeredSlide, setCenteredSlide] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(1);
+const RoadmapUpcomingActivations = ({ data }) => {
+  const router = useRouter();
+  const fn = () => router.push("#roadmapUpcoming");
 
-  const updateActiveIndex = (context) => {
-    setActiveIndex(context.realIndex + 1);
-  };
+  const regions = [...new Set(data.map(el => el.upcomingActivationsRegion))];
+  const countries = [...new Set(data.map(el => el.upcomingActivationsCountry))];
 
-  const handleContext = (context) => {
-    setSwiper(context);
-  };
+  const [reportRegion, setReportRegion] = useState(null);
+  const [reportCountry, setReportCountry] = useState(null);
 
-  const getSlidesPerView = () => {
-    if (typeof window !== 'undefined' && window.screen.width <= 1024) {
-      setSlidesPerView(1);
-      setCenteredSlide(true);
-      setSwiperWidth('100%');
-    } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
-      setSlidesPerView(2);
-      setCenteredSlide(true);
-      setSwiperWidth('100%');
-    } else if (typeof window !== 'undefined' && window.screen.width <= 1440) {
-      setSlidesPerView(3);
-      setCenteredSlide(false);
-      setSwiperWidth(3 * 608 + 32 * 2 + 'px');
-    } else if (typeof window !== 'undefined' && window.screen.width > 1440) {
-      setSlidesPerView(6);
-      setCenteredSlide(false);
-      setSwiperWidth(6 * 608 + 32 * 5 + 'px');
-    }
-  };
+  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.upcomingActivationsRegion) : el)
+                         .filter(el => reportCountry ? reportCountry.includes(el.upcomingActivationsCountry) : el);
 
-  useEffect(() => {
-    getSlidesPerView();
-    if (window) {
-      const listener = window.addEventListener('resize', getSlidesPerView);
-      return () => window.removeEventListener('resize', listener);
-    }
-  }, []);
+  console.log(regions, countries)
 
-  const upcomingActivations = data.map((item, index) => {
-    return (
-      <SwiperSlide  key={index}>
-        <UpcomingActivationsCard data={item} />
-      </SwiperSlide>
-    );
+  const roadmapUpcomingActivations = filterData.map((item, index) => {
+    return <RoadmapUpcomingActivationsCard key={index} data={item} />
   });
 
+  const transferFilter = (event, dropdownData, dropdownName) => {
+    const items = Array.from(event.target.parentElement.children);    
+    const selectedItems = items.filter(el => el.classList.contains("checked"))
+                               .map(el => dropdownData[el.id]);   
+    if(dropdownName === 'reportCountry') {
+      setReportCountry(selectedItems)
+    } 
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(selectedItems)
+    }    
+  }
+
+  const resetFilter = (dropdownName) => {
+    if(dropdownName === 'reportRegion') {      
+      setReportRegion(null)
+    } else if(dropdownName === 'reportCountry') {
+      setReportCountry(null)
+    } 
+  }
+
   return (
-    <section className="uaektion">
-      <div className="uaektion__center">
-        <h2 className="uaektion__title">Upcoming Activations</h2>
-        <div className="uaektion__slider-nav">
-          <SliderNav
-            total={upcomingActivations?.length ?? 0}
-            current={activeIndex}
-            onPrevClick={() => swiper.slidePrev(300)}
-            onNextClick={() => swiper.slideNext(300)}
-            theme="dark"
-          />
+    <section className="ruaektion">
+      <div className="ruaektion__center" id="roadmapUpcoming">
+        <div className="ruaektion__header">
+          <h2 className="ruaektion__title">Upcoming Activations</h2>
+          <div className="ruaektion__container">
+              <RoadmapDropdown dropdownName='reportRegion' dropdownData={regions} transferFilter={transferFilter} resetFilter={resetFilter} />
+              <RoadmapDropdown dropdownName='reportCountry' dropdownData={countries} transferFilter={transferFilter} resetFilter={resetFilter}/>
+            </div>
+          </div>
+          <div className="ruaektion__wrapper">
+            <div className="ruaektion__cards">
+              {roadmapUpcomingActivations}
+            </div>
+          </div>
+          <button className="cpection__button" onClick={(event) => viewAll(event, fn)}>View all</button>
         </div>
-      </div>
-      <div className="uaektion__slider--wrapper">
-        <div className="uaektion__slider" style={{width: swiperWidth}}>
-          <Swiper
-            id="uaecktionSlider"
-            slidesPerView={slidesPerView}
-            spaceBetween={32}
-            centeredSlides={centeredSlide}
-            onSwiper={(context) => handleContext(context)}
-            onSlideChange={updateActiveIndex}
-            loop={true}
-          >
-            {upcomingActivations}
-              
-          </Swiper>
-        </div>
-      </div>
     </section>
   );
 };
 
 export default RoadmapUpcomingActivations;
+

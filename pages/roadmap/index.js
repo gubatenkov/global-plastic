@@ -2,7 +2,7 @@ import {
   MainLayout,
   Meta,
   RoadmapHero,
-  // RoadmapUpcomingActivations,
+  RoadmapUpcomingActivations,
   // RoadmapTreaty,
   RoadmapTargetSection,
   ArchiveSection  
@@ -25,6 +25,7 @@ export default function Countries({ page }) {
       <Meta data={page} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <RoadmapHero data={roadmapHeroSection} />
+        <RoadmapUpcomingActivations data={roadmapUpcomingActivations} />
         <RoadmapTargetSection data={roadmapTargetSection} />
         <ArchiveSection data={roadmapArchiveSection} />
       </MainLayout>
