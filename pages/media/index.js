@@ -1,5 +1,5 @@
 import { getMediaFieldsQuery } from 'lib/queries';
-import { MainLayout, MediaHero, Meta, UpdatesSliderSection } from 'components';
+import { MainLayout, MediaHero, MediaVideoSection, Meta, UpdatesSliderSection } from 'components';
 
 export const getStaticProps = async () => {
   const data = await getMediaFieldsQuery();
@@ -22,6 +22,7 @@ export default function Media({ data }) {
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <MediaHero data={sections[0]} />
         <UpdatesSliderSection data={sections[1]} />
+        <MediaVideoSection />
       </MainLayout>
     </div>
   );
