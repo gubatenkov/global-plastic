@@ -1,12 +1,25 @@
-import { RoadmapUpcomingActivationsCard } from 'components';
+import { useState } from 'react';
 import { useRouter } from "next/router";
+
+import { RoadmapUpcomingActivationsCard, RoadmapDropdown } from 'components';
 import viewAll from '../../../utils/viewAll';
 
 const RoadmapUpcomingActivations = ({ data }) => {
   const router = useRouter();
   const fn = () => router.push("#roadmapUpcoming");
 
-  const roadmapUpcomingActivations = data.map((item, index) => {
+  const regions = [...new Set(data.map(el => el.upcomingActivationsRegion))];
+  const countries = [...new Set(data.map(el => el.upcomingActivationsCountry))];
+
+  const [reportRegion, setReportRegion] = useState(null);
+  const [reportCountry, setReportCountry] = useState(null);
+
+  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.reportRegion) : el)
+                         .filter(el => reportCountry ? reportCountry.includes(el.reportCountry) : el);
+
+  console.log(regions, countries)
+
+  const roadmapUpcomingActivations = filterData.map((item, index) => {
     return <RoadmapUpcomingActivationsCard key={index} data={item} />
   });
 

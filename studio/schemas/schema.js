@@ -52,6 +52,8 @@ import wideInvolved from './objects/wideInvolved'
 import stakeholdersInvolved from './objects/stakeholdersInvolved'
 import roadmapHero from './objects/roadmapHero'
 import roadmapUpcomingActivationsCard from './objects/roadmapUpcomingActivationsCard'
+import roadmapTreaty from './objects/roadmapTreaty'
+import roadmapTreatySection from './objects/roadmapTreatySection'
 
 export default createSchema({
   name: 'default',
@@ -109,6 +111,8 @@ export default createSchema({
     stakeholdersInvolved,
     roadmapHero,
     roadmapUpcomingActivationsCard,
+    roadmapTreaty,
+    roadmapTreatySection
 
     
   ]),

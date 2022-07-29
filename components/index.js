@@ -63,6 +63,8 @@ export {default as RoadmapHero } from './sections/RoadmapHero'
 export {default as RoadmapHeroCard } from './RoadmapHeroCard'
 export {default as RoadmapUpcomingActivations } from './sections/RoadmapUpcomingActivations'
 export {default as RoadmapUpcomingActivationsCard } from './RoadmapUpcomingActivationsCard'
+export {default as RoadmapDropdown } from './RoadmapDropdown'
 export {default as RoadmapTreaty } from './sections/RoadmapTreaty'
 export {default as RoadmapTargetSection } from './sections/RoadmapTargetSection'
+
 
