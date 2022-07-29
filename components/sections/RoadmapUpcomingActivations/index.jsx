@@ -17,8 +17,6 @@ const RoadmapUpcomingActivations = ({ data }) => {
   const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.upcomingActivationsRegion) : el)
                          .filter(el => reportCountry ? reportCountry.includes(el.upcomingActivationsCountry) : el);
 
-  console.log(regions, countries)
-
   const roadmapUpcomingActivations = filterData.map((item, index) => {
     return <RoadmapUpcomingActivationsCard key={index} data={item} />
   });
