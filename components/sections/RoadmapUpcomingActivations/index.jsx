@@ -21,6 +21,8 @@ const RoadmapUpcomingActivations = ({ data }) => {
     return <RoadmapUpcomingActivationsCard key={index} data={item} />
   });
 
+  const wrapperHeight = {height: filterData.length > 1 ? '866px' : '420px'};
+
   const transferFilter = (event, dropdownData, dropdownName) => {
     const items = Array.from(event.target.parentElement.children);    
     const selectedItems = items.filter(el => el.classList.contains("checked"))
@@ -30,7 +32,7 @@ const RoadmapUpcomingActivations = ({ data }) => {
     } 
     if(dropdownName === 'reportRegion') {      
       setReportRegion(selectedItems)
-    }    
+    }
   }
 
   const resetFilter = (dropdownName) => {
@@ -51,7 +53,7 @@ const RoadmapUpcomingActivations = ({ data }) => {
               <RoadmapDropdown dropdownName='reportCountry' dropdownData={countries} transferFilter={transferFilter} resetFilter={resetFilter}/>
             </div>
           </div>
-          <div className="ruaektion__wrapper">
+          <div className="ruaektion__wrapper" style={wrapperHeight}>
             <div className="ruaektion__cards">
               {roadmapUpcomingActivations}
             </div>
