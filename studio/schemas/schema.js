@@ -58,6 +58,7 @@ import mediapage from './documents/mediapage'
 import mediaHeroSection from './objects/mediaHeroSection'
 import updatesSliderSection from './objects/updatesSliderSection'
 import treatyUpdatesCard from './objects/treatyUpdatesCard'
+import reportsSliderSection from './objects/reportsSliderSection'
 
 
 export default createSchema({
@@ -121,6 +122,7 @@ export default createSchema({
     roadmapTreatySection,
     mediaHeroSection,
     updatesSliderSection,
-    treatyUpdatesCard
+    treatyUpdatesCard,
+    reportsSliderSection
   ]),
 })

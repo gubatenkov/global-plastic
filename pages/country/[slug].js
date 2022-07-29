@@ -27,7 +27,10 @@ export const getServerSideProps = async (context) => {
 export default function Country({ page, slug }) {
   const pages = page.countryPage;
   const currentPage = pages.filter(el => el.pageUrl === slug);
-  const { pageTitle, pageDescription, countryHero, upcomingActivationsSlider, stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, reportsGuidesSlider, actionSlider, archiveSlider } = currentPage[0];
+  const { pageTitle, pageDescription, countryHero, upcomingActivationsSlider, 
+    stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, 
+    wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, 
+    reportsGuidesSlider, actionSlider, archiveSlider } = currentPage[0];
   const { meta, menu: { pageMenu }, socials: { pageSocials }} = page;
   const metaData = {pageTitle, pageDescription, meta};
  
@@ -45,7 +48,7 @@ export default function Country({ page, slug }) {
         <VideoSection data={videoSectionCountryPage} />
         <TargetCountrySection data={targetSectionCountryPage} />
         <PartnersSection data={partnersSection} />
-        <ReportsSection data={reportsGuidesSlider} />
+        <ReportsSection className='rection' data={reportsGuidesSlider} />
         <ActionSection data={actionSlider} />
         <ArchiveSection data={archiveSlider} />
       </MainLayout>

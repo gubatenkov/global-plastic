@@ -5,7 +5,7 @@ import viewAll from '../../../utils/viewAll'
 
 import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
-const ReportsSection = ({data}) => {
+const ReportsSection = ({ className = '', data }) => {
   const router = useRouter();
   const fn = () => router.push("#reports");
 
@@ -98,7 +98,7 @@ const ReportsSection = ({data}) => {
   }
 
   return (
-    <section className="rektion">
+    <section className={`rektion ${className}`}>
       <div className="rektion__center" id="reports">
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>

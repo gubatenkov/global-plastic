@@ -53,7 +53,12 @@ export default {
               name: 'dialogsCardImage',
               type: 'image',
               title: 'Add dialog card image',
-            }, 
+            },
+            {
+              name: 'dialogsCardAvatar',
+              type: 'image',
+              title: 'Add dialog card avatar',
+            },
           ]
         }
       ]

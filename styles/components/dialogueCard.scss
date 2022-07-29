@@ -5,6 +5,10 @@
   border-radius: 16px;
   background-color: $white;
 
+  .medialection & {
+    padding: 50px 50px 0;
+  }
+
   @include screen($sm) {
     padding: 25px;
   }
@@ -31,6 +35,21 @@
     line-height: 21px;
     font-style: normal;
 
+    .medialection & {
+      height: 145px;
+      margin: 20px 0 45px;
+
+      -webkit-line-clamp: 5;
+      -moz-line-clamp: 5;
+      -ms-line-clamp: 5;
+      line-clamp: 5;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      font-style: normal;
+    }
+
     @include screen($sm) {
       margin: 10px 0 50px;
       min-height: fit-content;
@@ -51,19 +70,39 @@
     align-items: flex-end;
     justify-content: space-between;
 
+    .medialection & {
+      align-items: flex-start;
+    }
+
     @include screen($sm) {
       gap: 10px;
       flex-direction: column;
       align-items: flex-start;
     }
 
-    &-text {
+    &-left {
       max-width: 50%;
+
+      gap: 15px;
+      display: flex;
+      align-items: flex-start;
 
       @include screen($sm) {
         max-width: 100%;
       }
+    }
 
+    &-avatar {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+
+      overflow: hidden;
+
+      border-radius: 50%;
+    }
+
+    &-text {
       &__title {
         margin: 0 0 10px;
 

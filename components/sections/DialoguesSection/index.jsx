@@ -3,7 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { DialogueCard, SliderNav } from 'components';
 
-const DialoguesSection = ({ data: { dialogsSectionTitle, dialogsCards } }) => {
+const DialoguesSection = ({
+  className = '',
+  data: { dialogsSectionTitle, dialogsCards },
+}) => {
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(1.75);
   const [activeIndex, setActiveIndex] = useState(1);
@@ -34,7 +37,7 @@ const DialoguesSection = ({ data: { dialogsSectionTitle, dialogsCards } }) => {
   }, []);
 
   return (
-    <section className="dialection">
+    <section className={`dialection ${className}`}>
       <div className="dialection__inner">
         <div className="dialection__left">
           <h2 className="dialection__left__title">{dialogsSectionTitle}</h2>

@@ -5,10 +5,13 @@
   background-color: $white;
 
   gap: 25px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   @include screen($sm) {
     padding: 15px;
+
+    display: flex;
 
     border-radius: 8px;
   }
