@@ -4,12 +4,11 @@
   padding: 125px 0 150px;
   background-color: $country-bg;
   border-radius: $section-radius;
-  background: url('../../../assets/images/roadmapLline1.svg') top 845px left 5vw/90% auto no-repeat, url('../../../assets/images/roadmapLline2.svg') top 805px left 5vw/90% auto no-repeat;
 
   @include screen($sm) {
     padding: 60px 0;
     border-radius: $section-radius-mobile;
-    background: url('../../../assets/images/roadmapLline1.svg') top 970px left 0/100% auto no-repeat, url('../../../assets/images/roadmapLline2.svg') top 960px left 0/100% auto no-repeat;
+
   }
 
   &__title {
@@ -210,15 +209,42 @@
     &__list {
       margin: 0;
       padding: 0 0px 0 70px;
-
       display: flex;
       justify-content: space-evenly;
-
       list-style: none;
-
       position: relative;
+      overflow: hidden;
+      
 
-      z-index: 10;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -30px;
+        left: -96px;
+        width: 1440px;
+        height: 176px;
+        background-image: url('../../../assets/images/roadmapLine1.svg');
+
+        @include screen($sm) {
+          top: -40px;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: -60px;
+        left: -96px;
+        width: 1440px;
+        height: 243px;
+        background-image: url('../../../assets/images/roadmapLine2.svg');
+
+        @include screen($sm) {
+          top: -85px;
+        }
+      }
 
       @include screen($sm) {
         padding: 0;
@@ -233,6 +259,9 @@
 
         &__icon {
           margin: 0 0 25px 0;
+          
+          position: relative;
+          z-index: 100;
 
           @include screen($sm) {
             max-width: 50%;

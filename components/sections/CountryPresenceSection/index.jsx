@@ -1,6 +1,6 @@
 import { CountryPresenceCard } from 'components';
 import { useRouter } from "next/router";
-import viewAll from '../../../utils/viewAll'
+import viewAll from '../../../utils/viewAll';
 
 const CountryPresenceSection = ({data}) => {
   const router = useRouter();
