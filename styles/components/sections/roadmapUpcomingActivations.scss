@@ -7,7 +7,7 @@
     padding: 104px 96px 100px 96px;
     margin: 0 auto;
     @include screen($lg) {
-      padding: 60px 16px 0 16px;
+      padding: 60px 16px;
     }
   }
 
@@ -35,6 +35,13 @@
     font-size: 48px;
     font-weight: 600;
     line-height: 48px;
+
+    @include screen($xxl) {
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+
     @include screen($lg) {
       text-align: center;
     }
