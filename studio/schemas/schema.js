@@ -54,6 +54,11 @@ import roadmapHero from './objects/roadmapHero'
 import roadmapUpcomingActivationsCard from './objects/roadmapUpcomingActivationsCard'
 import roadmapTreaty from './objects/roadmapTreaty'
 import roadmapTreatySection from './objects/roadmapTreatySection'
+import mediapage from './documents/mediapage'
+import mediaHeroSection from './objects/mediaHeroSection'
+import updatesSliderSection from './objects/updatesSliderSection'
+import treatyUpdatesCard from './objects/treatyUpdatesCard'
+
 
 export default createSchema({
   name: 'default',
@@ -68,6 +73,7 @@ export default createSchema({
     socials,
     involved,
     roadmap,
+    mediapage,
     
     // Objects
     countryPage,
@@ -113,7 +119,9 @@ export default createSchema({
     roadmapUpcomingActivationsCard,
     roadmapTreaty,
     roadmapTreatySection
+    mediaHeroSection,
+    updatesSliderSection,
+    treatyUpdatesCard
 
-    
   ]),
 })

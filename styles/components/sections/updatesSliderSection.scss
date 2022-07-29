@@ -1,0 +1,34 @@
+.upslection {
+  padding: 6px 0 0;
+
+  overflow: hidden;
+
+  &__ticker {
+    margin: 0 0 100px;
+  }
+
+  &__title {
+    margin: 0 0 50px;
+
+    color: $black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    font-style: normal;
+
+    text-align: center;
+  }
+
+  &__slider {
+    &__wrapper {
+      margin: 0 0 50px;
+    }
+
+    &-nav {
+      margin: 0 0 50px;
+
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -22,22 +22,23 @@ const PartnersCard = ({ title, logos, index }) => {
         viewport={{ once: true }}
       >
         <div className="parection-card__list">
-          {logos.map((img, idx) => {
-            return (
-              <div className="parection-card__list-imgbox" key={idx}>
-                <Image
-                  className="parection-card__list-imgbox__img"
-                  key={idx}
-                  src={urlForImage(img).url()}
-                  layout="responsive"
-                  width={150}
-                  height={75}
-                  objectFit="contain"
-                  alt="img"
-                />
-              </div>
-            );
-          })}
+          {logos?.length &&
+            logos.map((img, idx) => {
+              return (
+                <div className="parection-card__list-imgbox" key={idx}>
+                  <Image
+                    className="parection-card__list-imgbox__img"
+                    key={idx}
+                    src={urlForImage(img).url()}
+                    layout="responsive"
+                    width={150}
+                    height={75}
+                    objectFit="contain"
+                    alt="img"
+                  />
+                </div>
+              );
+            })}
         </div>
         <div className="parection-card__info">
           <p className="parection-card__info__type">{title}</p>

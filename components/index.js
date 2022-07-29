@@ -35,9 +35,11 @@ export { default as JoinSection } from './sections/JoinSection'
 export { default as StakeholdersSection } from './sections/StakeholdersSection'
 export { default as PartnersSection } from './sections/PartnersSection'
 export { default as DialoguesSection } from './sections/DialoguesSection'
+export { default as MediaHero } from './sections/MediaHero'
 export { default as SliderPrevBtn } from './buttons/SliderPrevBtn'
 export { default as SliderNextBtn } from './buttons/SliderNextBtn'
 export { default as CountryPresenceSection } from './sections/CountryPresenceSection'
+export { default as UpdatesSliderSection } from './sections/UpdatesSliderSection'
 export {default as CountryPresenceCard } from './CountryPresenceCard'
 export {default as CountryHero } from './sections/CountryHero'
 export {default as UpcomingActivationsSection } from './sections/UpcomingActivationsSection'
@@ -66,5 +68,6 @@ export {default as RoadmapUpcomingActivationsCard } from './RoadmapUpcomingActiv
 export {default as RoadmapDropdown } from './RoadmapDropdown'
 export {default as RoadmapTreaty } from './sections/RoadmapTreaty'
 export {default as RoadmapTargetSection } from './sections/RoadmapTargetSection'
+export { default as TreatyUpdatesCard } from './TreatyUpdatesCard'
 
 
