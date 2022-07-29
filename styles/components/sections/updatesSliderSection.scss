@@ -1,5 +1,11 @@
 .upslection {
+  padding: 6px 0 0;
+
   overflow: hidden;
+
+  &__ticker {
+    margin: 0 0 100px;
+  }
 
   &__title {
     margin: 0 0 50px;

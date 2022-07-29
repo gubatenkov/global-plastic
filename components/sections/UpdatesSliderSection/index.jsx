@@ -1,13 +1,34 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { SliderNav, TreatyUpdatesCard } from 'components';
+import { NewsTicker, SliderNav, TreatyUpdatesCard } from 'components';
+
+const items = [
+  {
+    heroNewsLineText:
+      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
+    heroNewsLineURL: '#',
+  },
+  {
+    heroNewsLineText:
+      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
+    heroNewsLineURL: '#',
+  },
+  {
+    heroNewsLineText:
+      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
+    heroNewsLineURL: '#',
+  },
+  {
+    heroNewsLineText:
+      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
+    heroNewsLineURL: '#',
+  },
+];
 
 const UpdatesSliderSection = ({ data: { title, updatesSlider } }) => {
   const [swiper, setSwiper] = useState(null);
-  const [swiperWidth, setSwiperWidth] = useState('100%');
   const [slidesPerView, setSlidesPerView] = useState(3);
-  const [centeredSlide, setCenteredSlide] = useState(false);
   const [activeIndex, setActiveIndex] = useState(1);
 
   const updateActiveIndex = (context) => {
@@ -21,20 +42,12 @@ const UpdatesSliderSection = ({ data: { title, updatesSlider } }) => {
   const getSlidesPerView = () => {
     if (typeof window !== 'undefined' && window.screen.width <= 1024) {
       setSlidesPerView(1);
-      setCenteredSlide(true);
-      setSwiperWidth('100%');
     } else if (typeof window !== 'undefined' && window.screen.width <= 1200) {
       setSlidesPerView(2);
-      setCenteredSlide(true);
-      setSwiperWidth('100%');
     } else if (typeof window !== 'undefined' && window.screen.width <= 1440) {
-      setSlidesPerView(3);
-      setCenteredSlide(false);
-      setSwiperWidth(3 * 608 + 32 * 2 + 'px');
+      setSlidesPerView(2.5);
     } else if (typeof window !== 'undefined' && window.screen.width > 1440) {
-      setSlidesPerView(6);
-      setCenteredSlide(false);
-      setSwiperWidth(6 * 608 + 32 * 5 + 'px');
+      setSlidesPerView(3);
     }
   };
 
@@ -46,27 +59,32 @@ const UpdatesSliderSection = ({ data: { title, updatesSlider } }) => {
     }
   }, []);
 
-  const upcomingActivations = updatesSlider.map((item, index) => {
-    return (
-      <SwiperSlide key={index}>
-        <TreatyUpdatesCard data={item} />
-      </SwiperSlide>
-    );
-  });
+  const upcomingActivations =
+    updatesSlider?.length &&
+    updatesSlider.map((item, index) => {
+      return (
+        <SwiperSlide key={index}>
+          <TreatyUpdatesCard data={item} />
+        </SwiperSlide>
+      );
+    });
 
   return (
     <section className="upslection">
+      <div className="upslection__ticker">
+        <NewsTicker items={items} />
+      </div>
       <div className="upslection__center">
         <h2 className="upslection__title">{title}</h2>
       </div>
       <div className="upslection__slider__wrapper">
-        <div className="upslection__slider" style={{ width: swiperWidth }}>
+        <div className="upslection__slider">
           <Swiper
             id="upslectionSlider"
             slidesPerView={slidesPerView}
             spaceBetween={32}
-            centeredSlides={centeredSlide}
-            onSwiper={handleContext}
+            centeredSlides={true}
+            onSwiper={(context) => handleContext(context)}
             onSlideChange={updateActiveIndex}
             loop={true}
           >
