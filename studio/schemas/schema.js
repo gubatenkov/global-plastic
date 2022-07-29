@@ -118,10 +118,9 @@ export default createSchema({
     roadmapHero,
     roadmapUpcomingActivationsCard,
     roadmapTreaty,
-    roadmapTreatySection
+    roadmapTreatySection,
     mediaHeroSection,
     updatesSliderSection,
     treatyUpdatesCard
-
   ]),
 })

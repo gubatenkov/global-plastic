@@ -36,6 +36,16 @@
 
       background-repeat: no-repeat;
       background-image: url('../../../assets/images/bubbleGroup.png');
+
+      z-index: 2;
+    }
+
+    &__bubble {
+      right: 40px;
+      bottom: 80px;
+      position: absolute;
+
+      z-index: 0;
     }
   }
 
@@ -109,6 +119,8 @@
     position: relative;
 
     overflow: hidden;
+
+    z-index: 1;
 
     .vection__center__video__play {
       position: absolute;

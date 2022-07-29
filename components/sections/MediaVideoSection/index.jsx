@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import path from 'assets/images/mediaVideoSectionPreview.png';
+import Bubble from './components/Bubble';
 
 export default function MediaVideoSection() {
   return (
@@ -56,6 +57,7 @@ export default function MediaVideoSection() {
               <Image src={path} alt="video preview" />
               <div className="vection__center__video__play" />
             </div>
+            <Bubble className="mevidection__right__bubble" />
           </div>
         </div>
       </div>
