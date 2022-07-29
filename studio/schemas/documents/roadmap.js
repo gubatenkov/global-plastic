@@ -26,6 +26,11 @@ export default {
         title: 'Roadmap Upcoming Activations',
         type: 'array',
         of: [{type: 'roadmapUpcomingActivationsCard'}],
+      },      
+      {
+        name: 'roadmapTreatySections',
+        title: 'Roadmap Treaty Sections',
+        type: 'roadmapTreatySection',
       },
       {
         name: 'roadmapTargetSection',

@@ -25,22 +25,20 @@ const RoadmapHero = ({data}) => {
 
   return (
     <section className="rhektion">
-        <div className="rhektion__slider">
-          <div className="rhektion__center">
-            <Swiper
-              id="rhektionSlider"            
-              slidesPerView={1}
-              spaceBetween={0}
-              centeredSlides={true}
-              onSwiper={(context) => handleContext(context)}
-              onSlideChange={updateActiveIndex}
-              loop={true}
-            >
-              {roadmapHeroCards}
-                
-            </Swiper>
-          </div>
-        </div>
+      <div className="rhektion__slider">          
+        <Swiper
+          id="rhektionSlider"            
+          slidesPerView={1}
+          spaceBetween={0}
+          centeredSlides={true}
+          onSwiper={(context) => handleContext(context)}
+          onSlideChange={updateActiveIndex}
+          loop={true}
+        >
+          {roadmapHeroCards}              
+        </Swiper>          
+      </div>
+      <div className="rhektion__center">
         <div className="rhektion__slider-nav">
           <SliderNav
             total={roadmapHeroCards?.length ?? 0}
@@ -50,6 +48,7 @@ const RoadmapHero = ({data}) => {
             theme="light"
           />
         </div>
+      </div>
     </section>
   );
 };

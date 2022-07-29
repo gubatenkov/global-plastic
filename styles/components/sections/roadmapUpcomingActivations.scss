@@ -1,18 +1,35 @@
-.uaektion {
+.ruaektion {
   background-color: $country-bg;
 
   &__center {
     position: relative;
     max-width: 1440px;
-    padding: 104px 0 0 96px;
+    padding: 104px 96px 100px 96px;
     margin: 0 auto;
     @include screen($lg) {
       padding: 60px 16px 0 16px;
     }
   }
 
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 48px;
+
+    @include screen($xxl) {
+      flex-direction: column;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__container {
+    display: flex;
+  }
+
   &__title {
-    margin: 0 0 48px 0;
+    margin: 0;
+    margin-right: auto;
     padding: 0;
     color: $black;
     font-size: 48px;
@@ -28,72 +45,55 @@
     }
   }
 
-  &__slider--wrapper {
-    display: flex;
-    justify-content: flex-start; 
-    padding-left: calc((50vw - 720px) + 85px);
-    max-width: 100vw;
-    margin-bottom: 104px;  
-    overflow-x: hidden;
-
-    @include screen(1440px) {
-      max-width: 100%;
-      padding-left: 96px;
-      margin-bottom: 104px;  
-      overflow-x: hidden;
+  &__wrapper {
+    height: 866px;
+    margin-bottom: 48px;
+    overflow-y: hidden;   
+    @include screen($sm) {
+      margin-bottom: 24px;
+      height: 850px;
+      overflow-y: hidden;
     }
-
-    @include screen(1200px) {
-      width: 100%;
-      justify-content: center;
-      padding-left: 96px;
-      padding-right: 96px;
-      overflow-x: visible;
+    &.full {
+      height: 100%;
+      overflow-y: visible;
     }
-
-    @include screen($lg) {
-      padding-left: 16px;
-      padding-right: 16px;
-      margin-bottom: 132px;
-    }  
-
-    @include screen(525px) {
-      margin-bottom: 115px;
-    } 
   }
 
-  &__slider {
-    margin: 0 auto;
-  }
-
-  &__slider-nav {
-    position: absolute;
-    top: 112px;
-    right: 95px;
+  &__cards {
     display: flex;
     justify-content: center;
-    width: 215px;
-
-    @include screen($lg) {
-      top: 598px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 6;
-      width: 200px;
-    }
-
-    @include screen(525px) {
-      top: 558px;
+    flex-wrap: wrap;
+    gap: 32px; 
+     
+    @include screen($sm) {
+      gap: 16px;
     }
   }
-}
 
-#uaecktionSlider {
-  @include screen(1024px) {
-    width: 608px;
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 56px;
+    margin: 0 auto;
+    border: 1px solid rgba(33, 32, 32, 0.4);
+    border-radius: 8px;
+    background-color: transparent;
+    font-weight: 700;
+    transition: .5s;
+    &:hover {
+      color: $white;
+      background-color: $black;
+    }
+    &:active {
+      color: $white;
+      opacity: .8;
+    }
+    @include screen($sm) {
+      height: 50px;
+      font-size: 14px;
+    }
   }
-
-  @include screen(640px) {
-    width: 100%;
-  } 
 }

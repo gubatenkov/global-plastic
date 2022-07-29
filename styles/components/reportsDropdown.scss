@@ -5,8 +5,8 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1;
-  color: $white;
-  border: 1px solid rgba(255, 255, 255, .4);
+  color: $black;
+  border: 1px solid rgba(33, 32, 32, 0.4);
   border-radius: 8px;  
   background-color: transparent;
   
@@ -31,7 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $white;
+    color: $black;
     cursor: pointer;
 
     & space {
@@ -55,7 +55,7 @@
     width: 24px;
     height: 24px;
     margin-left: 16px;
-    background-image: url('../../assets/images/dropdownIcon.svg');
+    background-image: url('../../assets/images/roadmapDropdownIcon.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -78,9 +78,9 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
-    border: 1px solid rgba(255, 255, 255, .4);
+    border: 1px solid rgba(32, 32, 32, .4);
     border-radius: 0 0 8px 8px;
-    background-color: $black;
+    background-color: $country-bg;
 
   }
 
@@ -107,7 +107,7 @@
       left: 0px;
       width: 12px;
       height: 12px;
-      border: 1px solid rgba(255, 255, 255, .4);
+      border: 1px solid rgba(32, 32, 32, .4);
       border-radius: 2px;
     }
 
@@ -119,8 +119,9 @@
       content: "✔";
       color: $black;
       font-weight: 900;
-      font-size: 14px;
-      line-height: 12px;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
       background-color: $accent-color;
     }
   }
@@ -146,7 +147,7 @@
       position: absolute;
       left: -12px; right: -12px; top: 10px;
       height: 1px;
-      background-color: rgba(255, 255, 255, .4);
+      background-color: rgba(32, 32, 32, .4);
     }
   }
 }
