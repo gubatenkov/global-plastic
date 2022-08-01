@@ -14,6 +14,16 @@ export default {
       type: 'string',
     },
     {
+      name: 'actionRegion',
+      title: 'Action Region',
+      type: 'string',
+    },
+    {
+      name: 'actionCountry',
+      title: 'Action Country',
+      type: 'string',
+    },
+    {
       name: 'actionDate',
       title: 'Action Date',
       type: 'string',

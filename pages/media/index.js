@@ -6,6 +6,7 @@ import {
   MediaHero,
   MediaVideoSection,
   Meta,
+  MoreNewsSection,
   ReportsSection,
   UpdatesSliderSection
 } from 'components';
@@ -36,10 +37,11 @@ export default function Media({ data }) {
           className='merektion'
           data={sections[2].reportsGuidesSlider}
         />
-        <LinksSection data={sections[3]}/>
+        <MoreNewsSection data={sections[3]} />
+        <LinksSection data={sections[4]} />
         <DialoguesSection 
           className='medialection'
-          data={sections[4]}
+          data={sections[5]}
         />
       </MainLayout>
     </div>

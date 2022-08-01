@@ -1,0 +1,60 @@
+.monection {
+  padding: 115px 0;
+
+  background-color: $black;
+  border-radius: $section-radius;
+
+  &__header {
+    margin: 0 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin: 0;
+
+    color: $white;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    font-style: normal;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__cards {
+    margin: 0;
+
+    gap: 30px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__loadmore {
+    display: block;
+    margin: 50px auto 0;
+    padding: 15px 45px;
+
+    color: $white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 30px;
+    font-style: normal;
+
+    border-radius: 8px;
+    background-color: $black;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    transition: all 0.25s ease-in;
+
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+  }
+}
