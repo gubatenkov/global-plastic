@@ -19,7 +19,7 @@ export const getStaticProps = async () => {
 
 export default function Countries({ page }) {
   const {roadmapHeroSection, roadmapUpcomingActivations, roadmapTreatySections, roadmapTargetSection, roadmapArchiveSection, menu: { pageMenu }, socials: { pageSocials }} = page;
-console.log(page)
+
   return (
     <div className="roadmap">
       <Meta data={page} />

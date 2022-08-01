@@ -1,3 +1,241 @@
-.rtiktion { 
+.rtiktion {
+  position: absolute;
 
+  & * {
+    padding: 0;
+    margin: 0;
+    color: $white;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: .9;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 36px;
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0px;
+    left: -52px;
+  }
+
+  .dd &__title,
+  .dd &__subtitle,
+  .dd &__image {
+    display: none;
+  }
+
+  .dd &__date {
+    position: relative;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1px;
+    margin-bottom: 60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -45px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background-image: url("../../assets/images/roadmap-point.svg");      
+      background-repeat: no-repeat;
+    }
+  }
+
+  .tsdd &__subtitle::after {
+      content: "";
+      position: absolute;
+      bottom: -22px;
+      left: 5px;
+      width: 9px;
+      height: 9px;
+      background-image: url("../../assets/images/roadmap-point.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }  
+
+  .tsdd &__image {
+    display: none;
+  }
+
+  .idd &__image {
+    top: -205px;
+    left: -35px;
+  }
+
+  .idd + .idd &__image {
+    top: -240px;
+    left: -35px;
+  }
+
+  .idd &__title,
+  .idd &__subtitle {
+    display: none;
+  }
+
+  .idd &__date::after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    width: 9px;
+    height: 9px;
+    background-image: url("../../assets/images/roadmap-point.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .itsdd &__subtitle::after,
+  .itsdd-y &__subtitle::after,
+  .itsdd-b &__subtitle::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0px;
+    width: 9px;
+    height: 9px;
+    background-image: url("../../assets/images/roadmap-point.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .itsdd-y &__title,
+  .itsdd-y &__subtitle {
+     color: $accent-color;
+  }
+
+  .tdd &__title {
+    position: relative;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 44px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -26px;
+      left: 0px;
+      width: 14px;
+      height: 14px;
+      background-image: url("../../assets/images/roadmap-point.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .tdd &__subtitle,
+  .tdd &__image {
+    display: none;
+  }
+
+  .itsdd-b &__title,
+  .itsdd-b &__subtitle,
+  .itsdd-b &__date,
+  .itsdd-b &__description {
+    color: $black;
+  }
+
+  .itsdd-b &__subtitle {
+    position: relative;
+  }
+
+  .itsdd-b &__subtitle::after { 
+    bottom: -18px;
+    left: 0px;
+    width: 9px;
+    height: 9px;
+    background-image: url("../../assets/images/roadmap-point2.svg");
+    background-repeat: no-repeat;
+  }
+
+  .dd-s &__date,
+  .dd-s &__description {
+    color: $black;
+  }
+
+  .dd-s &__date::after {
+    content: "";
+    position: absolute;
+    top: -26px;
+    left: 0px;
+    width: 14px;
+    height: 14px;
+    background-image: url("../../assets/images/roadmap-point2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .dd-s &__title,
+  .dd-s &__subtitle,
+  .dd-s &__image {
+    display: none;
+  }
+
+  .tdd-b &__title,
+  .tdd-b &__date,
+  .tdd-b &__description {
+    color: $black;
+  }
+
+  .tdd-b &__title {
+    position: relative;    
+    margin-bottom: 44px;
+    font-size: 48px;
+    line-height: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -26px;
+      left: 0px;
+      width: 9px;
+      height: 9px;
+      background-image: url("../../assets/images/roadmap-point2.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+ 
+  .tdd-b &__subtitle,
+  .tdd-b &__image {
+    display: none;
+  }
+
+  .tdd-b:last-child &__title {
+    margin-bottom: 52px;
+
+    &::after {
+      bottom: -32px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .tdd-b:last-child &__date {
+    font-size: 32px;
+  }
 }

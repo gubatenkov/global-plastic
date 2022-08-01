@@ -1,10 +1,11 @@
 import {RoadmapTreatyItems} from 'components';
+import roadmapTretyData from './roadmapTretyData'
 
 const RoadmapTreaty = ({data}) => {
   const {roadmapTreatyTitle, roadmapTreatyDescription, roadmapTreatyItems} = data;
 
   const roadmapItems = roadmapTreatyItems.map((item, index) => 
-     <RoadmapTreatyItems data={item} key={index} />
+     <RoadmapTreatyItems data={item} style={roadmapTretyData[index]} key={index} />
   )
 
   return (
