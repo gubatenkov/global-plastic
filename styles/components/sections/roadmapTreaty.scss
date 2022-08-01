@@ -4,8 +4,7 @@
   background: linear-gradient($black,  $black 2812px, $country-bg 2812px, $country-bg 3892px, $accent-color 3892px, $accent-color);
   
 
-  @include screen($sm) {
-    height: auto;
+  @include screen(620px) {
     border-radius: 8px;    
   }
   
@@ -24,8 +23,8 @@
       padding: 96px 16px;     
     }
 
-    @include screen($sm) {
-      padding: 70px 16px 80px;
+    @include screen(620px) {
+      padding: 60px 16px;
     }
   }
 
@@ -41,10 +40,9 @@
     text-align: center;
     color: $white;
 
-    @include screen($sm) {
+    @include screen(620px) {
       max-width: 100%;
       margin-bottom: 32px;
-      padding-top: 68px;
       font-size: 32px;
       line-height: 32px;
     }
@@ -63,7 +61,7 @@
     text-align: center;
     color: $white;
 
-    @include screen($sm) {
+    @include screen(620px) {
       max-width: 100%;
       margin: 0;
       margin-bottom: 24px;

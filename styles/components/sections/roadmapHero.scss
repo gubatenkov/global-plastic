@@ -33,14 +33,14 @@
     justify-content: center;
     width: 215px;
 
-    @include screen(595px) {
+    @include screen(695px) {
       bottom: 25px;
       left: 50%;
       transform: translateX(-50%);
     }
 
     @include screen($sm) {
-      bottom: 25px;
+      bottom: 85px;
       left: 50%;
       transform: translateX(-50%);
     }
