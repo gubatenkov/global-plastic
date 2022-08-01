@@ -4,11 +4,6 @@ export default {
     type: 'object',
     fields: [
       {
-        name: 'roadmapTreatyNumber',
-        title: 'Roadmap Treaty Number',
-        type: 'number',
-      },
-      {
         name: 'roadmapTreatyTitle',
         title: 'Roadmap Treaty Title',
         type: 'string',
