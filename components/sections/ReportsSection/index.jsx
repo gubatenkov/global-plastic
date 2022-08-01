@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useRouter } from "next/router";
-import viewAll from '../../../utils/viewAll'
+import { useRouter } from 'next/router';
+import viewAll from '../../../utils/viewAll';
 
 import { SliderNav, ReportsCard, ReportsDropdown } from 'components';
 
 const ReportsSection = ({ className = '', data }) => {
   const router = useRouter();
-  const fn = () => router.push("#reports");
+  const fn = () => router.push('#reports');
 
-  const regions = [...new Set(data.map(el => el.reportRegion))];
-  const countries = [...new Set(data.map(el => el.reportCountry))];
+  const regions = [...new Set(data.map((el) => el.reportRegion))];
+  const countries = [...new Set(data.map((el) => el.reportCountry))];
 
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
@@ -19,20 +19,25 @@ const ReportsSection = ({ className = '', data }) => {
   const [reportCountry, setReportCountry] = useState(null);
   const [isMobile, setMobile] = useState(false);
 
-  const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.reportRegion) : el)
-                        .filter(el => reportCountry ? reportCountry.includes(el.reportCountry) : el);
-  
+  const filterData = data
+    .filter((el) =>
+      reportRegion ? reportRegion.includes(el.reportRegion) : el
+    )
+    .filter((el) =>
+      reportCountry ? reportCountry.includes(el.reportCountry) : el
+    );
+
   const getSliderWidth = () => {
     let sliderWidth;
     const cardWidth = 395;
     const gap = 32;
-    if(filterData.length === 2 && filterData.length < slidesPerView) {
+    if (filterData.length === 2 && filterData.length < slidesPerView) {
       sliderWidth = cardWidth * 2 + gap + 'px';
     } else {
       sliderWidth = '100%';
     }
     return sliderWidth;
-  }
+  };
 
   const updateActiveIndex = (context) => {
     setActiveIndex(context.realIndex + 1);
@@ -66,9 +71,9 @@ const ReportsSection = ({ className = '', data }) => {
   }, []);
 
   const renderCards = filterData.map((item, index) => {
-      return <ReportsCard key={index} data={item} />;
-    });
- 
+    return <ReportsCard key={index} data={item} />;
+  });
+
   const renderSwiperCards = filterData.map((item, index) => {
     return (
       <SwiperSlide key={index}>
@@ -78,24 +83,25 @@ const ReportsSection = ({ className = '', data }) => {
   });
 
   const transferFilter = (event, dropdownData, dropdownName) => {
-    const items = Array.from(event.target.parentElement.children);    
-    const selectedItems = items.filter(el => el.classList.contains("checked"))
-                               .map(el => dropdownData[el.id]);   
-    if(dropdownName === 'reportCountry') {
-      setReportCountry(selectedItems)
-    } 
-    if(dropdownName === 'reportRegion') {      
-      setReportRegion(selectedItems)
-    }    
-  }
+    const items = Array.from(event.target.parentElement.children);
+    const selectedItems = items
+      .filter((el) => el.classList.contains('checked'))
+      .map((el) => dropdownData[el.id]);
+    if (dropdownName === 'reportCountry') {
+      setReportCountry(selectedItems);
+    }
+    if (dropdownName === 'reportRegion') {
+      setReportRegion(selectedItems);
+    }
+  };
 
   const resetFilter = (dropdownName) => {
-    if(dropdownName === 'reportRegion') {      
-      setReportRegion(null)
-    } else if(dropdownName === 'reportCountry') {
-      setReportCountry(null)
-    } 
-  }
+    if (dropdownName === 'reportRegion') {
+      setReportRegion(null);
+    } else if (dropdownName === 'reportCountry') {
+      setReportCountry(null);
+    }
+  };
 
   return (
     <section className={`rektion ${className}`}>
@@ -103,22 +109,38 @@ const ReportsSection = ({ className = '', data }) => {
         <div className="rektion__header">
           <h2 className="rektion__title">Reports & Guides</h2>
           <div className="rektion__container">
-            <ReportsDropdown dropdownName='reportRegion' dropdownData={regions} transferFilter={transferFilter} resetFilter={resetFilter} />
-            <ReportsDropdown dropdownName='reportCountry' dropdownData={countries} transferFilter={transferFilter} resetFilter={resetFilter}/>
+            <ReportsDropdown
+              dropdownName="reportRegion"
+              dropdownData={regions}
+              transferFilter={transferFilter}
+              resetFilter={resetFilter}
+            />
+            <ReportsDropdown
+              dropdownName="reportCountry"
+              dropdownData={countries}
+              transferFilter={transferFilter}
+              resetFilter={resetFilter}
+            />
           </div>
         </div>
-        <div className={isMobile ? "rektion__none" : "rektion__slider--container"}>
-          <div className="rektion__slider"  style={{width: getSliderWidth()}}>
-            <Swiper              
+        <div
+          className={isMobile ? 'rektion__none' : 'rektion__slider--container'}
+        >
+          <div className="rektion__slider" style={{ width: getSliderWidth() }}>
+            <Swiper
               id="recktionSlider"
-              slidesPerView={filterData.length < slidesPerView ? filterData.length : slidesPerView }
+              slidesPerView={
+                filterData.length < slidesPerView
+                  ? filterData.length
+                  : slidesPerView
+              }
               spaceBetween={32}
               centeredSlides={false}
               onSwiper={(context) => handleContext(context)}
               onSlideChange={updateActiveIndex}
               loop={true}
             >
-              {renderSwiperCards}                
+              {renderSwiperCards}
             </Swiper>
           </div>
           <div className="rektion__slider-nav">
@@ -127,17 +149,22 @@ const ReportsSection = ({ className = '', data }) => {
               current={activeIndex}
               onPrevClick={() => swiper.slidePrev(300)}
               onNextClick={() => swiper.slideNext(300)}
-              theme="light"
+              theme="dark"
             />
           </div>
         </div>
-        <div className={isMobile ? "rektion__cards--container" : "rektion__none"}>
+        <div
+          className={isMobile ? 'rektion__cards--container' : 'rektion__none'}
+        >
           <div className="rektion__wrapper">
-            <div className="rektion__cards">
-              {renderCards}
-            </div>
+            <div className="rektion__cards">{renderCards}</div>
           </div>
-          <button className="rektion__button" onClick={(event) => viewAll(event, fn)}>View all</button>          
+          <button
+            className="rektion__button"
+            onClick={(event) => viewAll(event, fn)}
+          >
+            View all
+          </button>
         </div>
       </div>
     </section>
