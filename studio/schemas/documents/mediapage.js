@@ -22,8 +22,10 @@ export default {
       of: [
         { type: 'mediaHeroSection' },
         { type: 'updatesSliderSection' },
+        { type: 'mediaVideoSection' },
         { type: 'reportsSliderSection' },
         { type: 'moreNewsSection' },
+        { type: 'buildingProgramsSection' },
         { type: 'linksSection' },
         { type: 'dialogsSection' },
       ],

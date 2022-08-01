@@ -1,0 +1,48 @@
+.bpsection {
+  padding: 90px 0 80px;
+
+  &__header {
+    margin: 0 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    margin: 0;
+
+    color: $black;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    font-style: normal;
+  }
+
+  &__slide-wrap {
+    width: 100%;
+
+    &--width {
+      width: calc(100% - 30px);
+    }
+  }
+
+  &__cards {
+    margin: 0 0 50px;
+  }
+
+  &__card-wrap + &__card-wrap {
+    margin-top: 30px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+}

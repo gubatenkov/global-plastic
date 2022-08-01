@@ -1,5 +1,6 @@
 import { getMediaFieldsQuery } from 'lib/queries';
 import { 
+  BuildingProgramsSection,
   DialoguesSection,
   LinksSection,
   MainLayout,
@@ -32,16 +33,17 @@ export default function Media({ data }) {
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <MediaHero data={sections[0]} />
         <UpdatesSliderSection data={sections[1]} />
-        <MediaVideoSection />
+        <MediaVideoSection data={sections[2]} />
+        <MoreNewsSection data={sections[3]} />
+        <BuildingProgramsSection data={sections[4]} />
         <ReportsSection
           className='merektion'
-          data={sections[2].reportsGuidesSlider}
+          data={sections[5].reportsGuidesSlider}
         />
-        <MoreNewsSection data={sections[3]} />
-        <LinksSection data={sections[4]} />
+        <LinksSection data={sections[6]} />
         <DialoguesSection 
           className='medialection'
-          data={sections[5]}
+          data={sections[7]}
         />
       </MainLayout>
     </div>
