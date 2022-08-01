@@ -1,23 +1,25 @@
-.inktion {
-  background-color: $country-bg;
-  height: 715px;  
+.rtektion {
+  height: 5025px;  
   border-radius: 16px;
-  margin-bottom: 7px;
+  background: linear-gradient($black,  $black 2812px, $country-bg 2812px, $country-bg 3892px, $accent-color 3892px, $accent-color);
+  
 
   @include screen($sm) {
     height: auto;
-    border-radius: 8px;
-    margin-bottom: 4px;
+    border-radius: 8px;    
   }
   
   &__center {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;    
-    padding: 110px 292px 136px;
+    align-items: center;
+    height: 100%;    
+    padding: 100px;
     margin: 0 auto;
     max-width: 1440px;
+    background: url("../../../assets/images/roadmapWave1.png") top 170px left 62px /auto no-repeat, url("../../../assets/images/roadmapWave2.png") top 410px left 447px /auto no-repeat, url("../../../assets/images/roadmapWave3.png") top 2043px left -125px /auto no-repeat, url("../../../assets/images/roadmapWave4.png") top 2379px left 314px /auto no-repeat, url("../../../assets/images/roadmapWave5.png") top 4535px left 466px /auto no-repeat;
+    border: 1px solid red;
     
     @include screen($lg) {
       padding: 96px 16px;     
@@ -35,11 +37,10 @@
     margin: 0;
     margin-bottom: 40px;
     padding: 0;
-    padding-top: 92px;
     font-size: 48px;
     line-height: 48px;
     text-align: center;
-    color: $black;
+    color: $white;
 
     @include screen($sm) {
       max-width: 100%;
@@ -61,7 +62,7 @@
     font-size: 16px;
     line-height: 30px;
     text-align: center;
-    color: $black;
+    color: $white;
 
     @include screen($sm) {
       max-width: 100%;
@@ -71,64 +72,5 @@
       font-weight: 500;
       font-size: 14px;
     }
-  }
-  
-  &__link {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 13px 24px;
-    font-weight: 700;
-    font-size: 16px;
-    color: $white;
-    border-radius: 8px;
-    background-color: $black;
-    border: 1px solid rgba(33, 32, 32, 0.4);
-    cursor: pointer;
-    transition: .3s;
-
-    & svg {
-      margin-left: 16px;
-    }
-
-    &:hover {
-      color: $black;
-      background-color: $white;
-    }
-
-    &:active {
-      color: $white;
-      background: rgba(33, 32, 32, 0.8);
-    }
-  }
-
-  &__message {
-    position: absolute;
-    width: 46px;
-    height: 44px;
-    background-image: url("../../../assets/images/message.svg");
-    background-size: auto;
-    background-position:  12px center;
-    background-repeat: no-repeat;
-  }
-
-  &__icon {
-    position: absolute;
-    top: 110px;
-    left: calc(50% - 23px);
-    z-index: 1;
-    width: 46px;
-    height: 44px; 
-    background-image: url("../../../assets/images/shapeInvolvedAnimate.svg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow-y: hidden;
-
-    @include screen($sm) {
-      top: 50px;
-    }
-  }
+  } 
 }

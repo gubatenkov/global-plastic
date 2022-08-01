@@ -3,7 +3,7 @@ import {
   Meta,
   RoadmapHero,
   RoadmapUpcomingActivations,
-  // RoadmapTreaty,
+  RoadmapTreaty,
   RoadmapTargetSection,
   ArchiveSection  
 } from 'components'
@@ -18,14 +18,15 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {roadmapHeroSection, roadmapUpcomingActivations, roadmapTargetSection, roadmapArchiveSection, menu: { pageMenu }, socials: { pageSocials }} = page;
-
+  const {roadmapHeroSection, roadmapUpcomingActivations, roadmapTreatySections, roadmapTargetSection, roadmapArchiveSection, menu: { pageMenu }, socials: { pageSocials }} = page;
+console.log(page)
   return (
     <div className="roadmap">
       <Meta data={page} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <RoadmapHero data={roadmapHeroSection} />
         <RoadmapUpcomingActivations data={roadmapUpcomingActivations} />
+        <RoadmapTreaty data={roadmapTreatySections} />
         <RoadmapTargetSection data={roadmapTargetSection} />
         <ArchiveSection data={roadmapArchiveSection} />
       </MainLayout>
