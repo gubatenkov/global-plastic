@@ -9,9 +9,9 @@ const RoadmapTreatyItems = ({data, style}) => {
 
   const [isMobile, setMobile] = useState(false);
   const getMobile = () => {
-    if (typeof window !== 'undefined' && window.screen.width <= 520) {
+    if (typeof window !== 'undefined' && window.screen.width <= 620) {
       setMobile(true);
-    } else if (typeof window !== 'undefined' && window.screen.width > 520) {
+    } else if (typeof window !== 'undefined' && window.screen.width > 620) {
       setMobile(false);
     } 
   };

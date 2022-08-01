@@ -12,6 +12,10 @@
     font-size: 26px;
     line-height: .9;
     margin-bottom: 5px;
+
+    @include screen(620px) {
+      font-size: 18px; 
+    }
   }
 
   &__subtitle {
@@ -20,6 +24,10 @@
     font-size: 16px;
     line-height: 1;
     margin-bottom: 36px;
+
+    @include screen(620px) {
+      font-size: 12px;    
+    }
   }
 
   &__date {
@@ -27,12 +35,24 @@
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 8px;
+
+    @include screen(620px) {
+      font-weight: 400;
+      font-size: 16px;
+      margin-bottom: 0px;   
+    }
   }
 
   &__description {
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
+
+    @include screen(620px) {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    }
   }
 
   &__image {
@@ -53,6 +73,11 @@
     font-size: 32px;
     line-height: 1px;
     margin-bottom: 60px;
+
+    @include screen(620px) {
+      font-weight: 400;
+      font-size: 24px; 
+    }
 
     &::after {
       content: "";
@@ -85,11 +110,25 @@
   .idd &__image {
     top: -205px;
     left: -35px;
+
+    @include screen(620px) {
+      width: 100px;
+      height: auto;
+      top: -135px;
+      left: 0px;
+    }    
   }
 
   .idd + .idd &__image {
     top: -240px;
     left: -35px;
+
+    @include screen(620px) {
+      width: 100px;
+      height: auto;
+      top: -145px;
+      left: 0px;
+    }
   }
 
   .idd &__title,
@@ -126,6 +165,10 @@
   .itsdd-y &__title,
   .itsdd-y &__subtitle {
      color: $accent-color;
+
+     @include screen(620px) {
+      color: $white;
+    }
   }
 
   .tdd &__title {
@@ -133,6 +176,10 @@
     font-size: 48px;
     line-height: 1;
     margin-bottom: 44px;
+
+    @include screen(620px) {
+      font-size: 24px;
+    }
 
     &::after {
       content: "";
@@ -198,7 +245,7 @@
   .tdd-b &__title,
   .tdd-b &__date,
   .tdd-b &__description {
-    color: $black;
+    color: $black;    
   }
 
   .tdd-b &__title {
@@ -206,6 +253,11 @@
     margin-bottom: 44px;
     font-size: 48px;
     line-height: 1;
+
+    @include screen(620px) {
+      font-size: 24px;
+      margin-bottom: 36px;
+    }
 
     &::after {
       content: "";
@@ -237,5 +289,9 @@
 
   .tdd-b:last-child &__date {
     font-size: 32px;
+
+    @include screen(620px) {
+      font-size: 16px;
+    }
   }
 }

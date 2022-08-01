@@ -23,7 +23,7 @@ const roadmapTretyData = [
     width: '185',
     mTop: '659',
     mLeft: '16.8',
-    mWidth: '208',
+    mWidth: '185',
     type: 'tsdd'
   },
   {
@@ -32,7 +32,7 @@ const roadmapTretyData = [
     width: '185',
     mTop: '828',
     mLeft: '56.53',
-    mWidth: '208',
+    mWidth: '185',
     type: 'tsdd'
   },
   {
@@ -59,23 +59,23 @@ const roadmapTretyData = [
     width: '225',
     mTop: '1368',
     mLeft: '17.33',
-    mWidth: '208',
+    mWidth: '185',
     type: 'itsdd'
   },
   {
     top: '1763',
     left: '42.65',
     width: '225',
-    mTop: '15.67',
+    mTop: '1567',
     mLeft: '54.93',
-    mWidth: '208',
+    mWidth: '165',
     type: 'itsdd'
   },
   {
     top: '1933',
     left: '20',
     width: '225',
-    mTop: '17.59',
+    mTop: '1759',
     mLeft: '20.8',
     mWidth: '208',
     type: 'itsdd'
@@ -131,7 +131,7 @@ const roadmapTretyData = [
     width: '180',
     mTop: '2902',
     mLeft: '19.73',
-    mWidth: '260',
+    mWidth: '130',
     type: 'itsdd-b'
   },
   {
@@ -140,7 +140,7 @@ const roadmapTretyData = [
     width: '180',
     mTop: '3086',
     mLeft: '54.13',
-    mWidth: '260',
+    mWidth: '130',
     type: 'itsdd-b'
   },
   {
@@ -149,7 +149,7 @@ const roadmapTretyData = [
     width: '160',
     mTop: '3240',
     mLeft: '21.87',
-    mWidth: '260',
+    mWidth: '110',
     type: 'itsdd-b'
   },
   {
@@ -167,7 +167,7 @@ const roadmapTretyData = [
     width: '180',
     mTop: '3622',
     mLeft: '56.27',
-    mWidth: '260',
+    mWidth: '130',
     type: 'itsdd-b'
   },
   {
@@ -221,7 +221,7 @@ const roadmapTretyData = [
     width: '295',
     mTop: '4589',
     mLeft: '25.6',
-    mWidth: '260',
+    mWidth: '280',
     type: 'tdd-b'
   },
 ]
