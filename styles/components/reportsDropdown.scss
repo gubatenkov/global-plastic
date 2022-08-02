@@ -8,7 +8,7 @@
   color: $white;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: transparent;  
 
   .merektion & {
     color: $black;
@@ -183,4 +183,34 @@
       }
     }
   }
+}
+
+.dropdown--roadmap {
+  color: $black;
+  border: 1px solid rgba(32, 32, 32, 0.4);
+
+  &__header {
+    color: $black;
+  }
+
+  &__icon {
+    background-image: url('../../assets/images/dropdownIconBlack.svg');
+  }
+
+  &__body {
+    color: $black;
+    background-color: $country-bg;
+    border: 1px solid rgba(32, 32, 32, 0.4);
+  }
+
+  &__item::before {
+    border: 1px solid rgba(32, 32, 32, 0.4);
+  }
+
+  &__reset {
+    color: rgba(32, 32, 32, 0.8);
+    &::before {
+      background-color: rgba(32, 32, 32, 0.4);
+    }
+  }  
 }
