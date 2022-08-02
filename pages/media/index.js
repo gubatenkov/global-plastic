@@ -33,10 +33,10 @@ export default function Media({ data }) {
         <MediaHero data={sections[0]} />
         <UpdatesSliderSection data={sections[1]} />
         <MediaVideoSection />
-        <ReportsSection
+        {/* <ReportsSection
           className='merektion'
           data={sections[2].reportsGuidesSlider}
-        />
+        /> */}
         <MoreNewsSection data={sections[3]} />
         <LinksSection data={sections[4]} />
         <DialoguesSection 
