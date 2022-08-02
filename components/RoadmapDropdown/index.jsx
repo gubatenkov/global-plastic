@@ -46,14 +46,14 @@ const RoadmapDropdown = ({dropdownName, dropdownData, transferFilter, resetFilte
   }
   
   return (
-    <div className='dropdown' ref={dropdown}>
-      <div className='dropdown__header' onClick={toggleDropdown}>
+    <div className='dropdown dropdown--roadmap' ref={dropdown}>
+      <div className='dropdown__header dropdown--roadmap__header' onClick={toggleDropdown}>
         <span>{dropdownName.replace('report', '')}</span>
-        <i className={`dropdown__icon ${isOpen && "open"}`}></i>   
+        <i className={`dropdown__icon dropdown--roadmap__icon ${isOpen && "open"}`}></i>   
       </div>
-      <div className={`dropdown__body ${isOpen && 'open'}`}>
+      <div className={`dropdown__body dropdown--roadmap__body ${isOpen && 'open'}`}>
         {dropdownData.map((item, index) => (
-          <div className="dropdown__item" id={index} key={index}
+          <div className="dropdown__item dropdown--roadmap__item" id={index} key={index}
             onClick={(event) => {
               handleItemClick(event, dropdownData, dropdownName);
               transferFilter(event, dropdownData, dropdownName);              
@@ -61,7 +61,7 @@ const RoadmapDropdown = ({dropdownName, dropdownData, transferFilter, resetFilte
             {item}
           </div>          
         ))}
-        <div className="dropdown__reset" 
+        <div className="dropdown__reset dropdown--roadmap__reset" 
           onClick={(event) => {
             toggleDropdown();
             handleResetClick(event, dropdownName);
