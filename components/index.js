@@ -73,5 +73,8 @@ export {default as RoadmapTargetSection } from './sections/RoadmapTargetSection'
 export { default as TreatyUpdatesCard } from './TreatyUpdatesCard'
 export { default as RoadmapTreatyItems } from './RoadmapTreatyItems'
 export {default as BuildingProgramsSection } from './sections/BuildingProgramsSection'
+export { default as RoadmapWave } from './RoadmapWave'
+export { default as RoadmapWaveOrange } from './RoadmapWaveOrange'
+
 
 

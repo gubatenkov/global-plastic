@@ -1,5 +1,4 @@
 const getImg = (imgLink) => {
-  if(!imgLink || !imgLink.asset._ref) return;
   const imgKey = imgLink.asset._ref
     .replace(/image-/, '')
     .replace(/-jpg/, '.jpg')

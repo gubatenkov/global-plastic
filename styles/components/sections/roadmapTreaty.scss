@@ -1,11 +1,12 @@
 .rtektion {
+  position: relative;
   height: 5025px;  
   border-radius: 16px;
-  background: linear-gradient($black,  $black 2812px, $country-bg 2812px, $country-bg 3892px, $accent-color 3892px, $accent-color);
-  
+  background: linear-gradient($black,  $black 2812px, $country-bg 2812px, $country-bg 3892px, $accent-color 3892px, $accent-color); 
 
   @include screen(620px) {
-    border-radius: 8px;    
+    border-radius: 8px;
+    background: linear-gradient($black,  $black 2688px, $country-bg 2688px, $country-bg 3963px, $accent-color 3963px, $accent-color); 
   }
   
   &__center {

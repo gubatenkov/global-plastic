@@ -1,5 +1,6 @@
 .rtiktion {
   position: absolute;
+  z-index: 10;
 
   & * {
     padding: 0;
@@ -59,6 +60,8 @@
     position: absolute;
     top: 0px;
     left: -52px;
+    width: 32px;
+    height: 21px;
   }
 
   .dd &__title,
@@ -110,10 +113,14 @@
   .idd &__image {
     top: -205px;
     left: -35px;
+    width: 168px;
+    height: 163px;
+    background-size: contain;
+    background-repeat: no-repeat;
 
     @include screen(620px) {
       width: 100px;
-      height: auto;
+      height: 97px;
       top: -135px;
       left: 0px;
     }    
@@ -122,12 +129,16 @@
   .idd + .idd &__image {
     top: -240px;
     left: -35px;
+    width: 165px;
+    height: 187px;
 
     @include screen(620px) {
       width: 100px;
       height: auto;
       top: -145px;
       left: 0px;
+      width: 99px;
+      height: 113px;
     }
   }
 

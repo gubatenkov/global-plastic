@@ -1,0 +1,141 @@
+.wave {  
+  &__wrapper {
+    position: absolute;
+    z-index: 5;
+    top: 2780px;
+    margin: 0;
+    overflow: hidden;
+    background: $country-bg;
+    width: 100%;
+    height: 200px;
+
+    @include screen(620px) {
+      top: 2660px;
+      height: 100px;
+    }
+  }
+  
+  &__container {
+    position: relative;
+    height: 100px;
+    background: $black;
+
+    @include screen(620px) {
+      height: 50px;
+    }
+  }
+  
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: $black;
+    animation: beWavy 5s infinite linear;
+
+    @include screen(620px) {
+      height: 50px;
+      animation: beWavyMobile 5s infinite linear;
+    }
+  }
+  
+  &__wave::before, &__wave::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+  }
+  
+  &__wave::before {
+    height: 105%;
+    background-color: $country-bg;
+    right: -1.5%;
+    top: 60%;
+    animation: beWavyBefore 5s infinite step-end;
+  }
+  &__wave::after {
+    height: 100%;
+    background-color: $black;
+    left: -1.5%;
+    top: 40%;
+    animation: beWavyAfter 5s infinite step-end;
+  }
+  
+  
+  @keyframes beWavy {
+    0% {
+      animation-timing-function: ease-in;
+      height: 100px;
+    }
+    25% {
+      animation-timing-function: ease-out;
+      height: 0;
+    }
+    50% {
+      animation-timing-function: ease-in;
+      height: 100px;
+    }
+    75% {
+      animation-timing-function: ease-out;
+      height: 0;
+    }
+    100% {
+      animation-timing-function: ease-in;
+      height: 100px;
+    }    
+  }
+
+  @keyframes beWavyMobile {
+    0% {
+      animation-timing-function: ease-in;
+      height: 50px;
+    }
+    25% {
+      animation-timing-function: ease-out;
+      height: 0;
+    }
+    50% {
+      animation-timing-function: ease-in;
+      height: 50px;
+    }
+    75% {
+      animation-timing-function: ease-out;
+      height: 0;
+    }
+    100% {
+      animation-timing-function: ease-in;
+      height: 50px;
+    }    
+  }
+  
+  @keyframes beWavyBefore {
+    25% {
+      background-color: $black;
+      height: 100%;
+      top: 40%;
+      border-radius: 50% 100%;
+    }
+    75% {
+      background-color: $country-bg;
+      height: 105%;
+      top: 60%;
+      border-radius: 100% 50%;
+    }
+  }
+  
+  @keyframes beWavyAfter {
+    25% {
+      background-color: $country-bg;
+      height: 105%;
+      top: 60%;
+      border-radius: 50% 100%;
+    }
+    75% {
+      background-color: $black;
+      height: 100%;
+      top: 40%;
+      border-radius: 100% 50%;
+    }
+  }
+}
