@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import getImg from '../../utils/getImg';
 
@@ -29,13 +30,22 @@ const RoadmapTreatyItems = ({data, style}) => {
   const imsSrc = roadmapTreatyImage ? getImg(roadmapTreatyImage) : '';
 
   return (
-    <section className={`rtiktion ${type}`} style={itemStyle}>
-      <h3 className="rtiktion__title">{roadmapTreatyTitle}</h3>
-      <h4 className="rtiktion__subtitle">{roadmapTreatySubTitle}</h4>
-      <p className="rtiktion__date">{roadmapTreatyDate}</p>
-      <p className="rtiktion__description">{roadmapTreatyDescription}</p>
-      <div className="rtiktion__image" style={{backgroundImage: `url('${imsSrc}')`}}/>
-    </section>
+    <motion.div
+        className={`rtiktion ${type}`} style={itemStyle}
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{ duration: 2 }}
+        viewport={{ once: true }}
+      >
+        <h3 className="rtiktion__title">{roadmapTreatyTitle}</h3>
+        <h4 className="rtiktion__subtitle">{roadmapTreatySubTitle}</h4>
+        <p className="rtiktion__date">{roadmapTreatyDate}</p>
+        <p className="rtiktion__description">{roadmapTreatyDescription}</p>
+        <div className="rtiktion__image" style={{backgroundImage: `url('${imsSrc}')`}}/>  
+    </motion.div>
   );
 
 }
