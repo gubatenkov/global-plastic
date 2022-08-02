@@ -26,13 +26,15 @@ const RoadmapTreatyItems = ({data, style}) => {
 
   const itemStyle = {left: isMobile ? `${mLeft}%` : `${left}%`, top: isMobile ? `${mTop}px` : `${top}px`, maxWidth: isMobile ? `${mWidth}px` : `${width}px`};
 
+  const imsSrc = roadmapTreatyImage ? getImg(roadmapTreatyImage) : '';
+
   return (
     <section className={`rtiktion ${type}`} style={itemStyle}>
-      <h3 className={"rtiktion__title"}>{roadmapTreatyTitle}</h3>
-      <h4 className={"rtiktion__subtitle"}>{roadmapTreatySubTitle}</h4>
-      <p className={"rtiktion__date"}>{roadmapTreatyDate}</p>
-      <p className={"rtiktion__description"}>{roadmapTreatyDescription}</p>
-      <img src={getImg(roadmapTreatyImage)} alt="image" className={"rtiktion__image"}/>
+      <h3 className="rtiktion__title">{roadmapTreatyTitle}</h3>
+      <h4 className="rtiktion__subtitle">{roadmapTreatySubTitle}</h4>
+      <p className="rtiktion__date">{roadmapTreatyDate}</p>
+      <p className="rtiktion__description">{roadmapTreatyDescription}</p>
+      <div className="rtiktion__image" style={{backgroundImage: `url('${imsSrc}')`}}/>
     </section>
   );
 

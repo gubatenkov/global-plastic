@@ -13,6 +13,8 @@ const RoadmapUpcomingActivations = ({ data }) => {
 
   const [reportRegion, setReportRegion] = useState(null);
   const [reportCountry, setReportCountry] = useState(null);
+  const [isViewAll, setViewAll] = useState(false);
+  const [filterDataLength, setfilterDataLength] = useState(2);
 
   const filterData = data.filter(el => reportRegion ? reportRegion.includes(el.upcomingActivationsRegion) : el)
                          .filter(el => reportCountry ? reportCountry.includes(el.upcomingActivationsCountry) : el);
@@ -21,25 +23,29 @@ const RoadmapUpcomingActivations = ({ data }) => {
     return <RoadmapUpcomingActivationsCard key={index} data={item} />
   });
 
-  const wrapperHeight = {height: filterData.length > 1 ? '866px' : '420px'};
+  const wrapperHeight = {height: isViewAll ? '100%' : filterDataLength > 1 ? '866px' : '420px'};
 
   const transferFilter = (event, dropdownData, dropdownName) => {
     const items = Array.from(event.target.parentElement.children);    
     const selectedItems = items.filter(el => el.classList.contains("checked"))
-                               .map(el => dropdownData[el.id]);   
+                               .map(el => dropdownData[el.id]);      
     if(dropdownName === 'reportCountry') {
-      setReportCountry(selectedItems)
+      setReportCountry(selectedItems);
+      setfilterDataLength(filterData.length);
     } 
     if(dropdownName === 'reportRegion') {      
-      setReportRegion(selectedItems)
+      setReportRegion(selectedItems);
+      setfilterDataLength(filterData.length);
     }
   }
 
   const resetFilter = (dropdownName) => {
     if(dropdownName === 'reportRegion') {      
-      setReportRegion(null)
+      setReportRegion(null);
+      setfilterDataLength(2);
     } else if(dropdownName === 'reportCountry') {
-      setReportCountry(null)
+      setReportCountry(null);
+      setfilterDataLength(2);
     } 
   }
 
@@ -58,7 +64,10 @@ const RoadmapUpcomingActivations = ({ data }) => {
               {roadmapUpcomingActivations}
             </div>
           </div>
-          <button className="cpection__button" onClick={(event) => viewAll(event, fn)}>View all</button>
+          <button className="cpection__button" 
+            onClick={(event) => {viewAll(event, fn); setViewAll((isViewAll) => !isViewAll)}}>
+            View all
+          </button>
         </div>
     </section>
   );
