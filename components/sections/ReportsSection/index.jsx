@@ -21,10 +21,10 @@ const ReportsSection = ({ className = '', data }) => {
 
   const filterData = data
     .filter((el) =>
-      reportRegion ? reportRegion.includes(el.reportRegion) : el
+      reportRegion ? reportRegion.includes(el?.reportRegion) : el
     )
     .filter((el) =>
-      reportCountry ? reportCountry.includes(el.reportCountry) : el
+      reportCountry ? reportCountry.includes(el?.reportCountry) : el
     );
 
   const getSliderWidth = () => {
