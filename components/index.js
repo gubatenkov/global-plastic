@@ -72,5 +72,6 @@ export {default as MediaVideoSection } from './sections/MediaVideoSection'
 export {default as RoadmapTargetSection } from './sections/RoadmapTargetSection'
 export { default as TreatyUpdatesCard } from './TreatyUpdatesCard'
 export { default as RoadmapTreatyItems } from './RoadmapTreatyItems'
+export {default as BuildingProgramsSection } from './sections/BuildingProgramsSection'
 
 

@@ -60,6 +60,8 @@ import updatesSliderSection from './objects/updatesSliderSection'
 import treatyUpdatesCard from './objects/treatyUpdatesCard'
 import reportsSliderSection from './objects/reportsSliderSection'
 import moreNewsSection from './objects/moreNewsSection'
+import buildingProgramsSection from './objects/buildingProgramsSection'
+import mediaVideoSection from './objects/mediaVideoSection'
 
 
 export default createSchema({
@@ -125,6 +127,8 @@ export default createSchema({
     updatesSliderSection,
     treatyUpdatesCard,
     reportsSliderSection,
-    moreNewsSection
+    moreNewsSection,
+    buildingProgramsSection,
+    mediaVideoSection
   ]),
 })

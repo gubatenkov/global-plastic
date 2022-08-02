@@ -10,7 +10,8 @@
   border-radius: 8px;
   background-color: transparent;  
 
-  .merektion & {
+  .merektion &,
+  .bpsection & {
     color: $black;
 
     border: 1px solid rgba(33, 32, 32, 0.4);
@@ -40,7 +41,8 @@
     color: $white;
     cursor: pointer;
 
-    .merektion & {
+    .merektion &,
+    .bpsection & {
       color: $black;
     }
 
@@ -71,7 +73,8 @@
     background-position: center center;
     transition: 0.3s;
 
-    .merektion & {
+    .merektion &,
+    .bpsection & {
       background-image: url('../../assets/images/dropdownIconBlack.svg');
     }
   }
@@ -96,9 +99,14 @@
     border-radius: 0 0 8px 8px;
     background-color: $black;
 
-    .merektion & {
+    .merektion &,
+    .bpsection & {
+      margin: 10px 0 0;
+
       color: $black;
       background-color: $white;
+
+      border-radius: 8px;
     }
   }
 
@@ -128,7 +136,8 @@
       border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 2px;
 
-      .merektion & {
+      .merektion &,
+      .bpsection & {
         border: 1px solid #9e9d9b;
       }
     }
@@ -164,7 +173,8 @@
     text-align: center;
     cursor: pointer;
 
-    .merektion & {
+    .merektion &,
+    .bpsection & {
       color: #000000;
       opacity: 0.4;
     }
@@ -178,7 +188,8 @@
       height: 1px;
       background-color: rgba(255, 255, 255, 0.4);
 
-      .merektion & {
+      .merektion &,
+      .bpsection & {
         background-color: #d8d8d7;
       }
     }

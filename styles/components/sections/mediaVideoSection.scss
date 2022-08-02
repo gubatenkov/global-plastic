@@ -116,17 +116,48 @@
   }
 
   &__videopreview {
+    width: 530px;
+    height: 530px;
+
     position: relative;
+
+    border-top-left-radius: 545px;
+    border-top-right-radius: 480px;
+    border-bottom-right-radius: 555px;
+    border-bottom-left-radius: 460px;
 
     overflow: hidden;
 
     z-index: 1;
+
+    &::after {
+      content: '';
+
+      width: 100%;
+      height: 100%;
+
+      top: 0;
+      left: 0;
+      position: absolute;
+
+      background: linear-gradient(
+        180deg,
+        rgba(33, 32, 32, 0.74) 0%,
+        rgba(0, 0, 0, 0) 100%,
+        rgba(33, 32, 32, 0) 100%
+      );
+      transform: rotate(-90deg);
+
+      z-index: 1;
+    }
 
     .vection__center__video__play {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(1.9);
+
+      z-index: 3;
     }
   }
 }
