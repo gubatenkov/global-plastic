@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { NewsCardSmall, ReportsDropdown, SliderNav } from 'components';
@@ -8,6 +8,7 @@ export default function BuildingProgramsSection({ data: { cards, title } }) {
   const [activeIndex, setActiveIndex] = useState(1);
   const [cardRegion, setCardRegion] = useState(null);
   const [cardCountry, setCardCountry] = useState(null);
+  const [totalSlides, setTotalSlides] = useState(0);
 
   const filterData = (items) => {
     const filtered = items
@@ -58,6 +59,16 @@ export default function BuildingProgramsSection({ data: { cards, title } }) {
   const handleContext = (context) => {
     setSwiper(context);
   };
+
+  const countSlides = useCallback(() => {
+    window.innerWidth > 481
+      ? setTotalSlides(Math.ceil(cards?.length / 4 ?? 0))
+      : setTotalSlides(Math.ceil(cards?.length / 2 ?? 0));
+  }, [cards?.length]);
+
+  useEffect(() => {
+    countSlides();
+  }, [countSlides]);
 
   const renderSlides = (cards) => {
     // here we get array of arrays with two cards in each
@@ -118,16 +129,21 @@ export default function BuildingProgramsSection({ data: { cards, title } }) {
           <div className="bpsection__cards">
             <Swiper
               id="bpsectionSlider"
-              slidesPerView={2}
+              slidesPerView={1}
               onActiveIndexChange={updateActiveIndex}
               onSwiper={(swiper) => handleContext(swiper)}
+              breakpoints={{
+                481: {
+                  slidesPerView: 2,
+                },
+              }}
             >
               {renderSlides(filterData(cards))}
             </Swiper>
           </div>
           <div className="bpsection__nav">
             <SliderNav
-              total={cards?.length / 4 ?? 0}
+              total={totalSlides}
               current={activeIndex}
               onPrevClick={() => swiper.slidePrev(300)}
               onNextClick={() => swiper.slideNext(300)}

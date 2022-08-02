@@ -11,6 +11,10 @@
 
   position: relative;
 
+  @include screen($sm) {
+    padding: 305px 0 60px;
+  }
+
   &::before {
     content: '';
 
@@ -42,6 +46,12 @@
     font-style: normal;
 
     opacity: 0.6;
+
+    @include screen($sm) {
+      margin: 0 0 30px;
+
+      line-height: 27px;
+    }
   }
 
   &__title {
@@ -53,6 +63,15 @@
     font-weight: 700;
     line-height: 53px;
     font-style: normal;
+
+    @include screen($sm) {
+      margin: 0 0 30px;
+
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 40px;
+      font-style: normal;
+    }
   }
 
   &__link {
@@ -72,6 +91,13 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
 
     transition: all 0.3s ease-in-out;
+
+    @include screen($sm) {
+      padding: 15px 25px;
+
+      font-size: 14px;
+      line-height: 27px;
+    }
 
     &:hover {
       color: $black;

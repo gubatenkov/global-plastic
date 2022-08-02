@@ -3,33 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { NewsTicker, SliderNav, TreatyUpdatesCard } from 'components';
 
-const items = [
-  {
-    heroNewsLineText:
-      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
-    heroNewsLineURL: '#',
-  },
-  {
-    heroNewsLineText:
-      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
-    heroNewsLineURL: '#',
-  },
-  {
-    heroNewsLineText:
-      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
-    heroNewsLineURL: '#',
-  },
-  {
-    heroNewsLineText:
-      'DEFRA appoints the OPLN as the official neutral convener for United Kingdom',
-    heroNewsLineURL: '#',
-  },
-];
-
-const UpdatesSliderSection = ({ data: { title, updatesSlider } }) => {
+const UpdatesSliderSection = ({ data: { title, updatesSlider, newsLine } }) => {
   const [swiper, setSwiper] = useState(null);
-  const [slidesPerView, setSlidesPerView] = useState(3);
   const [activeIndex, setActiveIndex] = useState(1);
+  const [slidesPerView, setSlidesPerView] = useState(3);
 
   const updateActiveIndex = (context) => {
     setActiveIndex(context.realIndex + 1);
@@ -72,7 +49,7 @@ const UpdatesSliderSection = ({ data: { title, updatesSlider } }) => {
   return (
     <section className="upslection">
       <div className="upslection__ticker">
-        <NewsTicker items={items} />
+        <NewsTicker items={newsLine} />
       </div>
       <div className="upslection__center">
         <h2 className="upslection__title">{title}</h2>

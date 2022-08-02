@@ -5,12 +5,16 @@
   border-radius: 16px;
   background-color: $white;
 
-  .medialection & {
-    padding: 50px 50px 0;
-  }
-
   @include screen($sm) {
     padding: 25px;
+  }
+
+  .medialection & {
+    padding: 50px 50px 0;
+
+    @include screen($sm) {
+      padding: 30px 25px;
+    }
   }
 
   &__text {
@@ -48,6 +52,10 @@
       font-weight: 400;
       line-height: 30px;
       font-style: normal;
+
+      @include screen($sm) {
+        margin: 15px 0 35px;
+      }
     }
 
     @include screen($sm) {
@@ -89,6 +97,10 @@
 
       @include screen($sm) {
         max-width: 100%;
+
+        .medialection & {
+          width: 100%;
+        }
       }
     }
 
@@ -103,6 +115,12 @@
     }
 
     &-text {
+      @include screen($sm) {
+        .medialection & {
+          flex: 1;
+        }
+      }
+
       &__title {
         margin: 0 0 10px;
 

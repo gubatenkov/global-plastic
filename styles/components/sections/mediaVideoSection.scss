@@ -7,8 +7,18 @@
   background-position: center center;
   background-image: url('../../../assets/images/mediaVideoBg.png');
 
+  @include screen($sm) {
+    padding: 60px 0;
+
+    background-position: -725px;
+  }
+
   &__inner {
     display: flex;
+
+    @include screen($sm) {
+      position: relative;
+    }
   }
 
   &__left,
@@ -18,12 +28,23 @@
 
   &__left {
     padding: 190px 0 0;
+
+    @include screen($sm) {
+      padding: 0;
+    }
   }
 
   &__right {
     padding: 140px 0;
 
     position: relative;
+
+    @include screen($sm) {
+      padding: 0;
+
+      top: 145px;
+      position: absolute;
+    }
 
     &::after {
       content: '';
@@ -38,6 +59,16 @@
       background-image: url('../../../assets/images/bubbleGroup.png');
 
       z-index: 2;
+
+      @include screen($sm) {
+        top: 25px;
+        left: 80px;
+
+        width: 50px;
+        height: 55px;
+
+        background-image: url('../../../assets/images/bubbleGroupSmall.svg');
+      }
     }
 
     &__bubble {
@@ -46,6 +77,13 @@
       position: absolute;
 
       z-index: 0;
+
+      @include screen($sm) {
+        width: 35%;
+
+        right: 55px;
+        bottom: -65px;
+      }
     }
   }
 
@@ -63,6 +101,13 @@
     font-style: normal;
 
     opacity: 0.8;
+
+    @include screen($sm) {
+      margin: 0 0 20px;
+
+      font-size: 14px;
+      line-height: 27px;
+    }
   }
 
   &__title {
@@ -75,6 +120,13 @@
     font-weight: 600;
     line-height: 48px;
     font-style: normal;
+
+    @include screen($sm) {
+      margin: 0 0 335px;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 
   &__text {
@@ -88,6 +140,13 @@
     font-style: normal;
 
     opacity: 0.8;
+
+    @include screen($sm) {
+      margin: 0 0 30px;
+
+      font-size: 14px;
+      line-height: 27px;
+    }
   }
 
   &__link {
@@ -105,9 +164,17 @@
     font-style: normal;
 
     border-radius: 8px;
+    background-color: $white;
     border: 1px solid rgba(33, 32, 32, 0.4);
 
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-in-out;
+
+    @include screen($sm) {
+      padding: 15px 25px;
+
+      font-size: 14px;
+      line-height: 27px;
+    }
 
     &:hover {
       color: $white;
@@ -129,6 +196,13 @@
     overflow: hidden;
 
     z-index: 1;
+
+    @include screen($sm) {
+      margin: 0 auto;
+
+      width: 280px;
+      height: 280px;
+    }
 
     &::after {
       content: '';
@@ -158,6 +232,10 @@
       transform: translate(-50%, -50%) scale(1.9);
 
       z-index: 3;
+
+      @include screen($sm) {
+        transform: translate(-50%, -50%) scale(0.9);
+      }
     }
   }
 }
