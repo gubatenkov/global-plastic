@@ -1,9 +1,16 @@
 import Image from 'next/image';
+import { useState } from 'react';
+import getYouTubeID from 'get-youtube-id';
 
-import path from 'assets/images/mediaVideoSectionPreview.png';
 import Bubble from './components/Bubble';
+import { VideoPopup } from 'components';
 
-export default function MediaVideoSection() {
+export default function MediaVideoSection({
+  data: { title, country, region, link, subtitle, video },
+}) {
+  const [isVideoPopupShown, setVideoPopupShown] = useState(false);
+  const vidId = getYouTubeID(video?.url);
+
   return (
     <section className="mevidection">
       <div className="container">
@@ -24,15 +31,11 @@ export default function MediaVideoSection() {
                   fill="#F9B131"
                 />
               </svg>
-              Ghana &#x2022; Africa
+              {region} &#x2022; {country}
             </p>
-            <h2 className="mevidection__title">
-              Ghana&apos;s Informal Waste Sector Inclusion
-            </h2>
-            <p className="mevidection__text">{`Eco Sentiment «s a diagnostic survey designed around 3 
-            touch points for the systems charge terriers: Urgen- cy d a Proposed Solution. 
-            Trust {e g, between stakeholder groups}`}</p>
-            <a className="mevidection__link arrow-hover-right" href="#">
+            <h2 className="mevidection__title">{title}</h2>
+            <p className="mevidection__text">{subtitle}</p>
+            <a className="mevidection__link arrow-hover-right" href={link}>
               Read more
               <svg
                 className="arrow-image"
@@ -53,14 +56,32 @@ export default function MediaVideoSection() {
             </a>
           </div>
           <div className="mevidection__right">
-            <div className="mevidection__videopreview">
-              <Image src={path} alt="video preview" />
+            <div
+              className="mevidection__videopreview"
+              onClick={() => setVideoPopupShown(true)}
+            >
+              {typeof vidId === 'string' ? (
+                <Image
+                  src={`https://img.youtube.com/vi/${vidId}/0.jpg`}
+                  alt="YouTube video thumbnail"
+                  layout="responsive"
+                  width={530}
+                  height={530}
+                  objectFit="cover"
+                  style={{ transform: 'scale(1.2)' }}
+                />
+              ) : (
+                <div />
+              )}
               <div className="vection__center__video__play" />
             </div>
             <Bubble className="mevidection__right__bubble" />
           </div>
         </div>
       </div>
+      {isVideoPopupShown && (
+        <VideoPopup videoId={vidId} onClose={() => setVideoPopupShown(false)} />
+      )}
     </section>
   );
 }
