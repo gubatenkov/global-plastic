@@ -37,10 +37,10 @@ export default function Media({ data }) {
         <MediaVideoSection data={sections[2]} />
         <MoreNewsSection data={sections[3]} />
         <BuildingProgramsSection data={sections[4]} />
-        {/* <ReportsSection
+        <ReportsSection
           className='merektion'
-          data={sections[2].reportsGuidesSlider}
-        /> */}
+          data={sections[5].reportsGuidesSlider}
+        />
         <LinksSection data={sections[6]} />
 
         <DialoguesSection 
