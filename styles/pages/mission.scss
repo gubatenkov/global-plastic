@@ -1,0 +1,12 @@
+.mission {
+  .main-layout {
+    padding: 0;
+
+    &__header-wrap {
+      top: 15px;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+}

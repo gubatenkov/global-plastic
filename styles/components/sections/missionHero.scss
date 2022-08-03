@@ -1,0 +1,62 @@
+.mihero {
+  padding: 260px 0 160px;
+
+  background-image: url('../../../assets/images/missionHeroBg.png');
+  background-size: cover;
+  background-position: center;
+
+  border-radius: $section-radius;
+
+  position: relative;
+
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    background-image: url('../../../assets/images/missionHeroBgGradient.png');
+    background-size: cover;
+    background-position: left;
+
+    z-index: 0;
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__suptitle {
+    margin: 0 0 35px;
+    max-width: 600px;
+
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15px;
+    font-style: normal;
+
+    opacity: 0.8;
+  }
+
+  &__title {
+    margin: 0 0 50px;
+    max-width: 600px;
+
+    color: $white;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 48px;
+    font-style: normal;
+  }
+
+  .hero__panel {
+    margin: 0;
+  }
+}

@@ -1,4 +1,4 @@
-import { MainLayout, Meta } from 'components';
+import { MainLayout, Meta, MissionHero } from 'components';
 import { getMissionFieldsQuery } from 'lib/queries';
 
 export const getStaticProps = async () => {
@@ -20,7 +20,7 @@ export default function Mission({ data }) {
     <div className="mission">
       <Meta data={data} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
-        mission page
+      <MissionHero />
       </MainLayout>
     </div>
   );
