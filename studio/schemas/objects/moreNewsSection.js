@@ -14,7 +14,7 @@ export default {
       title: 'Add action slider cards',
       type: 'array',
       of: [{ type: 'action' }],
-      validation: Rule => Rule.required().min(3).max(12)
+      validation: Rule => Rule.required().min(3).max(9)
     },
   ]
 }

@@ -33,7 +33,6 @@ export default function Media({ data }) {
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <MediaHero data={sections[0]} />
         <UpdatesSliderSection data={sections[1]} />
-
         <MediaVideoSection data={sections[2]} />
         <MoreNewsSection data={sections[3]} />
         <BuildingProgramsSection data={sections[4]} />
@@ -42,7 +41,6 @@ export default function Media({ data }) {
           data={sections[5].reportsGuidesSlider}
         />
         <LinksSection data={sections[6]} />
-
         <DialoguesSection 
           className='medialection'
           data={sections[7]}

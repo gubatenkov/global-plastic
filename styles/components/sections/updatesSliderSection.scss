@@ -3,8 +3,16 @@
 
   overflow: hidden;
 
+  @include screen($sm) {
+    padding: 6px 0 60px;
+  }
+
   &__ticker {
     margin: 0 0 100px;
+
+    @include screen($sm) {
+      margin: 0 0 60px;
+    }
   }
 
   &__title {
@@ -17,11 +25,24 @@
     font-style: normal;
 
     text-align: center;
+
+    @include screen($sm) {
+      margin: 0 0 25px;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 
   &__slider {
+    padding: 0 15px;
+
     &__wrapper {
       margin: 0 0 50px;
+
+      @include screen($sm) {
+        margin: 0 0 15px;
+      }
     }
 
     &-nav {

@@ -30,6 +30,10 @@
 
     @include screen($sm) {
       display: none;
+
+      .bpsection & {
+        display: inline-flex;
+      }
     }
 
     &__img {
@@ -43,12 +47,20 @@
   }
 
   &__content {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    position: relative;
+
     @include screen($sm) {
       gap: 30px;
+
+      .bpsection & {
+        gap: 0;
+      }
     }
 
     &__title {
@@ -62,6 +74,10 @@
 
       @include screen($sm) {
         margin: 0;
+
+        .bpsection & {
+          margin: 35px 0 0;
+        }
       }
     }
 
@@ -76,6 +92,10 @@
         margin: 0;
 
         flex-direction: row-reverse;
+
+        .bpsection & {
+          justify-content: flex-end;
+        }
       }
 
       &__link {
@@ -92,6 +112,12 @@
         cursor: pointer;
 
         transition: all 0.1s ease-in-out;
+
+        @include screen($sm) {
+          .bpsection & {
+            margin: 0 0 15px;
+          }
+        }
 
         > span {
           position: relative;
@@ -138,6 +164,14 @@
         font-style: normal;
 
         opacity: 0.4;
+
+        @include screen($sm) {
+          .bpsection & {
+            top: 0;
+            left: 0;
+            position: absolute;
+          }
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ActionCard, ReportsDropdown } from 'components';
 
@@ -7,8 +7,31 @@ export default function MoreNewsSection({
 }) {
   const [actionRegion, setActionRegion] = useState(null);
   const [actionCountry, setActionCountry] = useState(null);
-  const [items, setItems] = useState(actionSlider.slice(0, 6));
-  const [isBtnVisible, setBtnVisible] = useState(actionSlider?.length > 6);
+  const [items, setItems] = useState([]);
+  const [itemsToShow, setItemsToShow] = useState(6);
+  const [isBtnVisible, setBtnVisible] = useState(
+    actionSlider.length !== items.length
+  );
+
+  // define the items to show in the slider based on the window w
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth > 480) {
+      setItemsToShow(6);
+    } else {
+      setItemsToShow(2);
+    }
+  }, []);
+
+  // control the visibility of the button
+  useEffect(() => {
+    actionSlider.length === items.length
+      ? setBtnVisible(false)
+      : setBtnVisible(true);
+  }, [actionSlider?.length, items?.length]);
+
+  useEffect(() => {
+    setItems(actionSlider.slice(0, itemsToShow));
+  }, [actionSlider, itemsToShow]);
 
   const filterData = (items) => {
     const filtered = items

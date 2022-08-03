@@ -26,14 +26,14 @@
     animation: move 100s linear infinite;
 
     background-position: 0 0;
-    background-size: contain;
     background-repeat: repeat-x;
     background: url('../../assets/images/headerPanel.svg');
+    background-size: contain;
 
     @include screen($sm) {
-      background-size: contain;
       background-repeat: repeat-x;
       background: url('../../assets/images/headerPanelMobile.svg') 0/50% auto;
+      background-size: contain;
 
       animation: move 200s linear infinite;
     }

@@ -96,10 +96,10 @@
   }
 
   &__cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   &__wrapper {
@@ -123,6 +123,26 @@
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 8px;
     transition: 0.3s;
+
+    .merektion & {
+      color: $black;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 27px;
+      font-style: normal;
+
+      border: 1px solid rgba(33, 32, 32, 0.4);
+
+      &:hover {
+        color: $white;
+        background-color: $black;
+      }
+
+      &:active {
+        color: $white;
+        background-color: $black;
+      }
+    }
 
     &:hover {
       background-color: $white;

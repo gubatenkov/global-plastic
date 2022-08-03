@@ -8,13 +8,17 @@
   color: $white;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 8px;
-  background-color: transparent;  
+  background-color: transparent;
 
   .merektion &,
   .bpsection & {
     color: $black;
 
     border: 1px solid rgba(33, 32, 32, 0.4);
+  }
+
+  .merektion & {
+    background-color: $white;
   }
 
   @include screen(520px) {
@@ -223,5 +227,5 @@
     &::before {
       background-color: rgba(32, 32, 32, 0.4);
     }
-  }  
+  }
 }

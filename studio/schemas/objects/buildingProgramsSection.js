@@ -23,7 +23,7 @@ export default {
               name: 'cardTitle',
               type: 'string',
               title: 'Add card title',
-              validation: Rule => Rule.required()
+              validation: Rule => Rule.required().max(85)
             },
             {
               name: 'cardRegion',
