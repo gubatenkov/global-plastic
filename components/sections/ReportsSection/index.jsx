@@ -89,9 +89,15 @@ const ReportsSection = ({ className = '', data }) => {
       .map((el) => dropdownData[el.id]);
     if (dropdownName === 'reportCountry') {
       setReportCountry(selectedItems);
+      if(selectedItems.length === 0) {
+        resetFilter('reportCountry')
+      }
     }
     if (dropdownName === 'reportRegion') {
       setReportRegion(selectedItems);
+      if(selectedItems.length === 0) {
+        resetFilter('reportRegion')
+      }
     }
   };
 
