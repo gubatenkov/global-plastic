@@ -18,7 +18,7 @@
 
     width: 200%;
 
-    top: -1px;
+    top: -3px;
     left: 0;
     bottom: 0;
     position: absolute;
@@ -28,7 +28,6 @@
     background-position: 0 0;
     background-repeat: repeat-x;
     background: url('../../assets/images/headerPanel.svg');
-    background-size: contain;
 
     @include screen($sm) {
       background-repeat: repeat-x;
