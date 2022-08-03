@@ -1,4 +1,10 @@
-import { MainLayout, Meta, MissionCTASection, MissionHero } from 'components';
+import {
+  MainLayout,
+  Meta,
+  MissionCTASection,
+  MissionHero,
+  TextImgSection,
+} from 'components';
 import { getMissionFieldsQuery } from 'lib/queries';
 
 export const getStaticProps = async () => {
@@ -22,6 +28,7 @@ export default function Mission({ data }) {
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <MissionHero />
         <MissionCTASection />
+        <TextImgSection />
       </MainLayout>
     </div>
   );
