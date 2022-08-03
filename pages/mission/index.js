@@ -1,4 +1,5 @@
 import {
+  BigMapSection,
   MainLayout,
   Meta,
   MissionCTASection,
@@ -29,6 +30,7 @@ export default function Mission({ data }) {
         <MissionHero />
         <MissionCTASection />
         <TextImgSection />
+        <BigMapSection />
       </MainLayout>
     </div>
   );
