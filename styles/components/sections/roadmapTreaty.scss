@@ -5,6 +5,7 @@
   background: linear-gradient($black,  $black 2812px, $country-bg 2812px, $country-bg 3892px, $accent-color 3892px, $accent-color); 
 
   @include screen(620px) {
+    height: 4780px;  
     border-radius: 8px;
     background: linear-gradient($black,  $black 2688px, $country-bg 2688px, $country-bg 3963px, $accent-color 3963px, $accent-color); 
   }
@@ -18,7 +19,7 @@
     padding: 100px;
     margin: 0 auto;
     max-width: 1440px;
-    background: url("../../../assets/images/road.svg") top 400px left 100px / auto no-repeat, url("../../../assets/images/roadmapWave1.png") top 170px left 62px /auto no-repeat, url("../../../assets/images/roadmapWave2.png") top 410px left 447px /auto no-repeat, url("../../../assets/images/roadmapWave3.png") top 2040px left 0px /auto no-repeat, url("../../../assets/images/roadmapWave4.png") top 2379px left 314px /auto no-repeat, url("../../../assets/images/roadmapWave5.png") top 4535px left 466px /auto no-repeat;
+    background: url("../../../assets/images/roadmapWave1.png") top 170px left 62px /auto no-repeat, url("../../../assets/images/roadmapWave2.png") top 410px left 447px /auto no-repeat, url("../../../assets/images/roadmapWave3.png") top 2040px left 0px /auto no-repeat, url("../../../assets/images/roadmapWave4.png") top 2379px left 314px /auto no-repeat, url("../../../assets/images/roadmapWave5.png") top 4535px left 466px /auto no-repeat;
     
     @include screen($lg) {
       padding: 96px 16px;     
@@ -26,6 +27,29 @@
 
     @include screen(620px) {
       padding: 60px 16px;
+    }
+  }
+
+  &__road {
+    position: absolute;
+    z-index: 6;
+    top: 400px; bottom: 0; left: 0; right: 0;
+    pointer-events: none;
+    background-image: url("../../../assets/images/road.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 100px 0;
+
+    @include screen($xxl) {
+      background-position: 25px 0;
+      background-size: 100% 95%;
+    }
+
+    @include screen(620px) {
+      top: 315px;
+      background-image: url("../../../assets/images/mRoad.png");
+      background-position: 25px 0;
+      background-size: 95% 97%;
     }
   }
 

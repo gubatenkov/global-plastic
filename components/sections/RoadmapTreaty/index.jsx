@@ -14,7 +14,8 @@ const RoadmapTreaty = ({data}) => {
       <RoadmapWaveOrange />
       <div className="rtektion__center">
         <h2 className="rtektion__title">{roadmapTreatyTitle}</h2>
-        <p className="rtektion__description">{roadmapTreatyDescription}</p>       
+        <p className="rtektion__description">{roadmapTreatyDescription}</p>
+        <div className="rtektion__road"></div>       
         {roadmapItems}
       </div>
     </section>
