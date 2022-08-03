@@ -5,6 +5,30 @@
   background-color: $country-bg;
   border-radius: $section-radius;
 
+  &::before {
+    content: '';
+
+    left: 50%;
+    bottom: 180px;
+    position: absolute;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    height: 243px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../../assets/images/roadmapTargetLine.svg');
+
+    z-index: 1;
+
+    @include screen($sm) {
+      bottom: 40px;
+    }
+  }
+
   @include screen($sm) {
     padding: 60px 0;
     border-radius: $section-radius-mobile;
@@ -215,36 +239,6 @@
       list-style: none;
       position: relative;
       overflow: hidden;      
-
-      &::before {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -30px;
-        left: -96px;
-        width: 1440px;
-        height: 176px;
-        background-image: url('../../../assets/images/roadmapLine1.svg');
-
-        @include screen($sm) {
-          top: -40px;
-        }
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: 1;
-        top: -60px;
-        left: -96px;
-        width: 1440px;
-        height: 243px;
-        background-image: url('../../../assets/images/roadmapLine2.svg');
-
-        @include screen($sm) {
-          top: -85px;
-        }
-      }
 
       @include screen($sm) {
         padding: 0;
