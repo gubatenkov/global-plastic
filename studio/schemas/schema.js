@@ -62,6 +62,7 @@ import reportsSliderSection from './objects/reportsSliderSection'
 import moreNewsSection from './objects/moreNewsSection'
 import buildingProgramsSection from './objects/buildingProgramsSection'
 import mediaVideoSection from './objects/mediaVideoSection'
+import mission from './documents/mission'
 
 
 export default createSchema({
@@ -78,6 +79,7 @@ export default createSchema({
     involved,
     roadmap,
     mediapage,
+    mission,
     
     // Objects
     countryPage,

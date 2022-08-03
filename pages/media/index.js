@@ -1,5 +1,5 @@
 import { getMediaFieldsQuery } from 'lib/queries';
-import { 
+import {
   BuildingProgramsSection,
   DialoguesSection,
   LinksSection,
@@ -9,7 +9,7 @@ import {
   Meta,
   MoreNewsSection,
   ReportsSection,
-  UpdatesSliderSection
+  UpdatesSliderSection,
 } from 'components';
 
 export const getStaticProps = async () => {
@@ -37,14 +37,11 @@ export default function Media({ data }) {
         <MoreNewsSection data={sections[3]} />
         <BuildingProgramsSection data={sections[4]} />
         <ReportsSection
-          className='merektion'
+          className="merektion"
           data={sections[5].reportsGuidesSlider}
         />
         <LinksSection data={sections[6]} />
-        <DialoguesSection 
-          className='medialection'
-          data={sections[7]}
-        />
+        <DialoguesSection className="medialection" data={sections[7]} />
       </MainLayout>
     </div>
   );
