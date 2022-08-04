@@ -31,6 +31,11 @@
     }
   }
 
+  &:hover &__title,
+  &:hover &__subtitle {
+     color: $accent-color;
+  }
+
   &__date {
     font-weight: 500;
     font-size: 20px;
@@ -159,8 +164,7 @@
     background-repeat: no-repeat;
   }
 
-  .itsdd &__subtitle::after,
-  .itsdd-y &__subtitle::after,
+  .itsdd &__subtitle::after, 
   .itsdd-b &__subtitle::after {
     content: "";
     position: absolute;
@@ -171,16 +175,7 @@
     background-image: url("../../assets/images/roadmap-point.svg");
     background-size: contain;
     background-repeat: no-repeat;
-  }
-
-  .itsdd-y &__title,
-  .itsdd-y &__subtitle {
-     color: $accent-color;
-
-     @include screen(620px) {
-      color: $white;
-    }
-  }
+  }  
 
   .tdd &__title {
     position: relative;

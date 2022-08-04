@@ -224,6 +224,10 @@
 
   &__reset {
     color: rgba(32, 32, 32, 0.8);
+
+    @include screen($sm) {
+      font-size: 14px;
+    }
     &::before {
       background-color: rgba(32, 32, 32, 0.4);
     }

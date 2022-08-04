@@ -36,7 +36,7 @@ const roadmapTretyData = [
     type: 'tsdd'
   },
   {
-    top: '1512',
+    top: '1489',
     left: '40.56',
     width: '265',
     mTop: '1033',
@@ -96,7 +96,7 @@ const roadmapTretyData = [
     mTop: '2169',
     mLeft: '21.1',
     mWidth: '208',
-    type: 'itsdd-y'
+    type: 'itsdd'
   },
   {
     top: '2325',
