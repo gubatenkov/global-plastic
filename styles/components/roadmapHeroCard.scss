@@ -168,7 +168,7 @@
     justify-content: space-between;
     align-items: center;
     flex: 0 0 auto;
-    width: 147px;
+    width: 152px;
     height: 55px;
     padding: 13px 24px;
     background-color: $accent-color;
@@ -187,8 +187,8 @@
     @include screen($sm) {
       font-size: 14px;
     }
-  } 
-
+  }
+  
   &__arrow {
     width: 48px;
     padding-left: 24px;
