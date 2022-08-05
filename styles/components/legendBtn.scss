@@ -1,0 +1,35 @@
+.legend-btn {
+  width: 100%;
+  display: none;
+  margin: 0 auto;
+  padding: 10px 0;
+  max-width: 334px;
+
+  left: 50%;
+  bottom: 90px;
+  position: absolute;
+
+  transform: translateX(-50%);
+
+  color: $black;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  font-style: normal;
+  text-align: center;
+
+  background: $white;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.32);
+
+  @include screen($sm) {
+    display: block;
+  }
+
+  &__icon {
+    top: 12px;
+    right: 100px;
+    position: absolute;
+  }
+}

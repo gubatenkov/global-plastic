@@ -22,6 +22,10 @@
     @include screen($sm) {
       right: 15px;
       bottom: 100px;
+
+      .legend & {
+        display: none;
+      }
     }
   }
 

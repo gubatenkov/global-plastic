@@ -11,6 +11,20 @@
 
   overflow: hidden;
 
+  @include screen($sm) {
+    padding: 260px 0 60px;
+    background-position: 675px;
+
+    & .hero__panel {
+      width: 100%;
+      max-width: 360px;
+
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+
   &::after {
     content: '';
     width: 100%;
@@ -25,6 +39,16 @@
     background-position: left;
 
     z-index: 0;
+
+    @include screen($sm) {
+      background-image: none;
+      background: linear-gradient(
+        60.69deg,
+        #212020 1.65%,
+        rgba(33, 32, 32, 0) 79.81%
+      );
+      filter: blur(4px);
+    }
   }
 
   &__inner {
@@ -43,6 +67,15 @@
     font-style: normal;
 
     opacity: 0.8;
+
+    @include screen($sm) {
+      margin: 0 0 20px;
+
+      line-height: 27px;
+      font-style: normal;
+
+      opacity: 0.6;
+    }
   }
 
   &__title {
@@ -54,6 +87,14 @@
     font-weight: 600;
     line-height: 48px;
     font-style: normal;
+
+    @include screen($sm) {
+      margin: 0 0 30px;
+
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 40px;
+    }
   }
 
   .hero__panel {

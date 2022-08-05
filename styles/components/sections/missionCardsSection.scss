@@ -1,11 +1,21 @@
 .micarection {
   padding: 65px 0 170px;
 
+  @include screen($sm) {
+    padding: 35px 0 60px;
+  }
+
   &__cards {
     margin: 0 0 120px;
 
     gap: 30px;
     display: flex;
+
+    @include screen($sm) {
+      margin: 0 0 60px;
+
+      flex-direction: column;
+    }
   }
 
   &__card {
@@ -17,6 +27,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      @include screen($sm) {
+        min-height: 295px;
+      }
     }
 
     &__top {
@@ -28,6 +42,11 @@
         font-weight: 600;
         line-height: 48px;
         font-style: normal;
+
+        @include screen($sm) {
+          font-size: 32px;
+          line-height: 32px;
+        }
       }
     }
 
@@ -35,6 +54,10 @@
       &--flex {
         gap: 50px;
         display: flex;
+
+        @include screen($sm) {
+          gap: 25px;
+        }
       }
 
       &__text {
@@ -48,8 +71,17 @@
 
         position: relative;
 
+        @include screen($sm) {
+          font-size: 14px;
+          line-height: 14px;
+        }
+
         &--ml {
           margin: 0 0 0 109px;
+
+          @include screen($sm) {
+            margin: 0 0 0 60px;
+          }
 
           &::before {
             content: '';
@@ -73,6 +105,11 @@
       &__imgs-box {
         width: 50px;
         height: 50px;
+
+        @include screen($sm) {
+          width: 25px;
+          height: 25px;
+        }
       }
     }
   }
@@ -85,6 +122,13 @@
     font-weight: 600;
     line-height: 48px;
     font-style: normal;
+
+    @include screen($sm) {
+      margin: 0 0 25px;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 
   &__subtitle {
@@ -99,11 +143,23 @@
     font-style: normal;
 
     opacity: 0.8;
+
+    @include screen($sm) {
+      margin: 0 0 25px;
+
+      font-size: 14px;
+      line-height: 26px;
+    }
   }
 
   &__wrapper {
     gap: 175px;
     display: flex;
+
+    @include screen($sm) {
+      gap: 10px;
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -113,10 +169,27 @@
     gap: 25px;
     display: flex;
     flex-direction: column;
+
+    @include screen($sm) {
+      width: 100%;
+      min-width: 100%;
+      padding: 0 0 5px;
+
+      gap: 15px;
+      flex-direction: row;
+
+      overflow-x: scroll;
+    }
   }
 
   &__right {
     width: 100%;
+
+    @include screen($sm) {
+      width: 350px;
+      height: 310px;
+      margin: 0 auto;
+    }
   }
 
   &__schema {
@@ -141,6 +214,16 @@
       background-image: url('../../../assets/images/schemaBg.png');
 
       z-index: 0;
+
+      @include screen($sm) {
+        width: 340px;
+        height: 340px;
+
+        top: 0;
+        left: 0;
+
+        background-size: contain;
+      }
     }
 
     &__top {
@@ -149,6 +232,12 @@
       position: absolute;
 
       z-index: 1;
+
+      @include screen($sm) {
+        top: -10px;
+        left: 85px;
+        transform: scale(0.5);
+      }
 
       > p {
         margin: 0;
@@ -175,6 +264,15 @@
 
       z-index: 1;
 
+      @include screen($sm) {
+        height: fit-content;
+
+        top: 150px;
+        left: -30px;
+
+        transform: scale(0.5);
+      }
+
       > p {
         margin: 0;
 
@@ -199,6 +297,15 @@
       position: absolute;
 
       z-index: 1;
+
+      @include screen($sm) {
+        height: fit-content;
+
+        top: 115px;
+        right: -40px;
+
+        transform: scale(0.5);
+      }
 
       > p {
         margin: 0;
@@ -243,6 +350,11 @@
       background-image: url('../../../assets/images/micarectionBubble.svg');
 
       z-index: 1;
+
+      @include screen($sm) {
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
     }
 
     &__arrow {
@@ -250,18 +362,39 @@
         top: 45px;
         left: 30px;
         position: absolute;
+
+        @include screen($sm) {
+          top: -10px;
+          left: -55px;
+
+          transform: scale(0.5);
+        }
       }
 
       &--r {
         top: 35px;
         right: 90px;
         position: absolute;
+
+        @include screen($sm) {
+          top: 0;
+          right: -15px;
+
+          transform: scale(0.5);
+        }
       }
 
       &--b {
         left: 255px;
         bottom: -90px;
         position: absolute;
+
+        @include screen($sm) {
+          left: 55px;
+          bottom: -75px;
+
+          transform: scale(0.5);
+        }
       }
     }
   }

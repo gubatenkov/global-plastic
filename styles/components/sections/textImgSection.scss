@@ -10,10 +10,22 @@
 
   overflow: hidden;
 
+  @include screen($sm) {
+    padding: 60px 0;
+
+    background-image: none;
+  }
+
   &__inner {
     gap: 140px;
     display: flex;
     align-items: center;
+
+    position: relative;
+
+    @include screen($sm) {
+      flex-direction: column;
+    }
   }
 
   &__left,
@@ -28,6 +40,13 @@
   &__right {
     position: relative;
 
+    @include screen($sm) {
+      max-width: 350px;
+
+      top: 155px;
+      position: absolute;
+    }
+
     &::after {
       content: '';
       width: 135px;
@@ -41,6 +60,13 @@
       background-image: url('../../../assets/images/bubbleGroup.png');
 
       z-index: 2;
+
+      @include screen($sm) {
+        left: 45px;
+
+        background-repeat: no-repeat;
+        background-image: url('../../../assets/images/bubbleGroupMob.svg');
+      }
     }
 
     &__bubble {
@@ -49,6 +75,12 @@
       position: absolute;
 
       z-index: 1;
+
+      @include screen($sm) {
+        right: -40px;
+        bottom: -95px;
+        transform: scale(0.5);
+      }
     }
   }
 
@@ -58,6 +90,10 @@
     margin: 0 0 30px;
 
     position: relative;
+
+    @include screen($sm) {
+      margin: 0 0 25px;
+    }
 
     &__bubble {
       top: 0;
@@ -84,9 +120,18 @@
     font-weight: 600;
     line-height: 48px;
     font-style: normal;
+
+    @include screen($sm) {
+      margin: 0 0 340px;
+
+      font-size: 32px;
+      line-height: 32px;
+    }
   }
 
   &__text {
+    margin: 0;
+
     color: $white;
     font-size: 16px;
     font-weight: 500;
@@ -94,6 +139,11 @@
     font-style: normal;
 
     opacity: 0.8;
+
+    @include screen($sm) {
+      font-size: 14px;
+      line-height: 27px;
+    }
   }
 
   &__preview {
@@ -110,6 +160,12 @@
     position: relative;
 
     z-index: 2;
+
+    @include screen($sm) {
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+    }
 
     &__img {
       display: flex;

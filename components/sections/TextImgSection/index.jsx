@@ -20,9 +20,11 @@ export default function TextImgSesction(props) {
             <p className="timection__text">
               Global Treaty Dialogues #For Plastics enable collaboration and
               deepen the understanding of the treaty processes and the plastics
-              crisis on a regional and a country-level. Our initative targets
-              countries most impacted by the plastics leakage and plastics waste
-              trade.
+              crisis on a regional and a country-level.
+              <br />
+              <br />
+              Our initative targets countries most impacted by the plastics
+              leakage and plastics waste trade.
             </p>
           </div>
           <div className="timection__right">

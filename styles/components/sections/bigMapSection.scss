@@ -10,6 +10,8 @@
   overflow: hidden;
 
   @include screen($sm) {
+    height: 660px;
+
     background-size: cover;
     background-position: center 30px;
     background-repeat: no-repeat;
@@ -25,6 +27,11 @@
     line-height: 32px;
     font-style: normal;
     text-align: center;
+
+    @include screen($sm) {
+      font-size: 20px;
+      line-height: 20px;
+    }
   }
 
   &__panel {
@@ -39,6 +46,12 @@
     box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.32);
 
     border-radius: $section-radius;
+
+    @include screen($sm) {
+      .hero__panel__text {
+        font-size: 16px;
+      }
+    }
   }
 
   &__inner {
