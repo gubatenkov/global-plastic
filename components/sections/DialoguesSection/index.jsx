@@ -23,7 +23,7 @@ const DialoguesSection = ({
     if (typeof window !== 'undefined' && window.screen.width <= 481) {
       setSlidesPerView(1);
     } else {
-      setSlidesPerView(1.75);
+      setSlidesPerView(2);
     }
   };
 

@@ -55,7 +55,7 @@ button {
 }
 
 .arrow-hover-right .arrow-image {
-  transform: translateX(-15%);
+  transform: translateX(0);
 }
 
 .arrow-hover-right:hover .arrow-image {
@@ -63,7 +63,7 @@ button {
 }
 
 .arrow-hover-left .arrow-image {
-  transform: translateX(15%);
+  transform: translateX(0);
 }
 
 .arrow-hover-left:hover .arrow-image {
@@ -71,7 +71,7 @@ button {
 }
 
 .arrow-hover-down .arrow-image {
-  transform: translateY(-15%);
+  transform: translateY(0);
 }
 
 .arrow-hover-down:hover .arrow-image {

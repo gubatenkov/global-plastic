@@ -1,5 +1,12 @@
 .trecard {
   .ua-country-card__link {
+    min-width: 58px;
     width: fit-content;
+
+    justify-content: center;
+
+    @include screen($sm) {
+      min-width: unset;
+    }
   }
 }

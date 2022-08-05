@@ -181,11 +181,15 @@
   }
 
   &__author {
+    margin: 0 0 0 50px;
+
     gap: 25px;
     display: inline-flex;
     align-items: flex-start;
 
     @include screen($sm) {
+      margin: 0;
+
       gap: 15px;
     }
 

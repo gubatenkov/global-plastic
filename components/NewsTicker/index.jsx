@@ -1,5 +1,5 @@
 const NewsTicker = ({ className = '', items }) => {
-  const duration = 18;
+  const duration = 28;
   const delayFn = (idx) => (idx + 1) * (duration / items.length);
 
   return (

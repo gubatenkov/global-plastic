@@ -122,16 +122,6 @@
 
     cursor: pointer;
 
-    .cross {
-      animation: spin 3s linear infinite;
-
-      @keyframes spin {
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    }
-
     &__text {
       gap: 15px;
       display: flex;

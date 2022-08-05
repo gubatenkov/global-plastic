@@ -31,8 +31,8 @@ const StakeholdersSection = ({
           loop={true}
           breakpoints={{
             481: {
-              slidesPerView: 1.5,
-              spaceBetween: 32,
+              slidesPerView: 2,
+              spaceBetween: 35,
             },
           }}
         >

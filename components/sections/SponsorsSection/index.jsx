@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { urlForImage } from 'lib/sanity';
 
 const SponsorsSection = ({ data: { sponsorsTitle, sponsorsImages } }) => {
-  const duration = 12;
+  const duration = 24;
   const delayFn = (idx) => (idx + 1) * (duration / sponsorsImages.length);
 
   return (

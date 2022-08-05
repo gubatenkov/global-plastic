@@ -9,7 +9,7 @@
   }
 
   &__text {
-    min-height: 120px;
+    min-height: 150px;
     margin: 15px 0 35px;
 
     color: $black;
@@ -22,10 +22,10 @@
     -webkit-box-orient: vertical;
     -ms-box-orient: vertical;
     box-orient: vertical;
-    -webkit-line-clamp: 4;
-    -moz-line-clamp: 4;
-    -ms-line-clamp: 4;
-    line-clamp: 4;
+    -webkit-line-clamp: 5;
+    -moz-line-clamp: 5;
+    -ms-line-clamp: 5;
+    line-clamp: 5;
     overflow: hidden;
 
     @include screen($sm) {
