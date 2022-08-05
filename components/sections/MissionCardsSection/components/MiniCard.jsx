@@ -2,6 +2,8 @@ export default function MiniCard({
   index,
   activeIndex,
   onHover: handleMouseEnter,
+  title,
+  text,
 }) {
   return (
     <div
@@ -9,10 +11,8 @@ export default function MiniCard({
       onMouseEnter={() => handleMouseEnter(index)}
     >
       <span className="minicard__number">0{index}</span>
-      <h3 className="minicard__title">Experiential Intelligence</h3>
-      <p className="minicard__text">
-        Experience the crisis with multi-faceted Expeditionss
-      </p>
+      <h3 className="minicard__title">{title}</h3>
+      <p className="minicard__text">{text}</p>
     </div>
   );
 }

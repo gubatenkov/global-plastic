@@ -63,6 +63,10 @@ import moreNewsSection from './objects/moreNewsSection'
 import buildingProgramsSection from './objects/buildingProgramsSection'
 import mediaVideoSection from './objects/mediaVideoSection'
 import mission from './documents/mission'
+import missionHero from './objects/missionHero'
+import missionCTASection from './objects/missionCTASection'
+import textImgMissionSection from './objects/textImgMissionSection'
+import missionCardsSection from './objects/missionCardsSection'
 
 
 export default createSchema({
@@ -131,6 +135,10 @@ export default createSchema({
     reportsSliderSection,
     moreNewsSection,
     buildingProgramsSection,
-    mediaVideoSection
+    mediaVideoSection,
+    missionHero,
+    missionCTASection,
+    textImgMissionSection,
+    missionCardsSection
   ]),
 })

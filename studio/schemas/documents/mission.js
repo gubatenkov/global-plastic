@@ -15,12 +15,16 @@ export default {
       type: 'text',
       validation: Rule => Rule.required().min(1).max(300)
     },
-    // {
-    //   name: 'sections',
-    //   type: 'array',
-    //   title: 'Page sections',
-    //   of: [
-    //   ],
-    // },
+    {
+      name: 'sections',
+      type: 'array',
+      title: 'Page sections',
+      of: [
+        { type: 'missionHeroSection' },
+        { type: 'missionCTASection' },
+        { type: 'textImgMissionSection' },
+        { type: 'missionCardsSection' },
+      ],
+    },
   ],
 }

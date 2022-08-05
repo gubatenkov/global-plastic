@@ -4,9 +4,9 @@ import Bubble from './components/Bubble';
 import Shield from './components/Shield';
 import AnimatedBubble from './components/AnimatedBubble';
 
-import path from 'assets/images/tectionImg.png';
+import { urlForImage } from 'lib/sanity';
 
-export default function TextImgSesction(props) {
+export default function TextImgSesction({ title, text, image }) {
   return (
     <section className="timection">
       <div className="container">
@@ -16,16 +16,8 @@ export default function TextImgSesction(props) {
               <Bubble className="timection__icon__bubble" color="#fff" />
               <Shield className="timection__icon__shield" />
             </div>
-            <h2 className="timection__title">Our Approach</h2>
-            <p className="timection__text">
-              Global Treaty Dialogues #For Plastics enable collaboration and
-              deepen the understanding of the treaty processes and the plastics
-              crisis on a regional and a country-level.
-              <br />
-              <br />
-              Our initative targets countries most impacted by the plastics
-              leakage and plastics waste trade.
-            </p>
+            <h2 className="timection__title">{title}</h2>
+            <p className="timection__text">{text}</p>
           </div>
           <div className="timection__right">
             <div className="timection__preview">
@@ -33,7 +25,7 @@ export default function TextImgSesction(props) {
                 className="timection__preview__img"
                 width={550}
                 height={550}
-                src={path}
+                src={urlForImage(image).url()}
                 alt="img"
               />
             </div>

@@ -28,11 +28,11 @@ export default function Mission({ data }) {
     <div className="mission">
       <Meta data={data} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
-        <MissionHero />
-        <MissionCTASection />
-        <TextImgSection />
+        <MissionHero {...sections[0]} />
+        <MissionCTASection {...sections[1]} />
+        <TextImgSection {...sections[2]} />
         <BigMapSection />
-        <MissionCardsSection />
+        <MissionCardsSection {...sections[3]} />
       </MainLayout>
     </div>
   );

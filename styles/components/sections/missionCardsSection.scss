@@ -1,6 +1,8 @@
 .micarection {
   padding: 65px 0 170px;
 
+  overflow: hidden;
+
   @include screen($sm) {
     padding: 35px 0 60px;
   }
@@ -153,8 +155,8 @@
   }
 
   &__wrapper {
-    gap: 175px;
     display: flex;
+    justify-content: space-between;
 
     @include screen($sm) {
       gap: 10px;
@@ -170,6 +172,8 @@
     display: flex;
     flex-direction: column;
 
+    flex-shrink: 0;
+
     @include screen($sm) {
       width: 100%;
       min-width: 100%;
@@ -183,7 +187,10 @@
   }
 
   &__right {
-    width: 100%;
+    width: 708px;
+    height: 482px;
+
+    flex-shrink: 0;
 
     @include screen($sm) {
       width: 350px;

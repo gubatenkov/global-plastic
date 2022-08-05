@@ -1,18 +1,15 @@
 import Bubble from './components/Bubble';
 import Mark from './components/Mark';
 
-export default function MissionCTASection(props) {
+export default function MissionCTASection({ title, linkUrl }) {
   return (
     <section className="missioncta">
       <div className="missioncta__img">
         <Bubble className="missioncta__img__bubble" color="#212121" />
         <Mark className="missioncta__img__mark" color="#fff" />
       </div>
-      <h2 className="missioncta__title">
-        Stakeholders throughout the value chain and beyond have trouble
-        understanding - let aloneparticipating in - UN treaties and processes.
-      </h2>
-      <a className="missioncta__link arrow-hover-right" href="#">
+      <h2 className="missioncta__title">{title}</h2>
+      <a className="missioncta__link arrow-hover-right" href={linkUrl}>
         Get involved
         <svg
           className="arrow-image"
