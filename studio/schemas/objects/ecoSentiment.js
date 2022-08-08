@@ -4,6 +4,14 @@ export default {
     type: 'object',
     fields: [
       {
+        name: 'isAdded',
+        title: 'Hide/show section on the page',
+        type: 'boolean',
+        initialValue: {
+          isAdded: true,
+        },
+      },
+      {
         name: 'ecoSentimentTitle',
         title: 'Eco Sentiment Title',
         type: 'string',

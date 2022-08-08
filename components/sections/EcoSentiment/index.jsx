@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 
-const EcoSentiment = ({data}) => {
-  const {ecoSentimentTitle, ecoSentimentDescriptionPart1, ecoSentimentDescriptionPart2, ecoSentimentLinkName, ecoSentimentLinkHref, ecoSentimentDiagramData, ecoSentimentDiagramDescription } = data;
+const EcoSentiment = ({ data }) => {
+  const {
+    ecoSentimentTitle,
+    ecoSentimentDescriptionPart1,
+    ecoSentimentDescriptionPart2,
+    ecoSentimentLinkName,
+    ecoSentimentLinkHref,
+    ecoSentimentDiagramData,
+    ecoSentimentDiagramDescription,
+  } = data;
 
   const [temperatureHeight, setTemperatureHeight] = useState(528);
   const [scaleHeight, setScaleHeight] = useState(425);
@@ -16,7 +24,7 @@ const EcoSentiment = ({data}) => {
       setTemperatureHeight(528);
       setScaleHeight(425);
       setTextHeight(80);
-    } 
+    }
   };
 
   useEffect(() => {
@@ -27,19 +35,21 @@ const EcoSentiment = ({data}) => {
     }
   }, []);
 
-  const valueHeight = scaleHeight * ecoSentimentDiagramData / 10 + (temperatureHeight-scaleHeight) / 2;
+  const valueHeight =
+    (scaleHeight * ecoSentimentDiagramData) / 10 +
+    (temperatureHeight - scaleHeight) / 2;
   const dataHeight = scaleHeight - valueHeight + textHeight;
 
   return (
     <section className="ecosektion">
-        <div className="ecosektion__center">
+      <div className="ecosektion__center">
         <div className="ecosektion__content">
           <h2 className="ecosektion__title">{ecoSentimentTitle}</h2>
           <div className="ecosektion__description">
             <p>{ecoSentimentDescriptionPart1}</p>
             <p>{ecoSentimentDescriptionPart2}</p>
           </div>
-          <a href={ecoSentimentLinkHref} className="ecosektion__link arrow-hover-right" >
+          {/* <a href={ecoSentimentLinkHref} className="ecosektion__link arrow-hover-right" >
             {ecoSentimentLinkName}
             <svg
               width="15"
@@ -54,20 +64,29 @@ const EcoSentiment = ({data}) => {
                 fill="#F9B131"
               />
             </svg>
-          </a>
+          </a> */}
         </div>
         <div className="ecosektion__diagram">
           <div className="ecosektion__diagram--image">
             <div className="ecosektion__temperature">
-              <div className="ecosektion__value" style={{height: `${valueHeight}px`}}></div>
-            </div>            
+              <div
+                className="ecosektion__value"
+                style={{ height: `${valueHeight}px` }}
+              ></div>
+            </div>
             <div className="ecosektion__scale"></div>
           </div>
-          <div className="ecosektion__diagram--data" style={{paddingTop: `${dataHeight}px`}}>
-            <div className="ecosektion__diagram--number">{ecoSentimentDiagramData}</div>
-            <div className="ecosektion__diagram--description">{ecoSentimentDiagramDescription}</div>
+          <div
+            className="ecosektion__diagram--data"
+            style={{ paddingTop: `${dataHeight}px` }}
+          >
+            <div className="ecosektion__diagram--number">
+              {ecoSentimentDiagramData}
+            </div>
+            <div className="ecosektion__diagram--description">
+              {ecoSentimentDiagramDescription}
+            </div>
           </div>
-
         </div>
       </div>
     </section>

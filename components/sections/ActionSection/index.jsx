@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SliderNav, ActionCard } from 'components';
 
-const ActionSection = ({data}) => {
+const ActionSection = ({ data }) => {
   const [swiper, setSwiper] = useState(null);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [centeredSlide, setCenteredSlide] = useState(false);
@@ -40,7 +40,7 @@ const ActionSection = ({data}) => {
 
   const actionCards = data.map((item, index) => {
     return (
-      <SwiperSlide  key={index}>
+      <SwiperSlide key={index}>
         <ActionCard data={item} />
       </SwiperSlide>
     );
@@ -49,10 +49,10 @@ const ActionSection = ({data}) => {
   return (
     <section className="aktion">
       <div className="action__center">
-        <h2 className="action__title">Spotlight on Action</h2>
+        <h2 className="action__title">Latest News</h2>
         <div className="action__slider">
           <Swiper
-            id="aktionSlider"            
+            id="aktionSlider"
             slidesPerView={slidesPerView}
             spaceBetween={32}
             centeredSlides={centeredSlide}
@@ -61,7 +61,6 @@ const ActionSection = ({data}) => {
             loop={true}
           >
             {actionCards}
-              
           </Swiper>
         </div>
         <div className="action__slider-nav">

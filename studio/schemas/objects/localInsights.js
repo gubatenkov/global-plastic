@@ -4,6 +4,14 @@ export default {
     type: 'object',
     fields: [
       {
+        name: 'isAdded',
+        title: 'Hide/show section on the page',
+        type: 'boolean',
+        initialValue: {
+          isAdded: true,
+        },
+      },
+      {
         name: 'localInsightsTitle',
         title: 'Local Insights Title',
         type: 'string',

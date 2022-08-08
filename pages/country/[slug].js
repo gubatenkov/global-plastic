@@ -33,7 +33,7 @@ export default function Country({ page, slug }) {
     reportsGuidesSlider, actionSlider, archiveSlider } = currentPage[0];
   const { meta, menu: { pageMenu }, socials: { pageSocials }} = page;
   const metaData = {pageTitle, pageDescription, meta};
- 
+
   return (
     <div className="country">
       <Meta data={metaData} />
@@ -42,8 +42,8 @@ export default function Country({ page, slug }) {
         <UpcomingActivationsSection data={upcomingActivationsSlider} />
         <StakeholderParticipationSection data={stakeholderParticipation} />
         <StakeholderEngagementSection data={stakeholderEngagement} />        
-        <EcoSentiment data={ecoSentiment} />
-        <LocalInsights data={localInsights} />
+        {ecoSentiment?.isAdded && <EcoSentiment data={ecoSentiment} />}
+        {localInsights?.isAdded && <LocalInsights data={localInsights} />}
         <WasteSection data={wasteSector} />        
         <VideoSection data={videoSectionCountryPage} />
         <TargetCountrySection data={targetSectionCountryPage} />
