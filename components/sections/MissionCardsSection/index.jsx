@@ -111,7 +111,12 @@ export default function MissionCardsSection({
             <div className="micarection__right">
               <div className="micarection__schema">
                 <div className="micarection__schema__top">
-                  <p style={{ color: activeIndex !== 1 ? '#212121' : '#fff' }}>
+                  <p
+                    style={{
+                      color: activeIndex !== 1 ? '#212121' : '#fff',
+                      zIndex: '11',
+                    }}
+                  >
                     {bubbles.top}
                   </p>
                   <Top activeIndex={activeIndex} />
@@ -120,13 +125,23 @@ export default function MissionCardsSection({
                   {bubbles.center}
                 </div>
                 <div className="micarection__schema__left">
-                  <p style={{ color: activeIndex !== 3 ? '#212121' : '#fff' }}>
+                  <p
+                    style={{
+                      color: activeIndex !== 3 ? '#212121' : '#fff',
+                      zIndex: '11',
+                    }}
+                  >
                     {bubbles.left}
                   </p>
                   <Left activeIndex={activeIndex} />
                 </div>
                 <div className="micarection__schema__right">
-                  <p style={{ color: activeIndex !== 2 ? '#212121' : '#fff' }}>
+                  <p
+                    style={{
+                      color: activeIndex !== 2 ? '#212121' : '#fff',
+                      zIndex: '11',
+                    }}
+                  >
                     {bubbles.right}
                   </p>
                   <Right activeIndex={activeIndex} />
