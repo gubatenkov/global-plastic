@@ -24,6 +24,7 @@ export default {
         { type: 'missionCTASection' },
         { type: 'textImgMissionSection' },
         { type: 'missionCardsSection' },
+        { type: 'bigMapSection' },
       ],
     },
   ],

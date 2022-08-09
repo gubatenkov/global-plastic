@@ -6,7 +6,8 @@ import {
   InvolvedForm, 
   TargetSection,
   StakeholdersSection,
-  PartnersSection,  
+  PartnersSection,
+  BigMapSection,  
 } from 'components'
 import { getInvolvedFieldsQuery } from 'lib/queries';
 
@@ -19,7 +20,7 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {involvedHeroSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
+  const {involvedHeroSection, bigMapSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
 
   return (
     <div className="involved">
@@ -31,6 +32,7 @@ export default function Countries({ page }) {
         <TargetSection data={targetSectionCountriesPage} />
         <StakeholdersSection data={stakeholdersSliderSection} />
         <PartnersSection data={partnersSection} />
+        <BigMapSection data={bigMapSection} />
       </MainLayout>
     </div>
   )

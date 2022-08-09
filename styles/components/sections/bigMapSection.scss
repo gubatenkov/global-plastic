@@ -13,9 +13,8 @@
     height: 660px;
 
     background-size: cover;
-    background-position: center 30px;
     background-repeat: no-repeat;
-    background-image: url('../../../assets/images/map.svg');
+    background-position: center 30px;
   }
 
   &__title {
@@ -27,6 +26,10 @@
     line-height: 32px;
     font-style: normal;
     text-align: center;
+
+    position: relative;
+
+    z-index: 11;
 
     @include screen($sm) {
       font-size: 20px;
@@ -50,14 +53,6 @@
     @include screen($sm) {
       .hero__panel__text {
         font-size: 16px;
-      }
-    }
-  }
-
-  &__inner {
-    img {
-      @include screen($sm) {
-        display: none !important;
       }
     }
   }

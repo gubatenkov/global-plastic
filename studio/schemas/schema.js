@@ -67,6 +67,7 @@ import missionHero from './objects/missionHero'
 import missionCTASection from './objects/missionCTASection'
 import textImgMissionSection from './objects/textImgMissionSection'
 import missionCardsSection from './objects/missionCardsSection'
+import bigMapSection from './objects/bigMapSection'
 
 
 export default createSchema({
@@ -139,6 +140,7 @@ export default createSchema({
     missionHero,
     missionCTASection,
     textImgMissionSection,
-    missionCardsSection
+    missionCardsSection,
+    bigMapSection
   ]),
 })

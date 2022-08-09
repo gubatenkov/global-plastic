@@ -44,6 +44,11 @@ export default {
         name: 'partnersSection',
         title: 'Partners Section',
         type: 'partnersCountrySection',
-      },     
+      },
+      {
+        name: 'bigMapSection',
+        title: 'Add Big Map Section',
+        type: 'bigMapSection'
+      }     
     ],   
   }

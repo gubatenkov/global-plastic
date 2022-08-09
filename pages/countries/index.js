@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {countryPresenceCards, targetSectionCountriesPage, 
+  const {countryPresenceCards, targetSectionCountriesPage, bigMapSection,
     regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials } } = page;
     
   return (
@@ -27,7 +27,7 @@ export default function Countries({ page }) {
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <TargetSection data={targetSectionCountriesPage} />
         <CountryPresenceSection data={countryPresenceCards} />
-        <BigMapSection />
+        <BigMapSection data={bigMapSection} />
         <RegionsSection data={regionsSectionCountriesPage}/>
         <LinksSection data={linksSectionCountriesPage} />
       </MainLayout>

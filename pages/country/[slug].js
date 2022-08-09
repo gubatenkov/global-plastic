@@ -13,7 +13,8 @@ import {
   PartnersSection,
   ReportsSection,
   ActionSection,
-  ArchiveSection  
+  ArchiveSection,  
+  BigMapSection
 } from 'components'
 import { getCountryFieldsQuery } from 'lib/queries';
 
@@ -30,7 +31,7 @@ export default function Country({ page, slug }) {
   const { pageTitle, pageDescription, countryHero, upcomingActivationsSlider, 
     stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, 
     wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, 
-    reportsGuidesSlider, actionSlider, archiveSlider } = currentPage[0];
+    reportsGuidesSlider, actionSlider, archiveSlider, bigMapSection } = currentPage[0];
   const { meta, menu: { pageMenu }, socials: { pageSocials }} = page;
   const metaData = {pageTitle, pageDescription, meta};
 
@@ -42,8 +43,8 @@ export default function Country({ page, slug }) {
         <UpcomingActivationsSection data={upcomingActivationsSlider} />
         <StakeholderParticipationSection data={stakeholderParticipation} />
         <StakeholderEngagementSection data={stakeholderEngagement} />        
-        {ecoSentiment?.isAdded && <EcoSentiment data={ecoSentiment} />}
-        {localInsights?.isAdded && <LocalInsights data={localInsights} />}
+        <EcoSentiment data={ecoSentiment} />
+        <LocalInsights data={localInsights} />
         <WasteSection data={wasteSector} />        
         <VideoSection data={videoSectionCountryPage} />
         <TargetCountrySection data={targetSectionCountryPage} />
@@ -51,6 +52,7 @@ export default function Country({ page, slug }) {
         <ReportsSection className='rection' data={reportsGuidesSlider} />
         <ActionSection data={actionSlider} />
         <ArchiveSection data={archiveSlider} />
+        <BigMapSection data={bigMapSection} />
       </MainLayout>
     </div>
   )

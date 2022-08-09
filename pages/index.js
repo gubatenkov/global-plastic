@@ -44,7 +44,7 @@ export default function Home({ data }) {
         <WideSliderSection data={sections[3]} />
         <TargetSection data={sections[4]} />
         <SponsorsSection data={sections[5]} />
-        <BigMapSection />
+        <BigMapSection data={sections[14]} />
         <RegionsSection data={sections[6]} />
         <VideoSection data={sections[7]} />
         <LinksSection data={sections[8]} />

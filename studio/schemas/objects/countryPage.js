@@ -88,6 +88,11 @@ export default {
         title: 'Archive Slider',
         type: 'array',
         of: [{type: 'archiveSection'}],
-      }, 
+      },
+      {
+        name: 'bigMapSection',
+        title: 'Add Big Map Section',
+        type: 'bigMapSection'
+      }
     ],   
   }

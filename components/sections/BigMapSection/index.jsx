@@ -6,9 +6,9 @@ import MapLegend from 'components/MapLegend';
 import LegendBtn from './components/LegendBtn';
 import LegendPopup from './components/LegendPopup';
 
-import map from 'assets/images/map.svg';
+import { urlForImage } from 'lib/sanity';
 
-const BigMapSection = () => {
+const BigMapSection = ({ data: { title = '', image, isAdded = false } }) => {
   const [isLegendVisible, setLegendVisible] = useState(true);
   const [isLegendPopupOpen, setLegendPopupOpen] = useState(false);
 
@@ -18,14 +18,19 @@ const BigMapSection = () => {
     }
   };
 
+  if (!isAdded) return;
+
   return (
     <section className={isLegendVisible ? 'mection legend' : 'mection'}>
       <div className="container">
         <div className="mection__inner">
-          <h2 className="mection__title">
-            Track Plastics Treaty Dialogues ahead of UNEA 6
-          </h2>
-          <Image src={map} alt="map" layout="responsive" />
+          <h2 className="mection__title">{title}</h2>
+          <Image
+            src={urlForImage(image).url()}
+            alt="map"
+            layout="fill"
+            objectFit="cover"
+          />
         </div>
       </div>
       <MapLegend

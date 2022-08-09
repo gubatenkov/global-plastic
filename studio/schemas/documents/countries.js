@@ -36,5 +36,10 @@ export default {
         title: 'Links Section Countries Page',
         type: 'linksSectionPage',
       },
+      {
+        name: 'bigMapSection',
+        title: 'Add Big Map Section',
+        type: 'bigMapSection'
+      }
     ],   
   }

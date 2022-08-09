@@ -28,6 +28,7 @@ export default {
         { type: 'buildingProgramsSection' },
         { type: 'linksSection' },
         { type: 'dialogsSection' },
+        { type: 'bigMapSection' },
       ],
     },
   ],

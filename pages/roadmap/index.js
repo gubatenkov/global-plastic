@@ -5,7 +5,8 @@ import {
   RoadmapUpcomingActivations,
   RoadmapTreaty,
   RoadmapTargetSection,
-  ArchiveSection  
+  ArchiveSection,  
+  BigMapSection
 } from 'components'
 import { getRoadmapFieldsQuery } from 'lib/queries';
 
@@ -18,8 +19,8 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {roadmapHeroSection, roadmapUpcomingActivations, roadmapTreatySections, roadmapTargetSection, roadmapArchiveSection, menu: { pageMenu }, socials: { pageSocials }} = page;
-
+  const {roadmapHeroSection, bigMapSection, roadmapUpcomingActivations, roadmapTreatySections, roadmapTargetSection, roadmapArchiveSection, menu: { pageMenu }, socials: { pageSocials }} = page;
+  
   return (
     <div className="roadmap">
       <Meta data={page} />
@@ -28,6 +29,7 @@ export default function Countries({ page }) {
         <RoadmapUpcomingActivations data={roadmapUpcomingActivations} />
         <RoadmapTreaty data={roadmapTreatySections} />
         <RoadmapTargetSection data={roadmapTargetSection} />
+        <BigMapSection data={bigMapSection} />
         <ArchiveSection data={roadmapArchiveSection} />
       </MainLayout>
     </div>

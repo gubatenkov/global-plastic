@@ -42,6 +42,10 @@ export default {
         title: 'Roadmap Archive Section',
         type: 'array',
         of: [{type: 'archiveSection'}],
-      },    
+      },
+      { 
+        name: 'bigMapSection',
+        type: 'bigMapSection'
+      },
     ],   
   }

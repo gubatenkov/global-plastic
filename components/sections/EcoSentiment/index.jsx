@@ -9,11 +9,12 @@ const EcoSentiment = ({ data }) => {
     ecoSentimentLinkHref,
     ecoSentimentDiagramData,
     ecoSentimentDiagramDescription,
+    isAdded = false,
   } = data;
 
-  const [temperatureHeight, setTemperatureHeight] = useState(528);
-  const [scaleHeight, setScaleHeight] = useState(425);
   const [textHeight, setTextHeight] = useState(80);
+  const [scaleHeight, setScaleHeight] = useState(425);
+  const [temperatureHeight, setTemperatureHeight] = useState(528);
 
   const getResizeHeight = () => {
     if (typeof window !== 'undefined' && window.screen.width <= 480) {
@@ -39,6 +40,8 @@ const EcoSentiment = ({ data }) => {
     (scaleHeight * ecoSentimentDiagramData) / 10 +
     (temperatureHeight - scaleHeight) / 2;
   const dataHeight = scaleHeight - valueHeight + textHeight;
+
+  if (!isAdded) return;
 
   return (
     <section className="ecosektion">

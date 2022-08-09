@@ -34,6 +34,7 @@ export default {
         { type: 'joinSection' },
         { type: 'partnersSection' },
         { type: 'dialogsSection' },
+        { type: 'bigMapSection' },
       ],
     },
   ],

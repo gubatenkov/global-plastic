@@ -1,5 +1,6 @@
 import { getMediaFieldsQuery } from 'lib/queries';
 import {
+  BigMapSection,
   BuildingProgramsSection,
   DialoguesSection,
   LinksSection,
@@ -27,6 +28,8 @@ export default function Media({ data }) {
     socials: { pageSocials },
   } = data;
 
+  console.log(sections[8]);
+
   return (
     <div className="media">
       <Meta data={data} />
@@ -42,6 +45,7 @@ export default function Media({ data }) {
         />
         <LinksSection data={sections[6]} />
         <DialoguesSection className="medialection" data={sections[7]} />
+        <BigMapSection data={sections[8]} />
       </MainLayout>
     </div>
   );
