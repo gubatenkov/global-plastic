@@ -41,7 +41,7 @@ const BigMapSection = ({ data: { title = '', image, isAdded = false } }) => {
       />
       <LegendBtn onClick={() => setLegendPopupOpen(true)} />
       <div className="mection__panel">
-        <HeroPanel leftText="656 days" />
+        <HeroPanel leftText="656 days" centerText="till UNEA 6 2024" />
       </div>
       {isLegendPopupOpen && <LegendPopup onClose={handleClose} />}
     </section>

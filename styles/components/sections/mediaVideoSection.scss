@@ -1,4 +1,6 @@
 .mevidection {
+  padding: 140px 0 100px;
+
   background-color: $white;
   border-radius: $section-radius;
 
@@ -27,7 +29,7 @@
   }
 
   &__left {
-    padding: 190px 0 0;
+    padding: 45px 0 0;
 
     @include screen($sm) {
       padding: 0;
@@ -35,15 +37,16 @@
   }
 
   &__right {
-    padding: 140px 0;
-
     position: relative;
 
     @include screen($sm) {
-      padding: 0;
+      max-width: 280px;
 
-      top: 145px;
+      top: 185px;
+      left: 50%;
       position: absolute;
+
+      transform: translateX(-50%);
     }
 
     &::after {
@@ -51,7 +54,7 @@
       width: 135px;
       height: 135px;
 
-      top: 205px;
+      top: 70px;
       left: -45px;
       position: absolute;
 
@@ -62,7 +65,7 @@
 
       @include screen($sm) {
         top: 25px;
-        left: 80px;
+        left: 5px;
 
         width: 50px;
         height: 55px;
@@ -81,8 +84,8 @@
       @include screen($sm) {
         width: 35%;
 
-        right: 55px;
-        bottom: -65px;
+        right: -10px;
+        bottom: -80px;
       }
     }
   }
