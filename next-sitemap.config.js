@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://fastidious-vacherin-1a0ea7.netlify.app',
+  siteUrl: process.env.NEXT_PUBLIC_DOMAIN || 'https://globaltreatydialogues.org/',
   generateRobotsTxt: true, // (optional)
   // ...other options
 };
