@@ -1,5 +1,12 @@
+const siteUrl = process.env.NEXT_PUBLIC_DOMAIN || 'https://globaltreatydialogues.org/';
+
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_DOMAIN || 'https://globaltreatydialogues.org/',
+  siteUrl,
   generateRobotsTxt: true, // (optional)
-  // ...other options
+  robotsTxtOptions: {
+    additionalSitemaps: [
+      `${siteUrl}sitemap.xml`,
+      `${siteUrl}server-sitemap.xml`
+    ],
+  }
 };
