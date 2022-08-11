@@ -4,16 +4,8 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'pageTitle',
-        title: 'Countries Page SEO title',
-        type: 'string',
-        validation: Rule => Rule.required().min(1).max(100)
-      },
-      {
-        name: 'pageDescription',
-        title: 'Countries Page SEO description',
-        type: 'text',
-        validation: Rule => Rule.required().min(1).max(300)
+        name: 'pageMeta',
+        type: 'meta'
       },
       {
         name: 'targetSectionCountriesPage',

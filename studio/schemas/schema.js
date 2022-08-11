@@ -3,7 +3,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import menu from './documents/menu'
-import meta from './documents/meta'
+import analytics from './documents/analytics'
 import socials from './documents/socials'
 import homepage from './documents/homepage'
 import countries from './documents/countries'
@@ -68,6 +68,7 @@ import missionCTASection from './objects/missionCTASection'
 import textImgMissionSection from './objects/textImgMissionSection'
 import missionCardsSection from './objects/missionCardsSection'
 import bigMapSection from './objects/bigMapSection'
+import meta from './objects/meta'
 
 
 export default createSchema({
@@ -79,14 +80,15 @@ export default createSchema({
     countries,
     countryPages,
     menu,
-    meta,
     socials,
     involved,
     roadmap,
     mediapage,
     mission,
+    analytics,
     
     // Objects
+    meta,
     countryPage,
     heroSection,
     sliderSection,

@@ -4,6 +4,10 @@ export default {
     type: 'document',
     fields: [
       {
+        name: 'pageMeta',
+        type: 'meta'
+      },
+      {
         name: 'pageTitle',
         title: 'Roadmap Page SEO title',
         type: 'string',

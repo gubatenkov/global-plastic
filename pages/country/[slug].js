@@ -28,16 +28,15 @@ export const getServerSideProps = async (context) => {
 export default function Country({ page, slug }) {
   const pages = page.countryPage;
   const currentPage = pages.filter(el => el.pageUrl === slug);
-  const { pageTitle, pageDescription, countryHero, upcomingActivationsSlider, 
+  const { pageMeta, countryHero, upcomingActivationsSlider, 
     stakeholderParticipation, stakeholderEngagement, ecoSentiment, localInsights, 
     wasteSector, videoSectionCountryPage, partnersSection, targetSectionCountryPage, 
     reportsGuidesSlider, actionSlider, archiveSlider, bigMapSection } = currentPage[0];
-  const { meta, menu: { pageMenu }, socials: { pageSocials }} = page;
-  const metaData = {pageTitle, pageDescription, meta};
-
+  const { analytics, menu: { pageMenu }, socials: { pageSocials }} = page;
+  
   return (
     <div className="country">
-      <Meta data={metaData} />
+      <Meta data={{analytics, pageMeta}} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
         <CountryHero data={countryHero} />
         <UpcomingActivationsSection data={upcomingActivationsSlider} />

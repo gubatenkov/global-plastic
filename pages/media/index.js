@@ -28,8 +28,6 @@ export default function Media({ data }) {
     socials: { pageSocials },
   } = data;
 
-  console.log(sections[8]);
-
   return (
     <div className="media">
       <Meta data={data} />

@@ -4,21 +4,16 @@ export default {
   title: 'Mediapage',
   fields: [
     {
-      name: 'pageTitle',
-      title: 'Mediapage SEO title',
-      type: 'string',
-      validation: Rule => Rule.required().min(1).max(100)
-    },
-    {
-      name: 'pageDescription',
-      title: 'Mediapage SEO description',
-      type: 'text',
-      validation: Rule => Rule.required().min(1).max(300)
+      name: 'pageMeta',
+      type: 'meta'
     },
     {
       name: 'sections',
       type: 'array',
       title: 'Page sections',
+      options: {
+        sortable: false
+      },
       of: [
         { type: 'mediaHeroSection' },
         { type: 'updatesSliderSection' },

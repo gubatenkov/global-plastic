@@ -4,21 +4,13 @@ export default {
     type: 'object',
     fields: [
       {
+        name: 'pageMeta',
+        type: 'meta'
+      },
+      {
         name: 'pageUrl',
         title: 'Country Name',
         type: 'string',
-      },
-      {
-        name: 'pageTitle',
-        title: 'Country Page SEO title',
-        type: 'string',
-        validation: Rule => Rule.required().min(1).max(100)
-      },
-      {
-        name: 'pageDescription',
-        title: 'Country Page SEO description',
-        type: 'text',
-        validation: Rule => Rule.required().min(1).max(300)
       },
       {
         name: 'countryHero',

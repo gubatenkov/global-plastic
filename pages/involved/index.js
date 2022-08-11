@@ -20,7 +20,9 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {involvedHeroSection, bigMapSection, wideInvolvedSection, involvedFormSection, targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, menu: { pageMenu }, socials: { pageSocials }} = page;
+  const {involvedHeroSection, bigMapSection, wideInvolvedSection, involvedFormSection, 
+    targetSectionCountriesPage, stakeholdersSliderSection, partnersSection, 
+    menu: { pageMenu }, socials: { pageSocials }} = page;
 
   return (
     <div className="involved">

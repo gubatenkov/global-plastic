@@ -9,6 +9,9 @@
   position: relative;
 
   &__wrap {
+    width: 100%;
+    max-width: 256px;
+
     right: 30px;
     bottom: 10px;
     position: absolute;
@@ -47,6 +50,10 @@
   &__section {
     padding: 15px 25px;
 
+    &--p15 {
+      padding: 15px;
+    }
+
     &__title {
       margin: 0 0 5px;
 
@@ -55,6 +62,10 @@
       font-weight: 500;
       line-height: 21px;
       font-style: normal;
+
+      &--m10 {
+        margin: 0 0 10px;
+      }
     }
 
     &__subtitle {
@@ -87,6 +98,18 @@
         gap: 10px;
         display: flex;
         align-items: center;
+
+        > .mw10 {
+          min-width: 10px;
+        }
+
+        > div {
+          min-width: 32px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
         > p {
           margin: 0;

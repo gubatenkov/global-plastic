@@ -4,21 +4,16 @@ export default {
   title: 'Homepage',
   fields: [
     {
-      name: 'pageTitle',
-      title: 'Homepage SEO title',
-      type: 'string',
-      validation: Rule => Rule.required().min(1).max(100)
-    },
-    {
-      name: 'pageDescription',
-      title: 'Homepage SEO description',
-      type: 'text',
-      validation: Rule => Rule.required().min(1).max(300)
+      name: 'pageMeta',
+      type: 'meta'
     },
     {
       name: 'sections',
       type: 'array',
       title: 'Page sections',
+      options: {
+        sortable: false
+      },
       of: [
         { type: 'heroSection' },
         { type: 'sliderSection' },

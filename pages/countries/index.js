@@ -18,8 +18,8 @@ export const getStaticProps = async () => {
 };
 
 export default function Countries({ page }) {
-  const {countryPresenceCards, targetSectionCountriesPage, bigMapSection,
-    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials } } = page;
+  const { countryPresenceCards, targetSectionCountriesPage, bigMapSection,
+    regionsSectionCountriesPage, linksSectionCountriesPage, menu: { pageMenu }, socials: { pageSocials }} = page;
     
   return (
     <div className="countries">

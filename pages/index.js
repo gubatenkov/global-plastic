@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
 
 export default function Home({ data }) {
   const { sections, menu: { pageMenu }, socials: { pageSocials } } = data;
-
+  
   return (
     <div className='home'>
       <Meta data={data} />

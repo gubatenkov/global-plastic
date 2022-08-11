@@ -1,8 +1,20 @@
 export default {
   name: 'meta',
-  title: 'Meta',
-  type: 'document',
+  title: 'Add meta page info',
+  type: 'object',
   fields: [
+    {
+      name: 'pageTitle',
+      title: 'Add page title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'pageDescription',
+      title: 'Add page description',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
     {
       name: 'ogTitle',
       title: 'Og Title',      
@@ -32,6 +44,6 @@ export default {
       name: 'image',
       title: 'Image',      
       type: 'image',
-    },    
-  ],
+    },  
+  ]
 }
