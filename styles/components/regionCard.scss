@@ -9,6 +9,10 @@
 
   position: relative;
 
+  &__link {
+    width: 100%;
+  }
+
   &::after {
     content: '';
 

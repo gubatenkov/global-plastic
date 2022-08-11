@@ -28,7 +28,7 @@ const NewsCardSmall = ({
             className="ncard-small__content__bottom__link arrow-hover-right"
             href={newsSmallCardLink}
           >
-            <span>Read more</span>
+            <span>Learn more</span>
             <svg
               className="arrow-image"
               width="15"

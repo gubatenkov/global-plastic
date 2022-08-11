@@ -30,6 +30,7 @@ const BigMapSection = ({ data: { title = '', image, isAdded = false } }) => {
             alt="map"
             layout="fill"
             objectFit="cover"
+            priority
           />
         </div>
       </div>

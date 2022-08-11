@@ -5,13 +5,30 @@ export default {
   fields: [
     {
       name: 'regionCardImage',
-      title: 'Regions Card Image',
-      type: 'image',
+      type: 'object',
+      title: 'Add card image data',
+      fields: [
+        {
+          name: 'image',
+          type: 'image',
+          title: 'Add image'
+        },
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Add image alt description'
+        }
+      ]
     },
     {
       name: 'regionCardTitle',
-      title: 'Regions Card Title',
       type: 'string',
+      title: 'Add title'
     },
+    {
+      name: 'regionCardLink',
+      type: 'string',
+      title: 'Add link url'
+    }
   ],
 }

@@ -25,11 +25,11 @@ export default function Countries({ page }) {
     <div className="countries">
       <Meta data={page} />
       <MainLayout menu={pageMenu} socials={pageSocials}>
-        <TargetSection data={targetSectionCountriesPage} />
         <CountryPresenceSection data={countryPresenceCards} />
         <BigMapSection data={bigMapSection} />
         <RegionsSection data={regionsSectionCountriesPage}/>
         <LinksSection data={linksSectionCountriesPage} />
+        <TargetSection data={targetSectionCountriesPage} />
       </MainLayout>
     </div>
   )

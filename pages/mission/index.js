@@ -31,8 +31,8 @@ export default function Mission({ data }) {
         <MissionHero {...sections[0]} />
         <MissionCTASection {...sections[1]} />
         <TextImgSection {...sections[2]} />
-        <BigMapSection data={sections[4]} />
         <MissionCardsSection {...sections[3]} />
+        <BigMapSection data={sections[4]} />
       </MainLayout>
     </div>
   );
