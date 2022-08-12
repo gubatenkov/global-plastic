@@ -1,29 +1,21 @@
-const NewsTicker = ({ className = '', items }) => {
-  const duration = 28;
-  const delayFn = (idx) => (idx + 1) * (duration / items.length);
+import Marquee from 'react-fast-marquee';
 
+const NewsTicker = ({ className = '', items }) => {
   return (
     <div className={className.length ? `ticker ${className}` : 'ticker'}>
-      <ul className="ticker__list">
-        {items.map(({ heroNewsLineText, heroNewsLineURL }, idx) => {
-          return (
-            <li
-              className="ticker__list__item"
-              key={idx}
-              style={{
-                '--distance-to-right': `${(items.length - (idx + 1)) * 100}%`,
-                '--distance-to-left': `${(idx + 1) * -100}%`,
-                animation: `running-start ${delayFn(idx)}s linear,
-              running-left ${duration}s linear ${delayFn(idx)}s infinite`,
-              }}
-            >
-              <a className="ticker__list__link" href={heroNewsLineURL}>
-                {heroNewsLineText}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <Marquee gradient={false} loop={0} speed={42}>
+        <ul className="ticker__list">
+          {items.map(({ heroNewsLineText, heroNewsLineURL }, idx) => {
+            return (
+              <li className="ticker__list__item" key={idx}>
+                <a className="ticker__list__link" href={heroNewsLineURL}>
+                  {heroNewsLineText}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </Marquee>
     </div>
   );
 };
